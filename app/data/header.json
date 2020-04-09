@@ -1,0 +1,88 @@
+{
+  "dropdowns": [
+    {
+      "title": "Greek",
+      "links": [
+        "Greek",
+        "English",
+        "Italian"
+      ]
+    },
+    {
+      "title": "Euro",
+      "links": [
+        "Euro",
+        "USD"
+      ]
+    }
+  ],
+  "menu": [
+    {
+      "text": "ΝΕΕΣ ΑΦΙΞΕΙΣ",
+      "link": "#"
+    },
+    {
+      "text": "ΡΟΥΧΑ",
+      "menu": "menu-1"
+    },
+    {
+      "text": "αξεσουαρ",
+      "menu": "menu-2"
+    },
+    {
+      "text": "ΠΑΠΟΥΤΣΙΑ",
+      "link": "#"
+    },
+    {
+      "text": "ΠΡΟΣΦΟΡΕΣ",
+      "menu": "menu-3"
+    },
+    {
+      "text": "LOOKBOOK",
+      "link": "#"
+    }
+  ],
+  "items": [
+    [
+      {
+        "type": "icon",
+        "icon": "search",
+        "class": "hide-lg",
+        "link": "#"
+      },
+      {
+        "type": "text",
+        "text": "SEARCH"
+      }
+    ],
+    [
+      {
+        "type": "icon",
+        "icon": "account",
+        "iconClass": "show-lg",
+        "class": "js-fancybox",
+        "link": "#popup-login"
+      },
+      {
+        "type": "text",
+        "text": "ACCOUNT"
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "text": "CART",
+        "link": "cart.html",
+        "class": "js-side-cart-open"
+      },
+      {
+        "type": "icon",
+        "icon": "cart"
+      },
+      {
+        "type": "mobileText",
+        "mobileText": "(<b>1</b>)"
+      }
+    ]
+  ]
+}

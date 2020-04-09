@@ -1,0 +1,82 @@
+.cart {
+  display: block;
+
+  $b: &;
+
+  &:not(:last-child) {
+    @include rule(margin-bottom, (xl: 100px, lg: 26px));
+  }
+
+  &__header {
+    @include screen('lg') {
+      position: absolute;
+      height: 58px;
+      top: 32px;
+      right: 60px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      background: white;
+    }
+  }
+
+  &__close {
+    width: 60px;
+    height: 100%;
+    background: white;
+    position: absolute;
+    left: 100%;
+    top: 0;
+
+    a {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      transition: opacity $ease-main;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+
+    svg {
+      width: 10px;
+      height: 10px;
+
+      @include center-image;
+    }
+  }
+
+  &__title {
+    font-family: $font-second;
+    font-style: normal;
+
+    @include rule(letter-spacing, (xl: .08em, lg: .19em));
+    @include rule(font-weight, (xl: 600, lg: 700));
+    @include rule(font-size, (xl: 25px, lg: 16px));
+    @include rule(line-height, (xl: 30px, lg: 16px));
+  }
+
+  &__amount {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: .08em;
+    color: $color-grey-24;
+  }
+
+  &__content {
+    @include rule(margin-top, (xl: 26px, lg: 20px));
+
+    padding: .1px;
+
+    .grid__col {
+      transition: margin $ease-main;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+mixin filters-section(name)
+  +e.section&attributes(attributes)
+    +e.section-header.CategoryFilterOverlay-ExpandableContentButton
+      +e.P.section-title!= name
+      +e.icon
+
+    +e.section-content.CategoryFilterOverlay-ExpandableContentContent
+      block
+
+mixin filters()
+  +b.filters.CategoryFilterOverlay&attributes(attributes)
+    +e.header
+      +e.P.title φιλτρα
+      +e.P.results 47 αποτελέσματα
+      +icon('close_big').__close.show-lg.js-filters-close
+
+    +e.content
+      each section in getData('filters')
+        +filters-section(section.title)(class=section.class).CategoryFilterOverlay-Filter
+          +e.scroll.js-scrollbar
+            if section.link
+              +e.container
+                +e.P.link
+                  a(href="#")!= section.link
+
+            if section.categories
+              +e.P.category.hide-lg ρουχα
+              +e.category-grid
+                each item in section.categories
+                  +e.category-content(class=item.class, data-items-id=item.id)
+                    +grid.grid_filters_category
+                      if item.selected
+                        +col({xl: 12})
+                          +e.P.category-selected(data-open-items=item.selected.targetItems)!= item.selected.text
+                      if item.checkboxes
+                        each checkbox in item.checkboxes
+                          +col({xl: 12, lg: 6})
+                            +e(checkbox.type ? 'label' : 'a').checkbox(data-open-items=checkbox.targetItems, href=checkbox.link, class="_desktop_style_link").ProductAttributeValue
+                              if checkbox.type
+                                input(type=checkbox.type, name=checkbox.name, value=checkbox.value, checked=checkbox.checked)
+                              span.ProductAttributeValue-String!= checkbox.text
+
+            if section.checkboxes
+              +e.container
+                +e.grid
+                  +grid.grid_filters
+                    each item in section.checkboxes
+                      +col(item.cols)
+                        +e.LABEL.checkbox.ProductAttributeValue
+                          input(type=item.type, name=item.name, value=item.value, checked=item.checked)
+                          span.ProductAttributeValue-String!= item.text
+
+    +e.buttons.show-lg
+      +e.BUTTON.button(type="button").js-filters-clear.CategoryFilterOverlay-ResetButton καθαρισμοσ
+      +e.BUTTON.button(type="button")._dark.js-filters-close.CategoryFilterOverlay-SeeResults εφαρμογη
+
+mixin ui-kit-filters()
+  +ui-section
+    +ui-section-head
+      +ui-title Filters
+      +ui-path
+        p Component: components/filters/filters
+
+    +ui-section-content()
+      +filters
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

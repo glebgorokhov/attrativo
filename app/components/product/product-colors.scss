@@ -1,0 +1,61 @@
+.product-colors {
+  display: block;
+  position: relative;
+
+  $b: &;
+
+  &__title {
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: .08em;
+    text-transform: capitalize;
+  }
+
+  &__header {
+    @include rule(margin-bottom, (xl: 7px, lg: 11px));
+    @include rule(display, (lg: flex));
+    @include rule(justify-content, (lg: space-between));
+  }
+
+  &__colors {
+    @include rule(margin, (xl: -10px -6px 0 0, lg: -9px -9px 0 0));
+
+    display: flex;
+  }
+
+  &__color {
+    @include rule(margin, (xl: 10px 6px 0 0, lg: 9px 9px 0 0));
+
+    font-size: 0;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__box {
+    @include rule(width, (xl: 31px, lg: 26px));
+    @include rule(height, (xl: 31px, lg: 26px));
+    @include rule(padding, (xl: 2px, lg: 1px));
+    @include rule(border-radius, (xl: 2px, lg: 1px));
+
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    transition: border-color $ease-main;
+    display: block;
+
+    #{$b}__input:checked + & {
+      border-color: $color-grey-14;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: 100% 100%;
+
+    @include rule(border-radius, (xl: 2px, lg: 1px));
+  }
+}

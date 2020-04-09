@@ -1,0 +1,20 @@
+mixin scroll-top()
+  +b.scroll-top&attributes(attributes)
+    +icon('arrow_top')
+    span.hide-lg TOP
+
+mixin ui-kit-scroll-top()
+  +ui-section
+    +ui-section-head
+      +ui-title Component scroll-top
+      +ui-path
+        p Component: components/scroll-top/scroll-top
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +scroll-top
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

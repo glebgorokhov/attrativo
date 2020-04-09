@@ -1,0 +1,40 @@
+mixin footer()
+  +b.Footer&attributes(attributes)
+    +e.top
+      .container
+        +e.menu
+          each item in getData('footer').menu
+            +e.item
+              +e(item.link ? 'a' : 'p').link(href=item.link, class='Footer-Link')
+                span!= item.text
+                if !item.link
+                  span.Footer__plus
+
+              if item.submenu
+                +e.submenu
+                  .container
+                    each subitem in item.submenu
+                      +e.subitem
+                        +e.A.sublink(href=subitem.link)!= subitem.text
+
+    +e.middle
+      .container
+        +subscribe-form
+
+    +e.bottom
+      .container
+        p.Footer-Copyright © 2019 <b>'ALE</b> by AXF SA. All rights reserved
+
+mixin ui-kit-footer()
+  +ui-section
+    +ui-section-head
+      +ui-title Footer
+      +ui-path
+        p Component: components/footer/footer
+
+    +ui-section-content(true)
+      +footer
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

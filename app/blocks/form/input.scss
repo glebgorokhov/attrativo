@@ -1,0 +1,31 @@
+.input {
+  padding: 0 0 2px;
+  height: 18px;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: black;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  min-height: 0;
+  background-color: transparent;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: lowercase;
+  transition: border-color $ease-main;
+
+  &.parsley-error {
+    border-color: $color-red;
+  }
+}
+
+.textarea {
+  @extend .input;
+
+  padding-top: 13px;
+  padding-bottom: 13px;
+  min-height: 150px;
+  resize: vertical;
+}

@@ -1,0 +1,135 @@
+// ##########
+// Basic layout settings
+// ##########
+$container-width: 1400px; // Max. container width
+$container-padding: 60px; // Container padding
+$grid-container-width: 100%; // Grid width
+$grid-cols: 12; // Columns count
+$grid-gap: 26px; // Column gap (horizontal)
+$grid-gap-vertical: 36px; // Column gap (vertical)
+$breakpoints: (
+  'xl': 1920px,
+  'lg': 1360px,
+  'md': 1024px,
+  'sm': 768px,
+  'xs': 480px
+);
+
+// ##########
+// Colors
+// ##########
+$color-basic: black; // Basic color (for <body>)
+$color-placeholder: #9b9b9b; // Placeholder color
+$color-input: black; // Input, textarea, select color
+$color-main: black; // Main UI color
+$color-border: #efefef; // Main border color
+
+$color-grey-1: #ebebeb;
+$color-grey-2: #b3b3b3;
+$color-grey-3: #787878;
+$color-grey-4: #ababab;
+$color-grey-5: #e6e6e6;
+$color-grey-6: #b9b9b9;
+$color-grey-7: #fbfbfb;
+$color-grey-8: #707070;
+$color-grey-9: #f5f5f5;
+$color-grey-10: #464646;
+$color-grey-11: #acacac;
+$color-grey-12: #9a9a9a;
+$color-grey-13: #a0a0a0;
+$color-grey-14: #929292;
+$color-grey-15: #b7b7b7;
+$color-grey-16: #888;
+$color-grey-17: #e5e5e5;
+$color-grey-18: #909090;
+$color-grey-19: #8d8d8d;
+$color-grey-20: #c4c4c4;
+$color-grey-21: #e7e7e7;
+$color-grey-22: #828282;
+$color-grey-23: #dbdbdb;
+$color-grey-24: #7b7b7b;
+$color-grey-25: #ccc;
+$color-grey-26: #8c8c8c;
+$color-grey-27: #d9d9d9;
+$color-grey-28: #bebebe;
+$color-grey-29: #7b7878;
+$color-grey-30: #757575;
+$color-grey-31: #717171;
+$color-grey-32: #e3e3e3;
+$color-grey-33: #aaa;
+$color-grey-34: #d2d2d2;
+$color-grey-35: #f5f4f4;
+$color-grey-36: #a3a3a3;
+$color-red: #c91010;
+$color-dark-1: #020000;
+$color-dark-2: #615f5f;
+
+// ##########
+// Colors array for UI-kit
+// ##########
+$colors: (
+  '$color-basic': black,
+  '$color-placeholder': #9b9b9b,
+  '$color-input': black,
+  '$color-main': black,
+  '$color-border': #efefef,
+  '$color-grey-1': #ebebeb,
+  '$color-grey-2': #b3b3b3,
+  '$color-grey-3': #787878,
+  '$color-grey-4': #ababab,
+  '$color-grey-5': #e6e6e6,
+  '$color-grey-6': #b9b9b9,
+  '$color-grey-7': #fbfbfb,
+  '$color-grey-8': #707070,
+  '$color-grey-9': #f5f5f5,
+  '$color-grey-10': #464646,
+  '$color-grey-11': #acacac,
+  '$color-grey-12': #9a9a9a,
+  '$color-grey-13': #a0a0a0,
+  '$color-grey-14': #929292,
+  '$color-grey-15': #b7b7b7,
+  '$color-grey-16': #888,
+  '$color-grey-17': #e5e5e5,
+  '$color-grey-18': #909090,
+  '$color-grey-19': #8d8d8d,
+  '$color-grey-20': #c4c4c4,
+  '$color-grey-21': #e7e7e7,
+  '$color-grey-22': #828282,
+  '$color-grey-23': #dbdbdb,
+  '$color-grey-24': #7b7b7b,
+  '$color-grey-25': #ccc,
+  '$color-grey-26': #8c8c8c,
+  '$color-grey-27': #d9d9d9,
+  '$color-grey-28': #bebebe,
+  '$color-grey-29': #7b7878,
+  '$color-grey-30': #757575,
+  '$color-grey-31': #717171,
+  '$color-grey-32': #e3e3e3,
+  '$color-grey-33': #aaa,
+  '$color-grey-34': #d2d2d2,
+  '$color-grey-35': #f5f4f4,
+  '$color-grey-36': #a3a3a3,
+  '$color-red': #c91010,
+  '$color-dark-1': #020000,
+  '$color-dark-2': #615f5f,
+);
+
+// ##########
+// Transitions
+// ##########
+$ease-main: .2s ease;
+$ease-long: 1s ease;
+
+// ##########
+// Шрифты
+// ##########
+$font-main: 'Source Sans Pro', sans-serif; // Main font
+$font-second: 'Montserrat', sans-serif; // Second font
+
+// ##########
+// UI-kit colors
+// ##########
+$ui-kit-bg: white; // Background
+$ui-kit-color-text: black; // Text color
+$ui-kit-color-gray: #ccc; // Border color
+$ui-kit-color-darkbg: #111; // Dark section color

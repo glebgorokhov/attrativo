@@ -1,0 +1,34 @@
+mixin store-tooltip()
+  +b.store-tooltip&attributes(attributes)
+    - var data = getData('stores')[0];
+
+    +e.content
+      +e.P.title!= data.title
+      +e.P.text!= data.text
+      +e.P.country!= data.country
+      +e.P.phone
+        span Τηλεφωνο:
+        b!= data.phone
+      +e.UL.schedule
+          each val, index in data.days
+            li
+              span!= index
+              span!= val
+      +button()(href=data.googleMaps, target="_blank").__button ανοιγμα στο <b>Google maps</b>
+    +icon('close_big').__close
+
+mixin ui-kit-store-tooltip()
+  +ui-section
+    +ui-section-head
+      +ui-title Component store-tooltip
+      +ui-path
+        p Component: components/store-tooltip/store-tooltip
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +store-tooltip
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

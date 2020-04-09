@@ -1,0 +1,44 @@
+{
+  "occassion": [
+    {
+      "image": "assets/images/occassion/1.jpg",
+      "text": "Going out"
+    },
+    {
+      "image": "assets/images/occassion/2.jpg",
+      "text": "Office look"
+    },
+    {
+      "image": "assets/images/occassion/3.jpg",
+      "text": "Festival"
+    },
+    {
+      "image": "assets/images/occassion/4.jpg",
+        "text": "Little black dress"
+    },
+    {
+      "image": "assets/images/occassion/1.jpg",
+      "text": "Best sellers"
+    }
+  ],
+  "items": [
+    {
+      "link": "#",
+      "class": "",
+      "icon": "user",
+      "text": "Σύνδεση / Εγγραφή"
+    },
+    {
+      "link": "#",
+      "class": "",
+      "icon": "pin",
+      "text": "Καταστήματα"
+    },
+    {
+      "link": "#",
+      "class": "",
+      "icon": "call",
+      "text": "Επικοινωνία"
+    }
+  ]
+}

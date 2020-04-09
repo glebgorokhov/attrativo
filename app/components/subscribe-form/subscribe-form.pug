@@ -1,0 +1,26 @@
+mixin subscribe-form()
+  +b.FORM.subscribe-form(action="#", method="post", data-parsley-validate)&attributes(attributes)
+    +e.P.title Become an ale insider
+    +e.P.subtitle.hide-lg εγγράψου στο newsletter μας και κέρδισε 10% στην πρώτη σου αγορά
+    +e.inputbox
+      +icon('mail').__icon.hide-lg
+      +e.INPUT.input(type="email" name="email" required="required" placeholder="example@gmail.com")
+      +e.BUTTON.button(type="submit").hide-lg
+        +icon('arrow_right')
+    +e.checkbox
+      +checkradio(false, 'agree', 'agree', false, true) Συμφωνώ με όρους και προυποθέσεις
+
+
+mixin ui-kit-subscribe-form()
+  +ui-section
+    +ui-section-head
+      +ui-title Subscribe Form
+      +ui-path
+        p Component: components/subscribe-form/subscribe-form
+
+    +ui-section-content()
+      +subscribe-form
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

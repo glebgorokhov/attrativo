@@ -1,0 +1,42 @@
+mixin cart-info()
+  +b.cart-info&attributes(attributes).CartPage-Floating
+    +e.BUTTON.button.hide-lg
+      div
+        span πληροφοριεσ παραγγελιασ
+        +icon('arrow_right')
+
+    +e.content
+      each item in getData('cart-info')
+        +e.text(class=item.class, href=item.href)
+          span!= item.text
+
+          if item.price
+            span!= item.price
+
+          if item.icon
+            +icon(item.icon)
+
+    +e.delivery
+      div
+        +icon('delivery')
+        span.CartPage-PromoText δωρεαν μεταφορικα σε ολη την ελλαδα
+
+    +e.final
+      +e.P.text._summ.show-lg.CartPage-Total
+        span συνολο
+        span 189,80 €
+      +button()(href="#").__send.CartPage-CheckoutButton ολοκληρωση παραγγελιασ
+
+mixin ui-kit-cart-info()
+  +ui-section
+    +ui-section-head
+      +ui-title Cart info
+      +ui-path
+        p Component: components/cart-info/cart-info
+
+    +ui-section-content()
+      +cart-info
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

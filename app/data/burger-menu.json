@@ -1,0 +1,189 @@
+{
+  "screens": [
+    {
+      "id": "main",
+      "class": "is-active",
+      "items": [
+        {
+          "link": "#",
+          "text": "NEEΣ ΑΦΙΞΕΙΣ"
+        },
+        {
+          "text": "ΡΟΥΧΑ",
+          "targetScreen": "menu_1"
+        },
+        {
+          "text": "ΑΞΕΣΟΥΑΡ",
+          "targetScreen": "menu_2"
+        },
+        {
+          "link": "#",
+          "text": "ΠΑΠΟΥΤΣΙΑ"
+        },
+        {
+          "text": "ΠΡΟΣΦΟΡΕΣ",
+          "targetScreen": "menu_1"
+        },
+        {
+          "link": "#",
+          "text": "LOOKBOOK"
+        }
+      ]
+    },
+    {
+      "id": "menu_1",
+      "previousID": "main",
+      "title": "ΡΟΥΧΑ",
+      "links": [
+        {
+          "text": "Όλα τα ρούχα",
+          "link": "#"
+        },
+        {
+          "text": "Φορέματα",
+          "link": "#"
+        },
+        {
+          "text": "Φούστες",
+          "link": "#"
+        },
+        {
+          "text": "Πουκάμισα",
+          "link": "#"
+        },
+        {
+          "text": "Τουνίκ",
+          "link": "#"
+        },
+        {
+          "text": "Παντελόνια",
+          "link": "#"
+        },
+        {
+          "text": "Jeans",
+          "link": "#"
+        },
+        {
+          "text": "Oλόσωμες φόρμες",
+          "link": "#"
+        },
+        {
+          "text": "Beachwear",
+          "targetScreen": "submenu_1"
+        },
+        {
+          "text": "Mπλούζες",
+          "link": "#"
+        },
+        {
+          "text": "Τοπ",
+          "link": "#"
+        },
+        {
+          "text": "Πλεκτά",
+          "link": "#"
+        },
+        {
+          "text": "Μπουφάν",
+          "link": "#"
+        },
+        {
+          "text": "Κολάν",
+          "link": "#"
+        },
+        {
+          "text": "Basics",
+          "link": "#"
+        },
+        {
+          "text": "Ζακέτες - Μπολερό",
+          "link": "#"
+        },
+        {
+          "text": "Κιμονό",
+          "link": "#"
+        },
+        {
+          "text": "Σακάκια - Γιλέκα",
+          "link": "#"
+        },
+        {
+          "text": "Πανωφόρια",
+          "targetScreen": "submenu_2"
+        },
+        {
+          "text": "Σορτς",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "id": "menu_2",
+      "previousID": "main",
+      "title": "ΑΞΕΣΟΥΑΡ",
+      "links": [
+        {
+          "text": "Όλα τα ρούχα",
+          "link": "#"
+        },
+        {
+          "text": "Φορέματα",
+          "link": "#"
+        },
+        {
+          "text": "Φούστες",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "id": "menu_3",
+      "previousID": "main",
+      "title": "ΠΡΟΣΦΟΡΕΣ",
+      "links": [
+        {
+          "text": "Όλα τα ρούχα",
+          "link": "#"
+        },
+        {
+          "text": "Φορέματα",
+          "link": "#"
+        },
+        {
+          "text": "Φούστες",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "id": "submenu_1",
+      "previousID": "menu_1",
+      "title": "Beachwear",
+      "links": [
+        {
+          "text": "μαγιο",
+          "link": "#"
+        },
+        {
+          "text": "ρουχα παραλιας",
+          "link": "#"
+        }
+      ]
+    },
+    {
+      "id": "submenu_2",
+      "previousID": "menu_1",
+      "title": "πανωφόρια",
+      "links": [
+        {
+          "text": "παλτό",
+          "link": "#"
+        },
+        {
+          "text": "καμπαρτίνες",
+          "link": "#"
+        }
+      ]
+    }
+  ]
+}

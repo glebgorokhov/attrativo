@@ -1,0 +1,38 @@
+mixin menu()
+  +b.menu&attributes(attributes)
+    each item in ["menu-1", "menu-2", "menu-3"]
+      +e.wrapper(data-menu=item)
+        .container
+          +e.image._1
+            img(src="assets/images/menu/1.jpg" alt="@@")
+
+          each menu in getData('menu')
+            +e.UL.items(class=menu.class)
+              each item in menu.items
+                +e.LI.item
+                  +e.A.link(class=item.class)!= item.text
+                  if item.submenu
+                    +e.UL.submenu
+                      each subitem in item.submenu
+                        +e.LI.subitem
+                          +e.A.link(class=subitem.class)!= subitem.text
+
+          +e.image._2
+            img(src="assets/images/menu/2.jpg" alt="@@")
+
+
+mixin ui-kit-menu()
+  +ui-section
+    +ui-section-head
+      +ui-title Component menu
+      +ui-path
+        p Component: components/menu/menu
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +menu
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

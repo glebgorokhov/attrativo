@@ -1,0 +1,96 @@
+.girls {
+  display: block;
+
+  $b: &;
+
+  &:not(:first-child) {
+    @include rule(margin-top, (xl: 112px, lg: 32px));
+  }
+
+  &__header {
+    font-size: 0;
+
+    @include rule(text-align, (xl: center, lg: left));
+  }
+
+  &__heading {
+    display: inline-block;
+  }
+
+  &__text {
+    @include rule(margin-top, (xl: 15px, lg: 20px));
+    @include rule(font-size, (xl: 14px, lg: 12px));
+
+    font-family: $font-second;
+    line-height: 1.4;
+    letter-spacing: .08em;
+    text-transform: capitalize;
+
+    b {
+      @include screen('lg', min) {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__slider {
+    @include rule(margin-top, (xl: 23px, lg: 7px));
+    @include rule(padding-right, (lg: 110px));
+
+    overflow: visible;
+  }
+
+  &__card {
+
+  }
+
+  &__image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__profile {
+    @include rule(font-size, (xl: 14px, lg: 12px));
+
+    margin-top: 6px;
+    font-family: $font-second;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: .08em;
+    text-decoration: underline;
+
+    a {
+      transition: opacity $ease-main;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: .08em;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__footer {
+    font-size: 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+}

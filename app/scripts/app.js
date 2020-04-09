@@ -1,0 +1,84 @@
+/* eslint-disable */
+import svg4everybody from 'svg4everybody';
+import objectFitImages from 'object-fit-images';
+import './globalOptions';
+import anchor from '../blocks/js-functions/anchor';
+import { selects, numberinput } from '../blocks/form/form';
+import popups from '../blocks/popups/popups';
+import scrollbar from '../blocks/scrollbar/scrollbar';
+import {slider} from '../blocks/slider/slider';
+import tabs from '../blocks/tabs/tabs';
+import maps from '../blocks/map/map';
+import accordion from '../blocks/accordion/accordion';
+import '../blocks/dropdown/dropdown';
+
+import {footer} from "../components/footer/footer";
+import {offer} from "../components/offer/offer";
+import {hotNow} from "../components/hot-now/hot-now";
+import {shop} from "../components/shop/shop";
+import {girls} from "../components/girls/girls";
+import {menu} from "../components/menu/menu";
+import {burger} from "../components/burger/burger";
+import {stores} from "../components/stores/stores";
+import {catalogueHead} from "../components/catalogue-head/catalogue-head";
+import {catalogue} from "../components/catalogue/catalogue";
+import {scrollTop} from "../components/scroll-top/scroll-top";
+import {filters} from "../components/filters/filters";
+import {cartItem} from "../components/cart-item/cart-item";
+import {cartInfo} from "../components/cart-info/cart-info";
+import {productSlider} from "../components/product-slider/product-slider";
+import {productCardSlider} from "../components/product-card/product-card";
+import {backToTop} from "../components/back-to-top/back-to-top";
+import {imageSlider} from "../components/image-slider/image-slider";
+import {recently} from "../components/recently/recently";
+import {product} from "../components/product/product";
+import {productAccordions} from "../components/product-accordions/product-accordions";
+import {productResult} from "../components/product-result/product-result";
+import {bottomPopup} from "../components/bottom-popup/bottom-popup";
+import {button} from "../blocks/button/button";
+import {popupPreview} from "../components/popup-preview/popup-preview";
+import {sideCart} from "../components/side-cart/side-cart";
+
+const $ = window.$;
+
+$(() => {
+  svg4everybody();
+  objectFitImages();
+  anchor();
+  selects();
+  popups();
+  scrollbar();
+  slider();
+  tabs();
+  numberinput();
+  maps();
+  accordion();
+
+  footer();
+  offer();
+  hotNow();
+  shop();
+  girls();
+  menu();
+  burger();
+  stores();
+  catalogueHead();
+  catalogue();
+  scrollTop();
+  filters();
+  cartItem();
+  cartInfo();
+  productSlider();
+  productCardSlider();
+  backToTop();
+  imageSlider();
+  recently();
+  product();
+  productAccordions();
+  productResult();
+  bottomPopup();
+  button();
+  popupPreview();
+  sideCart();
+});
+/* eslint-enable */

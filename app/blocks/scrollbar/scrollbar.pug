@@ -1,0 +1,18 @@
+mixin ui-kit-scrollbar
+  +ui-section
+    +ui-section-head
+      +ui-title Custom scrollbar
+      +ui-path
+        p Block: blocks/scrollbar/scrollbar
+      +ui-description
+        p Activates by class .js-scrollbar on scrolling container
+        p
+          a(href="https://kingsora.github.io/OverlayScrollbars/#!documentation/options" target="_blank") Documentation
+
+    +ui-section-content()
+      +ui-special._scroll.js-scrollbar
+        div(style="height: 1000px")
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

@@ -1,0 +1,17 @@
+mixin special-link()
+  +b.A.special-link&attributes(attributes)
+    block
+
+mixin ui-kit-special-link()
+  +ui-section
+    +ui-section-head
+      +ui-title Special Link
+      +ui-path
+        p Component: components/special-link/special-link
+
+    +ui-section-content()
+      +special-link(href="#") Come and see what’s new for you this week. New arrivals… just in! <span>#saleNewNow</span>
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

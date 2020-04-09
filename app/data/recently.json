@@ -1,0 +1,50 @@
+[
+  {
+    "target": "recently",
+    "tabClass": "is-active",
+    "text": "ειδατε προσφατα",
+    "items": [
+      {
+        "image": "assets/images/products/25.jpg"
+      },
+      {
+        "image": "assets/images/products/26.jpg"
+      },
+      {
+        "image": "assets/images/products/27.jpg"
+      }
+    ]
+  },
+  {
+    "target": "hotnow",
+    "tabClass": "",
+    "text": "hot now",
+    "items": [
+      {
+        "image": "assets/images/products/1.jpg"
+      },
+      {
+        "image": "assets/images/products/3.jpg"
+      },
+      {
+        "image": "assets/images/products/7.jpg"
+      }
+    ]
+  },
+  {
+    "target": "onsale",
+    "tabClass": "_sale",
+    "text": "on sale",
+    "items": [
+      {
+        "image": "assets/images/products/2.jpg"
+      },
+      {
+        "image": "assets/images/products/4.jpg"
+      },
+      {
+        "image": "assets/images/products/17.jpg"
+      }
+    ]
+  }
+]

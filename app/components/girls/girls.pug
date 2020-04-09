@@ -1,0 +1,33 @@
+mixin girls()
+  +b.girls&attributes(attributes)
+    .container
+      +e.header
+        +triangle-heading('h2').__heading ALE GIRLS
+        +e.P.text Be inspired by the outfits of our <b>#ALEGIRLS</b>
+
+      +e.slider.swiper-container.js-slider-girls
+        .swiper-wrapper
+          each item in getData('girls')
+            +e.card.swiper-slide
+              +e.A.image(href="#" target="_blank")
+                img(src=item.image, alt=item.text)
+              +e.P.profile
+                a(href="#" target="_blank")!= item.text
+
+      +e.footer.hide-lg
+        +e.A.link(href="#") Δείτε όλη την gallery
+
+
+mixin ui-kit-girls()
+  +ui-section
+    +ui-section-head
+      +ui-title Girls
+      +ui-path
+        p Component: components/girls/girls
+
+    +ui-section-content(true)
+      +girls
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

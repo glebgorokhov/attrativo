@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + 'Sitemap'
+
+block content
+  +b.sitemap
+    .container
+      +e.A.link(href="#popup-login").js-fancybox [Popup] Sign In (#popup-login)
+      +e.A.link(href="#popup-size").js-bottom-popup-open [Mobile Popup] Sizes (#popup-size)
+      +e.A.link(href="#popup-preview").js-popup-minicart-open [Mobile Popup] Mini Cart (#popup-minicart)
+      +e.A.link(href="cart.html").js-side-cart-open [Desktop Popup] Sidebar Shopping Cart
+      br
+      br
+      +e.A.link(href="ui-kit.html") UI-kit (ui-kit.html)
+      +e.A.link(href="index.html") Main Page (index.html)
+      +e.A.link(href="stores.html") Stores (stores.html)
+      +e.A.link(href="catalogue.html") Catalogue (catalogue.html)
+      +e.A.link(href="cart.html") Shopping Cart (cart.html)
+      +e.A.link(href="product.html") Product (product.html)

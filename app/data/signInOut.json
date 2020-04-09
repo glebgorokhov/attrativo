@@ -1,0 +1,134 @@
+{
+  "id": "popup-login",
+  "images": [
+    {
+      "src": "assets/images/login/2.jpg",
+      "class": "is-active",
+      "target": "signIn"
+    },
+    {
+      "src": "assets/images/login/1.jpg",
+      "target": "signUp"
+    }
+  ],
+  "links": [
+    {
+      "class": "is-active",
+      "text": "sign in",
+      "target": "signIn"
+    },
+    {
+      "text": "sign up",
+      "target": "signUp"
+    }
+  ],
+  "forms": [
+    {
+      "id": "signIn",
+      "class": "is-active-passive is-active",
+      "blocks": [
+        {
+          "type": "input",
+          "label": "email",
+          "inputType": "email",
+          "placeholder": "example@gmail.com",
+          "required": true,
+          "name": "email"
+        },
+        {
+          "type": "input",
+          "label": "κωδικοσ",
+          "inputType": "password",
+          "placeholder": "password123",
+          "required": true,
+          "name": "password"
+        },
+        {
+          "type": "link",
+          "href": "#",
+          "text": "Ξεχaσατε Τον Κωδικo Σας;",
+          "boxClass": "_link"
+        },
+        {
+          "type": "button",
+          "text": "συνδεση",
+          "boxClass": "_button"
+        },
+        {
+          "type": "text",
+          "text": "δεν είστε εγγεγραμμένος χρήστης; <a href='#'>Εγγραφή</a>",
+          "boxClass": "_text"
+        }
+      ]
+    },
+    {
+      "id": "signUp",
+      "blocks": [
+        {
+          "type": "input",
+          "label": "ονομα",
+          "inputType": "text",
+          "placeholder": "Μαρία",
+          "required": true,
+          "name": "firstName"
+        },
+        {
+          "type": "input",
+          "label": "επιθετο",
+          "inputType": "text",
+          "placeholder": "Παπαδοπούλου",
+          "required": true,
+          "name": "lastName"
+        },
+        {
+          "type": "input",
+          "label": "email",
+          "inputType": "email",
+          "placeholder": "example@gmail.com",
+          "required": true,
+          "name": "email"
+        },
+        {
+          "type": "input",
+          "label": "κωδικοσ",
+          "inputType": "password",
+          "placeholder": "password123",
+          "required": true,
+          "id": "password1",
+          "name": "password"
+        },
+        {
+          "type": "input",
+          "label": "επιβεβαιωση κωδικου",
+          "inputType": "password",
+          "placeholder": "password123",
+          "required": true,
+          "equalTo": "#password1",
+          "id": "password2",
+          "name": "passwordCheck"
+        },
+        {
+          "type": "checkbox",
+          "required": true,
+          "name": "checkbox1",
+          "value": "checkbox1",
+          "text": "Εγγραφή στο Newsletter μας",
+          "boxClass": "_checkbox"
+        },
+        {
+          "type": "checkbox",
+          "required": true,
+          "name": "checkbox2",
+          "value": "checkbox2",
+          "text": "Συμφωνώ με όρους και προυποθέσεις",
+          "boxClass": "_checkbox"
+        },
+        {
+          "type": "button",
+          "text": "Δημιουργια λογαριασμου",
+          "boxClass": "_button"
+        }
+      ]
+    }
+  ]
+}

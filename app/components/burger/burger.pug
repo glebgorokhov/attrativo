@@ -1,0 +1,44 @@
+include burger-occassion
+include burger-menu
+
+mixin burger()
+  +b.burger&attributes(attributes)
+    +icon('close').__close.js-burger-close
+    +e.background.js-burger-close
+    +e.wrapper
+      +e.container
+        +e.dropdowns
+          each dropdown in getData('header').dropdowns
+            +e.dropdown-wrapper
+              +e.dropdown-button.js-dropdown-toggle
+                span!= dropdown.title
+                +icon('arrow')
+              +dropdown.__dropdown-content
+                each link in dropdown.links
+                  a.dropdown__link(href="#")!= link
+
+        +burger-menu
+
+        +burger-occassion
+
+        +e.items
+          each item in getData('burger').items
+            +e.A.item(href=item.link, class=item.class)
+              +icon(item.icon)
+              span!= item.text
+
+mixin ui-kit-burger()
+  +ui-section
+    +ui-section-head
+      +ui-title Component burger
+      +ui-path
+        p Component: components/burger/burger
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +burger
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

@@ -1,0 +1,26 @@
+mixin product-navigation()
+  +b.product-navigation&attributes(attributes)
+    +e.A.link(href="#")
+      +icon('arrow_right')
+      span ΠΡΟΗΓΟύΜΕΝΟ
+
+    +e.A.link(href="#")._main
+      span Πίσω στα φορέματα
+
+    +e.A.link(href="#")
+      span Επόμενο
+      +icon('arrow_right')
+
+mixin ui-kit-product-navigation()
+  +ui-section
+    +ui-section-head
+      +ui-title Product Navigation
+      +ui-path
+        p Component: components/product-navigation/product-navigation
+
+    +ui-section-content()
+      +product-navigation
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

@@ -1,0 +1,10 @@
+mixin burger-occassion()
+  +b.burger-occassion&attributes(attributes)
+    +e.P.title SHOP BY OCCASSION
+    +e.wrapper.js-burger-scrollbar
+      +e.items
+        each item in getData('burger').occassion
+          +e.A.item(href="#")
+            +e.image
+              img(src=item.image)
+            +e.P.text!= item.text

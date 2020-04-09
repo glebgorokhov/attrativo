@@ -1,0 +1,33 @@
+.go-back {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  transition: opacity $ease-main;
+  margin-bottom: 47px;
+
+  $b: &;
+
+  svg {
+    margin-right: 10px;
+    height: 10px;
+    width: 7px;
+    transform: rotate(180deg);
+    transition: transform $ease-main;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: .08em;
+  }
+
+  &:hover {
+    opacity: .5;
+
+    svg {
+      transform: translate3d(-5px, 0, 0) rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,123 @@
+[
+  {
+    "class": "_cols",
+    "items": [
+      {
+        "text": "ολα τα ρουχα",
+        "class": "_title"
+      },
+      {
+        "text": "φορέματα",
+        "class": ""
+      },
+      {
+        "text": "φούστες",
+        "class": ""
+      },
+      {
+        "text": "πουκάμισα",
+        "class": ""
+      },
+      {
+        "text": "τουνίκ",
+        "class": ""
+      },
+      {
+        "text": "παντελόνια",
+        "class": ""
+      },
+      {
+        "text": "jeans",
+        "class": ""
+      },
+      {
+        "text": "ολόσωμες φόρμες ",
+        "class": ""
+      },
+      {
+        "text": "παντελόνια",
+        "class": ""
+      },
+      {
+        "text": "jeans",
+        "class": ""
+      },
+      {
+        "text": "Beachwear",
+        "class": "",
+        "submenu": [
+          {
+            "text": "μαγιο",
+            "class": ""
+          },
+          {
+            "text": "ρουχα παραλιας",
+            "class": ""
+          }
+        ]
+      },
+      {
+        "text": "Μπλούζες",
+        "class": ""
+      },
+      {
+        "text": "τοπ",
+        "class": ""
+      },
+      {
+        "text": "πλεκτά",
+        "class": ""
+      },
+      {
+        "text": "Μπουφάν",
+        "class": ""
+      },
+      {
+        "text": "ζακέτες",
+        "class": ""
+      },
+      {
+        "text": "κιμονό",
+        "class": ""
+      },
+      {
+        "text": "σακάκια - γιλέκα",
+        "class": ""
+      },
+      {
+        "text": "πανωφόρια",
+        "class": "",
+        "submenu": [
+          {
+            "text": "παλτό",
+            "class": ""
+          },
+          {
+            "text": "καμπαρτίνες",
+            "class": ""
+          }
+        ]
+      },
+      {
+        "text": "σορτς",
+        "class": ""
+      }
+    ]
+  },
+  {
+    "items": [
+      {
+        "text": "maxi φορεματα",
+        "class": "_special"
+      },
+      {
+        "text": "A/W 2019 Collection",
+        "class": "_special"
+      },
+      {
+        "text": "sales up to -50%",
+        "class": "_special _red"
+      }
+    ]
+  }
+]

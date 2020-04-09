@@ -1,0 +1,39 @@
+.back-to-top {
+  display: block;
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0;
+  margin-bottom: -20px;
+
+  $b: &;
+
+  &__button {
+    display: inline-flex;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    align-items: center;
+
+    span {
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: .08em;
+      margin-right: 12px;
+    }
+
+    svg {
+      transition: transform $ease-main;
+      width: 9px;
+      height: 13px;
+      transform: rotate(-90deg);
+      margin-right: 2px;
+    }
+
+    &:hover {
+      opacity: .5;
+
+      svg {
+        transform: translate3d(0, -5px, 0) rotate(-90deg);
+      }
+    }
+  }
+}

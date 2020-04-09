@@ -1,0 +1,34 @@
+[
+  {
+    "title": "πλεκτη μπλουζα μοχερ",
+    "image": "assets/images/products/18.jpg",
+    "price": "49,90 €"
+  },
+  {
+    "title": "Εσαρπα εμπριμε",
+    "image": "assets/images/products/19.jpg",
+    "price": "11,50 €",
+    "slider": [
+      "assets/images/products/19.jpg",
+      "assets/images/products/1.jpg",
+      "assets/images/products/2.jpg",
+      "assets/images/products/3.jpg"
+    ]
+  },
+  {
+    "title": "Σακακι με υφασματινη ζωνη",
+    "image": "assets/images/products/20.jpg",
+    "price": "79,90 €"
+  },
+  {
+    "title": "φορεμα midi ασυμμετρο",
+    "image": "assets/images/products/21.jpg",
+    "price": "69,90 €",
+    "newPrice": "35,00 €"
+  },
+  {
+    "title": "Σακακι με υφασματινη ζωνη",
+    "image": "assets/images/products/20.jpg",
+    "price": "79,90 €"
+  }
+]

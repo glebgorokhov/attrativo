@@ -1,0 +1,113 @@
+.product-result {
+  display: block;
+  padding: 15px 20px;
+  background: white;
+  transition: box-shadow $ease-main;
+
+  $b: &;
+
+  &.is-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 40;
+    box-shadow: 0 -1px 0 0 $color-border;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+  }
+
+  &__select-wrapper {
+    flex: 1;
+    position: relative;
+  }
+
+  &__select {
+    width: 100%;
+  }
+
+  .choices {
+    transition: opacity $ease-main;
+    pointer-events: all;
+    margin: 0;
+  }
+
+  &.is-active .choices {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__amount {
+    position: absolute;
+    z-index: -1;
+    transition: opacity $ease-main;
+    opacity: 0;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    #{$b}.is-active & {
+      opacity: 1;
+      pointer-events: all;
+      z-index: 20;
+    }
+
+    .input-numberbox {
+      height: 100%;
+      width: 100%;
+      border: 1px solid $color-border;
+
+      &__input {
+        font-size: 13px;
+        font-family: $font-second;
+        font-weight: 600;
+        letter-spacing: .08em;
+      }
+    }
+  }
+
+  &__button {
+    margin-left: 6px;
+    flex-shrink: 0;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 22px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-size: 13px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: .08em;
+  }
+
+  &__shadow {
+    display: none;
+    margin: 14px 0 -15px;
+
+    #{$b}.is-sticky + & {
+      display: block;
+    }
+  }
+}

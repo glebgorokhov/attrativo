@@ -1,0 +1,55 @@
+mixin header()
+  +b.Header&attributes(attributes)
+    +e.top
+      .container
+        +e.P.slogan <b>Δωρεaν</b> Αποστολεσ σε oλη την Ελλaδα
+        +e.dropdowns.hide-lg
+          each dropdown in getData('header').dropdowns
+            +e.dropdown-wrapper
+              +e.dropdown-button.js-dropdown-toggle
+                span!= dropdown.title
+                +icon('arrow')
+              +dropdown.__dropdown-content
+                each link in dropdown.links
+                  a.dropdown__link(href="#")!= link
+
+    +e.bottom
+      .container
+        +e.burger-button.show-lg.js-burger-open
+          img(src="assets/images/burger-icon.svg" alt="@@")
+
+        +e.menu.hide-lg
+          each item in getData('header').menu
+            +e(item.menu ? 'div' : 'a').menu-link(href=item.link, data-target-menu=item.menu)!= item.text
+
+        +e.A.logo(href="#").Header-LogoWrapper
+          img(src="assets/images/logo.png" alt="@@")
+
+        +e.items
+          each item in getData('header').items
+            +e.A.item(href=item[0].link, class=item[0].class).Header-Button
+              each block in item
+                case block.type
+                  when "icon"
+                    img(src="assets/images/" + block.icon + ".svg", alt="@@", class=block.iconClass)
+                  when "text"
+                    span!= block.text
+                  when "mobileText"
+                    span.is-mobile!= block.mobileText
+
+    +menu
+
+
+mixin ui-kit-header()
+  +ui-section
+    +ui-section-head
+      +ui-title Header
+      +ui-path
+        p Component: components/header/header
+
+    +ui-section-content(true)
+      +header
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

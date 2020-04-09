@@ -1,0 +1,153 @@
+@import '../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css';
+
+.popups {
+  display: none;
+}
+
+.fancybox-close-small:focus::after { outline: none; }
+
+.fancybox-enabled { overflow: initial; }
+
+.popup {
+  width: 100%;
+  background: white;
+  position: relative;
+  padding: 0;
+
+  @include rule(height, (lg: 100%));
+  @include rule(overflow, (lg: auto));
+  @include rule(border-radius, (xl: 2px, lg: 0));
+  @include rule(max-width, (xl: 795px, lg: none));
+
+  &__close {
+    cursor: pointer;
+    transition: opacity $ease-main;
+    padding: 10px;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    width: 12px;
+    height: 12px;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__images {
+    position: relative;
+    width: 333px;
+    overflow: hidden;
+
+    @include rule(display, (lg: none));
+
+    img {
+      @include fill-img;
+
+      transition: opacity $ease-long, transform $ease-long;
+      opacity: 0;
+      transform: scale(1.4);
+      pointer-events: none;
+
+      &.is-active {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+
+    @include rule(padding, (xl: 40px 70px 24px, lg: 0 20px 24px));
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+
+    @include rule(margin, (lg: 0 -20px 24px));
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: font-weight $ease-main, border-color $ease-main;
+
+    @include rule(font-family, (xl: $font-second, lg: $font-main));
+    @include rule(border-bottom-color, (lg: $color-border));
+    @include rule(line-height, (lg: 34px));
+    @include rule(text-align, (lg: center));
+    @include rule(width, (lg: 50%));
+
+    &.is-active {
+      font-weight: 700;
+      border-color: inherit;
+    }
+  }
+
+  &__forms {
+    @include rule(margin-top, (xl: 29px, lg: 0));
+
+    transition: height $ease-main;
+  }
+
+  &__form {
+    display: none;
+    transition: opacity $ease-main, transform $ease-main;
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+
+    .inputbox_link {
+      margin-bottom: auto;
+    }
+
+    &.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.is-active-passive {
+      display: block;
+    }
+  }
+
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include rule(min-height, (xl: 235px, lg: 0));
+  }
+}
+
+.fancybox-slide--html {
+  @include rule(padding, (xl: 20px, lg: 91px 0 0));
+}
+
+.fancybox-close-small {
+  display: none;
+}
+
+.fancybox-bg {
+  @include rule(background, (xl: rgba(239, 239, 239, .85), lg: transparent));
+}
+
+.fancybox-is-open .fancybox-bg {
+  opacity: 1;
+}
+
+.fancybox-container {
+}
+
+.compensate-for-scrollbar {
+  margin-right: 0 !important;
+}

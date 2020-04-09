@@ -1,0 +1,22 @@
+[
+  {
+    "text": "μερικο συνολο",
+    "price": "149,90 €"
+  },
+  {
+    "class": "show-lg",
+    "text": "εκτιμωμενα εξοδα αποστολησ",
+    "price": "00,00 €"
+  },
+  {
+    "class": "_link",
+    "text": "προσθεσε promo κωδικο",
+    "icon": "arrow_right",
+    "href": "#"
+  },
+  {
+    "class": "_summ hide-lg CartPage-Total",
+    "text": "συνολο",
+    "price": "189,80 €"
+  }
+]

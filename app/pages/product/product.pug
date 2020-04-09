@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + 'Product'
+
+block content
+  +product
+
+  +section._grey.hide-lg
+    .container
+      +product-slider(getData('product-cards_preview')) YOU MAY ALSO LIKE
+
+  +section
+    .container
+      +recently
+
+  +back-to-top.hide-lg

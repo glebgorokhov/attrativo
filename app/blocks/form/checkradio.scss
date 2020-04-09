@@ -1,0 +1,56 @@
+.checkradio {
+  display: flex;
+  cursor: pointer;
+  text-align: center;
+
+  $b: &;
+
+  &__input {
+    display: none;
+  }
+
+  &__box {
+    @include rule(width, (xl: 14px, lg: 13px));
+    @include rule(height, (xl: 14px, lg: 13px));
+    @include rule(margin-right, (xl: 11px, lg: 9px));
+    @include rule(border-radius, (xl: 3px, lg: 1px));
+
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid $color-grey-2;
+    transition: border-color $ease-main;
+    background: white;
+
+    #{$b}.parsley-error & {
+      border-color: $color-red;
+    }
+
+    &::before {
+      content: '';
+
+      @include rule(width, (xl: 6px, lg: 5px));
+      @include rule(height, (xl: 6px, lg: 5px));
+
+      background-color: $color-main;
+      display: block;
+      opacity: 0;
+      transition: opacity $ease-main;
+      border-radius: 2px;
+
+      @include center-image;
+    }
+
+    #{$b}__input:checked + &::before {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    @include rule(font-size, (xl: 12px, lg: 10px));
+
+    line-height: 1.4;
+    letter-spacing: .12em;
+    text-transform: capitalize;
+    color: $color-grey-3;
+  }
+}

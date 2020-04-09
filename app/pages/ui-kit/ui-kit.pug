@@ -1,0 +1,196 @@
+extends ../../layouts/empty
+include ui-kit-mixins
+
+block head
+  - var pageTitle = projectName + 'UI Kit'
+
+block content
+  script
+    | $(window).on('load', function () {
+    |   $('.ui-kit__section').each(function (i) {
+    |     var id = 'section' + i;
+    |     var name = $(this).find('.ui-kit__section-head h2').text();
+    |     var li = $('<li></li>');
+    |     var a = $('<a></a>');
+    |
+    |     a.attr('href', '#'+id).text(name).addClass('js-anchor');
+    |     li.append(a);
+    |
+    |     $('.ui-kit__navigation__list').append(li);
+    |     $(this).attr('id', id);
+    |   });
+    | });
+
+  +b.ui-kit
+    +e.navigation
+      +e.UL.navigation__list
+
+    //- Шапка ui-кита
+    +e.SECTION.head&attributes(attributes)
+      .container
+        +e.IMG.logo(src="assets/images/logo.png")
+
+    //- Сетка
+    +ui-section._grid
+      +ui-section-head
+        +ui-title Grid
+        +ui-description
+          p Columns: 12 ($grid-cols)
+          p Variables: styles/helpers/_variables.scss
+          p Block: blocks/grid/
+
+          +ui-special
+            p How to use
+            p
+              pre +col(12) is similar to +col({ xl: 12 })
+            p
+              pre +col({ xl: 8, lg: 6: md: 5, sm: 7, xs: 12 })
+            p 'md', 'lg' etc. — name of breakpoint (like breakpoints named in variables.scss)
+
+      +ui-section-content()
+        +grid
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(1)
+          +col(4)
+          +col(4)
+          +col(4)
+          +col(6)
+          +col(6)
+
+    //- Шрифты
+    +ui-section
+      +ui-section-head
+        +ui-title Fonts
+        +ui-path
+          p Variables are in styles/helpers/_variables.scss
+          p Fonts connected in styles/helpers/_fonts.scss
+        +ui-description
+          p Main Font: Source Sans Pro ($font-main), font-weight: 200, 300, 400, 600, 700, 900
+          p Second Font: Montserrat ($font-second), font-weight: 100, 200, 300, 400, 500, 600, 700, 900
+
+    //- Цвета
+    +ui-section
+      +ui-section-head
+        +ui-title Colors
+        +ui-path Stored in styles/helpers/_variables.scss
+      +ui-section-content()
+        +ui-elements-list()
+          - var n = 0;
+          while n < 100
+            +ui-color._color
+            - n++
+
+    //- Табы
+    +ui-kit-tabs
+
+    //- Скроллбар
+    +ui-kit-scrollbar
+
+    //- Карты
+    +ui-kit-map
+
+    //- Хлебные крошки
+    +ui-kit-breadcrumbs
+
+    //- Блок button
+    +ui-kit-button
+
+    //- Блок dropdown
+    +ui-kit-dropdown
+
+    //- Component header
+    +ui-kit-header
+
+    //- Component footer
+    +ui-kit-footer
+
+    //- Component subscribe-form
+    +ui-kit-subscribe-form
+
+    //- Component offer
+    +ui-kit-offer
+
+    //- Component special-link
+    +ui-kit-special-link
+
+    //- Component hot-now
+    +ui-kit-hot-now
+
+    //- Block triangle-heading
+    +ui-kit-triangle-heading
+
+    //- Component shop
+    +ui-kit-shop
+
+    //- Component product-card
+    +ui-kit-product-card
+
+    //- Component girls
+    +ui-kit-girls
+
+    //- Component stores
+    +ui-kit-stores
+
+    //- Component list-checkbox
+    +ui-kit-list-checkbox
+
+    //- Component shop-list
+    +ui-kit-shop-list
+
+    //- Component catalogue-head
+    +ui-kit-catalogue-head
+
+    //- Component catalogue
+    +ui-kit-catalogue
+
+    //- Component filters
+    +ui-kit-filters
+
+    //- Component pagination
+    +ui-kit-pagination
+
+    //- Component cart
+    +ui-kit-cart
+
+    //- Component go-back
+    +ui-kit-go-back
+
+    //- Component cart-info
+    +ui-kit-cart-info
+
+    //- Component cart-item
+    +ui-kit-cart-item
+
+    //- Component product-slider
+    +ui-kit-product-slider
+
+    //- Component back-to-top
+    +ui-kit-back-to-top
+
+    //- Component product
+    +ui-kit-product
+
+    //- Component product-navigation
+    +ui-kit-product-navigation
+
+    //- Component recently
+    +ui-kit-recently
+
+    //- Component product-accordions
+    +ui-kit-product-accordions
+
+    //- Component product-result
+    +ui-kit-product-result
+
+    //- Component popup-size
+    +ui-kit-popup-size

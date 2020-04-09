@@ -1,0 +1,20 @@
+mixin button(newTag)
+  +b(newTag || 'a').Button&attributes(attributes)
+    block
+
+mixin ui-kit-button()
+  +ui-section
+    +ui-section-head
+      +ui-title Buttons
+      +ui-path
+        p Block: blocks/button/button
+
+    +ui-section-content()
+      +ui-elements-list()
+        +button Button
+        +button._style_light Button
+        +button()(disabled) Disabled button
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

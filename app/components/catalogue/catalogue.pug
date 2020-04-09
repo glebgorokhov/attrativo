@@ -1,0 +1,55 @@
+include catalogue-settings
+
+mixin catalogue()
+  +b.catalogue&attributes(attributes)
+    .container.container_big
+      +e.left
+        +filters
+
+      +e.right
+        +e.header
+          +grid
+            +col({xl: 12}).show-lg
+              +e.mobile-header
+                +e.A.back-link(href="#")
+                  +icon('arrow_right')
+                +e.H1.title
+                  span φορεματα
+                +catalogue-settings
+
+            +col({xl: 4, lg: 6}).hide-lg
+              +catalogue-settings
+
+            +col({xl: 4, lg: 6}).hide-lg
+              +e.H1.title
+                span φορεματα
+
+            +col({xl: 4, lg: 6}).show-lg
+              +e.BUTTON.filters-button(type="button").js-filters-open φιλτρα(3)
+
+            +col({xl: 4, lg: 6})
+              +e.SELECT.select(name="#").js-catalogue-select
+                option(value="ταξινομηση" placeholder) ταξινομηση
+                option(value="Χωρις ταξινομηση") Χωρις ταξινομηση
+                option(value="Αυξουσα ΤΙΜΗ") Αυξουσα ΤΙΜΗ
+                option(value="Φθινουσα ΤΙΜΗ") Φθινουσα ΤΙΜΗ
+
+        +e.content
+          +grid.grid_catalogue_cols_xl_3.grid_catalogue_cols_lg_2
+            each item in getData('product-cards')
+              +col({xl: 4, lg: 6})
+                +product-card(item)(class=(item.special ? '_special' : false))
+
+mixin ui-kit-catalogue()
+  +ui-section
+    +ui-section-head
+      +ui-title Catalogue
+      +ui-path
+        p Component: components/catalogue/catalogue
+
+    +ui-section-content(true)
+      +catalogue
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

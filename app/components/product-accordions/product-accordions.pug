@@ -1,0 +1,23 @@
+mixin product-accordions()
+  +b.product-accordions&attributes(attributes)
+    each accordion in ['σύνθεση & Εφαρμογή', 'αποστολές - επιστροφές']
+      +e.accordion
+        +e.button
+          span!= accordion
+        +e.content
+          +e.wrapper
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nunc sed posuere tincidunt. Fusce id commodo metus. Integer vel velit suscipit, pulvinar magna vel, hendrerit mauris.
+
+mixin ui-kit-product-accordions()
+  +ui-section
+    +ui-section-head
+      +ui-title Product Accordions
+      +ui-path
+        p Component: components/product-accordions/product-accordions
+
+    +ui-section-content()
+      +product-accordions
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

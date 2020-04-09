@@ -1,0 +1,19 @@
+mixin go-back()
+  +b.A.go-back&attributes(attributes)
+    +icon('arrow_right')
+    span
+      block
+
+mixin ui-kit-go-back()
+  +ui-section
+    +ui-section-head
+      +ui-title Go Back
+      +ui-path
+        p Component: components/go-back/go-back
+
+    +ui-section-content()
+      +go-back GO BACK
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

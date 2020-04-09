@@ -1,0 +1,35 @@
+mixin recently()
+  +b.recently&attributes(attributes)
+    +e.select-wrapper.show-lg
+      +e.SELECT.select(name="recently_tabs").js-select-recently
+        each tab in getData('recently')
+          option(value=tab.target)!= tab.text
+
+    +grid.grid_recently.recently__main-grid
+      +col({xl: 3, lg: 12}).hide-lg
+        +e.links
+          each tab in getData('recently')
+            +e.BUTTON.link(type="button", data-tab-target=tab.target, class=tab.tabClass)!= tab.text
+
+      +col({xl: 9, lg: 12})
+        each tab in getData('recently')
+          +tab-wrapper(data-tab=tab.target, data-tab-group="recently" class=tab.tabClass)
+            +grid.grid_recently
+              each item in tab.items
+                +col({xl: 4})
+                  +e.A.item(href="#")
+                    img(src=item.image, alt="@@")
+
+mixin ui-kit-recently()
+  +ui-section
+    +ui-section-head
+      +ui-title Recently
+      +ui-path
+        p Component: components/recently/recently
+
+    +ui-section-content()
+      +recently
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

@@ -1,0 +1,138 @@
+$default-breakpoint-name: xl;
+$default-breakpoint-value: map_has_key($breakpoints, $default-breakpoint-name);
+$new-breakpoints: map_remove($breakpoints, $default-breakpoint-name);
+$grid-col-width: $grid-container-width/$grid-cols; // Ширина одной колонки
+
+.grid {
+  font-size: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  $grid-gap-vertical-lg: 20px;
+  $grid-gap-lg: 18px;
+
+  @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0, lg: -$grid-gap-vertical-lg (-$grid-gap-lg/2) 0));
+
+  $b: &;
+
+  &__col {
+    box-sizing: border-box;
+    margin: 0;
+
+    @include rule(padding, (xl: $grid-gap-vertical $grid-gap/2 0, lg: $grid-gap-vertical-lg $grid-gap-lg/2 0));
+
+    &_grow {
+      flex-grow: 1;
+    }
+
+    &_flex {
+      display: flex;
+    }
+
+    @for $i from 1 through 15 {
+
+      &_#{$default-breakpoint-name}_#{$i} {
+        width: $i * $grid-col-width;
+      }
+    }
+
+    @each $key, $val in $new-breakpoints {
+      @for $i from 1 through 15 {
+        @include screen($key) {
+
+          &_#{$key}_#{$i} {
+            width: $i * $grid-col-width;
+          }
+        }
+      }
+    }
+  }
+
+  &_filters {
+    $grid-gap-vertical: 8px;
+    $grid-gap: 8px;
+    $grid-gap-vertical-lg: 6px;
+    $grid-gap-lg: 6px;
+
+    @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0, lg: -$grid-gap-vertical-lg (-$grid-gap-lg/2) 0));
+
+    #{$b}__col {
+      @include rule(padding, (xl: $grid-gap-vertical $grid-gap/2 0, lg: $grid-gap-vertical-lg $grid-gap-lg/2 0));
+    }
+  }
+
+  &_filters_category {
+    $grid-gap-vertical: 10px;
+    $grid-gap: 8px;
+    $grid-gap-vertical-lg: 6px;
+    $grid-gap-lg: 6px;
+
+    @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0, lg: -$grid-gap-vertical-lg (-$grid-gap-lg/2) 0));
+
+    #{$b}__col {
+      @include rule(padding, (xl: $grid-gap-vertical $grid-gap/2 0, lg: $grid-gap-vertical-lg $grid-gap-lg/2 0));
+    }
+  }
+
+  &_catalogue {
+
+    &_cols {
+
+      &_xl {
+        @include screen('lg', min) {
+
+          &_3 #{$b}__col {
+            width: 1/3*100%;
+          }
+
+          &_4 #{$b}__col {
+            width: 1/4*100%;
+          }
+        }
+      }
+
+      &_lg {
+        @include screen('lg') {
+
+          &_1 #{$b}__col {
+            width: 1*100%;
+          }
+
+          &_2 #{$b}__col {
+            width: 1/2*100%;
+
+            &:nth-of-type(3n) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_cart {
+    $grid-gap-vertical: 40px;
+    $grid-gap: 40px;
+    $grid-gap-vertical-lg: 12px;
+    $grid-gap-lg: 12px;
+
+    @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0, lg: -$grid-gap-vertical-lg (-$grid-gap-lg/2) 0));
+
+    #{$b}__col {
+      @include rule(padding, (xl: $grid-gap-vertical $grid-gap/2 0, lg: $grid-gap-vertical-lg $grid-gap-lg/2 0));
+    }
+  }
+
+  &_recently {
+    $grid-gap-vertical: 10px;
+    $grid-gap: 10px;
+    $grid-gap-vertical-lg: 10px;
+    $grid-gap-lg: 6px;
+
+    @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0, lg: -$grid-gap-vertical-lg (-$grid-gap-lg/2) 0));
+
+    #{$b}__col {
+      @include rule(padding, (xl: $grid-gap-vertical $grid-gap/2 0, lg: $grid-gap-vertical-lg $grid-gap-lg/2 0));
+    }
+  }
+}

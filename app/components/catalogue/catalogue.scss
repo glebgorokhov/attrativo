@@ -1,0 +1,115 @@
+.catalogue {
+  display: block;
+
+  @include rule(margin-top, (xl: 22px, lg: 0));
+
+  $b: &;
+
+  .container {
+    @include rule(display, (xl: flex, lg: block));
+  }
+
+  &__left {
+    @include screen('lg', min) {
+      margin-right: 60px;
+      width: 240px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__right {
+    flex-grow: 1;
+
+    @include rule(margin-right, (xl: -35px, lg: 0));
+  }
+
+  &__header {
+    padding: .1px;
+  }
+
+  &__title {
+    @include rule(height, (xl: 68px, lg: auto));
+    @include rule(background, (xl: $color-grey-7, lg: 0));
+    @include rule(padding, (xl: 10px, lg: 0));
+    @include rule(font-size, (xl: 15px, lg: 14px));
+    @include rule(line-height, (xl: 19px, lg: 18px));
+    @include rule(font-weight, (xl: 700, lg: 400));
+
+    @include screen('lg') {
+      position: absolute;
+      height: 18px;
+      top: 0;
+      bottom: 0;
+      left: 65px;
+      right: 65px;
+      margin: auto;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    @include rule(margin-top, (xl: 22px, lg: 15px));
+  }
+
+  &__filters-button {
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    width: 100%;
+    appearance: none;
+    background: black;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__mobile-header {
+    position: relative;
+    background: $color-grey-7;
+    margin: 0 -20px -5px;
+    height: 40px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__back-link {
+    width: 8px;
+    height: 14px;
+    transform: rotate(180deg);
+    padding: 10px;
+    margin-left: -10px;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    font-size: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}

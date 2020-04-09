@@ -1,0 +1,22 @@
+[
+  {
+    "image": "assets/images/products/1.jpg",
+    "title": "φορεμα ασυμμετρο με βολαν",
+    "color": "multicolor",
+    "price": "129,90 €"
+  },
+  {
+    "image": "assets/images/products/2.jpg",
+    "title": "ΖΥΠ ΚΥΛΟΤ ΜΕ ΥΦΑΣΜΑΤΙΝΗ ΖΩΝΗ",
+    "color": "red",
+    "price": "40,00 €",
+    "oldPrice": "129,99 €",
+    "discount": "(-30%)"
+  },
+  {
+    "image": "assets/images/products/3.jpg",
+    "title": "ΜΠΛΟΥΖΑ ΜΕ ΤΙΡΑΝΤΕΣ",
+    "color": "black",
+    "price": "19,90 €"
+  }
+]

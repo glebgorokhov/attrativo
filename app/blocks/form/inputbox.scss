@@ -1,0 +1,88 @@
+.inputbox {
+  display: block;
+  position: relative;
+
+  & + & {
+    margin-top: 20px;
+
+    &_link {
+      margin-top: 11px;
+    }
+
+    &_text {
+      margin-top: 7px;
+    }
+
+    &_checkbox {
+      margin-top: 20px;
+    }
+
+    &_button {
+      @include rule(margin-top, (lg: 30px));
+    }
+  }
+
+  &_checkbox + &_checkbox {
+    margin-top: 8px;
+  }
+
+  &_button {
+
+    .button {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: .12em;
+    text-transform: capitalize;
+    color: $color-grey-3;
+
+    a {
+      color: black;
+      text-decoration: underline;
+      transition: opacity $ease-main;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+.parsley-errors-list {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: .08em;
+  text-transform: capitalize;
+  color: $color-red;
+}

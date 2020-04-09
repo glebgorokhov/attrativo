@@ -1,0 +1,19 @@
+mixin section()
+  +b.SECTION.section&attributes(attributes)
+    block
+
+mixin ui-kit-section()
+  +ui-section
+    +ui-section-head
+      +ui-title Component section
+      +ui-path
+        p Component: components/section/section
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +section
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

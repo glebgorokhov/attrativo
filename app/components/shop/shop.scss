@@ -1,0 +1,204 @@
+.shop {
+  display: block;
+
+  $b: &;
+
+  &:not(:first-child) {
+    @include rule(margin-top, (xl: 111px, lg: 34px));
+  }
+
+  &__grid {
+    display: flex;
+
+    @include rule(margin-top, (lg: 10px));
+  }
+
+  &__left {
+    flex-grow: 1;
+
+    @include rule(margin-right, (xl: 20px, lg: 5px));
+    @include rule(flex, (lg: 0 auto));
+    @include rule(width, (lg: 2/3*100%));
+    @include rule(flex-shrink, (lg: 0));
+  }
+
+  &__right {
+    @include rule(width, (xl: 726px, lg: auto));
+    @include rule(flex, (lg: 1));
+
+    flex-shrink: 0;
+  }
+
+  &__banner {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  // Texts
+
+  &__titles {
+    @include rule(padding-left, (xl: 22px, lg: 0));
+  }
+
+  &__heading {
+    @include rule(margin-left, (xl: -22px, lg: 0));
+  }
+
+  &__subtitle {
+    font-family: $font-second;
+    font-weight: 600;
+
+    @include rule(font-size, (xl: 20px, lg: 12px));
+    @include rule(line-height, (xl: 24px, lg: 15px));
+    @include rule(margin-top, (xl: 12px, lg: 18px));
+
+    letter-spacing: .05em;
+    text-transform: uppercase;
+
+    a {
+      text-decoration: underline;
+      transition: opacity $ease-main;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  &__texts {
+    margin-top: 39px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__text {
+    font-family: $font-second;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: .08em;
+    text-transform: capitalize;
+    flex-grow: 1;
+    margin-right: 30px;
+    max-width: 530px;
+    padding-bottom: 2px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    transition: opacity $ease-main;
+    font-family: $font-second;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-left: auto;
+
+    svg {
+      margin-left: 10px;
+      width: 10px;
+      height: 15px;
+    }
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  // Slider
+
+  &__slider {
+    @include rule(margin-top, (xl: 34px, lg: 0));
+    @include rule(height, (lg: 0));
+    @include rule(width, (lg: 100%));
+    @include rule(padding-bottom, (lg: 380%));
+
+    position: relative;
+
+    .swiper-container {
+      @include rule(height, (lg: 100%));
+      @include rule(position, (lg: absolute));
+      @include rule(left, (lg: 0));
+      @include rule(top, (lg: 0));
+      @include rule(width, (lg: 100%));
+      @include rule(padding-bottom, (lg: 70px));
+      @include rule(box-sizing, (lg: border-box));
+
+      @include screen('lg') {
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          height: 120px;
+          background: linear-gradient(rgba(white, 0), rgba(white, .7));
+          z-index: 5;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .ProductCard-Content, .ProductCard__sizes, .ProductCard__favourite {
+      @include rule(display, (lg: none));
+    }
+
+    .ProductCard__top {
+      @include rule(padding-bottom, (lg: 0));
+      @include rule(height, (lg: 100%));
+    }
+  }
+
+  &__arrow-next {
+    width: 10px;
+    height: 16px;
+    font-size: 0;
+    transition: opacity $ease-main;
+    cursor: pointer;
+    position: absolute;
+    z-index: 50;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    @include rule(padding, (xl: 12px, lg: 15px));
+    @include rule(top, (xl: 0, lg: auto));
+    @include rule(left, (lg: 0));
+    @include rule(transform, (lg: rotate(90deg)));
+
+    &:hover {
+      opacity: .5;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__button {
+    margin-top: 8px;
+    background: $color-grey-9;
+    border-radius: 1px;
+    line-height: 32px;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}

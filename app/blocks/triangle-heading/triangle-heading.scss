@@ -1,0 +1,32 @@
+.triangle-heading {
+  @include rule(padding-left, (xl: 22px, lg: 17px));
+  @include rule(font-size, (xl: 40px, lg: 17px));
+  @include rule(line-height, (xl: 29px, lg: 14px));
+  @include rule(font-weight, (xl: 600, lg: 700));
+
+  display: block;
+  position: relative;
+  font-family: $font-second;
+  letter-spacing: .22em;
+
+  $b: &;
+
+  &_small {
+    font-size: 30px;
+    line-height: 21px;
+    padding-left: 28px;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: black transparent transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @include rule(border-width, (xl: 12px 7px 0 7px, lg: 10px 5px 0));
+  }
+}

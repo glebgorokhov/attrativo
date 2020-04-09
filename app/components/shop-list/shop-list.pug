@@ -1,0 +1,22 @@
+mixin shop-list()
+  +b.shop-list&attributes(attributes)
+    +e.OL.list
+      each item in getData('stores')
+        +e.LI.shop(data-shop-id=item.id)
+          +e.content
+            +e.P.title!= item.title
+            +e.P.text!= item.text
+
+mixin ui-kit-shop-list()
+  +ui-section
+    +ui-section-head
+      +ui-title Shop List
+      +ui-path
+        p Component: components/shop-list/shop-list
+
+    +ui-section-content()
+      +shop-list
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

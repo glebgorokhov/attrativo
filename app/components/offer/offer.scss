@@ -1,0 +1,145 @@
+.offer {
+  display: block;
+
+  $b: &;
+
+  .swiper-container {
+    overflow: visible;
+  }
+
+  .swiper-wrapper {
+
+  }
+
+  &__slide {
+    @include rule(height, (xl: 830px, lg: 400px));
+
+    position: relative;
+    overflow: hidden;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__dots {
+    @include screen('lg', min) {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      padding: 11px 103px 11px 23px;
+      background: rgba(232, 232, 232, .35);
+      z-index: 50;
+      bottom: auto !important;
+      left: auto !important;
+      width: auto !important;
+    }
+
+    @include screen('lg') {
+      position: relative;
+      display: flex;
+      bottom: 0 !important;
+      height: 30px;
+      width: auto;
+      margin: 11px 20px 0;
+    }
+  }
+
+  &__dot {
+    @include screen('lg', min) {
+      display: flex;
+      font-family: $font-second;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      position: relative;
+      cursor: pointer;
+
+      span {
+        transition: font-weight $ease-main, transform $ease-main;
+      }
+
+      &::before {
+        content: '';
+        width: 43px;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: black;
+        transform: scale3d(0, 1, 1);
+        transform-origin: left;
+        transition: transform $ease-main;
+      }
+
+      &.is-active {
+
+        &::before {
+          transform: scale3d(1, 1, 1);
+        }
+
+        span {
+          font-weight: 700;
+          transform: translate3d(58px, 0, 0);
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+
+    @include screen('lg') {
+      font-size: 0;
+
+      &::before {
+        content: '';
+        width: 32px;
+        height: 2px;
+        background: $color-grey-6;
+        transition: width $ease-main, background $ease-main;
+        display: block;
+      }
+
+      &:not(:first-child) {
+        margin-left: 6px;
+      }
+
+      span {
+        position: absolute;
+        left: 0;
+        top: 7px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: .08em;
+        text-transform: capitalize;
+        font-family: $font-second;
+        transition: opacity $ease-main, transform $ease-main;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate3d(0, 5px, 0);
+      }
+
+      &.is-active {
+
+        &::before {
+          width: 67px;
+          background: black;
+        }
+
+        span {
+          opacity: 1;
+          pointer-events: all;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+  }
+}

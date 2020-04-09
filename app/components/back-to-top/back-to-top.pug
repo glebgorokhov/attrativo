@@ -1,0 +1,20 @@
+mixin back-to-top()
+  +b.back-to-top&attributes(attributes)
+    .container
+      +e.button
+        span BACK TO TOP
+        +icon('arrow_right')
+
+mixin ui-kit-back-to-top()
+  +ui-section
+    +ui-section-head
+      +ui-title Back To Top
+      +ui-path
+        p Component: components/back-to-top/back-to-top
+
+    +ui-section-content()
+      +back-to-top
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()
