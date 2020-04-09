@@ -4,12 +4,9 @@ mixin popups()
 
 mixin popup(data)
   +b.popup&attributes(attributes)(id=data.id)
-    +icon('close').__close(data-fancybox-close="").hide-lg
-    +e.wrapper
-      +e.images
-        each image in data.images
-          img(src=image.src, alt="@@", class=image.class, data-login-image=image.target)
+    +icon('close').__close(data-fancybox-close="")
 
+    +e.wrapper
       +e.content
         +e.links
           each link in data.links
@@ -33,6 +30,20 @@ mixin popup(data)
                         +e.A.link(href=item.href)!= item.text
                       when "text"
                         +e.P.text!= item.text
+                      when "final"
+                        +form-final
+
+      +e.images
+        img(src="assets/images/login/1.jpg")
+
+        +e.info
+          +e.info-wrapper
+            +e.P.info-title!= data.info.title
+            +e.UL.info-list
+              each item in data.info.items
+                +e.LI.info-item
+                  +icon('tick_simple')
+                  span!= item
 
 mixin ui-kit-popups
   +ui-section

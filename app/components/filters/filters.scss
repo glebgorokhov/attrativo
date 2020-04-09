@@ -49,7 +49,7 @@
     @include rule(line-height, (xl: 16px, lg: 15px));
     @include rule(font-weight, (xl: 700, lg: 600));
 
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
@@ -59,7 +59,7 @@
     @include rule(line-height, (xl: 16px, lg: 15px));
     @include rule(color, (xl: $color-grey-8, lg: $color-grey-22));
 
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: lowercase;
 
     @include screen('lg') {
@@ -120,7 +120,7 @@
   &__section-title {
     flex-grow: 1;
     margin-right: 20px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
 
     @include rule(font-size, (xl: 13px, lg: 12px));
@@ -201,7 +201,7 @@
     @include rule(line-height, (xl: 16px, lg: 15px));
 
     text-align: right;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
 
     a {
@@ -242,7 +242,7 @@
       @include rule(font-size, (xl: 13px, lg: 12px));
       @include rule(line-height, (xl: 16px, lg: 15px));
 
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
       transition: background $ease-main, border-color $ease-main, color $ease-main, font-weight $ease-main, opacity $ease-main, font-weight $ease-main;
     }
@@ -337,7 +337,7 @@
     color: white;
     font-weight: 600;
     font-size: 13px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     background: black;
     text-align: center;
@@ -360,7 +360,7 @@
     padding: 0 10px;
     text-align: center;
     font-size: 13px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     margin-bottom: 8px;
   }
@@ -395,7 +395,7 @@
     text-align: center;
     line-height: 33px;
     font-size: 13px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
 
     &:not(:first-child) {

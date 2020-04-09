@@ -21,9 +21,9 @@
     @include rule(margin-top, (xl: 15px, lg: 20px));
     @include rule(font-size, (xl: 14px, lg: 12px));
 
-    font-family: $font-second;
+    font-family: $font-main;
     line-height: 1.4;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: capitalize;
 
     b {
@@ -61,10 +61,10 @@
     @include rule(font-size, (xl: 14px, lg: 12px));
 
     margin-top: 6px;
-    font-family: $font-second;
+    font-family: $font-main;
     font-weight: 500;
     line-height: 17px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-decoration: underline;
 
     a {
@@ -80,7 +80,7 @@
     display: inline-block;
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     transition: opacity $ease-main;
 
     &:hover {

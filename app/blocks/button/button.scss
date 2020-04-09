@@ -9,15 +9,15 @@
   cursor: pointer;
   text-align: center;
 
-  @include rule(font-size, (xl: 14px, lg: 13px));
-  @include rule(line-height, (xl: 40px, lg: 38px));
-  @include rule(height, (xl: 40px, lg: 38px));
+  @include rule(font-size, (xl: 14px));
+  @include rule(line-height, (xl: 40px));
+  @include rule(height, (xl: 40px));
+  @include rule(font-weight, (xl: 700, lg: 400));
 
   color: white;
   appearance: none;
   border-radius: 2px;
-  font-weight: 600;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   fill: white;
 

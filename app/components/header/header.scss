@@ -45,7 +45,7 @@
     span {
       font-size: 12px;
       line-height: 15px;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
     }
 
@@ -73,7 +73,7 @@
     @include rule(height, (xl: 15px, lg: auto));
 
     text-align: center;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     left: 0;
     top: 0;
@@ -113,7 +113,7 @@
   &__menu-link {
     font-size: 12px;
     line-height: 15px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     transition: color $ease-main;
     text-transform: uppercase;
 
@@ -157,7 +157,7 @@
   &__item {
     font-size: 12px;
     line-height: 15px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -187,11 +187,11 @@
       }
 
       &.is-mobile {
-        font-family: $font-second;
+        font-family: $font-main;
         font-weight: 300;
         font-size: 12px;
         line-height: 15px;
-        letter-spacing: .08em;
+        letter-spacing: .06em;
         text-transform: uppercase;
         margin-left: 2px;
 

@@ -24,7 +24,7 @@
   &__text {
     font-size: 12px;
     line-height: 15px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     color: $color-grey-30;
     margin-top: 5px;
   }
@@ -201,9 +201,9 @@
     text-transform: capitalize;
     text-align: left;
 
-    @include rule(letter-spacing, (xl: .08em, lg: .15em));
+    @include rule(letter-spacing, (xl: .06em, lg: .15em));
     @include rule(font-weight, (xl: 600, lg: 700));
-    @include rule(font-family, (lg: $font-second));
+    @include rule(font-family, (lg: $font-main));
 
     a {
       color: $color-grey-33;

@@ -1,24 +1,21 @@
 {
   "id": "popup-login",
-  "images": [
-    {
-      "src": "assets/images/login/2.jpg",
-      "class": "is-active",
-      "target": "signIn"
-    },
-    {
-      "src": "assets/images/login/1.jpg",
-      "target": "signUp"
-    }
-  ],
+  "info": {
+    "title": "Eπωφελείσαι από",
+    "items": [
+      "Γρήγορο checkout",
+      "Προσωποποιημένες προτάσεις",
+      "Wishlists"
+    ]
+  },
   "links": [
     {
       "class": "is-active",
-      "text": "sign in",
+      "text": "ΣΥΝΔΕΣΗ",
       "target": "signIn"
     },
     {
-      "text": "sign up",
+      "text": "ΕΓΓΡΑΦΗ",
       "target": "signUp"
     }
   ],
@@ -44,42 +41,27 @@
           "name": "password"
         },
         {
-          "type": "link",
-          "href": "#",
-          "text": "Ξεχaσατε Τον Κωδικo Σας;",
-          "boxClass": "_link"
+          "type": "checkbox",
+          "required": false,
+          "name": "checkbox1",
+          "value": "checkbox1",
+          "text": "Keep me sign in",
+          "boxClass": "_checkbox"
         },
         {
           "type": "button",
-          "text": "συνδεση",
+          "text": "ΣΥΝΔΕΣΗ",
           "boxClass": "_button"
         },
         {
-          "type": "text",
-          "text": "δεν είστε εγγεγραμμένος χρήστης; <a href='#'>Εγγραφή</a>",
-          "boxClass": "_text"
+          "type": "final",
+          "boxClass": "_final"
         }
       ]
     },
     {
       "id": "signUp",
       "blocks": [
-        {
-          "type": "input",
-          "label": "ονομα",
-          "inputType": "text",
-          "placeholder": "Μαρία",
-          "required": true,
-          "name": "firstName"
-        },
-        {
-          "type": "input",
-          "label": "επιθετο",
-          "inputType": "text",
-          "placeholder": "Παπαδοπούλου",
-          "required": true,
-          "name": "lastName"
-        },
         {
           "type": "input",
           "label": "email",
@@ -90,7 +72,23 @@
         },
         {
           "type": "input",
-          "label": "κωδικοσ",
+          "label": "ONOMA",
+          "inputType": "text",
+          "placeholder": "Μαρία",
+          "required": true,
+          "name": "firstName"
+        },
+        {
+          "type": "input",
+          "label": "EΠΙΘΕΤΟ",
+          "inputType": "text",
+          "placeholder": "Παπαδοπούλου",
+          "required": true,
+          "name": "lastName"
+        },
+        {
+          "type": "input",
+          "label": "ΚΩΔΙΚΟΣ",
           "inputType": "password",
           "placeholder": "password123",
           "required": true,
@@ -99,7 +97,7 @@
         },
         {
           "type": "input",
-          "label": "επιβεβαιωση κωδικου",
+          "label": "ΕΠΙΒΕΒΑΙΩΣΗ ΚΩΔΙΚΟΥ",
           "inputType": "password",
           "placeholder": "password123",
           "required": true,
@@ -112,20 +110,20 @@
           "required": true,
           "name": "checkbox1",
           "value": "checkbox1",
-          "text": "Εγγραφή στο Newsletter μας",
-          "boxClass": "_checkbox"
+          "text": "Αποδέχομαι τους όρους και τις προυποθέσεις",
+          "boxClass": "_checkbox _checkbox_big-margin"
         },
         {
           "type": "checkbox",
           "required": true,
           "name": "checkbox2",
           "value": "checkbox2",
-          "text": "Συμφωνώ με όρους και προυποθέσεις",
+          "text": "Εγγραφή στο newsletter",
           "boxClass": "_checkbox"
         },
         {
           "type": "button",
-          "text": "Δημιουργια λογαριασμου",
+          "text": "ΕΓΓΡΑΦΗ",
           "boxClass": "_button"
         }
       ]

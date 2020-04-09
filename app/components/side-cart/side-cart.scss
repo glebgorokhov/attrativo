@@ -29,11 +29,11 @@
   }
 
   &__title {
-    font-family: $font-second;
+    font-family: $font-main;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     padding-right: 20px;
     flex-grow: 1;
   }
@@ -90,7 +90,7 @@
   &__info-title {
     font-size: 12px;
     line-height: 15px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     flex-grow: 1;
     padding-right: 20px;
@@ -101,7 +101,7 @@
     font-size: 12px;
     line-height: 15px;
     text-align: right;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
 
     &_red {

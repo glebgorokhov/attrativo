@@ -21,7 +21,7 @@
   &__title {
     font-size: 16px;
     line-height: 15px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
     transition: border-color $ease-main, font-weight $ease-main;
@@ -45,7 +45,7 @@
   &__text {
     font-size: 14px;
     line-height: 18px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: capitalize;
     display: none;
 
@@ -118,8 +118,8 @@
     @include rule(font-size, (xl: 17px, lg: 12px));
 
     background: black;
-    font-family: $font-second;
-    letter-spacing: .08em;
+    font-family: $font-main;
+    letter-spacing: .06em;
     text-transform: uppercase;
     color: white;
     display: inline-block;

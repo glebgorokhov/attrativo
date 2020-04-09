@@ -90,7 +90,7 @@
     @include rule(overflow, (lg: hidden));
     @include rule(text-overflow, (lg: ellipsis));
 
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
 
     #{$b}_static & {
@@ -130,7 +130,7 @@
     @include rule(color, (lg: $color-grey-29));
     @include rule(font-weight, (xl: 300, lg: 400));
 
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: capitalize;
     display: flex;
     align-items: center;
@@ -230,13 +230,13 @@
   }
 
   &__price {
-    font-family: $font-second;
+    font-family: $font-main;
 
     @include rule(font-weight, (xl: 600, lg: 500));
     @include rule(font-size, (xl: 18px, lg: 13px));
     @include rule(line-height, (xl: 22px, lg: 16px));
 
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
 
     &:first-child {
@@ -443,7 +443,7 @@
         @include rule(line-height, (xl: 15px, lg: 14px));
         @include rule(color, (lg: black));
 
-        letter-spacing: .08em;
+        letter-spacing: .06em;
         text-transform: capitalize;
 
         #{$b}_small & {

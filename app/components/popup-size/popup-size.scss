@@ -11,7 +11,7 @@
   &__title {
     font-size: 12px;
     line-height: 15px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-align: left;
   }
 
@@ -42,7 +42,7 @@
     font-size: 12px;
     line-height: 28px;
     text-align: center;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     display: block;
     transition: background $ease-main, border $ease-main, color $ease-main;
@@ -74,7 +74,7 @@
     font-size: 12px;
     line-height: 15px;
     text-align: right;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: capitalize;
 
     a {

@@ -25,9 +25,6 @@ export default function popups() {
 
     if (link.hasClass('is-active')) return;
 
-    // Changing Image
-    popup.find(`.popup__images img[data-login-image="${targetID}"]`).addClass('is-active').siblings().removeClass('is-active');
-
     // Changing Link Style
     link.addClass('is-active').siblings().removeClass('is-active');
 
@@ -43,6 +40,14 @@ export default function popups() {
         form.addClass('is-active');
       });
     }, globalOptions.animationDuration);
+  });
+
+  $(document).on('click', '[data-form-target]', function (e) {
+    e.preventDefault();
+
+    const target = $(this).data('form-target');
+
+    $(document).find(`[data-login-target="${target}"]`)[0].click();
   });
 }
 /* eslint-enable */

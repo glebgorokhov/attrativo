@@ -7,8 +7,8 @@
     display: block;
     transition: opacity $ease-main;
     color: $color-main;
-    font-family: $font-second;
-    letter-spacing: .08em;
+    font-family: $font-main;
+    letter-spacing: .06em;
 
     @include rule(font-size, (xl: 14px, lg: 12px));
 

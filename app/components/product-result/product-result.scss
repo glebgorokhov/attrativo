@@ -72,9 +72,9 @@
 
       &__input {
         font-size: 13px;
-        font-family: $font-second;
+        font-family: $font-main;
         font-weight: 600;
-        letter-spacing: .08em;
+        letter-spacing: .06em;
       }
     }
   }
@@ -91,7 +91,7 @@
     font-weight: 600;
     font-size: 11px;
     line-height: 14px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
@@ -99,7 +99,7 @@
     font-size: 13px;
     line-height: 16px;
     text-align: right;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
   }
 
   &__shadow {

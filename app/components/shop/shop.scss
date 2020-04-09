@@ -52,7 +52,7 @@
   }
 
   &__subtitle {
-    font-family: $font-second;
+    font-family: $font-main;
     font-weight: 600;
 
     @include rule(font-size, (xl: 20px, lg: 12px));
@@ -79,10 +79,10 @@
   }
 
   &__text {
-    font-family: $font-second;
+    font-family: $font-main;
     font-size: 14px;
     line-height: 1.4;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: capitalize;
     flex-grow: 1;
     margin-right: 30px;
@@ -94,11 +94,11 @@
     display: flex;
     align-items: center;
     transition: opacity $ease-main;
-    font-family: $font-second;
+    font-family: $font-main;
     font-weight: 300;
     font-size: 13px;
     line-height: 16px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     margin-left: auto;
 
@@ -193,7 +193,7 @@
     display: block;
     text-align: center;
     font-size: 12px;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     transition: opacity $ease-main;
 

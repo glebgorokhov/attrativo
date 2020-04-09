@@ -2,8 +2,10 @@
   display: block;
   position: relative;
 
+  $b: &;
+
   & + & {
-    margin-top: 20px;
+    margin-top: 24px;
 
     &_link {
       margin-top: 11px;
@@ -14,11 +16,27 @@
     }
 
     &_checkbox {
-      margin-top: 20px;
+      margin-top: 15px;
+
+      &_big-margin {
+        @include rule(margin-top, (xl: 30px, lg: 35px));
+      }
+
+      & + & {
+        @include rule(margin-top, (xl: 5px, lg: 15px));
+      }
     }
 
     &_button {
-      @include rule(margin-top, (lg: 30px));
+      @include rule(margin-top, (xl: 25px, lg: 26px));
+
+      .Button {
+        width: 100%;
+      }
+    }
+
+    &_final {
+      @include rule(margin-top, (xl: 32px, lg: 37px));
     }
   }
 
@@ -37,10 +55,11 @@
   &__label {
     font-weight: 600;
     font-size: 12px;
-    line-height: 15px;
-    letter-spacing: .08em;
+    line-height: 16px;
+    letter-spacing: .06em;
     text-transform: uppercase;
-    margin-bottom: 4px;
+
+    @include rule(margin-bottom, (xl: 0, lg: 1px));
   }
 
   &__wrapper {
@@ -51,7 +70,7 @@
     font-weight: 600;
     font-size: 11px;
     line-height: 1.4;
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     transition: opacity $ease-main;
 
@@ -80,9 +99,10 @@
 }
 
 .parsley-errors-list {
-  font-size: 12px;
-  line-height: 15px;
-  letter-spacing: .08em;
+  @include rule(font-size, (xl: 12px, lg: 10px));
+  @include rule(line-height, (xl: 15px, lg: 14px));
+
+  letter-spacing: .06em;
   text-transform: capitalize;
   color: $color-red;
 }

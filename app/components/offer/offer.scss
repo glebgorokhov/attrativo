@@ -50,11 +50,11 @@
   &__dot {
     @include screen('lg', min) {
       display: flex;
-      font-family: $font-second;
+      font-family: $font-main;
       font-weight: 500;
       font-size: 13px;
       line-height: 16px;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
       position: relative;
       cursor: pointer;
@@ -118,9 +118,9 @@
         font-weight: 500;
         font-size: 12px;
         line-height: 15px;
-        letter-spacing: .08em;
+        letter-spacing: .06em;
         text-transform: capitalize;
-        font-family: $font-second;
+        font-family: $font-main;
         transition: opacity $ease-main, transform $ease-main;
         opacity: 0;
         pointer-events: none;
