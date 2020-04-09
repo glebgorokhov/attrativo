@@ -21,6 +21,20 @@
     transition: border-color $ease-main;
     background: white;
 
+    #{$b}_light & {
+      border-color: white;
+    }
+
+    #{$b}_radio & {
+      border-radius: 50%;
+
+      &::before {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+      }
+    }
+
     #{$b}.parsley-error & {
       border-color: $color-red;
     }
@@ -51,5 +65,9 @@
     text-transform: capitalize;
     color: $color-placeholder;
     text-align: left;
+
+    #{$b}_light & {
+      color: #C2C2C2;
+    }
   }
 }

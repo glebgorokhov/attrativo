@@ -1,71 +1,174 @@
 {
+  "contacts": [
+    {
+      "tel": "216 5000 162",
+      "text": "(Για τηλ. παραγγελίες)"
+    },
+    {
+      "tel": "210 2853 813",
+      "text": "(Για εταιρική επικοινωνία)"
+    }
+  ],
+  "socials": [
+    {
+      "icon": "fb"
+    },
+    {
+      "icon": "instagram"
+    },
+    {
+      "icon": "youtube"
+    }
+  ],
+  "topMenu": [
+    {
+      "link": "#",
+      "text": "STORES"
+    },
+    {
+      "link": "#",
+      "text": "CONTACT US"
+    },
+    {
+      "link": "#",
+      "text": "INSPIRATION",
+      "class": "hide-lg"
+    },
+    {
+      "link": "#",
+      "text": "GIFT CARD",
+      "class": "hide-lg"
+    }
+  ],
   "menu": [
     {
       "link": "#",
-      "text": "About ale"
-    },
-    {
-      "text": "Online store",
+      "text": "ABOUT ATTRATTIVO",
       "submenu": [
         {
-          "link": "#",
-          "text": "οροι χρησησ"
+          "link": {
+            "href": "#",
+            "text": "Προφίλ"
+          }
         },
         {
-          "link": "#",
-          "text": "τροποι αποστολησ"
+          "link": {
+            "href": "#",
+            "text": "Καταστήματα"
+          }
         },
         {
-          "link": "#",
-          "text": "τροποι πληρωμων"
-        },
-        {
-          "link": "#",
-          "text": "πολιτικη επιστροφων"
-        },
-        {
-          "link": "#",
-          "text": "πολιτικη απορρητου"
-        },
-        {
-          "link": "#",
-          "text": "ασφαλεια συναλλαγων"
-        }
-      ]
-    },
-    {
-      "text": "Contact us",
-      "submenu": [
-        {
-          "link": "#",
-          "text": "οροι χρησησ"
-        },
-        {
-          "link": "#",
-          "text": "τροποι αποστολησ"
-        }
-      ]
-    },
-    {
-      "text": "Lookbook",
-      "submenu": [
-        {
-          "link": "#",
-          "text": "οροι χρησησ"
-        },
-        {
-          "link": "#",
-          "text": "τροποι αποστολησ"
-        },
-        {
-          "link": "#",
-          "text": "τροποι πληρωμων"
+          "link": {
+            "href": "#",
+            "text": "Επικοινωνία"
+          }
         }
       ]
     },
     {
       "link": "#",
-      "text": "Store locator"
+      "text": "online store",
+      "submenu": [
+        {
+          "link": {
+            "href": "#",
+            "text": "Όροι χρήσης"
+          }
+        },
+        {
+          "link": {
+            "href": "#",
+            "text": "Τρόποι πληρωμής"
+          }
+        },
+        {
+          "link": {
+            "href": "#",
+            "text": "Τρόποι αποστολής"
+          }
+        },
+        {
+          "link": {
+            "href": "#",
+            "text": "Πολιτική επιστροφών"
+          }
+        },
+        {
+          "link": {
+            "href": "#",
+            "text": "προσωπικά δεδομένα"
+          }
+        },
+        {
+          "link": {
+            "href": "#",
+            "text": "Ασφάλεια Συναλλαγών"
+          }
+        }
+      ]
+    },
+    {
+      "link": "#",
+      "text": "ΓΙΑ ONLINE ΑΓΟΡΕΣ",
+      "class": "hide-lg",
+      "submenu": [
+        {
+          "text": "T: 216 5000 162"
+        },
+        {
+          "text": "E: support@attrattivo.gr"
+        },
+        {
+          "text": "Δευτέρα-Παρασκευή"
+        },
+        {
+          "text": "09:00-16:00"
+        }
+      ]
+    },
+    {
+      "link": "#",
+      "text": "ΓΙΑ ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ",
+      "submenu": [
+        {
+          "text": "T: 210 2853813"
+        },
+        {
+          "text": "E: info@attrattivo.gr"
+        },
+        {
+          "text": "Δευτέρα-Παρασκευή"
+        },
+        {
+          "text": "09:00-16:00"
+        }
+      ]
+    },
+    {
+      "class": "hide-lg",
+      "link": "#",
+      "text": "Follow us",
+      "submenu": [
+        {
+          "socials": true
+        }
+      ]
     }
+  ],
+  "systems": [
+    "assets/images/payment-systems/american-express.svg",
+    "assets/images/payment-systems/dinners-club.svg",
+    "assets/images/payment-systems/securecode.svg",
+    "assets/images/payment-systems/maestro-pay-logo.svg",
+    "assets/images/payment-systems/visa.svg",
+    "assets/images/payment-systems/mastercard.svg",
+    "assets/images/payment-systems/paypal-logo.svg",
+    "assets/images/payment-systems/american-express.svg",
+    "assets/images/payment-systems/dinners-club.svg",
+    "assets/images/payment-systems/securecode.svg",
+    "assets/images/payment-systems/maestro-pay-logo.svg",
+    "assets/images/payment-systems/visa.svg",
+    "assets/images/payment-systems/mastercard.svg",
+    "assets/images/payment-systems/paypal-logo.svg"
   ]
 }

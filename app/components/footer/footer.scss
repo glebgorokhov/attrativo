@@ -1,221 +1,303 @@
 .Footer {
   display: block;
-  background: $color-grey-7;
 
   @include rule(margin-top, (xl: 45px, lg: 30px));
 
   $b: &;
 
+  // Top
   &__top {
-    @include rule(padding, (xl: 10px 0, lg: 0));
-    @include rule(border-width, (xl: 1px 0, lg: 0));
+    border-top: 1px solid black;
 
-    border-style: solid;
-    border-color: $color-grey-2;
-    position: relative;
+    @include rule(border-color, (lg: #d4d4d4));
 
-    @include screen('lg', min) {
-      transition: margin $ease-main;
+    .container {
+      @include rule(padding, (lg: 0));
+    }
+  }
 
-      #{$b}.has-submenu-open & {
-        margin-bottom: 60px;
+  &__top-menu {
+    @include rule(padding, (xl: 11px 0, lg: 0));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__top-menu-link {
+    box-sizing: border-box;
+    line-height: 19px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+    @include rule(padding, (xl: 0 20px, lg: 0));
+    @include rule(font-size, (xl: 16px, lg: 11px));
+    @include rule(flex, (lg: 1));
+
+    a {
+      transition: color $ease-main;
+
+      @include screen(lg) {
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 20px;
       }
+
+      &:hover {
+        color: rgba(black, .5);
+      }
+    }
+
+    &:not(:first-child) {
+      @include screen(lg) {
+        border-left: 1px solid #D4D4D4;
+      }
+
+      @include screen(lg, min) {
+        &::before {
+          content: '';
+          height: 19px;
+          width: 1px;
+          display: block;
+          margin: 0 94px;
+          background: black;
+        }
+      }
+    }
+  }
+
+  // Middle
+  &___contacts {
+    display: block;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #282828;
+
+    svg {
+      width: 17px;
+      height: 17px;
+      fill: white;
+      flex-shrink: 0;
+      margin-right: 11px;
+    }
+
+    a {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.06em;
+      color: white;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.08em;
+      color: #C2C2C2;
+    }
+
+    &:not(:first-child) {
+      margin-top: 3px;
+
+      a, svg {
+        color: #ACACAC;
+        fill: #ACACAC;
+      }
+
+      p {
+        color: #ACACAC;
+      }
+    }
+  }
+
+  &__middle {
+    @include rule(padding, (xl: 33px 0, lg: 0));
+    @include rule(background, (xl: #0F0F0F, lg: #212121));
+
+    color: white;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+
+      @include rule(padding, (lg: 0));
+      @include rule(flex-direction, (lg: column));
+    }
+  }
+
+  &__subscribe-form {
+    @include rule(width, (xl: 412px, lg: 100%));
+    @include rule(order, (lg: -1));
+
+    @include screen(lg, min) {
+      margin-left: 40px;
     }
   }
 
   &__menu {
-    display: flex;
-    justify-content: space-between;
+    @include rule(display, (xl: flex, lg: block));
 
-    @include rule(align-items, (xl: center, lg: flex-start));
-    @include rule(flex-wrap, (lg: wrap));
-    @include rule(margin, (lg: 0 -20px));
+    @include screen(lg) {
+      padding: 24px 20px 28px;
+    }
   }
 
   &__item {
-    @include rule(position, (lg: relative));
-    @include rule(width, (lg: 50%));
-
-    &:nth-of-type(3n) {
-      @include rule(width, (lg: 100%));
+    &:not(:first-child) {
+      @include rule(margin-left, (xl: 50px, lg: 0));
+      @include rule(margin-top, (lg: 24px));
     }
   }
 
   &-Link {
-    line-height: 1.4;
-    letter-spacing: .12em;
+    @include rule(font-size, (xl: 14px, lg: 11px));
+    @include rule(line-height, (xl: 19px, lg: 15px));
+
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    transition: opacity $ease-main, border-color $ease-main, box-shadow $ease-main;
+    fill: white;
+    cursor: pointer;
 
-    @include rule(font-size, (xl: 13px, lg: 10px));
-    @include rule(padding, (xl: 10px 0, lg: 0));
-    @include rule(height, (lg: 40px));
-    @include rule(border-bottom, (lg: 1px solid $color-grey-5));
-    @include rule(justify-content, (lg: center));
-    @include rule(cursor, (xl: pointer));
-
-    &:hover {
-      opacity: .5;
+    span {
+      flex: 1;
     }
 
-    @include screen('lg') {
-
-      &.is-active:not([href]) {
-        border-bottom-color: transparent;
-        font-weight: 700;
-      }
-
-      #{$b}__item:nth-of-type(1) &, #{$b}__item:nth-of-type(2) & {
-        border-top: 1px solid transparent;
-
-        &:not([href]).is-active {
-          border-top-color: $color-grey-5;
-        }
-      }
-
-      #{$b}__item:nth-of-type(3n + 1) &:not([href]).is-active {
-        box-shadow: inset -1px 0 0 0 $color-grey-5;
-      }
-
-      #{$b}__item:nth-of-type(3n + 2) &:not([href]).is-active {
-        box-shadow: inset 1px 0 0 0 $color-grey-5;
-      }
-    }
-  }
-
-  &__plus {
-    margin-left: 10px;
-    width: 7px;
-    height: 7px;
-    position: relative;
-
-    &::before, &::after {
-      content: '';
-      width: 100%;
-      height: 1px;
+    svg {
+      margin-left: 20px;
+      width: 11px;
+      height: 6px;
+      flex-shrink: 0;
       transition: transform $ease-main;
-      background: $color-basic;
-
-      @include center-image;
     }
 
-    &::after {
-      transform: rotate(90deg);
-    }
-
-    #{$b}-Link.is-active &::after {
-      transform: rotate(0);
+    &.is-active {
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 
   &__submenu {
     @include screen('lg', min) {
-      position: absolute;
-      top: calc(100% + 1px);
-      left: 0;
-      right: 0;
-      padding: 0;
-      z-index: 50;
-      white-space: nowrap;
-      pointer-events: none;
-      background: $color-grey-7;
-      border-bottom: 1px solid $color-grey-2;
-      transition: opacity $ease-main;
-      opacity: 0;
-      display: none;
-
-      .container {
-        display: flex;
-        align-items: center;
-        height: 59px;
-        justify-content: space-between;
-      }
-
-      #{$b}-Link.is-active + & {
-        opacity: 1;
-        pointer-events: all;
-      }
+      display: block !important;
+      margin-top: 7px;
     }
 
     @include screen('lg') {
       display: none;
       font-size: 0;
-      box-shadow: inset 0 -1px 0 0 $color-grey-5;
-
-      .container {
-        display: block;
-        padding: 0;
-      }
-
-      #{$b}__item:nth-of-type(3n + 1) & {
-        margin-right: -100%;
-      }
-
-      #{$b}__item:nth-of-type(3n + 2) & {
-        margin-left: -100%;
-      }
+      padding-top: 15px;
     }
   }
 
   &__subitem {
-    @include screen('lg') {
-      padding: 20px;
-      width: 50%;
-      box-sizing: border-box;
-      display: inline-block;
-      text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    color: #afafaf;
 
-      &:not(:first-child) {
-        margin-top: -15px;
+    a {
+      transition: color $ease-main, opacity $ease-main;
+
+      &:hover {
+        color: white;
       }
+    }
+
+    &:not(:first-child) {
+      margin-top: 9px;
     }
   }
 
-  &__sublink {
-    font-size: 10px;
-    line-height: 1.4;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    transition: opacity $ease-main;
+  &__socials {
+    display: flex;
+    align-items: center;
+  }
 
-    @include screen('lg', min) {
-      font-size: 13px;
-    }
+  &__social-link {
+    fill: white;
+    font-size: 0;
+    transition: opacity $ease-main;
 
     &:hover {
       opacity: .5;
     }
-  }
 
-  // Middle
+    &:not(:first-child) {
+      margin-left: 25px;
+    }
 
-  &__middle {
-    @include rule(padding, (xl: 19px 0, lg: 23px 0 0));
+    svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   // Bottom
 
   &__bottom {
-    @include rule(padding, (xl: 18px 0, lg: 4px 0));
-    @include rule(border-top, (xl: 1px solid $color-grey-1, lg: 0));
-    @include rule(margin-top, (lg: 19px));
-    @include rule(background, (lg: white));
+    @include rule(padding, (xl: 9px 0, lg: 2px 0));
+    @include rule(margin-top, (lg: 0));
+    @include rule(background, (xl: #F8F8F8));
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &-Copyright {
-    @include rule(font-size, (xl: 11px, lg: 10px));
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.06em;
 
-    line-height: 1.4;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    text-align: center;
+    a {
+      transition: opacity $ease-main;
 
-    b {
-      @include screen('lg', min) {
-        font-weight: 400;
+      &:hover {
+        opacity: .5;
       }
+    }
+  }
+
+  &__payment-systems {
+    display: flex;
+    align-items: center;
+    font-size: 0;
+
+    @include rule(width, (lg: 100%));
+    @include rule(justify-content, (lg: space-between));
+  }
+
+  &__payment-system {
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:nth-child(n + 8) {
+      @include rule(display, (lg: none));
+    }
+
+    &:not(:first-child) {
+      @include rule(margin-left, (xl: 24px, lg: 10px));
     }
   }
 }
