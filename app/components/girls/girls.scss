@@ -12,7 +12,7 @@
     font-family: $font-second;
     font-size: 40px;
     line-height: 50px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
   }
 
   &__content {
@@ -25,7 +25,7 @@
     color: white;
     font-size: 14px;
     line-height: 19px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
 
     .container {
       display: flex;
@@ -104,14 +104,14 @@
     &__title {
       font-size: 18px;
       line-height: 1;
-      letter-spacing: 0.06em;
+      letter-spacing: .06em;
     }
 
     &__text {
       font-size: 12px;
       line-height: 1;
-      letter-spacing: 0.06em;
-      color: #4C4C4C;
+      letter-spacing: .06em;
+      color: #4c4c4c;
       margin-top: 7px;
     }
   }

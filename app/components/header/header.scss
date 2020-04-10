@@ -186,11 +186,11 @@
 
       &:not(:first-child) {
         @include rule(margin-left, (xl: 6px, lg: 3px));
- }
+      }
 
       &:first-child {
         @include rule(margin-right, (xl: 6px, lg: 3px));
- }
+      }
     }
 
     span {

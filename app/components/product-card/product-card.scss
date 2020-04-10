@@ -415,12 +415,14 @@
 
   &_small-slider {
     @include screen(lg, min) {
+
       .ProductCard__favourite, .ProductCard-Content, .ProductCard__sizes {
         display: none;
       }
     }
 
     @include screen(lg) {
+
       .ProductCard__favourite {
         display: none;
       }

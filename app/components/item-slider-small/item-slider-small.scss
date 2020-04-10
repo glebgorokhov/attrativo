@@ -23,7 +23,7 @@
     @include rule(line-height, (xl: 31px, lg: 25px));
 
     font-family: $font-second;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
   }
 
   &__arrows {

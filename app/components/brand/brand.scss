@@ -25,7 +25,7 @@
       position: absolute;
       right: calc((100vw - 1600px) / -2);
       left: calc(50vw - 180px);
-      background: #F5F5F5;
+      background: #f5f5f5;
       height: 408px;
       bottom: 0;
 
@@ -45,7 +45,7 @@
     @include rule(color, (lg: #4c4c4c));
     @include rule(text-align, (xl: center, lg: left));
 
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     font-family: $font-second;
   }
 
@@ -72,11 +72,11 @@
     transition: opacity $ease-main;
     color: white;
     font-size: 14px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-align: center;
 
     &:hover {
-      opacity: 0.5;
+      opacity: .5;
     }
   }
 
@@ -109,7 +109,7 @@
       &::after {
         content: '';
         display: block;
-        padding-bottom: (9/16)*100%;
+        padding-bottom: (9/16) *100%;
       }
 
       iframe {
@@ -142,7 +142,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     margin-left: 30px;
     font-weight: 300;
 

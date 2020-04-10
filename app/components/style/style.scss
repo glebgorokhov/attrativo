@@ -40,7 +40,7 @@
   &__title {
     font-size: 40px;
     line-height: 50px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     font-family: $font-second;
   }
 
@@ -48,7 +48,7 @@
     font-weight: 800;
     font-size: 14px;
     line-height: 19px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
 
     &:not(:first-child) {
       margin-top: 24px;
@@ -67,7 +67,7 @@
     display: flex;
     font-size: 14px;
     line-height: 19px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
 
     &:hover {
       text-decoration: underline;
