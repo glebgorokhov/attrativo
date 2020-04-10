@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Attrativo | Cart</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#232323">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link href="assets/styles/app.min.css" rel="stylesheet">
+    <script src="assets/scripts/libs/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="Header">
+        <div class="Header__top">
+            <div class="container">
+                <div class="slogan-slider js-slogan-slider Header__slogan hide-lg">
+                    <div class="slogan-slider__arrow slogan-slider__arrow_prev js-slider-prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <p>Δωρεάν αποστολές & δωρεάν αντικαταβολή σε όλη την Ελλάδα</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p>Δωρεάν αποστολές & δωρεάν</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p>Δωρεάν αποστολές & δωρεάν αντικαταβολή σε</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slogan-slider__arrow slogan-slider__arrow_next js-slider-next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                </div>
+                <div class="Header__slogan show-lg">
+                    <p>Δωρεάν αποστολές & αντικαταβολή σε όλη την Ελλάδα</p>
+                </div>
+                <div class="Header__top-right hide-lg"><a class="Header__top-link" href="#">Καταστήματα</a>
+                    <div class="Header__dropdown-wrapper">
+                        <div class="Header__dropdown-button js-dropdown-toggle"><span>Greek</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                        <div class="js-dropdown dropdown Header__dropdown-content"><a class="dropdown__link" href="#">Greek</a><a class="dropdown__link" href="#">English</a><a class="dropdown__link" href="#">Italian</a></div>
+                    </div>
+                    <div class="Header__dropdown-wrapper">
+                        <div class="Header__dropdown-button js-dropdown-toggle"><span>Euro</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                        <div class="js-dropdown dropdown Header__dropdown-content"><a class="dropdown__link" href="#">Euro</a><a class="dropdown__link" href="#">USD</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Header__bottom">
+            <div class="container"><a class="Header__logo Header-LogoWrapper" href="#"><img src="assets/images/logo.png" alt="@@" /></a>
+                <div class="Header__menu hide-lg"><a class="Header__menu-link" href="#">ΝΕΕΣ ΑΦΙΞΕΙΣ</a>
+                    <div class="Header__menu-link" data-target-menu="menu-1">ΡΟΥΧΑ</div>
+                    <div class="Header__menu-link" data-target-menu="menu-2">αξεσουαρ</div><a class="Header__menu-link" href="#">ΠΑΠΟΥΤΣΙΑ</a>
+                    <div class="Header__menu-link" data-target-menu="menu-3">ΠΡΟΣΦΟΡΕΣ</div><a class="Header__menu-link" href="#">LOOKBOOK</a>
+                </div>
+                <div class="Header__items"><a class="Header__item Header-Button" href="#"><img src="assets/images/search.svg" alt="@@" /><span class="hide-lg">Aναζήτηση</span></a><a class="Header__item js-fancybox hide-lg Header-Button" href="#popup-login"><span>Σύνδεση / Εγγραφή</span><img src="assets/images/arrow_down.svg" alt="@@" /></a><a class="Header__item js-side-cart-open Header-Button" href="cart.html"><img src="assets/images/bag.png" alt="@@" /><span class="is-cart">(0)</span></a></div>
+                <div class="Header__burger-button show-lg js-burger-open"><img src="assets/images/burger-icon.svg" alt="@@" /></div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu__wrapper" data-menu="menu-1">
+                <div class="container container_small">
+                    <div class="menu__main-links"><a class="menu__main-link" href="#">BEST SELLERS</a><a class="menu__main-link menu__main-link_red" href="#">SALES</a><a class="menu__main-link" href="#">BASICS</a><a class="menu__main-link" href="#">X-MAS DEALS</a><a class="menu__main-link" href="#">LAST PIECES</a></div>
+                    <div class="menu__section">
+                        <div class="menu__section-title">KATHΓΟΡΙΕΣ</div>
+                        <div class="menu__section-content">
+                            <ul class="menu__items menu__items_cols">
+                                <li class="menu__item"><a class="menu__link">Όλα τα ρούχα</a></li>
+                                <li class="menu__item"><a class="menu__link">Φορέματα</a></li>
+                                <li class="menu__item"><a class="menu__link">Φούστες</a></li>
+                                <li class="menu__item"><a class="menu__link">Πουκάμισα</a></li>
+                                <li class="menu__item"><a class="menu__link">Τουνίκ</a></li>
+                                <li class="menu__item"><a class="menu__link">Παντελόνια</a></li>
+                                <li class="menu__item"><a class="menu__link">Jeans</a></li>
+                                <li class="menu__item"><a class="menu__link">Oλόσωμες φόρμες</a></li>
+                                <li class="menu__item"><a class="menu__link">Beachwear</a>
+                                    <ul class="menu__submenu">
+                                        <li class="menu__subitem"><a class="menu__link">Μαγιό</a></li>
+                                        <li class="menu__subitem"><a class="menu__link">Ρούχα παραλίας</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a class="menu__link">Mπλούζες</a></li>
+                                <li class="menu__item"><a class="menu__link">Τοπ</a></li>
+                                <li class="menu__item"><a class="menu__link">Πλεκτά</a></li>
+                                <li class="menu__item"><a class="menu__link">Μπουφάν</a></li>
+                                <li class="menu__item"><a class="menu__link">Κολάν</a></li>
+                                <li class="menu__item"><a class="menu__link">Basics</a></li>
+                                <li class="menu__item"><a class="menu__link">Ζακέτες - Μπολερό</a></li>
+                                <li class="menu__item"><a class="menu__link">Κιμονό</a></li>
+                                <li class="menu__item"><a class="menu__link">Σακάκια - Γιλέκα</a></li>
+                                <li class="menu__item"><a class="menu__link">Πανωφόρια</a>
+                                    <ul class="menu__submenu">
+                                        <li class="menu__subitem"><a class="menu__link">Παλτό</a></li>
+                                        <li class="menu__subitem"><a class="menu__link">Καμπαρντίνες</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a class="menu__link">Σορτς</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu__section">
+                        <div class="menu__section-title">SHOP BY OCCASSION</div>
+                        <div class="menu__section-content"><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/1.jpg" /></span><span class="menu__occassion-text">Office look</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/2.jpg" /></span><span class="menu__occassion-text">Cozy outfits</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/3.jpg" /></span><span class="menu__occassion-text">Festival</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/4.jpg" /></span><span class="menu__occassion-text">Going out-out</span></a></div>
+                    </div>
+                    <div class="menu__images">
+                        <div><img src="assets/images/menu/1.jpg" alt="@@" /></div>
+                        <div><img src="assets/images/menu/2.jpg" alt="@@" /></div>
+                        <div><img src="assets/images/menu/3.jpg" alt="@@" /></div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__wrapper" data-menu="menu-2">
+                <div class="container container_small">
+                    <div class="menu__main-links"><a class="menu__main-link" href="#">BEST SELLERS</a><a class="menu__main-link menu__main-link_red" href="#">SALES</a><a class="menu__main-link" href="#">BASICS</a><a class="menu__main-link" href="#">X-MAS DEALS</a><a class="menu__main-link" href="#">LAST PIECES</a></div>
+                    <div class="menu__section">
+                        <div class="menu__section-title">KATHΓΟΡΙΕΣ</div>
+                        <div class="menu__section-content">
+                            <ul class="menu__items menu__items_cols">
+                                <li class="menu__item"><a class="menu__link">Όλα τα ρούχα</a></li>
+                                <li class="menu__item"><a class="menu__link">Φορέματα</a></li>
+                                <li class="menu__item"><a class="menu__link">Φούστες</a></li>
+                                <li class="menu__item"><a class="menu__link">Πουκάμισα</a></li>
+                                <li class="menu__item"><a class="menu__link">Τουνίκ</a></li>
+                                <li class="menu__item"><a class="menu__link">Παντελόνια</a></li>
+                                <li class="menu__item"><a class="menu__link">Jeans</a></li>
+                                <li class="menu__item"><a class="menu__link">Oλόσωμες φόρμες</a></li>
+                                <li class="menu__item"><a class="menu__link">Beachwear</a>
+                                    <ul class="menu__submenu">
+                                        <li class="menu__subitem"><a class="menu__link">Μαγιό</a></li>
+                                        <li class="menu__subitem"><a class="menu__link">Ρούχα παραλίας</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a class="menu__link">Mπλούζες</a></li>
+                                <li class="menu__item"><a class="menu__link">Τοπ</a></li>
+                                <li class="menu__item"><a class="menu__link">Πλεκτά</a></li>
+                                <li class="menu__item"><a class="menu__link">Μπουφάν</a></li>
+                                <li class="menu__item"><a class="menu__link">Κολάν</a></li>
+                                <li class="menu__item"><a class="menu__link">Basics</a></li>
+                                <li class="menu__item"><a class="menu__link">Ζακέτες - Μπολερό</a></li>
+                                <li class="menu__item"><a class="menu__link">Κιμονό</a></li>
+                                <li class="menu__item"><a class="menu__link">Σακάκια - Γιλέκα</a></li>
+                                <li class="menu__item"><a class="menu__link">Πανωφόρια</a>
+                                    <ul class="menu__submenu">
+                                        <li class="menu__subitem"><a class="menu__link">Παλτό</a></li>
+                                        <li class="menu__subitem"><a class="menu__link">Καμπαρντίνες</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a class="menu__link">Σορτς</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu__section">
+                        <div class="menu__section-title">SHOP BY OCCASSION</div>
+                        <div class="menu__section-content"><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/1.jpg" /></span><span class="menu__occassion-text">Office look</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/2.jpg" /></span><span class="menu__occassion-text">Cozy outfits</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/3.jpg" /></span><span class="menu__occassion-text">Festival</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/4.jpg" /></span><span class="menu__occassion-text">Going out-out</span></a></div>
+                    </div>
+                    <div class="menu__images">
+                        <div><img src="assets/images/menu/1.jpg" alt="@@" /></div>
+                        <div><img src="assets/images/menu/2.jpg" alt="@@" /></div>
+                        <div><img src="assets/images/menu/3.jpg" alt="@@" /></div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__wrapper" data-menu="menu-3">
+                <div class="container container_small">
+                    <div class="menu__main-links"><a class="menu__main-link" href="#">BEST SELLERS</a><a class="menu__main-link menu__main-link_red" href="#">SALES</a><a class="menu__main-link" href="#">BASICS</a><a class="menu__main-link" href="#">X-MAS DEALS</a><a class="menu__main-link" href="#">LAST PIECES</a></div>
+                    <div class="menu__section">
+                        <div class="menu__section-title">KATHΓΟΡΙΕΣ</div>
+                        <div class="menu__section-content">
+                            <ul class="menu__items menu__items_cols">
+                                <li class="menu__item"><a class="menu__link">Όλα τα ρούχα</a></li>
+                                <li class="menu__item"><a class="menu__link">Φορέματα</a></li>
+                                <li class="menu__item"><a class="menu__link">Φούστες</a></li>
+                                <li class="menu__item"><a class="menu__link">Πουκάμισα</a></li>
+                                <li class="menu__item"><a class="menu__link">Τουνίκ</a></li>
+                                <li class="menu__item"><a class="menu__link">Παντελόνια</a></li>
+                                <li class="menu__item"><a class="menu__link">Jeans</a></li>
+                                <li class="menu__item"><a class="menu__link">Oλόσωμες φόρμες</a></li>
+                                <li class="menu__item"><a class="menu__link">Beachwear</a>
+                                    <ul class="menu__submenu">
+                                        <li class="menu__subitem"><a class="menu__link">Μαγιό</a></li>
+                                        <li class="menu__subitem"><a class="menu__link">Ρούχα παραλίας</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a class="menu__link">Mπλούζες</a></li>
+                                <li class="menu__item"><a class="menu__link">Τοπ</a></li>
+                                <li class="menu__item"><a class="menu__link">Πλεκτά</a></li>
+                                <li class="menu__item"><a class="menu__link">Μπουφάν</a></li>
+                                <li class="menu__item"><a class="menu__link">Κολάν</a></li>
+                                <li class="menu__item"><a class="menu__link">Basics</a></li>
+                                <li class="menu__item"><a class="menu__link">Ζακέτες - Μπολερό</a></li>
+                                <li class="menu__item"><a class="menu__link">Κιμονό</a></li>
+                                <li class="menu__item"><a class="menu__link">Σακάκια - Γιλέκα</a></li>
+                                <li class="menu__item"><a class="menu__link">Πανωφόρια</a>
+                                    <ul class="menu__submenu">
+                                        <li class="menu__subitem"><a class="menu__link">Παλτό</a></li>
+                                        <li class="menu__subitem"><a class="menu__link">Καμπαρντίνες</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item"><a class="menu__link">Σορτς</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu__section">
+                        <div class="menu__section-title">SHOP BY OCCASSION</div>
+                        <div class="menu__section-content"><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/1.jpg" /></span><span class="menu__occassion-text">Office look</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/2.jpg" /></span><span class="menu__occassion-text">Cozy outfits</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/3.jpg" /></span><span class="menu__occassion-text">Festival</span></a><a class="menu__occassion-item" href="#"><span class="menu__occassion-image"><img src="assets/images/occassion/4.jpg" /></span><span class="menu__occassion-text">Going out-out</span></a></div>
+                    </div>
+                    <div class="menu__images">
+                        <div><img src="assets/images/menu/1.jpg" alt="@@" /></div>
+                        <div><img src="assets/images/menu/2.jpg" alt="@@" /></div>
+                        <div><img src="assets/images/menu/3.jpg" alt="@@" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="main" role="main">
+        <div class="container hide-lg"><a class="go-back" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg><span>ΣΥΝΕΧΙΣΗ ΑΓΟΡΩΝ</span></a></div>
+        <div class="cart">
+            <div class="container">
+                <div class="cart__header">
+                    <h1 class="cart__title">SHOPPING CART</h1>
+                    <p class="cart__amount hide-lg">3 Τεμάχια</p>
+                    <div class="cart__close show-lg"><a href="#"><svg><use xlink:href="assets/images/icon.svg#icon_close_bold"></use></svg></a></div>
+                </div>
+                <div class="cart__content">
+                    <div class="grid grid_cart">
+                        <div class="grid__col grid__col_xl_9 grid__col_lg_12">
+                            <div class="grid grid_cart">
+                                <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_flex">
+                                    <div class="CartItem">
+                                        <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/1.jpg" /></div>
+                                        <div class="CartItem__content">
+                                            <div class="CartItem__title-wrapper">
+                                                <p class="CartItem__title CartItem-Heading">φορεμα ασυμμετρο με βολαν</p>
+                                            </div>
+                                            <div class="CartItem__row">
+                                                <div class="CartItem__items">
+                                                    <div class="CartItem__item"><span>Colour:</span><span>multicolor</span></div>
+                                                    <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
+                                                                <option value="s-8" selected="selected">s-8</option>
+                                                                <option value="s-9">s-9</option>
+                                                                <option value="s-10">s-10</option>
+                                                            </select></span></div>
+                                                </div>
+                                                <div class="CartItem__numberbox">
+                                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="CartItem__prices CartItem-Price">
+                                                <div class="CartItem__price">129,90 €</div>
+                                            </div>
+                                            <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
+                                                <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_flex">
+                                    <div class="CartItem">
+                                        <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/2.jpg" /></div>
+                                        <div class="CartItem__content">
+                                            <div class="CartItem__title-wrapper">
+                                                <p class="CartItem__title CartItem-Heading">ΖΥΠ ΚΥΛΟΤ ΜΕ ΥΦΑΣΜΑΤΙΝΗ ΖΩΝΗ</p>
+                                            </div>
+                                            <div class="CartItem__row">
+                                                <div class="CartItem__items">
+                                                    <div class="CartItem__item"><span>Colour:</span><span>red</span></div>
+                                                    <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
+                                                                <option value="s-8" selected="selected">s-8</option>
+                                                                <option value="s-9">s-9</option>
+                                                                <option value="s-10">s-10</option>
+                                                            </select></span></div>
+                                                </div>
+                                                <div class="CartItem__numberbox">
+                                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="CartItem__prices CartItem-Price">
+                                                <div class="CartItem__price">40,00 €</div>
+                                                <div class="CartItem__price CartItem__price_old"><span>129,99 €</span><span>(-30%)</span></div>
+                                            </div>
+                                            <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
+                                                <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_flex">
+                                    <div class="CartItem">
+                                        <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/3.jpg" /></div>
+                                        <div class="CartItem__content">
+                                            <div class="CartItem__title-wrapper">
+                                                <p class="CartItem__title CartItem-Heading">ΜΠΛΟΥΖΑ ΜΕ ΤΙΡΑΝΤΕΣ</p>
+                                            </div>
+                                            <div class="CartItem__row">
+                                                <div class="CartItem__items">
+                                                    <div class="CartItem__item"><span>Colour:</span><span>black</span></div>
+                                                    <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
+                                                                <option value="s-8" selected="selected">s-8</option>
+                                                                <option value="s-9">s-9</option>
+                                                                <option value="s-10">s-10</option>
+                                                            </select></span></div>
+                                                </div>
+                                                <div class="CartItem__numberbox">
+                                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                                </div>
+                                            </div>
+                                            <div class="CartItem__prices CartItem-Price">
+                                                <div class="CartItem__price">19,90 €</div>
+                                            </div>
+                                            <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
+                                                <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__col grid__col_xl_3 grid__col_lg_12">
+                            <div class="cart-info CartPage-Floating"><button class="cart-info__button hide-lg">
+                                    <div><span>πληροφοριεσ παραγγελιασ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
+                                </button>
+                                <div class="cart-info__content">
+                                    <div class="cart-info__text"><span>μερικο συνολο</span><span>149,90 €</span></div>
+                                    <div class="cart-info__text show-lg"><span>εκτιμωμενα εξοδα αποστολησ</span><span>00,00 €</span></div><a class="cart-info__text cart-info__text_link" href="#"><span>προσθεσε promo κωδικο</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></a>
+                                    <div class="cart-info__text cart-info__text_summ hide-lg CartPage-Total"><span>συνολο</span><span>189,80 €</span></div>
+                                </div>
+                                <div class="cart-info__delivery">
+                                    <div><svg><use xlink:href="assets/images/icon.svg#icon_delivery"></use></svg><span class="CartPage-PromoText">δωρεαν μεταφορικα σε ολη την ελλαδα</span></div>
+                                </div>
+                                <div class="cart-info__final">
+                                    <p class="cart-info__text cart-info__text_summ show-lg CartPage-Total"><span>συνολο</span><span>189,80 €</span></p><a class="Button cart-info__send CartPage-CheckoutButton" href="#">ολοκληρωση παραγγελιασ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="section section_grey">
+            <div class="container">
+                <div class="grid grid_cart">
+                    <div class="grid__col grid__col_xl_9 grid__col_lg_12">
+                        <div class="product-slider js-product-slider">
+                            <div class="product-slider__header">
+                                <h2 class="triangle-heading triangle-heading_small product-slider__title">PAIR IT WITH</h2>
+                                <p class="product-slider__text show-lg">5 προϊόντα</p>
+                            </div>
+                            <div class="product-slider__content">
+                                <div class="product-slider__slider swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                            <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/18.jpg" /></a>
+                                                <div class="ProductCard__sizes hide-lg">
+                                                    <div class="ProductCard__sizes-title">choose your size</div>
+                                                    <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                            </div>
+                                            <div class="ProductCard-Content">
+                                                <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">πλεκτη μπλουζα μοχερ</a>
+                                                    <div class="ProductCard-Prices">
+                                                        <div class="ProductCard-Price">49,90 €</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                            <div class="ProductCard__top">
+                                                <div class="ProductCard__image ProductCard-Picture"><a href="#"><img src="assets/images/products/19.jpg" /></a>
+                                                    <div class="ProductCard__slider-wrapper">
+                                                        <div class="ProductCard__slider swper-container">
+                                                            <div class="swiper-wrapper">
+                                                                <div class="ProductCard__slide swiper-slide"><img src="assets/images/products/19.jpg" alt="@@" /></div>
+                                                                <div class="ProductCard__slide swiper-slide"><img src="assets/images/products/1.jpg" alt="@@" /></div>
+                                                                <div class="ProductCard__slide swiper-slide"><img src="assets/images/products/2.jpg" alt="@@" /></div>
+                                                                <div class="ProductCard__slide swiper-slide"><img src="assets/images/products/3.jpg" alt="@@" /></div>
+                                                            </div>
+                                                            <div class="ProductCard__arrow ProductCard__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
+                                                            <div class="ProductCard__arrow ProductCard__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ProductCard__sizes hide-lg">
+                                                    <div class="ProductCard__sizes-title">choose your size</div>
+                                                    <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                            </div>
+                                            <div class="ProductCard-Content">
+                                                <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">Εσαρπα εμπριμε</a>
+                                                    <div class="ProductCard-Prices">
+                                                        <div class="ProductCard-Price">11,50 €</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                            <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/20.jpg" /></a>
+                                                <div class="ProductCard__sizes hide-lg">
+                                                    <div class="ProductCard__sizes-title">choose your size</div>
+                                                    <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                            </div>
+                                            <div class="ProductCard-Content">
+                                                <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">Σακακι με υφασματινη ζωνη</a>
+                                                    <div class="ProductCard-Prices">
+                                                        <div class="ProductCard-Price">79,90 €</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                            <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/21.jpg" /></a>
+                                                <div class="ProductCard__sizes hide-lg">
+                                                    <div class="ProductCard__sizes-title">choose your size</div>
+                                                    <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                            </div>
+                                            <div class="ProductCard-Content">
+                                                <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα midi ασυμμετρο</a>
+                                                    <div class="ProductCard-Prices">
+                                                        <div class="ProductCard-Price ProductCard-Price_new">35,00 €</div>
+                                                        <div class="ProductCard-Price">69,90 €</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                            <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/20.jpg" /></a>
+                                                <div class="ProductCard__sizes hide-lg">
+                                                    <div class="ProductCard__sizes-title">choose your size</div>
+                                                    <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                            </div>
+                                            <div class="ProductCard-Content">
+                                                <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">Σακακι με υφασματινη ζωνη</a>
+                                                    <div class="ProductCard-Prices">
+                                                        <div class="ProductCard-Price">79,90 €</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-slider__arrows">
+                                    <div class="product-slider__arrow product-slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
+                                    <div class="product-slider__arrow product-slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="back-to-top hide-lg">
+            <div class="container">
+                <div class="back-to-top__button"><span>BACK TO TOP</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
+            </div>
+        </div>
+    </main>
+    <div class="Footer">
+        <div class="Footer__top">
+            <div class="container">
+                <div class="Footer__top-menu">
+                    <div class="Footer__top-menu-link"><a href="#"><span>STORES</span></a></div>
+                    <div class="Footer__top-menu-link"><a href="#"><span>CONTACT US</span></a></div>
+                    <div class="Footer__top-menu-link hide-lg"><a href="#"><span>INSPIRATION</span></a></div>
+                    <div class="Footer__top-menu-link hide-lg"><a href="#"><span>GIFT CARD</span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="Footer__middle">
+            <div class="container">
+                <div class="Footer__contacts show-lg">
+                    <div class="Footer__contact"><svg><use xlink:href="assets/images/icon.svg#icon_phone_footer"></use></svg><a href="tel:216 5000 162">216 5000 162</a>
+                        <p>(Για τηλ. παραγγελίες)</p>
+                    </div>
+                    <div class="Footer__contact"><svg><use xlink:href="assets/images/icon.svg#icon_phone_footer"></use></svg><a href="tel:210 2853 813">210 2853 813</a>
+                        <p>(Για εταιρική επικοινωνία)</p>
+                    </div>
+                </div>
+                <div class="Footer__menu">
+                    <div class="Footer__item">
+                        <div class="Footer__link Footer-Link"><span>ABOUT ATTRATTIVO</span><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_arrow_footer"></use></svg></div>
+                        <div class="Footer__submenu">
+                            <div class="Footer__subitem"><a href="#">Προφίλ</a></div>
+                            <div class="Footer__subitem"><a href="#">Καταστήματα</a></div>
+                            <div class="Footer__subitem"><a href="#">Επικοινωνία</a></div>
+                        </div>
+                    </div>
+                    <div class="Footer__item">
+                        <div class="Footer__link Footer-Link"><span>online store</span><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_arrow_footer"></use></svg></div>
+                        <div class="Footer__submenu">
+                            <div class="Footer__subitem"><a href="#">Όροι χρήσης</a></div>
+                            <div class="Footer__subitem"><a href="#">Τρόποι πληρωμής</a></div>
+                            <div class="Footer__subitem"><a href="#">Τρόποι αποστολής</a></div>
+                            <div class="Footer__subitem"><a href="#">Πολιτική επιστροφών</a></div>
+                            <div class="Footer__subitem"><a href="#">προσωπικά δεδομένα</a></div>
+                            <div class="Footer__subitem"><a href="#">Ασφάλεια Συναλλαγών</a></div>
+                        </div>
+                    </div>
+                    <div class="Footer__item hide-lg">
+                        <div class="Footer__link Footer-Link"><span>ΓΙΑ ONLINE ΑΓΟΡΕΣ</span><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_arrow_footer"></use></svg></div>
+                        <div class="Footer__submenu">
+                            <div class="Footer__subitem">
+                                <p>T: 216 5000 162</p>
+                            </div>
+                            <div class="Footer__subitem">
+                                <p>E: support@attrattivo.gr</p>
+                            </div>
+                            <div class="Footer__subitem">
+                                <p>Δευτέρα-Παρασκευή</p>
+                            </div>
+                            <div class="Footer__subitem">
+                                <p>09:00-16:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Footer__item">
+                        <div class="Footer__link Footer-Link"><span>ΓΙΑ ΓΕΝΙΚΕΣ ΠΛΗΡΟΦΟΡΙΕΣ</span><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_arrow_footer"></use></svg></div>
+                        <div class="Footer__submenu">
+                            <div class="Footer__subitem">
+                                <p>T: 210 2853813</p>
+                            </div>
+                            <div class="Footer__subitem">
+                                <p>E: info@attrattivo.gr</p>
+                            </div>
+                            <div class="Footer__subitem">
+                                <p>Δευτέρα-Παρασκευή</p>
+                            </div>
+                            <div class="Footer__subitem">
+                                <p>09:00-16:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Footer__item hide-lg">
+                        <div class="Footer__link Footer-Link"><span>Follow us</span><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_arrow_footer"></use></svg></div>
+                        <div class="Footer__submenu">
+                            <div class="Footer__subitem">
+                                <div class="Footer__socials"><a class="Footer__social-link" href="#" target="_blank"><svg><use xlink:href="assets/images/icon.svg#icon_fb"></use></svg></a><a class="Footer__social-link" href="#" target="_blank"><svg><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg></a><a class="Footer__social-link" href="#" target="_blank"><svg><use xlink:href="assets/images/icon.svg#icon_youtube"></use></svg></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="subscribe-form Footer__subscribe-form" action="#" method="post" data-parsley-validate="data-parsley-validate">
+                    <p class="subscribe-form__title">ΘΕΣ ΠΕΡΙΣΣΟΤΕΡΑ;</p>
+                    <p class="subscribe-form__subtitle hide-lg">Meine enhmeρωμενοσ και κερδισε 10% στην πρωτη σου παραγγελια</p>
+                    <div class="subscribe-form__inputbox"><input class="subscribe-form__input" type="email" name="email" required="required" placeholder="Email Adress" /><button class="subscribe-form__button" type="submit">Εγγραφη</button></div>
+                    <div class="subscribe-form__checkbox"><label class="checkradio checkradio_light checkradio_radio"><input class="checkradio__input" name="agree" value="agree" type="checkbox" required="required" /><span class="checkradio__box"></span><span class="checkradio__content">Συμφωνώ με τους όρους και τις προυποθέσεις</span></label></div>
+                </form>
+            </div>
+        </div>
+        <div class="Footer__bottom">
+            <div class="container">
+                <p class="Footer-Copyright hide-lg">Developed & designed by <a href="#" target="_blank">Mageguide</a></p>
+                <div class="Footer__payment-systems"><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/american-express.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/dinners-club.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/securecode.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/maestro-pay-logo.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/visa.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/mastercard.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/paypal-logo.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/american-express.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/dinners-club.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/securecode.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/maestro-pay-logo.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/visa.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/mastercard.svg" /></a><a class="Footer__payment-system" href="#"><img src="assets/images/payment-systems/paypal-logo.svg" /></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="burger"><svg class="burger__close js-burger-close"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+        <div class="burger__background js-burger-close"></div>
+        <div class="burger__wrapper">
+            <div class="burger__container">
+                <div class="burger__dropdowns">
+                    <div class="burger__dropdown-wrapper">
+                        <div class="burger__dropdown-button js-dropdown-toggle"><span>Greek</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                        <div class="js-dropdown dropdown burger__dropdown-content"><a class="dropdown__link" href="#">Greek</a><a class="dropdown__link" href="#">English</a><a class="dropdown__link" href="#">Italian</a></div>
+                    </div>
+                    <div class="burger__dropdown-wrapper">
+                        <div class="burger__dropdown-button js-dropdown-toggle"><span>Euro</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                        <div class="js-dropdown dropdown burger__dropdown-content"><a class="dropdown__link" href="#">Euro</a><a class="dropdown__link" href="#">USD</a></div>
+                    </div>
+                </div>
+                <div class="burger-menu">
+                    <div class="burger-menu__screen is-active" data-burger-screen="main">
+                        <div class="burger-menu__main-items"><a class="burger-menu__main-item" href="#"><span>NEEΣ ΑΦΙΞΕΙΣ</span></a>
+                            <div class="burger-menu__main-item" data-burger-target-screen="menu_1"><span>ΡΟΥΧΑ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_burger"></use></svg></div>
+                            <div class="burger-menu__main-item" data-burger-target-screen="menu_2"><span>ΑΞΕΣΟΥΑΡ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_burger"></use></svg></div><a class="burger-menu__main-item" href="#"><span>ΠΑΠΟΥΤΣΙΑ</span></a>
+                            <div class="burger-menu__main-item" data-burger-target-screen="menu_1"><span>INSPIRATION</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_burger"></use></svg></div><a class="burger-menu__main-item" href="#"><span>OUTLET</span></a>
+                        </div>
+                    </div>
+                    <div class="burger-menu__screen" data-burger-screen="menu_1">
+                        <div class="burger-menu__header"><svg class="burger-menu__back" data-burger-target-screen="main"><use xlink:href="assets/images/icon.svg#icon_arrow_left_light"></use></svg>
+                            <p class="burger-menu__title">ΡΟΥΧΑ</p>
+                        </div>
+                        <div class="burger-menu__links"><a class="burger-menu__link" href="#"><span>Όλα τα ρούχα</span></a><a class="burger-menu__link" href="#"><span>Φορέματα</span></a><a class="burger-menu__link" href="#"><span>Φούστες</span></a><a class="burger-menu__link" href="#"><span>Πουκάμισα</span></a><a class="burger-menu__link" href="#"><span>Τουνίκ</span></a><a class="burger-menu__link" href="#"><span>Παντελόνια</span></a><a class="burger-menu__link" href="#"><span>Jeans</span></a><a class="burger-menu__link" href="#"><span>Oλόσωμες φόρμες</span></a>
+                            <div class="burger-menu__link" data-burger-target-screen="submenu_1"><span>Beachwear</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_left_light"></use></svg></div><a class="burger-menu__link" href="#"><span>Mπλούζες</span></a><a class="burger-menu__link" href="#"><span>Τοπ</span></a><a class="burger-menu__link" href="#"><span>Πλεκτά</span></a><a class="burger-menu__link" href="#"><span>Μπουφάν</span></a><a class="burger-menu__link" href="#"><span>Κολάν</span></a><a class="burger-menu__link" href="#"><span>Basics</span></a><a class="burger-menu__link" href="#"><span>Ζακέτες - Μπολερό</span></a><a class="burger-menu__link" href="#"><span>Κιμονό</span></a><a class="burger-menu__link" href="#"><span>Σακάκια - Γιλέκα</span></a>
+                            <div class="burger-menu__link" data-burger-target-screen="submenu_2"><span>Πανωφόρια</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_left_light"></use></svg></div><a class="burger-menu__link" href="#"><span>Σορτς</span></a>
+                        </div>
+                    </div>
+                    <div class="burger-menu__screen" data-burger-screen="menu_2">
+                        <div class="burger-menu__header"><svg class="burger-menu__back" data-burger-target-screen="main"><use xlink:href="assets/images/icon.svg#icon_arrow_left_light"></use></svg>
+                            <p class="burger-menu__title">ΑΞΕΣΟΥΑΡ</p>
+                        </div>
+                        <div class="burger-menu__links"><a class="burger-menu__link" href="#"><span>Όλα τα ρούχα</span></a><a class="burger-menu__link" href="#"><span>Φορέματα</span></a><a class="burger-menu__link" href="#"><span>Φούστες</span></a></div>
+                    </div>
+                    <div class="burger-menu__screen" data-burger-screen="menu_3">
+                        <div class="burger-menu__header"><svg class="burger-menu__back" data-burger-target-screen="main"><use xlink:href="assets/images/icon.svg#icon_arrow_left_light"></use></svg>
+                            <p class="burger-menu__title">ΠΡΟΣΦΟΡΕΣ</p>
+                        </div>
+                        <div class="burger-menu__links"><a class="burger-menu__link" href="#"><span>Όλα τα ρούχα</span></a><a class="burger-menu__link" href="#"><span>Φορέματα</span></a><a class="burger-menu__link" href="#"><span>Φούστες</span></a></div>
+                    </div>
+                    <div class="burger-menu__screen" data-burger-screen="submenu_1">
+                        <div class="burger-menu__header"><svg class="burger-menu__back" data-burger-target-screen="menu_1"><use xlink:href="assets/images/icon.svg#icon_arrow_left_light"></use></svg>
+                            <p class="burger-menu__title">Beachwear</p>
+                        </div>
+                        <div class="burger-menu__links"><a class="burger-menu__link" href="#"><span>μαγιο</span></a><a class="burger-menu__link" href="#"><span>ρουχα παραλιας</span></a></div>
+                    </div>
+                    <div class="burger-menu__screen" data-burger-screen="submenu_2">
+                        <div class="burger-menu__header"><svg class="burger-menu__back" data-burger-target-screen="menu_1"><use xlink:href="assets/images/icon.svg#icon_arrow_left_light"></use></svg>
+                            <p class="burger-menu__title">πανωφόρια</p>
+                        </div>
+                        <div class="burger-menu__links"><a class="burger-menu__link" href="#"><span>παλτό</span></a><a class="burger-menu__link" href="#"><span>καμπαρτίνες</span></a></div>
+                    </div>
+                </div>
+                <div class="burger-occassion">
+                    <p class="burger-occassion__title">SHOP BY OCCASSION</p>
+                    <div class="burger-occassion__wrapper js-burger-scrollbar">
+                        <div class="burger-occassion__items"><a class="burger-occassion__item" href="#"><span class="burger-occassion__image"><img src="assets/images/occassion/1.jpg" /></span>
+                                <p class="burger-occassion__text">Going out</p>
+                            </a><a class="burger-occassion__item" href="#"><span class="burger-occassion__image"><img src="assets/images/occassion/2.jpg" /></span>
+                                <p class="burger-occassion__text">Office look</p>
+                            </a><a class="burger-occassion__item" href="#"><span class="burger-occassion__image"><img src="assets/images/occassion/3.jpg" /></span>
+                                <p class="burger-occassion__text">Festival</p>
+                            </a><a class="burger-occassion__item" href="#"><span class="burger-occassion__image"><img src="assets/images/occassion/4.jpg" /></span>
+                                <p class="burger-occassion__text">Little black dress</p>
+                            </a><a class="burger-occassion__item" href="#"><span class="burger-occassion__image"><img src="assets/images/occassion/1.jpg" /></span>
+                                <p class="burger-occassion__text">Best sellers</p>
+                            </a></div>
+                    </div>
+                </div>
+                <div class="burger__items"><a class="burger__item" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_user"></use></svg><span>Σύνδεση / Εγγραφή</span></a><a class="burger__item" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_pin"></use></svg><span>Καταστήματα</span></a><a class="burger__item" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_call"></use></svg><span>Επικοινωνία</span></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="popups">
+        <div class="popup" id="popup-login"><svg class="popup__close" data-fancybox-close=""><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+            <div class="popup__wrapper">
+                <div class="popup__content">
+                    <div class="popup__links"><button class="popup__link is-active" type="button" data-login-target="signIn">ΣΥΝΔΕΣΗ</button><button class="popup__link" type="button" data-login-target="signUp">ΕΓΓΡΑΦΗ</button></div>
+                    <div class="popup__forms">
+                        <form class="popup__form is-active-passive is-active" action="#" method="post" data-login-form="signIn" data-parsley-validate="data-parsley-validate">
+                            <div class="popup__form-wrapper">
+                                <div class="inputbox">
+                                    <p class="inputbox__label">email</p><input class="input" type="email" name="email" placeholder="example@gmail.com" required="required" />
+                                </div>
+                                <div class="inputbox">
+                                    <p class="inputbox__label">κωδικοσ</p><input class="input" type="password" name="password" placeholder="password123" required="required" />
+                                </div>
+                                <div class="inputbox inputbox_checkbox"><label class="checkradio"><input class="checkradio__input" name="checkbox1" value="checkbox1" type="checkbox" /><span class="checkradio__box"></span><span class="checkradio__content">Keep me sign in</span></label></div>
+                                <div class="inputbox inputbox_button"><button class="Button" type="submit">ΣΥΝΔΕΣΗ</button></div>
+                                <div class="inputbox inputbox_final">
+                                    <div class="form-final">
+                                        <p class="form-final__text">Ξέχασες τον κωδικό σου?</p>
+                                        <p class="form-final__text">Δεν έχεις λογαριασμό? <a href="#" data-form-target="signUp">Eγγραφή</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="popup__form" action="#" method="post" data-login-form="signUp" data-parsley-validate="data-parsley-validate">
+                            <div class="popup__form-wrapper">
+                                <div class="inputbox">
+                                    <p class="inputbox__label">email</p><input class="input" type="email" name="email" placeholder="example@gmail.com" required="required" />
+                                </div>
+                                <div class="inputbox">
+                                    <p class="inputbox__label">ONOMA</p><input class="input" type="text" name="firstName" placeholder="Μαρία" required="required" />
+                                </div>
+                                <div class="inputbox">
+                                    <p class="inputbox__label">EΠΙΘΕΤΟ</p><input class="input" type="text" name="lastName" placeholder="Παπαδοπούλου" required="required" />
+                                </div>
+                                <div class="inputbox">
+                                    <p class="inputbox__label">ΚΩΔΙΚΟΣ</p><input class="input" type="password" name="password" placeholder="password123" required="required" id="password1" />
+                                </div>
+                                <div class="inputbox">
+                                    <p class="inputbox__label">ΕΠΙΒΕΒΑΙΩΣΗ ΚΩΔΙΚΟΥ</p><input class="input" type="password" name="passwordCheck" placeholder="password123" required="required" data-parsley-equalto="#password1" id="password2" />
+                                </div>
+                                <div class="inputbox inputbox_checkbox inputbox_checkbox_big-margin"><label class="checkradio"><input class="checkradio__input" name="checkbox1" value="checkbox1" type="checkbox" required="required" /><span class="checkradio__box"></span><span class="checkradio__content">Αποδέχομαι τους όρους και τις προυποθέσεις</span></label></div>
+                                <div class="inputbox inputbox_checkbox"><label class="checkradio"><input class="checkradio__input" name="checkbox2" value="checkbox2" type="checkbox" required="required" /><span class="checkradio__box"></span><span class="checkradio__content">Εγγραφή στο newsletter</span></label></div>
+                                <div class="inputbox inputbox_button"><button class="Button" type="submit">ΕΓΓΡΑΦΗ</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="popup__images"><img src="assets/images/login/1.jpg" />
+                    <div class="popup__info">
+                        <div class="popup__info-wrapper">
+                            <p class="popup__info-title">Eπωφελείσαι από</p>
+                            <ul class="popup__info-list">
+                                <li class="popup__info-item"><svg><use xlink:href="assets/images/icon.svg#icon_tick_simple"></use></svg><span>Γρήγορο checkout</span></li>
+                                <li class="popup__info-item"><svg><use xlink:href="assets/images/icon.svg#icon_tick_simple"></use></svg><span>Προσωποποιημένες προτάσεις</span></li>
+                                <li class="popup__info-item"><svg><use xlink:href="assets/images/icon.svg#icon_tick_simple"></use></svg><span>Wishlists</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-popups">
+        <div class="bottom-popup" id="popup-size">
+            <div class="bottom-popup__popup">
+                <div class="popup-size">
+                    <p class="popup-size__title">Επέλεξε το μέγεθός σου</p>
+                    <div class="popup-size__items"><label class="popup-size__size"><input class="popup-size__input" type="radio" value="es-6" name="size_popup" disabled="disabled" /><span class="popup-size__box">es-6</span></label><label class="popup-size__size"><input class="popup-size__input" type="radio" value="μ-10" name="size_popup" checked="checked" /><span class="popup-size__box">μ-10</span></label><label class="popup-size__size"><input class="popup-size__input" type="radio" value="l-12" name="size_popup" /><span class="popup-size__box">l-12</span></label><label class="popup-size__size"><input class="popup-size__input" type="radio" value="xl-14" name="size_popup" /><span class="popup-size__box">xl-14</span></label></div>
+                    <div class="popup-size__link"><a href="#">size guide</a></div><a class="Button popup-size__button" href="#">προσθηκη στο καλαθι</a>
+                </div>
+            </div>
+        </div>
+        <div class="popup-preview">
+            <div class="popup-preview__popup">
+                <div class="popup-preview__head">
+                    <p class="popup-preview__title">ΠΡΟΣΤΕΘΗΚΕ ΣΤΟ ΚΑΛΑΘΙ</p><svg class="popup-preview__close js-popup-minicart-close"><use xlink:href="assets/images/icon.svg#icon_close_bold"></use></svg>
+                </div>
+                <div class="popup-preview__item">
+                    <div class="CartItem CartItem_static">
+                        <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/1.jpg" /></div>
+                        <div class="CartItem__content">
+                            <div class="CartItem__title-wrapper">
+                                <p class="CartItem__title CartItem-Heading">φορεμα ασυμμετρο με βολαν</p>
+                            </div>
+                            <div class="CartItem__row">
+                                <div class="CartItem__items">
+                                    <div class="CartItem__item"><span>Colour:</span><span>multicolor</span></div>
+                                    <div class="CartItem__item"><span>Size:</span><span>S-8</span></div>
+                                    <div class="CartItem__item"><span>Qty:</span><span>1</span></div>
+                                </div>
+                            </div>
+                            <div class="CartItem__prices CartItem-Price">
+                                <div class="CartItem__price">129,90 €</div>
+                            </div>
+                        </div>
+                    </div>
+                </div><button class="Button popup-preview__button js-popup-minicart-close">ολοκληρωση παραγγελιασ</button>
+            </div>
+        </div>
+    </div>
+    <div class="CartOverlay">
+        <div class="CartOverlay__header">
+            <p class="CartOverlay__title">SHOPPING CART</p><svg class="CartOverlay__close js-side-cart-close"><use xlink:href="assets/images/icon.svg#icon_close_bold"></use></svg>
+        </div>
+        <div class="CartOverlay__items">
+            <div class="CartItem CartItem_small CartOverlay__item">
+                <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/1.jpg" /></div>
+                <div class="CartItem__content">
+                    <div class="CartItem__title-wrapper">
+                        <p class="CartItem__title CartItem-Heading">φορεμα ασυμμετρο με βολαν</p>
+                    </div>
+                    <div class="CartItem__row">
+                        <div class="CartItem__items">
+                            <div class="CartItem__item"><span>Colour:</span><span>multicolor</span></div>
+                            <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
+                                        <option value="s-8" selected="selected">s-8</option>
+                                        <option value="s-9">s-9</option>
+                                        <option value="s-10">s-10</option>
+                                    </select></span></div>
+                            <div class="CartItem__item"><span>Qty:</span><span>
+                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                </span></div>
+                        </div>
+                    </div>
+                    <div class="CartItem__prices CartItem-Price">
+                        <div class="CartItem__price">129,90 €</div>
+                    </div>
+                    <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                        <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
+                        <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+            <div class="CartItem CartItem_small CartOverlay__item">
+                <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/2.jpg" /></div>
+                <div class="CartItem__content">
+                    <div class="CartItem__title-wrapper">
+                        <p class="CartItem__title CartItem-Heading">ΖΥΠ ΚΥΛΟΤ ΜΕ ΥΦΑΣΜΑΤΙΝΗ ΖΩΝΗ</p>
+                    </div>
+                    <div class="CartItem__row">
+                        <div class="CartItem__items">
+                            <div class="CartItem__item"><span>Colour:</span><span>red</span></div>
+                            <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
+                                        <option value="s-8" selected="selected">s-8</option>
+                                        <option value="s-9">s-9</option>
+                                        <option value="s-10">s-10</option>
+                                    </select></span></div>
+                            <div class="CartItem__item"><span>Qty:</span><span>
+                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                </span></div>
+                        </div>
+                    </div>
+                    <div class="CartItem__prices CartItem-Price">
+                        <div class="CartItem__price">40,00 €</div>
+                        <div class="CartItem__price CartItem__price_old"><span>129,99 €</span><span>(-30%)</span></div>
+                    </div>
+                    <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                        <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
+                        <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+            <div class="CartItem CartItem_small CartOverlay__item">
+                <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/3.jpg" /></div>
+                <div class="CartItem__content">
+                    <div class="CartItem__title-wrapper">
+                        <p class="CartItem__title CartItem-Heading">ΜΠΛΟΥΖΑ ΜΕ ΤΙΡΑΝΤΕΣ</p>
+                    </div>
+                    <div class="CartItem__row">
+                        <div class="CartItem__items">
+                            <div class="CartItem__item"><span>Colour:</span><span>black</span></div>
+                            <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
+                                        <option value="s-8" selected="selected">s-8</option>
+                                        <option value="s-9">s-9</option>
+                                        <option value="s-10">s-10</option>
+                                    </select></span></div>
+                            <div class="CartItem__item"><span>Qty:</span><span>
+                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                </span></div>
+                        </div>
+                    </div>
+                    <div class="CartItem__prices CartItem-Price">
+                        <div class="CartItem__price">19,90 €</div>
+                    </div>
+                    <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                        <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
+                        <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="CartOverlay__info">
+            <div class="CartOverlay__info-section">
+                <div class="CartOverlay__info-item CartOverlay-Tax">
+                    <p class="CartOverlay__info-title">αξια παραγγελιασ</p>
+                    <p class="CartOverlay__info-value">189,90 €</p>
+                </div>
+                <div class="CartOverlay__info-item CartOverlay-Tax">
+                    <p class="CartOverlay__info-title">μεταφορικα</p>
+                    <p class="CartOverlay__info-value CartOverlay__info-value_red">δωρεαν</p>
+                </div>
+            </div>
+            <div class="CartOverlay__info-section">
+                <div class="CartOverlay__info-item CartOverlay-Total">
+                    <p class="CartOverlay__info-title">συνολο</p>
+                    <p class="CartOverlay__info-value CartOverlay__info-value_summ">189,90 €</p>
+                </div>
+            </div>
+        </div>
+        <div class="CartOverlay__buttons"><a class="Button CartOverlay__button CartOverlay-CartButton" href="#">ολοκληρωση παραγγελιασ</a><a class="Button Button_style_light CartOverlay__button CartOverlay-CartButton" href="#">Συνεχεια αγορων</a></div>
+    </div>
+    <script src="assets/scripts/app.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,9 +1,0 @@
-.hot-now {
-  display: block;
-
-  &:not(:first-child) {
-    @include rule(margin-top, (xl: 100px, lg: 43px));
-  }
-
-  $b: &;
-}
