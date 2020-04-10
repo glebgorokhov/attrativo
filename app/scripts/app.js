@@ -38,6 +38,7 @@ import {bottomPopup} from "../components/bottom-popup/bottom-popup";
 import {button} from "../blocks/button/button";
 import {popupPreview} from "../components/popup-preview/popup-preview";
 import {sideCart} from "../components/side-cart/side-cart";
+import {sloganSlider} from "../components/slogan-slider/slogan-slider";
 
 const $ = window.$;
 
@@ -80,5 +81,6 @@ $(() => {
   button();
   popupPreview();
   sideCart();
+  sloganSlider();
 });
 /* eslint-enable */

@@ -1,10 +1,13 @@
 mixin girls()
   +b.girls&attributes(attributes)
     .container
-      +e.header
-        +triangle-heading('h2').__heading ALE GIRLS
-        +e.P.text Be inspired by the outfits of our <b>#ALEGIRLS</b>
+      +e.H2.heading @attrattivo_official
 
+    +e.content
+      +e.texts
+        .container
+          a(href="#") @Attrattivo_official
+          span Good vibes only!
       +e.slider.swiper-container.js-slider-girls
         .swiper-wrapper
           each item in getData('girls')
@@ -14,8 +17,9 @@ mixin girls()
               +e.P.profile
                 a(href="#" target="_blank")!= item.text
 
+    .container
       +e.footer.hide-lg
-        +e.A.link(href="#") Δείτε όλη την gallery
+        +button()(href="#")._style_light Δείτε όλη την gallery
 
 
 mixin ui-kit-girls()

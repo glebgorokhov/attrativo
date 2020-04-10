@@ -3,22 +3,38 @@ mixin menu()
     each item in ["menu-1", "menu-2", "menu-3"]
       +e.wrapper(data-menu=item)
         .container
-          +e.image._1
-            img(src="assets/images/menu/1.jpg" alt="@@")
+          +e.main-links
+            each item in getData('menu').mainLinks
+              +e.A.main-link(class=item.class, href=item.link)!= item.text
 
-          each menu in getData('menu')
-            +e.UL.items(class=menu.class)
-              each item in menu.items
-                +e.LI.item
-                  +e.A.link(class=item.class)!= item.text
-                  if item.submenu
-                    +e.UL.submenu
-                      each subitem in item.submenu
-                        +e.LI.subitem
-                          +e.A.link(class=subitem.class)!= subitem.text
+          +e.section
+            +e.section-title KATHΓΟΡΙΕΣ
+            +e.section-content
+              each menu in getData('menu').items
+                +e.UL.items(class=menu.class)
+                  each item in menu.items
+                    +e.LI.item
+                      +e.A.link(class=item.class)!= item.text
+                      if item.submenu
+                        +e.UL.submenu
+                          each subitem in item.submenu
+                            +e.LI.subitem
+                              +e.A.link(class=subitem.class)!= subitem.text
 
-          +e.image._2
-            img(src="assets/images/menu/2.jpg" alt="@@")
+          +e.section
+            +e.section-title SHOP BY OCCASSION
+            +e.section-content
+              each item in getData('menu').occassion
+                +e.A.occassion-item(href="#")
+                  +e.occassion-image
+                    img(src=item.image)
+                  +e.occassion-text!= item.text
+
+          +e.images
+            each item in getData('menu').images
+              div
+                img(src=item alt="@@")
+
 
 
 mixin ui-kit-menu()

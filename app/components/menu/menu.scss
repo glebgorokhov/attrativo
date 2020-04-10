@@ -7,16 +7,144 @@
 
   $b: &;
 
+  // Main-links
+
+  &__main-links {
+    display: block;
+  }
+
+  &__main-link {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: .06em;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+
+    &_red {
+      color: #c92c52;
+    }
+  }
+
+  // Section
+
+  &__section {
+    display: block;
+  }
+
+  &__section-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: .06em;
+    margin-bottom: 14px;
+
+    &::after {
+      content: '';
+      display: block;
+      margin-top: 4px;
+      width: 71px;
+      height: 1px;
+      background: black;
+    }
+  }
+
+  // Occassion
+
+  &__occassion-item {
+    display: flex;
+    align-items: center;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__occassion-image {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    margin-right: 8px;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__occassion-text {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: .06em;
+  }
+
+  // Images
+
+  &__images {
+    width: 277px;
+    height: 240px;
+    position: relative;
+
+    div {
+      position: absolute;
+      overflow: hidden;
+
+      &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+        width: calc(50% - 4px);
+      }
+
+      &:nth-child(1) {
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        right: 0;
+        height: calc(50% - 4px);
+      }
+
+      &:nth-child(2) {
+        top: 0;
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  // Wrapper
+
   &__wrapper {
     display: none;
-    padding: 25px 0;
+    padding: 30px 0;
     transition: opacity $ease-main;
     opacity: 0;
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
-    background: rgba(251, 251, 251, .9);
+    background: white;
+    border-bottom: 1px solid #dcdcdc;
 
     &.is-active {
       opacity: 1;
@@ -25,46 +153,22 @@
 
   .container {
     display: flex;
+    justify-content: space-between;
+    max-width: 1420px;
   }
 
   &__items {
 
     &_cols {
       column-count: 3;
-      column-gap: 68px;
-    }
-
-    &:not(:first-child) {
-      margin-left: 75px;
-    }
-
-    & + & {
-      margin-left: 91px;
-    }
-  }
-
-  &__image {
-    position: relative;
-    overflow: hidden;
-    font-size: 0;
-    margin-top: 4px;
-
-    img {
-      height: 183px;
-    }
-
-    &_2 {
-
-      &:not(:first-child) {
-        margin-left: 24px;
-      }
+      column-gap: 40px;
     }
   }
 
   &__item, &__submenu, &__subitem {
 
     &:not(:first-child) {
-      margin-top: 6px;
+      margin-top: 11px;
     }
   }
 
@@ -73,24 +177,9 @@
     line-height: 15px;
     letter-spacing: .06em;
     text-transform: capitalize;
-    color: $color-grey-10;
+    color: black;
     transition: opacity $ease-main;
-
-    &_title {
-      font-weight: 700;
-      text-transform: uppercase;
-      color: black;
-    }
-
-    &_special {
-      font-weight: 600;
-      text-transform: uppercase;
-      color: black;
-    }
-
-    &_red {
-      color: $color-red;
-    }
+    display: block;
 
     &:hover {
       opacity: .5;
@@ -98,17 +187,17 @@
   }
 
   &__subitem {
-    padding-left: 18px;
+    padding-left: 15px;
     position: relative;
 
     &::before {
       content: '';
-      width: 5px;
-      height: 7px;
+      width: 4px;
+      height: 9px;
       background-image: url('../images/menu__item_arrow.svg');
       background-size: 100% 100%;
       position: absolute;
-      left: 8px;
+      left: 6px;
       top: 0;
       bottom: 0;
       margin: auto;

@@ -46,42 +46,38 @@
     [
       {
         "type": "icon",
-        "icon": "search",
-        "class": "hide-lg",
+        "icon": "search.svg",
         "link": "#"
       },
       {
         "type": "text",
-        "text": "SEARCH"
+        "text": "Aναζήτηση",
+        "textClass": "hide-lg"
       }
     ],
     [
       {
-        "type": "icon",
-        "icon": "account",
-        "iconClass": "show-lg",
-        "class": "js-fancybox",
+        "type": "text",
+        "text": "Σύνδεση / Εγγραφή",
+        "class": "js-fancybox hide-lg",
         "link": "#popup-login"
       },
       {
-        "type": "text",
-        "text": "ACCOUNT"
+        "type": "icon",
+        "icon": "arrow_down.svg"
       }
     ],
     [
       {
-        "type": "text",
-        "text": "CART",
-        "link": "cart.html",
-        "class": "js-side-cart-open"
-      },
-      {
         "type": "icon",
-        "icon": "cart"
+        "icon": "bag.png",
+        "class": "js-side-cart-open",
+        "link": "cart.html"
       },
       {
-        "type": "mobileText",
-        "mobileText": "(<b>1</b>)"
+        "type": "text",
+        "text": "(0)",
+        "textClass": "is-cart"
       }
     ]
   ]

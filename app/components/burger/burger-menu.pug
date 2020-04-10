@@ -11,7 +11,7 @@ mixin burger-menu()
                 +e(item.link ? 'a' : 'div').main-item(href=item.link, data-burger-target-screen=item.targetScreen)
                   span!= item.text
                   if item.targetScreen
-                    +icon('arrow_right')
+                    +icon('arrow_right_burger')
           default
             +e.header
               +icon('arrow_left_light').__back(data-burger-target-screen=screen.previousID)

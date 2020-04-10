@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(239, 239, 239, .85);
+  background: rgba(black, .65);
   z-index: 100000;
   transition: opacity $ease-main;
   opacity: 0;
@@ -28,7 +28,7 @@
   &__close {
     width: 14px;
     height: 14px;
-    fill: black;
+    fill: white;
     transition: opacity $ease-main;
     cursor: pointer;
     position: absolute;
@@ -64,7 +64,7 @@
 
   &__dropdowns {
     display: flex;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid black;
   }
 
   &__dropdown-wrapper {
@@ -72,7 +72,7 @@
     width: 50%;
 
     &:not(:first-child) {
-      border-left: 1px solid $color-border;
+      border-left: 1px solid black;
     }
   }
 
@@ -96,9 +96,9 @@
     }
 
     svg {
-      width: 7px;
-      height: 5px;
-      margin-left: 8px;
+      width: 9px;
+      height: 9px;
+      margin-left: 4px;
       transition: transform $ease-main;
     }
 
@@ -115,6 +115,7 @@
 
   &__items {
     padding: 0;
+    margin-top: 24px;
   }
 
   &__item {

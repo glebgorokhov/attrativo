@@ -6,6 +6,7 @@
   $b: &;
 
   // Top
+
   &__top {
     border-top: 1px solid black;
 
@@ -27,7 +28,7 @@
   &__top-menu-link {
     box-sizing: border-box;
     line-height: 19px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
@@ -57,10 +58,11 @@
 
     &:not(:first-child) {
       @include screen(lg) {
-        border-left: 1px solid #D4D4D4;
+        border-left: 1px solid #d4d4d4;
       }
 
       @include screen(lg, min) {
+
         &::before {
           content: '';
           height: 19px;
@@ -74,6 +76,7 @@
   }
 
   // Middle
+
   &___contacts {
     display: block;
   }
@@ -96,7 +99,7 @@
       font-weight: bold;
       font-size: 14px;
       line-height: 19px;
-      letter-spacing: 0.06em;
+      letter-spacing: .06em;
       color: white;
       margin-right: 15px;
       flex-shrink: 0;
@@ -105,20 +108,20 @@
     p {
       font-size: 12px;
       line-height: 16px;
-      letter-spacing: 0.08em;
-      color: #C2C2C2;
+      letter-spacing: .08em;
+      color: #c2c2c2;
     }
 
     &:not(:first-child) {
       margin-top: 3px;
 
       a, svg {
-        color: #ACACAC;
-        fill: #ACACAC;
+        color: #acacac;
+        fill: #acacac;
       }
 
       p {
-        color: #ACACAC;
+        color: #acacac;
       }
     }
   }
@@ -156,6 +159,7 @@
   }
 
   &__item {
+
     &:not(:first-child) {
       @include rule(margin-left, (xl: 50px, lg: 0));
       @include rule(margin-top, (lg: 24px));
@@ -166,7 +170,7 @@
     @include rule(font-size, (xl: 14px, lg: 11px));
     @include rule(line-height, (xl: 19px, lg: 15px));
 
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -186,6 +190,7 @@
     }
 
     &.is-active {
+
       svg {
         transform: rotate(180deg);
       }
@@ -208,7 +213,7 @@
   &__subitem {
     font-size: 12px;
     line-height: 1.5;
-    letter-spacing: 0.08em;
+    letter-spacing: .08em;
     color: #afafaf;
 
     a {
@@ -265,7 +270,7 @@
   &-Copyright {
     font-size: 12px;
     line-height: 16px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
 
     a {
       transition: opacity $ease-main;
