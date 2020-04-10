@@ -1,0 +1,34 @@
+mixin trendy()
+  +b.trendy&attributes(attributes)
+    .container.container_small
+      +e.P.title BE TRENDY FOR EVERY MOOD
+      +e.items.js-scrollbar
+        +e.wrapper
+          each item in getData('trendy')
+            +e.item
+              +e.A.link(href="#").show-lg
+                +e.image
+                  img(src=item.image)
+                +e.name!= item.text
+
+              +button()._style_light._arrow.__button.hide-lg
+                div
+                  span!= item.text
+                  +icon('arrow_button')
+
+
+mixin ui-kit-trendy()
+  +ui-section
+    +ui-section-head
+      +ui-title Component trendy
+      +ui-path
+        p Component: components/trendy/trendy
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +trendy
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

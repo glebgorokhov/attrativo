@@ -1,0 +1,35 @@
+mixin item-slider-small(data)
+  +b.item-slider-small.js-item-slider-small&attributes(attributes)
+    +e.header
+      +e.P.title
+        block
+
+      +e.arrows.hide-lg
+        +e.arrow._prev.js-arrow-prev
+          +icon('arrow_right_burger')
+        +e.arrow._next.js-arrow-next
+          +icon('arrow_right_burger')
+
+    +e.slider
+      .swiper-container
+        .swiper-wrapper
+          each item in data
+            +product-card(item)._small-slider.__slide.swiper-slide
+
+    +slider-dots.__dots.show-lg
+
+mixin ui-kit-item-slider-small()
+  +ui-section
+    +ui-section-head
+      +ui-title Component item-slider-small
+      +ui-path
+        p Component: components/item-slider-small/item-slider-small
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +item-slider-small(getData('product-cards-small')) NEW & NOW
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

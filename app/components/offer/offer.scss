@@ -1,145 +1,166 @@
 .offer {
   display: block;
+  position: relative;
 
   $b: &;
 
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: #F7F7F7;
+
+    @include rule(right, (xl: calc(50% - 110px), lg: 35px));
+    @include rule(left, (xl: calc((100vw - 1600px) / -2), lg: -20px));
+    @include rule(top, (xl: 77px, lg: 50px));
+
+    @media (max-width: 1720px) {
+      left: -60px;
+    }
+  }
+
   .swiper-container {
     overflow: visible;
+    z-index: 2;
   }
 
-  .swiper-wrapper {
+  // Navigation
+  &__arrow {
+    font-size: 0;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    width: 6px;
+    height: 11px;
 
+    &:hover {
+      opacity: .5;
+    }
+
+    &_prev {
+      transform: rotate(180deg);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  &__slide {
-    @include rule(height, (xl: 830px, lg: 400px));
+  &__dots {
+    height: 33px;
+    justify-content: flex-end !important;
+    padding-right: 50px;
+  }
 
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
     position: relative;
+    z-index: 2;
+  }
+
+  &__pages {
+    margin: 0 28px;
+  }
+
+  // Main
+  &__slide {
     overflow: hidden;
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+
+    @include rule(align-items, (xl: center, lg: flex-end));
+    @include rule(justify-content, (lg: stretch));
+    @include rule(height, (xl: 600px, lg: 426px));
+    @include rule(margin-right, (lg: -20px));
+    @include rule(box-sizing, (lg: border-box));
+    @include rule(padding-left, (lg: 42px));
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+
+    @include rule(background, (lg: white));
+    @include rule(padding, (lg: 17px 20px 19px 17px));
+    @include rule(width, (lg: 100%));
+    @include rule(box-sizing, (lg: border-box));
+  }
+
+  &__image {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+
+    @include rule(left, (xl: 160px, lg: 0));
+    @include rule(bottom, (xl: 0, lg: 20px));
+    @include rule(right, (xl: calc((100vw - 1600px) / -2), lg: 0));
+
+    @media (max-width: 1720px) {
+      right: -60px;
+    }
 
     img {
       @include fill-img;
     }
   }
 
-  &__dots {
-    @include screen('lg', min) {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      white-space: nowrap;
-      padding: 11px 103px 11px 23px;
-      background: rgba(232, 232, 232, .35);
-      z-index: 50;
-      bottom: auto !important;
-      left: auto !important;
-      width: auto !important;
-    }
+  &__title {
+    font-family: $font-second;
+    letter-spacing: 0.06em;
+    display: block;
+    transition: opacity $ease-main;
 
-    @include screen('lg') {
-      position: relative;
-      display: flex;
-      bottom: 0 !important;
-      height: 30px;
-      width: auto;
-      margin: 11px 20px 0;
+    @include rule(font-size, (xl: 60px, lg: 20px));
+    @include rule(line-height, (xl: 75px, lg: 25px));
+
+    &:hover {
+      opacity: .5;
     }
   }
 
-  &__dot {
-    @include screen('lg', min) {
-      display: flex;
-      font-family: $font-main;
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 16px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      position: relative;
-      cursor: pointer;
+  &__text {
+    @include rule(margin-top, (xl: 5px, lg: 0));
+    @include rule(font-size, (xl: 14px, lg: 11px));
+    @include rule(line-height, (xl: 19px, lg: 15px));
 
-      span {
-        transition: font-weight $ease-main, transform $ease-main;
-      }
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #767045;
 
-      &::before {
-        content: '';
-        width: 43px;
-        height: 1px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        background: black;
-        transform: scale3d(0, 1, 1);
-        transform-origin: left;
-        transition: transform $ease-main;
-      }
+    span {
+      background: white;
+    }
+  }
 
-      &.is-active {
+  &__buttons {
+    margin-top: 45px;
+    width: 300px;
+    margin-left: 80px;
+  }
 
-        &::before {
-          transform: scale3d(1, 1, 1);
-        }
+  &__button {
+    display: block;
+    position: relative;
 
-        span {
-          font-weight: 700;
-          transform: translate3d(58px, 0, 0);
-        }
-      }
-
-      &:not(:first-child) {
-        margin-top: 10px;
-      }
+    &:not(:first-child) {
+      margin-top: 10px;
     }
 
-    @include screen('lg') {
-      font-size: 0;
-
-      &::before {
-        content: '';
-        width: 32px;
-        height: 2px;
-        background: $color-grey-6;
-        transition: width $ease-main, background $ease-main;
-        display: block;
-      }
-
-      &:not(:first-child) {
-        margin-left: 6px;
-      }
-
-      span {
-        position: absolute;
-        left: 0;
-        top: 7px;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-        letter-spacing: .06em;
-        text-transform: capitalize;
-        font-family: $font-main;
-        transition: opacity $ease-main, transform $ease-main;
-        opacity: 0;
-        pointer-events: none;
-        transform: translate3d(0, 5px, 0);
-      }
-
-      &.is-active {
-
-        &::before {
-          width: 67px;
-          background: black;
-        }
-
-        span {
-          opacity: 1;
-          pointer-events: all;
-          transform: translate3d(0, 0, 0);
-        }
-      }
+    svg {
+      width: 25px;
+      height: 9px;
+      position: absolute;
+      right: 24px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
     }
   }
 }

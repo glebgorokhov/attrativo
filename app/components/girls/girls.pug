@@ -1,12 +1,16 @@
 mixin girls()
   +b.girls&attributes(attributes)
     .container
-      +e.H2.heading @attrattivo_official
+      +e.H2.heading.hide-lg @attrattivo_official
+      +e.A.main-button(href="#").show-lg
+        +e.IMG.main-button__image(src="assets/images/instagram-big.svg" alt="@@" width="29" height="29")
+        +e.P.main-button__title @attrattivo_official
+        +e.P.main-button__text view the gallery
 
-    +e.content
+    +e.content.hide-lg
       +e.texts
         .container
-          a(href="#") @Attrattivo_official
+          a(href="https://www.instagram.com/attrattivo_official" target="_blank") @Attrattivo_official
           span Good vibes only!
       +e.slider.swiper-container.js-slider-girls
         .swiper-wrapper
@@ -14,13 +18,10 @@ mixin girls()
             +e.card.swiper-slide
               +e.A.image(href="#" target="_blank")
                 img(src=item.image, alt=item.text)
-              +e.P.profile
-                a(href="#" target="_blank")!= item.text
 
-    .container
-      +e.footer.hide-lg
-        +button()(href="#")._style_light Δείτε όλη την gallery
-
+    +e.footer.hide-lg
+      .container
+        +button()(href="#")._style_light.__button ΔΕΙΤΕ ΟΛΗ ΤΗΝ GALLERY
 
 mixin ui-kit-girls()
   +ui-section

@@ -1,7 +1,7 @@
 .Footer {
   display: block;
 
-  @include rule(margin-top, (xl: 45px, lg: 30px));
+  @include rule(margin-top, (xl: 100px, lg: 50px));
 
   $b: &;
 

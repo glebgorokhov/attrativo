@@ -4,10 +4,32 @@ mixin offer()
       .swiper-wrapper
         each slide in getData('offer')
           +e.slide.swiper-slide
-            img(src=slide.image, alt=slide.text)
+            .container
+              +e.wrapper
+                +e.content
+                  +e.A.title(href="#")!= slide.title
+                  +e.P.text
+                    span.hide-lg!= slide.text
+                    span.show-lg!= slide.textMobile
+                  +e.buttons.hide-lg
+                    each item in slide.buttons
+                      +button()(href="#").__button
+                        span!= item.text
+                        if item.arrow
+                          +icon('arrow_button')
+                +e.image
+                  img(src=slide.image, alt="@@")
 
-      +e.dots
-        +e.dot
+    +e.navigation.hide-lg
+      +e.arrow._prev.js-arrow-prev
+        +icon('arrow_right_burger')
+
+      +slider-pages.__pages
+
+      +e.arrow._next.js-arrow-next
+        +icon('arrow_right_burger')
+
+    +slider-dots.__dots.show-lg
 
 mixin ui-kit-offer()
   +ui-section

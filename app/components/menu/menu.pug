@@ -2,7 +2,7 @@ mixin menu()
   +b.menu&attributes(attributes)
     each item in ["menu-1", "menu-2", "menu-3"]
       +e.wrapper(data-menu=item)
-        .container
+        .container.container_small
           +e.main-links
             each item in getData('menu').mainLinks
               +e.A.main-link(class=item.class, href=item.link)!= item.text

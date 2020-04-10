@@ -1,0 +1,132 @@
+.match-point {
+  display: block;
+
+  $b: &;
+
+  &:not(:first-child) {
+    @include rule(margin-top, (xl: 81px, lg: 47px));
+  }
+
+  .container {
+    @include rule(display, (xl: flex, lg: block));
+  }
+
+  &__images {
+    @include rule(display, (lg: flex));
+    @include rule(flex-wrap, (lg: wrap));
+    @include rule(margin, (lg: 0 -20px));
+
+    position: relative;
+    flex: 1;
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+
+    &_1 {
+      @include screen(lg, min) {
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 330px;
+        bottom: 250px;
+      }
+
+      @include screen(lg) {
+        flex: 1;
+        height: 197px;
+        order: 1;
+      }
+    }
+
+    &_2 {
+      @include screen(lg, min) {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: 0;
+        left: 355px;
+        bottom: 55px;
+      }
+
+      @include screen(lg) {
+        width: 100%;
+        height: 215px;
+        order: -1;
+        margin-bottom: 8px;
+      }
+    }
+
+    &_3 {
+      position: absolute;
+      bottom: 0;
+      right: 70px;
+      top: 170px;
+      left: 80px;
+    }
+
+    &_4 {
+      @include screen(lg, min) {
+        display: block;
+        margin-top: 56px;
+        height: 358px;
+        min-width: 320px;
+      }
+
+      @include screen(lg) {
+        flex: 1;
+        height: 197px;
+        margin-right: 8px;
+      }
+    }
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__content {
+    margin-left: 25px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-family: $font-second;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    margin-top: 5px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.06em;
+    margin-top: 5px;
+  }
+
+  &__links {
+    margin-top: 35px;
+  }
+
+  &__link {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.06em;
+    text-decoration: underline;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:not(:first-child) {
+      margin-top: 19px;
+    }
+  }
+}

@@ -33,8 +33,6 @@ mixin product-card(data)
         +icon('heart')
 
     .ProductCard-Content
-      +e.A.button(href="#", class=(data.special ? '_dark' : false)).__button.show-lg χρωματα
-
       +e.texts
         a.ProductCard-Name(href="#")!= data.title
         .ProductCard-Prices

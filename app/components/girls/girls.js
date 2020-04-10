@@ -9,20 +9,15 @@ export function girls () {
       block = $(this);
 
     const mySlider = new Swiper(block, {
-      loop: false,
+      loop: true,
       speed: 500,
       autoplay: false,
-      slidesPerView: 1,
-      spaceBetween: 10,
+      slidesPerView: 'auto',
+      spaceBetween: 0,
       centeredSlides: false,
-      simulateTouch: false,
+      simulateTouch: true,
       roundLengths: true,
       freeMode: false,
-      breakpoints: {
-        1360: {
-          slidesPerView: 5,
-        },
-      },
     });
   });
 }

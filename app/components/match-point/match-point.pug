@@ -1,0 +1,41 @@
+mixin match-point()
+  +b.match-point&attributes(attributes)
+    .container.container_small
+      +e.images
+        +e.image._1
+          img(src="assets/images/match-point/1.jpg" alt="@@")
+
+        +e.image._2
+          img(src="assets/images/match-point/2.jpg" alt="@@")
+
+        +e.image._3.hide-lg
+          img(src="assets/images/match-point/4.jpg" alt="@@")
+
+        +e.image._4.show-lg
+          img(src="assets/images/match-point/3.jpg" alt="@@")
+
+      +e.content.hide-lg
+        +e.P.title MATCH POINT
+        +e.P.subtitle TOTAL OUTFITS FOR YOU
+        +e.links
+          +e.A.link(href="#") SHOP EDITORIAL 2019
+          +e.A.link(href="#") SHOP STYLEGUIDE
+
+        +e.image._4
+          img(src="assets/images/match-point/3.jpg" alt="@@")
+
+mixin ui-kit-match-point()
+  +ui-section
+    +ui-section-head
+      +ui-title Component match-point
+      +ui-path
+        p Component: components/match-point/match-point
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +match-point
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

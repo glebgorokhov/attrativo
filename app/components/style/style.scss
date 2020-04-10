@@ -1,0 +1,96 @@
+.style {
+  display: block;
+
+  $b: &;
+
+  &:not(:first-child) {
+    margin-top: 81px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__images {
+    height: 520px;
+    display: flex;
+    flex: 1;
+    margin-left: calc((100vw - 1600px) / -2);
+
+    @media (max-width: 1720px) {
+      margin-left: -60px;
+    }
+  }
+
+  &__image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__content {
+    margin-left: 20px;
+  }
+
+  &__title {
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0.06em;
+    font-family: $font-second;
+  }
+
+  &__subtitle {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.06em;
+
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+  }
+
+  &__items {
+    display: block;
+
+    &:not(:first-child) {
+      margin-top: 18px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.06em;
+
+    &:hover {
+      text-decoration: underline;
+
+      svg {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    svg {
+      margin-left: 12px;
+      width: 25px;
+      height: 10px;
+      flex-shrink: 0;
+      margin-top: 5px;
+      transform: translate3d(-5px, 0, 0);
+      opacity: 0;
+      transition: transform $ease-main, opacity $ease-main;
+    }
+
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+  }
+}

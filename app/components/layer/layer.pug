@@ -1,0 +1,36 @@
+mixin layer()
+  +b.layer&attributes(attributes)
+    .container
+      +e.left
+        +e.image._1
+          +e.tag AΞΕΣΟΥΑΡ
+          img(src="assets/images/layer/1.jpg")
+
+      +e.right
+        +e.P.title LAYER UP!<br> IT WORTHS A<br> GLANCHE
+        +e.links
+          each item in ["AΞΕΣΟΥΑΡ", "OUTLET"]
+            +e.A.link(href="#")
+              span!= item
+              +icon('arrow_button')
+
+        +e.image._2
+          img(src="assets/images/layer/2.jpg")
+          +e.name
+            span OUTLET
+
+mixin ui-kit-layer()
+  +ui-section
+    +ui-section-head
+      +ui-title Component layer
+      +ui-path
+        p Component: components/layer/layer
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +layer
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

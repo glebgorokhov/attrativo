@@ -4,44 +4,54 @@
   $b: &;
 
   &:not(:first-child) {
-    @include rule(margin-top, (xl: 112px, lg: 32px));
-  }
-
-  &__header {
-    font-size: 0;
-
-    @include rule(text-align, (xl: center, lg: left));
+    @include rule(margin-top, (xl: 90px, lg: 66px));
   }
 
   &__heading {
-    display: inline-block;
+    text-align: center;
+    font-family: $font-second;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0.06em;
   }
 
-  &__text {
-    @include rule(margin-top, (xl: 15px, lg: 20px));
-    @include rule(font-size, (xl: 14px, lg: 12px));
+  &__content {
+    margin-top: 17px;
+  }
 
-    font-family: $font-main;
-    line-height: 1.4;
-    letter-spacing: .06em;
-    text-transform: capitalize;
+  &__texts {
+    background: black;
+    padding: 5px 0;
+    color: white;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.06em;
 
-    b {
-      @include screen('lg', min) {
-        font-weight: 400;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      font-weight: 600;
+      transition: opacity $ease-main;
+
+      &:hover {
+        opacity: .5;
       }
+    }
+
+    span {
+      margin-left: 19px;
     }
   }
 
   &__slider {
-    @include rule(margin-top, (xl: 23px, lg: 7px));
-    @include rule(padding-right, (lg: 110px));
-
-    overflow: visible;
   }
 
   &__card {
-
+    width: 275px !important;
   }
 
   &__image {
@@ -54,37 +64,12 @@
 
     img {
       @include fill-img;
+
+      transition: transform $ease-main;
     }
-  }
 
-  &__profile {
-    @include rule(font-size, (xl: 14px, lg: 12px));
-
-    margin-top: 6px;
-    font-family: $font-main;
-    font-weight: 500;
-    line-height: 17px;
-    letter-spacing: .06em;
-    text-decoration: underline;
-
-    a {
-      transition: opacity $ease-main;
-
-      &:hover {
-        opacity: .5;
-      }
-    }
-  }
-
-  &__link {
-    display: inline-block;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: .06em;
-    transition: opacity $ease-main;
-
-    &:hover {
-      opacity: .5;
+    &:hover img {
+      transform: scale(1.05);
     }
   }
 
@@ -92,5 +77,42 @@
     font-size: 0;
     text-align: center;
     margin-top: 40px;
+  }
+
+  &__button {
+    min-width: 339px;
+  }
+
+  &__main-button {
+    padding: 7px 60px 9px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    display: block;
+
+    &__image {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 15px;
+      margin: auto;
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+    }
+
+    &__text {
+      font-size: 12px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      color: #4C4C4C;
+      margin-top: 7px;
+    }
   }
 }

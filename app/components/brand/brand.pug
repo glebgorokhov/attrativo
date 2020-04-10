@@ -1,0 +1,35 @@
+mixin brand()
+  +b.brand&attributes(attributes)
+    .container.container_small
+      +e.header
+        +e.P.title A FEEL FOR OUR FEMININE BRAND
+        +e.A.button(href="#").show-lg INSPIRATION
+
+      +e.content
+        +e.image._1
+          img(src="assets/images/brand/1.jpg")
+
+        +e.image._2.hide-lg
+          iframe(src="https://www.youtube.com/embed/1WcGRh1X8MQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+        +e.bottom.hide-lg
+          +e.image._3
+            img(src="assets/images/brand/2.jpg")
+
+          +e.stores <b>85</b> attrattivo stores<br> all over the world
+
+mixin ui-kit-brand()
+  +ui-section
+    +ui-section-head
+      +ui-title Component brand
+      +ui-path
+        p Component: components/brand/brand
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +brand
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

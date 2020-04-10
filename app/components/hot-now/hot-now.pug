@@ -3,37 +3,7 @@ mixin hot-now()
 
   +b.hot-now&attributes(attributes)
     .container
-      +e.left.hide-lg
-        +triangle-heading('h2').__heading HOT NOW
-        +e.tabs
-          each tab in data
-            +e.tab(data-tab-target=tab.target, class=(tab.active ? 'is-active' : false))
-              +e.P.title!= tab.title
-
-              if tab.text
-                +e.P.text(class=(tab.active ? 'is-active-passive' : false))!= tab.text
-
-      +e.right.hide-lg
-        each tab in data
-          if tab.target
-            .tabs-content__wrapper(data-tab=tab.target, data-tab-group="hot-now", class=(tab.active ? 'is-active' : false))
-              +e.items
-                each slide in tab.slides
-                  +e.slide
-                    +e.slide-image
-                      img(src=slide.image, alt="@@")
-                    +e.A.button(href="#") SHOP NOW
-
-      +e.slider.show-lg.js-slider-hot-now
-        .swiper-container
-          .swiper-wrapper
-            each tab in data
-              if tab.slides
-                each slide in tab.slides
-                  +e.slide.swiper-slide
-                    +e.slide-image
-                      img(src=slide.image, alt="@@")
-                    +e.A.button(href="#") SHOP NOW
+      +item-slider-small(getData('product-cards-small')) NEW & NOW
 
 mixin ui-kit-hot-now()
   +ui-section

@@ -1,0 +1,21 @@
+mixin slider-pages()
+  +b.slider-pages&attributes(attributes)
+    +e.current 01
+    +e.slash /
+    +e.amount 04
+
+mixin ui-kit-slider-pages()
+  +ui-section
+    +ui-section-head
+      +ui-title Component slider-pages
+      +ui-path
+        p Component: components/slider-pages/slider-pages
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +slider-pages
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

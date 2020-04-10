@@ -1,0 +1,101 @@
+.trendy {
+  @include rule(padding, (xl: 29px 0 38px, lg: 15px 0 0));
+
+  display: block;
+  background: #F8F8F8;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #D5D5D5;
+
+  $b: &;
+
+  &:not(:first-child) {
+    @include rule(margin-top, (xl: 70px, lg: 44px));
+  }
+
+  &__title {
+    @include rule(font-size, (xl: 40px, lg: 20px));
+    @include rule(line-height, (xl: 50px, lg: 25px));
+    @include rule(text-align, (lg: left));
+
+    letter-spacing: 0.06em;
+    color: #4D4D4D;
+    font-family: $font-second;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include rule(padding, (lg: 0 20px 20px));
+
+    &::after {
+      @include screen(lg) {
+        content: '';
+        width: 20px;
+        height: 1px;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__items {
+    @include rule(margin-top, (xl: 22px, lg: 11px));
+    @include rule(margin-left, (lg: -20px));
+    @include rule(margin-right, (lg: -20px));
+  }
+
+  &__item {
+    @include screen(lg, min) {
+      flex: 1;
+    }
+
+    &:not(:first-child) {
+      @include rule(margin-left, (xl: 33px, lg: 20px));
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__image {
+    width: 59px;
+    height: 59px;
+    display: block;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__name {
+    margin-top: 6px;
+    width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.06em;
+    color: #9A9A9A;
+    display: block;
+    text-align: center;
+  }
+
+  .os-theme-dark>.os-scrollbar, .os-theme-light>.os-scrollbar {
+    left: 20px;
+    right: 20px;
+    padding: 0;
+    height: 3px;
+  }
+
+  .os-theme-dark>.os-scrollbar>.os-scrollbar-track>.os-scrollbar-handle {
+    background: #A0A0A0;
+  }
+}

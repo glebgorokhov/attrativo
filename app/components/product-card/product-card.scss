@@ -220,13 +220,12 @@
   }
 
   &-Name {
-    @include rule(font-weight, (xl: 600, lg: 400));
+    @include rule(font-weight, (xl: 600, lg: 300));
     @include rule(font-size, (xl: 12px, lg: 11px));
     @include rule(line-height, (xl: 12px, lg: 14px));
     @include rule(width, (lg: 100%));
     @include rule(white-space, (lg: nowrap));
     @include rule(overflow, (lg: hidden));
-    @include rule(text-align, (lg: center));
     @include rule(text-overflow, (lg: ellipsis));
 
     display: block;
@@ -240,15 +239,13 @@
   }
 
   &-Prices {
-    margin-top: 3px;
+    margin-top: 2px;
     display: flex;
     align-items: center;
-
-    @include rule(justify-content, (lg: center));
   }
 
   &-Price {
-    @include rule(font-size, (xl: 13px, lg: 11px));
+    @include rule(font-size, (xl: 13px, lg: 12px));
     @include rule(font-weight, (lg: 700));
 
     line-height: 11px;
@@ -413,6 +410,29 @@
 
     &_next {
       right: 0;
+    }
+  }
+
+  &_small-slider {
+    @include screen(lg, min) {
+      .ProductCard__favourite, .ProductCard-Content, .ProductCard__sizes {
+        display: none;
+      }
+    }
+
+    @include screen(lg) {
+      .ProductCard__favourite {
+        display: none;
+      }
+
+      .ProductCard__button {
+        display: none;
+      }
+
+      .ProductCard-Content {
+        padding: 10px 0 0 10px;
+        text-align: left;
+      }
     }
   }
 }

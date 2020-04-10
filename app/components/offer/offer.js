@@ -20,17 +20,32 @@ export function offer () {
       centeredSlides: false,
       roundLengths: true,
       freeMode: false,
-      pagination: {
-        el: block.find('.offer__dots'),
-        clickable: true,
-        bulletClass: 'offer__dot',
-        bulletActiveClass: 'is-active',
-        renderBullet: function (index, className) {
-          const text = $(this.slides[index]).find('img').attr('alt');
-
-          return `<div class="${className}">
-            <span>${text}</span>
-          </div>`;
+      navigation: {
+        nextEl: block.find('.js-arrow-next'),
+        prevEl: block.find('.js-arrow-prev'),
+      },
+      breakpoints: {
+        0: {
+          pagination: {
+            el: block.find('.slider-dots'),
+            clickable: true,
+            bulletClass: 'slider-dots__dot',
+            bulletActiveClass: 'is-active',
+          },
+        },
+        1360: {
+          pagination: {
+            el: block.find('.slider-pages'),
+            clickable: true,
+            type: 'custom',
+            renderCustom: function (swiper, current, total) {
+              return `
+            <div class="slider-pages__current">0${current}</div>
+            <div class="slider-pages__slash">/</div>
+            <div class="slider-pages__amount">0${total}</div>  
+          `;
+            }
+          },
         },
       },
     });
