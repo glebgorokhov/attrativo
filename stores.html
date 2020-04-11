@@ -225,113 +225,116 @@
         </div>
     </div>
     <main class="main" role="main">
-        <div class="container hide-lg">
-            <div class="breadcrumbs">
-                <div class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">ΑΡΧΙΚh</a></div>
-                <div class="breadcrumbs__item"><span class="breadcrumbs__link">store locator</span></div>
-            </div>
-        </div>
         <div class="stores" data-shops-url="assets/data/stores.json">
-            <div class="container">
-                <div class="stores__header show-lg">
-                    <div class="container"><a class="stores__back-link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></a>
-                        <p class="stores__header-title">βρειτε το καταστημα σασ</p>
-                    </div>
+            <div class="container container_small">
+                <div class="stores__header">
+                    <p class="stores__title">STORE LOCATOR</p>
                 </div>
                 <div class="stores__left">
-                    <h1 class="stores__title hide-lg">store locator</h1>
-                    <div class="stores__checkboxes hide-lg"><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="1" /><span class="list-checkbox__box">
-                                <p class="list-checkbox__text">ALE</p><span class="list-checkbox__tick"><svg><use xlink:href="assets/images/icon.svg#icon_tick"></use></svg></span>
-                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="2" /><span class="list-checkbox__box">
-                                <p class="list-checkbox__text">ALE CORNERS</p><span class="list-checkbox__tick"><svg><use xlink:href="assets/images/icon.svg#icon_tick"></use></svg></span>
-                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="3" /><span class="list-checkbox__box">
-                                <p class="list-checkbox__text">ALE outlet</p><span class="list-checkbox__tick"><svg><use xlink:href="assets/images/icon.svg#icon_tick"></use></svg></span>
+                    <div class="stores__checkboxes"><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="1" /><span class="list-checkbox__box"><span class="list-checkbox__tick"></span>
+                                <p class="list-checkbox__text">Athens</p>
+                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="2" /><span class="list-checkbox__box"><span class="list-checkbox__tick"></span>
+                                <p class="list-checkbox__text">Thessaloniki</p>
+                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="3" /><span class="list-checkbox__box"><span class="list-checkbox__tick"></span>
+                                <p class="list-checkbox__text">Other cities</p>
+                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="4" /><span class="list-checkbox__box"><span class="list-checkbox__tick"></span>
+                                <p class="list-checkbox__text">Cyprus</p>
+                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="5" /><span class="list-checkbox__box"><span class="list-checkbox__tick"></span>
+                                <p class="list-checkbox__text">Attrattivo corners</p>
+                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="6" /><span class="list-checkbox__box"><span class="list-checkbox__tick"></span>
+                                <p class="list-checkbox__text">Other cities</p>
+                            </span></label><label class="list-checkbox"><input class="list-checkbox__input" name="stores" type="checkbox" value="7" /><span class="list-checkbox__box"><span class="list-checkbox__tick"></span>
+                                <p class="list-checkbox__text">Outlets</p>
                             </span></label></div>
                     <div class="stores__filter">
-                        <div class="inputbox">
-                            <p class="inputbox__label">εΠΙΛΕΞΤΕ ΚΑΤΑΣΤΗΜΑΤΑ ΒΑΣΗ ΠΟΛΗΣ</p><select class="select js-store-select" name="store-filter">
-                                <option value="π.χ. Αθηνα" placeholder="placeholder">π.χ. Αθηνα</option>
+                        <div class="inputbox"><select class="select js-store-select" name="store-filter">
+                                <option value="Eπιλέξτε περιοχή" placeholder="placeholder">Eπιλέξτε περιοχή</option>
                                 <option value="Αθηνα">Αθηνα</option>
                                 <option value="ΜΑΡΟΥΣΙ">ΜΑΡΟΥΣΙ</option>
                                 <option value="ΝΕΑ ΙΩΝΙΑ">ΝΕΑ ΙΩΝΙΑ</option>
-                            </select>
-                        </div>
+                            </select></div>
                     </div>
                     <div class="shop-list stores__list">
                         <ol class="shop-list__list">
                             <li class="shop-list__shop" data-shop-id="0">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">Αθηνα</p>
-                                    <p class="shop-list__text">ΠΑΤΗΣΙΩΝ 150 ΚΑΙ ΑΓ. ΜΕΛΕΤΙΟΥ</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">Αθηνα</p>
+                                        <p class="shop-list__text">ΠΑΤΗΣΙΩΝ 150 ΚΑΙ ΑΓ. ΜΕΛΕΤΙΟΥ</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="shop-list__shop" data-shop-id="1">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
-                                    <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
-                                        THE MALL ATHENS)</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
+                                        <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
+                                            THE MALL ATHENS)</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="shop-list__shop" data-shop-id="2">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
-                                    <p class="shop-list__text">ΔΙΟΝΥΣΟΥ 25-27</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
+                                        <p class="shop-list__text">ΔΙΟΝΥΣΟΥ 25-27</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="shop-list__shop" data-shop-id="3">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">ΝΕΑ ΙΩΝΙΑ</p>
-                                    <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
-                                        THE MALL ATHENS)</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">ΝΕΑ ΙΩΝΙΑ</p>
+                                        <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
+                                            THE MALL ATHENS)</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="shop-list__shop" data-shop-id="4">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">Αθηνα</p>
-                                    <p class="shop-list__text">ΠΑΤΗΣΙΩΝ 150 ΚΑΙ ΑΓ. ΜΕΛΕΤΙΟΥ</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">Αθηνα</p>
+                                        <p class="shop-list__text">ΠΑΤΗΣΙΩΝ 150 ΚΑΙ ΑΓ. ΜΕΛΕΤΙΟΥ</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="shop-list__shop" data-shop-id="5">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
-                                    <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
-                                        THE MALL ATHENS)</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
+                                        <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
+                                            THE MALL ATHENS)</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="shop-list__shop" data-shop-id="6">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
-                                    <p class="shop-list__text">ΔΙΟΝΥΣΟΥ 25-27</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">ΜΑΡΟΥΣΙ</p>
+                                        <p class="shop-list__text">ΔΙΟΝΥΣΟΥ 25-27</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="shop-list__shop" data-shop-id="7">
-                                <div class="shop-list__content">
-                                    <p class="shop-list__title">ΝΕΑ ΙΩΝΙΑ</p>
-                                    <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
-                                        THE MALL ATHENS)</p>
+                                <div class="shop-list__wrapper">
+                                    <div class="shop-list__content">
+                                        <p class="shop-list__title">ΝΕΑ ΙΩΝΙΑ</p>
+                                        <p class="shop-list__text">ΑΝΔΡ. ΠΑΠΑΝΔΡΕΟΥ 35 (ΕΜΠ. ΚΕΝΤΡΟ
+                                            THE MALL ATHENS)</p>
+                                    </div>
                                 </div>
                             </li>
                         </ol>
                     </div>
                 </div>
-                <div class="stores__right hide-lg">
-                    <div class="store-tooltip stores__tooltip">
-                        <div class="store-tooltip__content">
-                            <p class="store-tooltip__title">Αθηνα</p>
-                            <p class="store-tooltip__text">ΠΑΤΗΣΙΩΝ 150 ΚΑΙ ΑΓ. ΜΕΛΕΤΙΟΥ</p>
-                            <p class="store-tooltip__country">ελλαδα</p>
-                            <p class="store-tooltip__phone"><span>Τηλεφωνο:</span><b>+216-8002868</b></p>
-                            <ul class="store-tooltip__schedule">
-                                <li><span>δευτέρα</span><span>9.00-16.00</span></li>
-                                <li><span>Τρίτη</span><span>9.00-21.00</span></li>
-                                <li><span>τετάρτη</span><span>9.00-16.00</span></li>
-                                <li><span>πέμπτη</span><span>9.00-21.00</span></li>
-                                <li><span>παρασκευή</span><span>9.00-21.00</span></li>
-                                <li><span>σάββατο</span><span>9.00-20.00</span></li>
-                            </ul><a class="Button store-tooltip__button" href="https://goo.gl/maps/f8mDCHTbEc7DMCef8" target="_blank">ανοιγμα στο <b>Google maps</b></a>
-                        </div><svg class="store-tooltip__close"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg>
+                <div class="stores__map-wrapper" id="map-wrapper">
+                    <div class="stores__map-container">
+                        <div class="store-tooltip stores__tooltip">
+                            <div class="store-tooltip__content"></div>
+                        </div>
+                        <div class="map" id="map"></div>
+                        <div class="stores__tooltip-close js-store-tooltip-close hide-lg"><svg><use xlink:href="assets/images/icon.svg#icon_close"></use></svg></div>
                     </div>
-                    <div class="map" id="map"></div>
                 </div>
             </div>
         </div>
