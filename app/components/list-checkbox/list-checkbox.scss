@@ -1,15 +1,13 @@
 .list-checkbox {
   display: block;
-  border-width: 0 0 1px;
-  border-style: solid;
-  border-color: $color-grey-14;
   cursor: pointer;
-
-  &:first-child {
-    border-top-width: 1px;
-  }
+  flex-shrink: 0;
+  white-space: nowrap;
 
   $b: &;
+  &:not(:first-child) {
+    margin-left: 43px;
+  }
 
   &__input {
     display: none;
@@ -17,55 +15,32 @@
 
   &__box {
     display: flex;
-    padding: 8px 10px;
+    align-items: center;
+    flex-shrink: 0;
   }
 
   &__text {
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    flex-grow: 1;
+    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(line-height, (xl: 20px, lg: 14px));
+
+    letter-spacing: 0.06em;
+    font-family: $font-second;
   }
 
   &__tick {
-    margin-left: 20px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+    @include rule(width, (xl: 13px, lg: 11px));
+    @include rule(height, (xl: 13px, lg: 11px));
+
+    margin-right: 7px;
     font-size: 0;
     position: relative;
-
-    svg {
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity $ease-main;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      background: black;
-      border-radius: 50%;
-      opacity: 1;
-      transition: opacity $ease-main;
-    }
+    box-sizing: border-box;
+    border: 1px solid black;
+    background: transparent;
+    transition: background $ease-main;
 
     #{$b}__input:checked + #{$b}__box & {
-
-      svg {
-        opacity: 1;
-      }
-
-      &::after {
-        opacity: 0;
-      }
+      background: black;
     }
   }
 }

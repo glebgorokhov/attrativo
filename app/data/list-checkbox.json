@@ -1,21 +1,49 @@
 [
   {
-    "text": "ALE",
+    "text": "Athens",
     "value": "1",
     "name": "stores",
     "checked": false,
     "required": false
   },
   {
-    "text": "ALE CORNERS",
+    "text": "Thessaloniki",
     "value": "2",
     "name": "stores",
     "checked": false,
     "required": false
   },
   {
-    "text": "ALE outlet",
+    "text": "Other cities",
     "value": "3",
+    "name": "stores",
+    "checked": false,
+    "required": false
+  },
+  {
+    "text": "Cyprus",
+    "value": "4",
+    "name": "stores",
+    "checked": false,
+    "required": false
+  },
+  {
+    "text": "Attrattivo corners",
+    "value": "5",
+    "name": "stores",
+    "checked": false,
+    "required": false
+  },
+  {
+    "text": "Other cities",
+    "value": "6",
+    "name": "stores",
+    "checked": false,
+    "required": false
+  },
+  {
+    "text": "Outlets",
+    "value": "7",
     "name": "stores",
     "checked": false,
     "required": false

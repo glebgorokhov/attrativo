@@ -1,123 +1,131 @@
 .shop-list {
   display: block;
-
-  @include rule(margin-left, (lg: -20px));
-  @include rule(margin-right, (lg: -20px));
-  @include rule(padding-right, (xl: 15px, lg: 0));
-  @include rule(border-bottom, (xl: 1px solid rgba(black, .07), lg: 0));
-  @include rule(height, (xl: 220px, lg: auto));
+  padding-top: 0.1px;
 
   $b: &;
 
-  .os-scrollbar-vertical {
-    top: 0;
-    right: 0;
-    bottom: 17px !important;
-    padding: 0;
-    width: 3px;
-  }
-
-  .os-scrollbar-track {
-    background: $color-grey-17 !important;
-    border-radius: 100px;
-  }
-
-  .os-scrollbar-handle {
-    background: black !important;
-    border-radius: 100px;
-  }
-
   &__list {
     counter-reset: list;
+    display: flex;
+    flex-wrap: wrap;
+    @include rule(margin, (xl: -36px -13px 0, lg: 0));
   }
 
   &__shop {
-    @include rule(padding, (xl: 13px 25px 11px 18px, lg: 15px 20px 14px));
-    @include rule(border-radius, (xl: 2px, lg: 0));
-    @include rule(border-bottom, (xl: 1px solid transparent, lg: 0));
-    @include rule(border-top, (lg: 1px solid $color-grey-7));
+    @include rule(width, (xl: (1/3)*100%, lg: 100%));
+    @include rule(padding, (xl: 36px 13px 0, lg: 0));
 
+    box-sizing: border-box;
     position: relative;
-    transition: background-color $ease-main, border-color $ease-main;
     cursor: pointer;
     display: flex;
 
-    &:last-child {
-      @include rule(border-bottom, (lg: 1px solid $color-grey-7));
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 0, lg: 16px));
     }
+  }
+
+  &__wrapper {
+    background: #F4F4F4;
+    transition: border-color $ease-main;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include rule(border-bottom, (xl: 1px solid #F4F4F4, lg: 0));
+    @include rule(padding, (xl: 20px 40px 25px, lg: 17px 24px 17px));
 
     &::before {
-      content: '0' counter(list) '.';
+      @include rule(width, (xl: 29px, lg: 21px));
+      @include rule(height, (xl: 40px, lg: 29px));
+      @include rule(font-size, (xl: 16px, lg: 14px));
+      @include rule(left, (xl: -5px, lg: 3px));
+      @include rule(top, (xl: -5px, lg: -7px));
+      @include rule(line-height, (xl: 33px, lg: 25px));
+
+      content: counter(list);
       counter-increment: list;
-      font-family: $font-main;
       font-style: normal;
-      font-weight: bold;
-      font-size: 15px;
-      line-height: 18px;
+      font-weight: 700;
       letter-spacing: .06em;
       text-transform: uppercase;
       font-feature-settings: 'pnum' on, 'lnum' on;
-      color: #000;
-      width: 44px;
       flex-shrink: 0;
-
-      @include rule(display, (lg: none));
+      color: white;
+      position: absolute;
+      background-image: url('../images/shop-pin.svg');
+      background-size: 100% 100%;
+      text-align: center;
     }
 
-    &:nth-child(n+10)::before {
-      content: counter(list) '.';
-    }
-
-    &:hover, &.is-active {
-      background-color: $color-grey-7;
-    }
-
-    &.is-active {
-      @include rule(border-color, (xl: rgba(black, .07), lg: $color-grey-18));
-
-      &:last-child {
-        @include rule(border-bottom-color, (lg: $color-border));
-      }
-
-      & + #{$b}__shop {
-        @include rule(border-top-color, (lg: $color-border));
-      }
+    #{$b}__shop.is-active & {
+      border-bottom-color: black;
     }
   }
 
   &__title {
-    @include rule(font-size, (xl: 15px, lg: 12px));
-    @include rule(line-height, (xl: 19px, lg: 15px));
+    @include rule(font-size, (xl: 12px, lg: 11px));
+    @include rule(line-height, (xl: 16px, lg: 15px));
 
-    font-weight: bold;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    font-weight: 600;
+    letter-spacing: 0.06em;
   }
 
   &__text {
-    margin-top: 2px;
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    @include rule(font-size, (xl: 12px, lg: 11px));
+    @include rule(line-height, (xl: 16px, lg: 15px));
 
-    @include rule(color, (xl: $color-grey-12, lg: black));
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    flex-grow: 1;
+
+    .is-upper {
+      text-transform: uppercase;
+    }
   }
 
-  &__tel {
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: .06em;
-    margin-top: 1px;
+  &__title, &__text {
+    padding-right: 105px;
   }
 
-  &__link {
-    margin-top: 20px;
+  &__photo {
+    @include rule(width, (xl: 121px, lg: 100px));
+    @include rule(height, (xl: 110px, lg: 90px));
+
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__button {
+    @include rule(margin-top, (xl: 22px, lg: 11px));
+    @include rule(padding, (xl: 0 17px, lg: 0 11px));
+
+    height: 34px;
+    line-height: 32px;
+    border-color: #C9C9C9;
     font-size: 12px;
-    line-height: 15px;
-    letter-spacing: .06em;
-    text-decoration-line: underline;
+    font-weight: 600;
+    transition: background-color $ease-main, border-color $ease-main, color $ease-main;
+    opacity: 1 !important;
+
+    #{$b}__shop:hover & {
+      border-color: black;
+    }
+
+    #{$b}__shop.is-active & {
+      background: black;
+      border-color: black;
+      color: white;
+    }
   }
 }

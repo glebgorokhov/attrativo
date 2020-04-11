@@ -10,12 +10,5 @@ export default function scrollbar() {
       clickScrolling: true,
     },
   });
-
-  OverlayScrollbars(document.querySelectorAll('.shop-list'), {
-    className: 'os-theme-dark',
-    scrollbars: {
-      clickScrolling: true,
-    },
-  });
 }
 /* eslint-enable */

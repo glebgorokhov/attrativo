@@ -3,19 +3,6 @@ mixin store-tooltip()
     - var data = getData('stores')[0];
 
     +e.content
-      +e.P.title!= data.title
-      +e.P.text!= data.text
-      +e.P.country!= data.country
-      +e.P.phone
-        span Τηλεφωνο:
-        b!= data.phone
-      +e.UL.schedule
-          each val, index in data.days
-            li
-              span!= index
-              span!= val
-      +button()(href=data.googleMaps, target="_blank").__button ανοιγμα στο <b>Google maps</b>
-    +icon('close_big').__close
 
 mixin ui-kit-store-tooltip()
   +ui-section

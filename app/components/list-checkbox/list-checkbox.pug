@@ -2,10 +2,9 @@ mixin list-checkbox(data)
   +b.LABEL.list-checkbox&attributes(attributes)
     +e.INPUT.input(name=data.name, type="checkbox", value=data.value, checked=data.checked, required=data.required)
     +e.box
+      +e.tick
       +e.P.text
         block
-      +e.tick
-        +icon('tick')
 
 mixin ui-kit-list-checkbox()
   +ui-section

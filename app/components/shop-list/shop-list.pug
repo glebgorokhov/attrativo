@@ -3,9 +3,10 @@ mixin shop-list()
     +e.OL.list
       each item in getData('stores')
         +e.LI.shop(data-shop-id=item.id)
-          +e.content
-            +e.P.title!= item.title
-            +e.P.text!= item.text
+          +e.wrapper
+            +e.content
+              +e.P.title!= item.title
+              +e.P.text!= item.text
 
 mixin ui-kit-shop-list()
   +ui-section

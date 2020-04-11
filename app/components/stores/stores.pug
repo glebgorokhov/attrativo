@@ -1,33 +1,30 @@
 mixin stores()
   +b.stores(data-shops-url="assets/data/stores.json")&attributes(attributes)
-    .container
-      +e.header.show-lg
-        .container
-          +e.A.back-link(href="#")
-            +icon('arrow_right')
-          +e.P.header-title βρειτε το καταστημα σασ
+    .container.container_small
+      +e.header
+        +e.P.title STORE LOCATOR
 
       +e.left
-        +e.H1.title.hide-lg store locator
-
-        +e.checkboxes.hide-lg
+        +e.checkboxes
           each checkbox in getData('list-checkbox')
             +list-checkbox(checkbox)!= checkbox.text
 
         +e.filter
           +inputbox
-            +label εΠΙΛΕΞΤΕ ΚΑΤΑΣΤΗΜΑΤΑ ΒΑΣΗ ΠΟΛΗΣ
             select.select.js-store-select(name="store-filter")
-              option(value="π.χ. Αθηνα" placeholder) π.χ. Αθηνα
+              option(value="Eπιλέξτε περιοχή" placeholder) Eπιλέξτε περιοχή
               option(value="Αθηνα") Αθηνα
               option(value="ΜΑΡΟΥΣΙ") ΜΑΡΟΥΣΙ
               option(value="ΝΕΑ ΙΩΝΙΑ") ΝΕΑ ΙΩΝΙΑ
 
         +shop-list.__list
 
-      +e.right.hide-lg
-        +store-tooltip.__tooltip
-        +map#map
+      +e.map-wrapper#map-wrapper
+        +e.map-container
+          +store-tooltip.__tooltip
+          +map#map
+          +e.tooltip-close.js-store-tooltip-close.hide-lg
+            +icon('close')
 
 mixin ui-kit-stores()
   +ui-section

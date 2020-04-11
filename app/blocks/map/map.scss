@@ -9,6 +9,11 @@
   flex-grow: 1;
   border-radius: 2px;
   overflow: hidden;
+
+  @include screen(lg) {
+    height: 142px;
+    margin-top: 10px;
+  }
 }
 
 .leaflet-control-layers-toggle {

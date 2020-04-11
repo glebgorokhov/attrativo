@@ -219,3 +219,47 @@
     }
   }
 }
+
+.choices.choices_stores {
+
+  &[data-type*=select-one] {
+
+    .choices__inner {
+      border: 1px solid #DADADA;
+      line-height: 1;
+      letter-spacing: .06em;
+      background: transparent;
+      border-radius: 0;
+
+      @include rule(font-size, (xl: 14px, lg: 12px));
+      @include rule(padding, (xl: 0 40px 0 25px, lg: 0 40px 0 12px));
+      @include rule(height, (xl: 44px, lg: 35px));
+
+      .choices__placeholder {
+        color: black;
+      }
+
+      .choices__list--single {
+        padding-right: 0;
+        border: 0;
+      }
+    }
+
+    &::after {
+      width: 14px;
+      height: 8px;
+      background-image: url('../images/arrow_select_store.svg');
+      background-size: 100% 100%;
+
+      @include rule(right, (xl: 18px, lg: 12px));
+    }
+
+    .choices__list--dropdown .choices__item {
+      @include rule(padding, (xl: 10px 24px, lg: 7px 11px));
+    }
+
+    .choices__list--dropdown {
+      border-color: #DADADA;
+    }
+  }
+}

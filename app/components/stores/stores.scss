@@ -1,116 +1,107 @@
 .stores {
   display: block;
 
-  @include rule(padding-top, (lg: 20px));
-  @include rule(position, (lg: relative));
+  @include rule(padding-top, (xl: 25px, lg: 0));
 
   $b: &;
 
   &__header {
-    height: 58px;
-    bottom: 100%;
-    margin-bottom: 1px;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    background: white;
-    position: absolute;
-    text-align: center;
-    z-index: 100;
+    display: block;
+  }
 
-    .container {
-      position: relative;
+  &__title {
+    @include rule(font-size, (xl: 60px, lg: 20px));
+
+    font-family: $font-second;
+    line-height: 1;
+    letter-spacing: 0.06em;
+
+    @include screen(lg) {
+      text-align: center;
+      padding: 18px 0;
     }
   }
 
-  &__back-link {
-    position: absolute;
-    height: 14px;
-    width: 8px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    left: 10px;
-    padding: 10px;
-    transform: rotate(180deg);
+  .container {
+    display: block;
+  }
+
+  // Left
+
+  &__left {
+    display: block;
+
+    @include rule(margin-top, (xl: 25px, lg: 0));
+  }
+
+  &__checkboxes {
+    display: flex;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #E1E1E1;
+
+    @include rule(justify-content, (xl: space-between, lg: flex-start));
+    @include rule(padding, (xl: 10px 30px, lg: 13px 20px));
+    @include rule(margin, (lg: 0 -20px));
+
+    @include screen(lg) {
+      overflow: auto;
+
+      &::after {
+        content: '';
+        width: 20px;
+        flex-shrink: 0;
+        height: 1px;
+      }
+    }
+  }
+
+  &__filter {
+    @include rule(max-width, (xl: 386px, lg: 100%));
+    @include rule(margin-top, (xl: 16px, lg: 22px));
+  }
+
+  &__list {
+    @include rule(margin-top, (xl: 43px, lg: 22px));
+  }
+
+  // Right
+
+  &__map-wrapper {
+    @include rule(padding, (xl: 36px 13px 0, lg: 0));
+
+    box-sizing: border-box;
+    width: 100%;
+    display: none;
+  }
+
+  &__map-container {
+    @include rule(height, (xl: 298px, lg: auto));
+    @include rule(border, (xl: 1px solid #ececec, lg: 0));
+    @include rule(display, (xl: flex, lg: block));
+
+    position: relative;
+
+    @include screen(lg) {
+      background: #F4F4F4;
+      padding: 0 10px 10px;
+      box-sizing: border-box;
+    }
+  }
+
+  &__tooltip-close {
     font-size: 0;
+    padding: 21px;
+    flex-shrink: 0;
     cursor: pointer;
-    transition: opacity $ease-main;
 
     &:hover {
       opacity: .5;
     }
 
     svg {
-      width: 100%;
-      height: 100%;
+      width: 14px;
+      height: 14px;
     }
-  }
-
-  &__header-title {
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-  }
-
-  .container {
-    @include rule(display, (xl: flex, lg: block));
-  }
-
-  // Left
-
-  &__left {
-    @include rule(width, (xl: 315px, lg: 100%));
-    @include rule(margin-right, (xl: 70px, lg: 0));
-
-    flex-shrink: 0;
-  }
-
-  &__title {
-    font-family: $font-main;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-  }
-
-  &__checkboxes {
-    max-width: 274px;
-    margin-top: 31px;
-  }
-
-  &__filter {
-    @include rule(margin-top, (xl: 40px, lg: 0));
-
-    .inputbox__label {
-      margin-bottom: 6px;
-
-      @include rule(display, (lg: none));
-    }
-  }
-
-  &__list {
-    @include rule(margin-top, (xl: 11px, lg: 20px));
-  }
-
-  // Right
-
-  &__right {
-    flex-grow: 1;
-    position: relative;
-  }
-
-  &__tooltip {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 220px;
-    z-index: 10;
   }
 }

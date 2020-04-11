@@ -11,7 +11,8 @@ const
 let
   data,
   filters,
-  cityFilter= "";
+  cityFilter= "",
+  firstLoaded = false;
 
 // Load shops data
 if (url) {
@@ -23,18 +24,11 @@ if (url) {
 function loadTooltipContent(id) {
   const
     info = data[id],
-    title = info.title,
-    text = info.text,
-    country = info.country,
-    phone = info.phone,
     googleMaps = info.googleMaps,
     days = info.days;
 
   let html = `
-    <p class="store-tooltip__title">${title}</p>
-    <p class="store-tooltip__text">${text}</p>
-    <p class="store-tooltip__country">${country}</p>
-    <p class="store-tooltip__phone"><span>Τηλεφωνο:</span><b>${phone}</b></p>
+    <p class="store-tooltip__title">ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</p>
     <ul class="store-tooltip__schedule">`;
 
   $.each(days, function (index, value) {
@@ -43,7 +37,10 @@ function loadTooltipContent(id) {
 
   html += `
     </ul>
-    <a class="button store-tooltip__button" href="${googleMaps}" target="_blank">ανοιγμα στο <b>Google maps</b></a>
+    <a class="store-tooltip__link hide-lg" href="${googleMaps}" target="_blank">
+      <span>ΟΔΗΓΙΕΣ</span>
+      <svg><use xlink:href="assets/images/icon.svg#icon_arrow_button"></use></svg>
+    </a>
   `;
 
   tooltipContainer.html(html);
@@ -88,6 +85,53 @@ function shopFilters() {
   console.log(`Current filters: ${filters}`);
 }
 
+function mapToggle(hide, callback) {
+  const
+    map = $(document).find('#map-wrapper');
+
+  if (hide) {
+    map.slideUp(globalOptions.animationDuration);
+    map.removeClass('is-active');
+  } else {
+    map.slideDown(globalOptions.animationDuration, function () {
+      var resizeEvent = window.document.createEvent('UIEvents');
+      resizeEvent.initUIEvent('resize', true, false, window, 0);
+      window.dispatchEvent(resizeEvent);
+
+      if (!firstLoaded) {
+        firstLoaded = true;
+        window.map.zoomIn(1);
+      }
+    });
+    map.addClass('is-active');
+  }
+
+  setTimeout(callback, globalOptions.animationDuration);
+}
+
+function mapPosition(el) {
+  const
+    element = el,
+    siblings = element.closest('.shop-list__list').find('.shop-list__shop'),
+    posTop = element.position().top;
+
+  let targetSibling = element;
+
+  siblings.each(function (i) {
+    if ($(this).position().top > posTop) {
+      targetSibling = siblings[i-1];
+      return false;
+    } else if (i === siblings.length-1) {
+      targetSibling = siblings[i];
+    }
+  });
+
+  mapToggle(true, function () {
+    $(document).find('#map-wrapper').insertAfter(targetSibling);
+    mapToggle(false);
+  });
+}
+
 function loadShops() {
   const
     shopsContainer = $(document).find('.stores__list ol');
@@ -100,8 +144,11 @@ function loadShops() {
       id = store.id,
       title = store.title,
       text = store.text,
+      textTwo = store.textTwo,
       type = store.type.toString(),
       phone = store.phone,
+      country = store.country,
+      photo = store.photo,
       link = store.googleMaps;
 
     // Checking filters
@@ -110,12 +157,19 @@ function loadShops() {
 
     let html = `
       <li class="shop-list__shop" data-shop-id="${id}">
-          <div class="shop-list__content">
-              <p class="shop-list__title">${title}</p>
-              <p class="shop-list__text">${text}</p>
-              <p class="shop-list__tel show-lg"><b>TEL:</b> <a href="tel:${phone}">${phone}</a></p>
-              <p class="shop-list__link show-lg"><a href="${link}">Ανοιγμα στο Google Maps & ωράριο λετουργιας</a></p>
-          </div>
+        <div class="shop-list__wrapper">
+           <p class="shop-list__title">${title}</p>
+           <div class="shop-list__text">
+             ${text ? `<p class="is-upper">${text}</p>` : ``}
+             ${textTwo ? `<p class="is-upper">${textTwo}</p>` : ``}
+             ${country ? `<p>${country}</p>` : ``}
+             <p>Τηλέφωνο : ${phone}</p>
+           </div>
+           <div class="shop-list__photo">
+             <img src="${photo}">  
+           </div>
+           <button class="Button Button_style_light shop-list__button" type="button">ΧΑΡΤΗΣ & ΩΡΑΡΙΟ ΛΕΙΤΟΥΡΓΙΑΣ</button>
+        </div>
       </li>
     `;
 
@@ -166,16 +220,24 @@ function cityFilterInit() {
     choices = new Choices('.js-store-select', {
       searchEnabled: false,
       itemSelectText: '',
+      classNames: {
+        containerOuter: 'choices choices_stores',
+      },
     });
 
     choices.passedElement.element.addEventListener('change', function(event) {
       cityFilter = event.detail.value;
 
+      saveMap();
       shopFilters();
       filterPins();
       loadShops();
     }, false);
   }
+}
+
+function saveMap() {
+  $(document).find('#map-wrapper').hide().insertAfter('.stores__left');
 }
 
 export function stores() {
@@ -197,14 +259,16 @@ export function stores() {
 
   // Update page on changing filters
   $(document).on('click', '.list-checkbox', function () {
+    saveMap();
     shopFilters();
     filterPins();
     loadShops();
   });
 
   // Close tooltip
-  $(document).on('click', '.store-tooltip__close', function () {
+  $(document).on('click', '.js-store-tooltip-close', function () {
     tooltipToggle(true);
+    mapToggle(true);
   });
 
   // Selecting shop from the list
@@ -220,11 +284,14 @@ export function stores() {
     activeShop = shopID;
 
     // Load and show tooltip
-    loadTooltipContent(shopID);
-    tooltipToggle(false);
+    mapPosition(shopBlock);
 
     // Moving a map
-    flyToPin(shopID);
+    setTimeout(() => {
+      loadTooltipContent(shopID);
+      tooltipToggle(false);
+      flyToPin(shopID);
+    }, globalOptions.animationDuration);
   });
 }
 

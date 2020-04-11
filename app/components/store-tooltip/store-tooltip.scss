@@ -1,96 +1,62 @@
 .store-tooltip {
-  display: none;
-  background: black;
-  color: white;
-  padding: 52px 24px 24px;
-  box-sizing: border-box;
-  border-radius: 2px;
-  opacity: 0;
-  transform: translate3d(-10px, 0, 0);
-  transition: transform $ease-main, opacity $ease-main;
+  @include rule(padding, (xl: 27px 33px 33px, lg: 0 14px 0));
+  @include rule(background, (xl: white, lg: transparent));
+  @include rule(width, (xl: 280px, lg: auto));
 
-  &.is-active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: relative;
 
   $b: &;
 
   &__title {
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: .03em;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-  }
+    @include rule(font-size, (xl: 12px, lg: 11px));
 
-  &__text {
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-  }
-
-  &__country {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    margin-top: 1px;
-  }
-
-  &__phone {
-    margin-top: 20px;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-
-    b {
-      font-weight: 700;
-    }
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
   }
 
   &__schedule {
-    margin-top: 22px;
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: .06em;
-    text-transform: capitalize;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    @include rule(font-size, (xl: 12px, lg: 11px));
+    @include rule(margin-top, (xl: 3px, lg: 5px));
+
+    line-height: 25px;
+    letter-spacing: 0.06em;
 
     li {
       display: flex;
-      justify-content: space-between;
-
-      &:not(:first-child) {
-        margin-top: 4px;
-      }
     }
 
     span {
 
-      &:last-child {
-        letter-spacing: 0;
+      &:first-child {
+        width: 80px;
+        margin-right: 3px;
       }
     }
   }
 
-  &__button {
-    margin-top: 43px;
-    width: 100%;
-    padding: 0 10px;
-    height: 35px;
-    line-height: 33px;
-    border: 1px solid white;
-    color: white;
-    background: transparent;
-    letter-spacing: 0;
-    font-weight: 400;
+  &__link {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
     font-size: 12px;
-    text-transform: none;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+    text-decoration-line: underline;
+    transition: opacity $ease-main;
+    margin-top: 26px;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    svg {
+      width: 25px;
+      height: 10px;
+      margin-left: 16px;
+    }
   }
 
   &__close {
@@ -99,24 +65,12 @@
     top: 10px;
     width: 14px;
     height: 14px;
-    fill: white;
+    fill: black;
     cursor: pointer;
     transition: opacity $ease-main;
 
     &:hover {
       opacity: .5;
     }
-  }
-
-  &::after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 9px 10px 9px 0;
-    border-color: transparent #000 transparent transparent;
-    position: absolute;
-    right: 100%;
-    bottom: 184px;
   }
 }
