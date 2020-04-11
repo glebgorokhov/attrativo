@@ -2209,124 +2209,421 @@
             </div>
             <div class="ui-kit__section-content">
                 <div class="cart">
-                    <div class="container">
+                    <div class="container container_small">
+                        <div class="cart-final show-lg">
+                            <div class="cart-final__texts">
+                                <p class="cart-final__title">ΣΥΝΟΛO:</p>
+                                <p class="cart-final__text">128,90€</p>
+                            </div><a class="Button Button_with-arrow cart-final__button" href="#">
+                                <div><span>OΛΟΚΛΗΡΩΣΗ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_button"></use></svg></div>
+                            </a>
+                        </div>
                         <div class="cart__header">
-                            <h1 class="cart__title">SHOPPING CART</h1>
-                            <p class="cart__amount hide-lg">3 Τεμάχια</p>
-                            <div class="cart__close show-lg"><a href="#"><svg><use xlink:href="assets/images/icon.svg#icon_close_bold"></use></svg></a></div>
+                            <h1 class="cart__title">ΚΑΛΑΘΙ ΑΓΟΡΩΝ</h1><a class="cart__back show-lg" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_burger"></use></svg></a>
                         </div>
                         <div class="cart__content">
                             <div class="grid grid_cart">
-                                <div class="grid__col grid__col_xl_9 grid__col_lg_12">
-                                    <div class="grid grid_cart">
-                                        <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_flex">
-                                            <div class="CartItem">
-                                                <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/1.jpg" /></div>
-                                                <div class="CartItem__content">
+                                <div class="grid__col grid__col_xl_8 grid__col_lg_12">
+                                    <div class="cart__cart-items">
+                                        <div class="CartItem">
+                                            <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/1.jpg" /></div>
+                                            <div class="CartItem__content">
+                                                <div class="CartItem__texts">
                                                     <div class="CartItem__title-wrapper">
                                                         <p class="CartItem__title CartItem-Heading">φορεμα ασυμμετρο με βολαν</p>
                                                     </div>
-                                                    <div class="CartItem__row">
-                                                        <div class="CartItem__items">
-                                                            <div class="CartItem__item"><span>Colour:</span><span>multicolor</span></div>
-                                                            <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
-                                                                        <option value="s-8" selected="selected">s-8</option>
-                                                                        <option value="s-9">s-9</option>
-                                                                        <option value="s-10">s-10</option>
-                                                                    </select></span></div>
-                                                        </div>
-                                                        <div class="CartItem__numberbox">
-                                                            <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
-                                                        </div>
+                                                    <div class="CartItem__items">
+                                                        <div class="CartItem__item"><span>Χρώμα:</span><span>multicolor</span></div>
+                                                        <div class="CartItem__item"><span>Μέγεθος:</span><span>S-8</span></div>
                                                     </div>
-                                                    <div class="CartItem__prices CartItem-Price">
-                                                        <div class="CartItem__price">129,90 €</div>
-                                                    </div>
-                                                    <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
-                                                        <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
-                                                        <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
-                                                    </div>
+                                                </div>
+                                                <div class="CartItem__numberbox">
+                                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-minus" type="button">-</button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-plus" type="button">+</button></div>
+                                                </div>
+                                                <div class="CartItem__prices CartItem-Price">
+                                                    <div class="CartItem__price">129,90 €</div>
+                                                </div>
+                                                <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                    <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg></div>
+                                                    <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_flex">
-                                            <div class="CartItem">
-                                                <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/2.jpg" /></div>
-                                                <div class="CartItem__content">
+                                        <div class="CartItem">
+                                            <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/2.jpg" /></div>
+                                            <div class="CartItem__content">
+                                                <div class="CartItem__texts">
                                                     <div class="CartItem__title-wrapper">
                                                         <p class="CartItem__title CartItem-Heading">ΖΥΠ ΚΥΛΟΤ ΜΕ ΥΦΑΣΜΑΤΙΝΗ ΖΩΝΗ</p>
                                                     </div>
-                                                    <div class="CartItem__row">
-                                                        <div class="CartItem__items">
-                                                            <div class="CartItem__item"><span>Colour:</span><span>red</span></div>
-                                                            <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
-                                                                        <option value="s-8" selected="selected">s-8</option>
-                                                                        <option value="s-9">s-9</option>
-                                                                        <option value="s-10">s-10</option>
-                                                                    </select></span></div>
-                                                        </div>
-                                                        <div class="CartItem__numberbox">
-                                                            <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
-                                                        </div>
+                                                    <div class="CartItem__items">
+                                                        <div class="CartItem__item"><span>Χρώμα:</span><span>red</span></div>
+                                                        <div class="CartItem__item"><span>Μέγεθος:</span><span>S-8</span></div>
                                                     </div>
-                                                    <div class="CartItem__prices CartItem-Price">
-                                                        <div class="CartItem__price">40,00 €</div>
-                                                        <div class="CartItem__price CartItem__price_old"><span>129,99 €</span><span>(-30%)</span></div>
-                                                    </div>
-                                                    <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
-                                                        <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
-                                                        <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
-                                                    </div>
+                                                </div>
+                                                <div class="CartItem__numberbox">
+                                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-minus" type="button">-</button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-plus" type="button">+</button></div>
+                                                </div>
+                                                <div class="CartItem__prices CartItem-Price">
+                                                    <div class="CartItem__price">40,00 €</div>
+                                                </div>
+                                                <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                    <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg></div>
+                                                    <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid__col grid__col_xl_4 grid__col_lg_12 grid__col_flex">
-                                            <div class="CartItem">
-                                                <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/3.jpg" /></div>
-                                                <div class="CartItem__content">
+                                        <div class="CartItem">
+                                            <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/3.jpg" /></div>
+                                            <div class="CartItem__content">
+                                                <div class="CartItem__texts">
                                                     <div class="CartItem__title-wrapper">
                                                         <p class="CartItem__title CartItem-Heading">ΜΠΛΟΥΖΑ ΜΕ ΤΙΡΑΝΤΕΣ</p>
                                                     </div>
-                                                    <div class="CartItem__row">
-                                                        <div class="CartItem__items">
-                                                            <div class="CartItem__item"><span>Colour:</span><span>black</span></div>
-                                                            <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
-                                                                        <option value="s-8" selected="selected">s-8</option>
-                                                                        <option value="s-9">s-9</option>
-                                                                        <option value="s-10">s-10</option>
-                                                                    </select></span></div>
+                                                    <div class="CartItem__items">
+                                                        <div class="CartItem__item"><span>Χρώμα:</span><span>black</span></div>
+                                                        <div class="CartItem__item"><span>Μέγεθος:</span><span>S-8</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="CartItem__numberbox">
+                                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-minus" type="button">-</button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-plus" type="button">+</button></div>
+                                                </div>
+                                                <div class="CartItem__prices CartItem-Price">
+                                                    <div class="CartItem__price">19,90 €</div>
+                                                </div>
+                                                <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                    <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg></div>
+                                                    <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cart-back hide-lg"><a class="Button Button_style_light cart-back__button" href="#">
+                                            <div><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_burger"></use></svg><span>ΠΙΣΩ ΓΙΑ ΣΥΝΕΧΕΙΑ ΑΓΟΡΩΝ</span></div>
+                                        </a></div>
+                                    <div class="cart-additional cart__additional show-lg">
+                                        <div class="cart-additional__item hide-lg"><svg class="cart-additional__icon"><use xlink:href="assets/images/icon.svg#icon_back"></use></svg>
+                                            <p class="cart-additional__text">Εύκολες και γρήγορες επιστροφές. <a href='#'>Μάθε περισσότερα</a></p>
+                                        </div>
+                                        <div class="cart-additional__item"><svg class="cart-additional__icon"><use xlink:href="assets/images/icon.svg#icon_package"></use></svg>
+                                            <p class="cart-additional__text">Δωρεάν αποστολή σε όλη την Ελλάδα</p>
+                                        </div>
+                                    </div>
+                                    <div class="cart-info CartPage-Floating show-lg">
+                                        <p class="cart-info__title hide-lg">ΣΥΝΟΛΟ</p>
+                                        <div class="cart-info__content">
+                                            <div class="cart-info__text cart-info__text_price CartPage-Total"><span>ΣΥΝΟΛΙΚΗ ΤΙΜΗ</span><span>120,50€</span></div>
+                                            <div class="cart-info__text"><span>ΜΕΤΑΦΟΡΙΚΑ ΕΞΟΔΑ</span><span>ΔΩΡΕΑΝ</span></div>
+                                        </div>
+                                        <div class="cart-info__final"><a class="Button Button_with-arrow cart-info__send CartPage-CheckoutButton" href="#">
+                                                <div><span>ΠΛΗΡΩΜΗ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_button"></use></svg></div>
+                                            </a></div>
+                                    </div>
+                                    <div class="product-slider js-product-slider cart__slider" data-slides="[6, 2]">
+                                        <div class="product-slider__header">
+                                            <div class="product-slider__title">LOOKING FOR THESE... ?</div>
+                                            <div class="product-slider__arrows">
+                                                <div class="product-slider__arrow product-slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_small"></use></svg></div>
+                                                <div class="product-slider__arrow product-slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_small"></use></svg></div>
+                                            </div>
+                                        </div>
+                                        <div class="product-slider__content">
+                                            <div class="product-slider__slider swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/1.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
                                                         </div>
-                                                        <div class="CartItem__numberbox">
-                                                            <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα maxi ΜΕ κουμπια</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price">129,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ProductCard__colors"><button class="ProductCard-Color" type="button" style="background-image: url(assets/images/colors/pattern.jpg);"></button><button class="ProductCard-Color" type="button" style="background-color: black;"></button></div>
                                                         </div>
                                                     </div>
-                                                    <div class="CartItem__prices CartItem-Price">
-                                                        <div class="CartItem__price">19,90 €</div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/2.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα mini με παγιετα</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">89,90 €</div>
+                                                                    <div class="ProductCard-Price">70,00 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
-                                                        <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
-                                                        <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/3.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα mini με δαντελα</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ProductCard__colors"><button class="ProductCard-Color" type="button" style="background-color: #AE61DE;"></button><button class="ProductCard-Color" type="button" style="background-color: black;"></button></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/4.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα maxi εμπριμε</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price">119,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/5.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα mini με παγιετα</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">70,00 €</div>
+                                                                    <div class="ProductCard-Price">89,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/6.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα ασυμμετρο με βολαν</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ProductCard__colors"><button class="ProductCard-Color" type="button" style="background-image: url(assets/images/colors/pattern.jpg);"></button><button class="ProductCard-Color" type="button" style="background-color: black;"></button></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/7.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα semizie μακρυμανικο</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">40,00 €</div>
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ProductCard__colors"><button class="ProductCard-Color" type="button" style="background-color: black;"></button><button class="ProductCard-Color" type="button" style="background-color: #FF3636;"></button></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/8.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα mini semizie</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">40,00 €</div>
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/9.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα ασυμμετρο</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">50,00 €</div>
+                                                                    <div class="ProductCard-Price">99,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/10.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα μακρυμανικο</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">40,00 €</div>
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/11.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα maxi</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">40,00 €</div>
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ProductCard__colors"><button class="ProductCard-Color" type="button" style="background-color: #FF7E21;"></button><button class="ProductCard-Color" type="button" style="background-color: black;"></button></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/12.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα ασυμμετρο floral</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">50,00 €</div>
+                                                                    <div class="ProductCard-Price">99,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/13.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα ασυμμετρο με κουμπια</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ProductCard__colors"><button class="ProductCard-Color" type="button" style="background-color: #FF3636;"></button><button class="ProductCard-Color" type="button" style="background-color: black;"></button><button class="ProductCard-Color" type="button" style="background-color: #177100;"></button></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/14.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα mini με print</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">70,00 €</div>
+                                                                    <div class="ProductCard-Price">89,99 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/15.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">φορεμα μπροκαρ με βολαν</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price">79,90 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/16.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">Κιμονο ΜΕ ΥΦΑΣΜΑΤΙΝΗ ΖΩΝΗ</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price">69,99 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
+                                                        <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/17.jpg" /></a>
+                                                            <div class="ProductCard__sizes hide-lg">
+                                                                <div class="ProductCard__sizes-title">choose your size</div>
+                                                                <div class="ProductCard__sizes-items"><a class="ProductCard__size" href="#">es-6</a><a class="ProductCard__size" href="#" disabled="disabled">s-8</a><a class="ProductCard__size" href="#">m-8</a><a class="ProductCard__size" href="#" disabled="disabled">l-8</a><a class="ProductCard__size" href="#">xl-14</a></div>
+                                                            </div><label class="ProductCard__favourite"><input type="checkbox" name="favourite" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
+                                                        </div>
+                                                        <div class="ProductCard-Content">
+                                                            <div class="ProductCard__texts"><a class="ProductCard-Name" href="#">Παπουτσι ΨΗΛο ΜΕ ΔΙΑΦαΝΕΙΕς</a>
+                                                                <div class="ProductCard-Prices">
+                                                                    <div class="ProductCard-Price ProductCard-Price_new">69,99 €</div>
+                                                                    <div class="ProductCard-Price">39,99 €</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="cart-additional cart__additional hide-lg">
+                                        <div class="cart-additional__item hide-lg"><svg class="cart-additional__icon"><use xlink:href="assets/images/icon.svg#icon_back"></use></svg>
+                                            <p class="cart-additional__text">Εύκολες και γρήγορες επιστροφές. <a href='#'>Μάθε περισσότερα</a></p>
+                                        </div>
+                                        <div class="cart-additional__item"><svg class="cart-additional__icon"><use xlink:href="assets/images/icon.svg#icon_package"></use></svg>
+                                            <p class="cart-additional__text">Δωρεάν αποστολή σε όλη την Ελλάδα</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="grid__col grid__col_xl_3 grid__col_lg_12">
-                                    <div class="cart-info CartPage-Floating"><button class="cart-info__button hide-lg">
-                                            <div><span>πληροφοριεσ παραγγελιασ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
-                                        </button>
+                                <div class="grid__col grid__col_xl_4 grid__col_lg_12 hide-lg">
+                                    <div class="cart-info CartPage-Floating">
+                                        <p class="cart-info__title hide-lg">ΣΥΝΟΛΟ</p>
                                         <div class="cart-info__content">
-                                            <div class="cart-info__text"><span>μερικο συνολο</span><span>149,90 €</span></div>
-                                            <div class="cart-info__text show-lg"><span>εκτιμωμενα εξοδα αποστολησ</span><span>00,00 €</span></div><a class="cart-info__text cart-info__text_link" href="#"><span>προσθεσε promo κωδικο</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></a>
-                                            <div class="cart-info__text cart-info__text_summ hide-lg CartPage-Total"><span>συνολο</span><span>189,80 €</span></div>
+                                            <div class="cart-info__text cart-info__text_price CartPage-Total"><span>ΣΥΝΟΛΙΚΗ ΤΙΜΗ</span><span>120,50€</span></div>
+                                            <div class="cart-info__text"><span>ΜΕΤΑΦΟΡΙΚΑ ΕΞΟΔΑ</span><span>ΔΩΡΕΑΝ</span></div>
                                         </div>
-                                        <div class="cart-info__delivery">
-                                            <div><svg><use xlink:href="assets/images/icon.svg#icon_delivery"></use></svg><span class="CartPage-PromoText">δωρεαν μεταφορικα σε ολη την ελλαδα</span></div>
-                                        </div>
-                                        <div class="cart-info__final">
-                                            <p class="cart-info__text cart-info__text_summ show-lg CartPage-Total"><span>συνολο</span><span>189,80 €</span></p><a class="Button cart-info__send CartPage-CheckoutButton" href="#">ολοκληρωση παραγγελιασ</a>
-                                        </div>
+                                        <div class="cart-info__final"><a class="Button Button_with-arrow cart-info__send CartPage-CheckoutButton" href="#">
+                                                <div><span>ΠΛΗΡΩΜΗ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_button"></use></svg></div>
+                                            </a></div>
                                     </div>
                                 </div>
                             </div>
@@ -2359,20 +2656,15 @@
             </div>
             <div class="ui-kit__section-content">
                 <div class="container">
-                    <div class="cart-info CartPage-Floating"><button class="cart-info__button hide-lg">
-                            <div><span>πληροφοριεσ παραγγελιασ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
-                        </button>
+                    <div class="cart-info CartPage-Floating">
+                        <p class="cart-info__title hide-lg">ΣΥΝΟΛΟ</p>
                         <div class="cart-info__content">
-                            <div class="cart-info__text"><span>μερικο συνολο</span><span>149,90 €</span></div>
-                            <div class="cart-info__text show-lg"><span>εκτιμωμενα εξοδα αποστολησ</span><span>00,00 €</span></div><a class="cart-info__text cart-info__text_link" href="#"><span>προσθεσε promo κωδικο</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></a>
-                            <div class="cart-info__text cart-info__text_summ hide-lg CartPage-Total"><span>συνολο</span><span>189,80 €</span></div>
+                            <div class="cart-info__text cart-info__text_price CartPage-Total"><span>ΣΥΝΟΛΙΚΗ ΤΙΜΗ</span><span>120,50€</span></div>
+                            <div class="cart-info__text"><span>ΜΕΤΑΦΟΡΙΚΑ ΕΞΟΔΑ</span><span>ΔΩΡΕΑΝ</span></div>
                         </div>
-                        <div class="cart-info__delivery">
-                            <div><svg><use xlink:href="assets/images/icon.svg#icon_delivery"></use></svg><span class="CartPage-PromoText">δωρεαν μεταφορικα σε ολη την ελλαδα</span></div>
-                        </div>
-                        <div class="cart-info__final">
-                            <p class="cart-info__text cart-info__text_summ show-lg CartPage-Total"><span>συνολο</span><span>189,80 €</span></p><a class="Button cart-info__send CartPage-CheckoutButton" href="#">ολοκληρωση παραγγελιασ</a>
-                        </div>
+                        <div class="cart-info__final"><a class="Button Button_with-arrow cart-info__send CartPage-CheckoutButton" href="#">
+                                <div><span>ΠΛΗΡΩΜΗ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_button"></use></svg></div>
+                            </a></div>
                     </div>
                 </div>
             </div>
@@ -2391,27 +2683,23 @@
                     <div class="CartItem">
                         <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/1.jpg" /></div>
                         <div class="CartItem__content">
-                            <div class="CartItem__title-wrapper">
-                                <p class="CartItem__title CartItem-Heading">φορεμα ασυμμετρο με βολαν</p>
-                            </div>
-                            <div class="CartItem__row">
+                            <div class="CartItem__texts">
+                                <div class="CartItem__title-wrapper">
+                                    <p class="CartItem__title CartItem-Heading">φορεμα ασυμμετρο με βολαν</p>
+                                </div>
                                 <div class="CartItem__items">
-                                    <div class="CartItem__item"><span>Colour:</span><span>multicolor</span></div>
-                                    <div class="CartItem__item"><span>Size:</span><span><select class="CartItem__size-select js-size-select" name="size">
-                                                <option value="s-8" selected="selected">s-8</option>
-                                                <option value="s-9">s-9</option>
-                                                <option value="s-10">s-10</option>
-                                            </select></span></div>
+                                    <div class="CartItem__item"><span>Χρώμα:</span><span>multicolor</span></div>
+                                    <div class="CartItem__item"><span>Μέγεθος:</span><span>S-8</span></div>
                                 </div>
-                                <div class="CartItem__numberbox">
-                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
-                                </div>
+                            </div>
+                            <div class="CartItem__numberbox">
+                                <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-minus" type="button">-</button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-plus" type="button">+</button></div>
                             </div>
                             <div class="CartItem__prices CartItem-Price">
                                 <div class="CartItem__price">129,90 €</div>
                             </div>
                             <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
-                                <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close_big"></use></svg></div>
+                                <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg></div>
                                 <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
                             </div>
                         </div>
@@ -2432,13 +2720,16 @@
                 <div class="container">
                     <div class="product-slider js-product-slider">
                         <div class="product-slider__header">
-                            <h2 class="triangle-heading triangle-heading_small product-slider__title"></h2>
-                            <p class="product-slider__text show-lg">5 προϊόντα</p>
+                            <div class="product-slider__title"></div>
+                            <div class="product-slider__arrows">
+                                <div class="product-slider__arrow product-slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_small"></use></svg></div>
+                                <div class="product-slider__arrow product-slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_small"></use></svg></div>
+                            </div>
                         </div>
                         <div class="product-slider__content">
                             <div class="product-slider__slider swiper-container">
                                 <div class="swiper-wrapper">
-                                    <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                         <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/18.jpg" /></a>
                                             <div class="ProductCard__sizes hide-lg">
                                                 <div class="ProductCard__sizes-title">choose your size</div>
@@ -2453,7 +2744,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                         <div class="ProductCard__top">
                                             <div class="ProductCard__image ProductCard-Picture"><a href="#"><img src="assets/images/products/19.jpg" /></a>
                                                 <div class="ProductCard__slider-wrapper">
@@ -2482,7 +2773,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                         <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/20.jpg" /></a>
                                             <div class="ProductCard__sizes hide-lg">
                                                 <div class="ProductCard__sizes-title">choose your size</div>
@@ -2497,7 +2788,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                         <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/21.jpg" /></a>
                                             <div class="ProductCard__sizes hide-lg">
                                                 <div class="ProductCard__sizes-title">choose your size</div>
@@ -2513,7 +2804,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="ProductCard ProductCard_preview swiper-slide product-slider__slide">
+                                    <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                         <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/20.jpg" /></a>
                                             <div class="ProductCard__sizes hide-lg">
                                                 <div class="ProductCard__sizes-title">choose your size</div>
@@ -2529,10 +2820,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="product-slider__arrows">
-                                <div class="product-slider__arrow product-slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
-                                <div class="product-slider__arrow product-slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
                             </div>
                         </div>
                     </div>
@@ -2660,7 +2947,7 @@
                                             <option value="M-12">Size: M-12</option>
                                         </select>
                                         <div class="product-result__amount">
-                                            <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                            <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-minus" type="button">-</button><input class="input-numberbox__input js-numberbox-input" value="1" type="text" /><button class="input-numberbox__button js-numberbox-plus" type="button">+</button></div>
                                         </div>
                                     </div><button class="Button Button_submit-button product-result__button js-popup-minicart-open ProductActions-AddToCart" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_done"></use></svg><span>προσθηκη στο καλαθι</span></button>
                                 </div>
@@ -2668,16 +2955,16 @@
                             <div class="product__small-slider">
                                 <div class="product-slider js-product-slider product-slider product-slider_small" data-size="small">
                                     <div class="product-slider__header">
-                                        <div class="product-slider__titles">
-                                            <p class="product-slider__title-small">PAIRS WELL WITH</p>
-                                            <p class="product-slider__title-small show-lg"><a href="#">SHOP THE LOOK</a></p>
+                                        <div class="product-slider__title">PAIRS WELL WITH</div>
+                                        <div class="product-slider__arrows">
+                                            <div class="product-slider__arrow product-slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_small"></use></svg></div>
+                                            <div class="product-slider__arrow product-slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_small"></use></svg></div>
                                         </div>
-                                        <p class="product-slider__text show-lg">5 προϊόντα</p>
                                     </div>
                                     <div class="product-slider__content">
                                         <div class="product-slider__slider swiper-container">
                                             <div class="swiper-wrapper">
-                                                <div class="ProductCard swiper-slide product-slider__slide">
+                                                <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                                     <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/22.jpg" /></a>
                                                         <div class="ProductCard__sizes hide-lg">
                                                             <div class="ProductCard__sizes-title">choose your size</div>
@@ -2692,7 +2979,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="ProductCard swiper-slide product-slider__slide">
+                                                <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                                     <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/23.jpg" /></a>
                                                         <div class="ProductCard__sizes hide-lg">
                                                             <div class="ProductCard__sizes-title">choose your size</div>
@@ -2707,7 +2994,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="ProductCard swiper-slide product-slider__slide">
+                                                <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                                     <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/24.jpg" /></a>
                                                         <div class="ProductCard__sizes hide-lg">
                                                             <div class="ProductCard__sizes-title">choose your size</div>
@@ -2722,7 +3009,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="ProductCard swiper-slide product-slider__slide">
+                                                <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                                     <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/21.jpg" /></a>
                                                         <div class="ProductCard__sizes hide-lg">
                                                             <div class="ProductCard__sizes-title">choose your size</div>
@@ -2737,7 +3024,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="ProductCard swiper-slide product-slider__slide">
+                                                <div class="ProductCard ProductCard_small swiper-slide product-slider__slide">
                                                     <div class="ProductCard__top"><a class="ProductCard__image ProductCard-Picture" href="#"><img src="assets/images/products/20.jpg" /></a>
                                                         <div class="ProductCard__sizes hide-lg">
                                                             <div class="ProductCard__sizes-title">choose your size</div>
@@ -2753,10 +3040,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="product-slider__arrows">
-                                            <div class="product-slider__arrow product-slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
-                                            <div class="product-slider__arrow product-slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right"></use></svg></div>
                                         </div>
                                     </div>
                                 </div>
@@ -2885,7 +3168,7 @@
                                     <option value="M-12">Size: M-12</option>
                                 </select>
                                 <div class="product-result__amount">
-                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-plus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_plus"></use></svg></button><input class="input-numberbox__input js-numberbox-input" value="1" type="text" /><button class="input-numberbox__button js-numberbox-minus" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_minus"></use></svg></button></div>
+                                    <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-minus" type="button">-</button><input class="input-numberbox__input js-numberbox-input" value="1" type="text" /><button class="input-numberbox__button js-numberbox-plus" type="button">+</button></div>
                                 </div>
                             </div><button class="Button Button_submit-button product-result__button js-popup-minicart-open ProductActions-AddToCart" type="button"><svg><use xlink:href="assets/images/icon.svg#icon_done"></use></svg><span>προσθηκη στο καλαθι</span></button>
                         </div>
@@ -3299,6 +3582,76 @@
                             <div class="slider-dots__dot is-active"></div>
                             <div class="slider-dots__dot"></div>
                             <div class="slider-dots__dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Component cart-final</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Component: components/cart-final/cart-final</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Component description</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="cart-final">
+                        <div class="cart-final__texts">
+                            <p class="cart-final__title">ΣΥΝΟΛO:</p>
+                            <p class="cart-final__text">128,90€</p>
+                        </div><a class="Button Button_with-arrow cart-final__button" href="#">
+                            <div><span>OΛΟΚΛΗΡΩΣΗ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_button"></use></svg></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Component cart-back</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Component: components/cart-back/cart-back</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Component description</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="cart-back"><a class="Button Button_style_light cart-back__button" href="#">
+                            <div><svg><use xlink:href="assets/images/icon.svg#icon_arrow_right_burger"></use></svg><span>ΠΙΣΩ ΓΙΑ ΣΥΝΕΧΕΙΑ ΑΓΟΡΩΝ</span></div>
+                        </a></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Component cart-additional</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Component: components/cart-additional/cart-additional</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Component description</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="cart-additional">
+                        <div class="cart-additional__item hide-lg"><svg class="cart-additional__icon"><use xlink:href="assets/images/icon.svg#icon_back"></use></svg>
+                            <p class="cart-additional__text">Εύκολες και γρήγορες επιστροφές. <a href='#'>Μάθε περισσότερα</a></p>
+                        </div>
+                        <div class="cart-additional__item"><svg class="cart-additional__icon"><use xlink:href="assets/images/icon.svg#icon_package"></use></svg>
+                            <p class="cart-additional__text">Δωρεάν αποστολή σε όλη την Ελλάδα</p>
                         </div>
                     </div>
                 </div>
