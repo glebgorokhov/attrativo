@@ -1,24 +1,26 @@
 mixin side-cart()
-  +b.CartOverlay&attributes(attributes)
-    +e.header
-      +e.P.title SHOPPING CART
-      +icon('close_bold').__close.js-side-cart-close
+  +b.CartOverlay.js-side-cart-close&attributes(attributes)
+    .container
+      +e.wrapper
+        +e.header
+          +e.P.title SHOPPING CART
+          +e.amount
+            img(src="assets/images/bag.png")
+            span (2)
 
-    +e.items
-      each item in [0, 1, 2]
-        +cart-item(getData('cart-items')[item], false, true)._small.__item
+        +e.items
+          each item in [0, 1, 2]
+            +cart-item(getData('cart-items')[item])._small.__item
 
-    +e.info
-      each section in getData('side-cart')
-        +e.info-section
-          each item in section
-            +e.info-item(class=item.itemClass)
-              +e.P.info-title!= item.title
-              +e.P.info-value(class=item.valueClass)!= item.value
+        +e.info
+          +e.P.info-title ΣΥΝΟΛΙΚΗ ΤΙΜΗ
+          +e.P.info-value 120,50€
 
-    +e.buttons
-      +button()(href="#").__button.CartOverlay-CartButton ολοκληρωση παραγγελιασ
-      +button()(href="#")._style_light.__button.CartOverlay-CartButton Συνεχεια αγορων
+        +e.buttons
+          +button()(href="#")._style_light.__button.CartOverlay-CartButton ΚΑΛΑΘΙ
+          +button()(href="#")._with-arrow.__button.CartOverlay-CartButton
+            span ΠΛΗΡΩΜΗ
+            +icon('arrow_button')
 
 mixin ui-kit-side-cart()
   +ui-section

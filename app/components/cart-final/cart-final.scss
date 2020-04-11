@@ -1,0 +1,27 @@
+.cart-final {
+  display: flex;
+  padding: 17px 0;
+  justify-content: space-between;
+  align-items: center;
+
+  $b: &;
+
+  &__texts {
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: .06em;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__text {
+
+  }
+
+  &__button {
+    font-weight: 600;
+    padding: 0 26px;
+  }
+}

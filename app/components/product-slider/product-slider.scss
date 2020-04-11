@@ -4,154 +4,60 @@
   $b: &;
 
   &__header {
-    @include rule(text-align, (xl: center, lg: left));
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 0;
   }
 
   &__title {
-    @include rule(display, (xl: inline-block, lg: block));
-    @include rule(padding, (lg: 0));
-    @include rule(font-size, (lg: 13px));
-    @include rule(line-height, (lg: 13px));
-    @include rule(letter-spacing, (lg: .15em));
-
-    &::before {
-      @include rule(display, (lg: none));
-    }
-  }
-
-  &__text {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 20px;
+    line-height: 25px;
     letter-spacing: .06em;
-    color: $color-grey-30;
-    margin-top: 5px;
+    font-family: $font-second;
   }
 
   &__content {
     position: relative;
 
-    @include rule(margin-top, (xl: 47px, lg: 14px));
-    @include rule(margin-left, (lg: -20px));
-    @include rule(margin-right, (lg: -20px));
-
-    @include screen('lg', min) {
-
-      #{$b}_small & {
-        margin-top: 9px;
-      }
-    }
+    @include rule(margin-top, (xl: 11px, lg: 13px));
   }
 
   &__slider {
-    @include rule(overflow, (xl: visible, lg: hidden));
-
-    #{$b}_small & {
-      overflow: hidden;
-    }
+    @include rule(margin-left, (lg: -20px));
+    @include rule(margin-right, (lg: -20px));
   }
 
   &__slide {
-    @include screen('lg', min) {
-      width: calc((100% - 30px) / 4) !important;
 
-      #{$b}[data-size='small'] & {
-        width: calc((100% - 20px) / 3) !important;
-      }
-    }
-
-    @include screen('lg', min) {
-      transition: opacity $ease-main;
-      opacity: 0;
-
-      &.swiper-slide-active {
-
-        &, & + .swiper-slide, & + .swiper-slide + .swiper-slide, & + .swiper-slide + .swiper-slide + .swiper-slide {
-          opacity: 1;
-        }
-      }
-    }
-
-    #{$b}_small & {
-      opacity: 1;
-
-      .ProductCard__slider, .ProductCard__sizes, .ProductCard-Content, .ProductCard__favourite {
-        display: none;
-      }
-
-      @include screen('lg', min) {
-
-        &:hover {
-          opacity: .5 !important;
-        }
-      }
-
-      .ProductCard__top {
-        @include screen('lg', min) {
-          padding-bottom: 112%;
-        }
-      }
-    }
-
-    @include screen('lg') {
-
-      .ProductCard-Content {
-        display: none;
-      }
-    }
   }
 
   &__arrows {
-    @include screen('lg', min) {
-      width: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: absolute;
-      right: 0;
-      bottom: 100%;
-      margin-bottom: 47px;
-
-      #{$b}_small & {
-        width: 34px;
-        margin-bottom: 9px;
-      }
-    }
+    width: auto;
+    display: flex;
+    align-items: center;
   }
 
   &__arrow {
-    width: 10px;
-    height: 15px;
+    width: 6px;
+    height: 12px;
     font-size: 0;
     cursor: pointer;
-    transition: opacity $ease-main, fill $ease-main;
+    transition: opacity $ease-main;
     position: relative;
-
-    @include screen('lg', min) {
-
-      #{$b}_small & {
-        width: 9px;
-        height: 14px;
-      }
-    }
-
-    @include screen('lg') {
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      padding: 20px;
-      z-index: 50;
-      position: absolute;
-    }
+    fill: black;
 
     &::after {
       content: '';
       position: absolute;
-      left: -10px;
-      top: -10px;
-      right: -10px;
-      bottom: -10px;
+      left: -5px;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+    }
+
+    &:not(:first-child) {
+      margin-left: 12px;
     }
 
     &:hover {
@@ -165,53 +71,11 @@
 
     &_prev {
       transform: rotate(180deg);
-
-      @include rule(left, (lg: 0));
-    }
-
-    &_next {
-      @include rule(right, (lg: 0));
     }
 
     &.swiper-button-disabled {
-      @include screen('lg', min) {
-        fill: $color-grey-32;
-        pointer-events: none;
-      }
-
-      @include screen('lg') {
-        opacity: 0;
-        pointer-events: none;
-      }
-    }
-  }
-
-  &__titles {
-    display: flex;
-    justify-content: space-between;
-
-    @include rule(padding-bottom, (lg: 6px));
-    @include rule(border-bottom, (lg: 1px solid $color-border));
-    @include rule(margin-bottom, (lg: 8px));
-  }
-
-  &__title-small {
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: capitalize;
-    text-align: left;
-
-    @include rule(letter-spacing, (xl: .06em, lg: .15em));
-    @include rule(font-weight, (xl: 600, lg: 700));
-    @include rule(font-family, (lg: $font-main));
-
-    a {
-      color: $color-grey-33;
-      transition: color $ease-main;
-
-      &:hover {
-        color: black;
-      }
+      opacity: .5;
+      pointer-events: none;
     }
   }
 }

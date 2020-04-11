@@ -104,5 +104,23 @@
       }
     }
   }
+
+  &_with-arrow {
+
+    div {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      width: 27px;
+      height: 10px;
+
+      @include rule(margin-left, (xl: 10px, lg: 16px));
+    }
+  }
 }
 

@@ -1,0 +1,22 @@
+mixin cart-additional()
+  +b.cart-additional&attributes(attributes)
+    each item in getData('cart-additional')
+      +e.item(class=item.class)
+        +icon(item.icon).__icon
+        +e.P.text!= item.text
+
+mixin ui-kit-cart-additional()
+  +ui-section
+    +ui-section-head
+      +ui-title Component cart-additional
+      +ui-path
+        p Component: components/cart-additional/cart-additional
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +cart-additional
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

@@ -1,31 +1,20 @@
 mixin cart-info()
   +b.cart-info&attributes(attributes).CartPage-Floating
-    +e.BUTTON.button.hide-lg
-      div
-        span πληροφοριεσ παραγγελιασ
-        +icon('arrow_right')
+    +e.P.title.hide-lg ΣΥΝΟΛΟ
 
     +e.content
       each item in getData('cart-info')
-        +e.text(class=item.class, href=item.href)
+        +e.text(class=item.class)
           span!= item.text
 
           if item.price
             span!= item.price
 
-          if item.icon
-            +icon(item.icon)
-
-    +e.delivery
-      div
-        +icon('delivery')
-        span.CartPage-PromoText δωρεαν μεταφορικα σε ολη την ελλαδα
-
     +e.final
-      +e.P.text._summ.show-lg.CartPage-Total
-        span συνολο
-        span 189,80 €
-      +button()(href="#").__send.CartPage-CheckoutButton ολοκληρωση παραγγελιασ
+      +button()(href="#")._with-arrow.__send.CartPage-CheckoutButton
+        div
+          span ΠΛΗΡΩΜΗ
+          +icon('arrow_button')
 
 mixin ui-kit-cart-info()
   +ui-section

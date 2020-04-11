@@ -1,0 +1,22 @@
+mixin cart-back()
+  +b.cart-back&attributes(attributes)
+    +button()(href="#")._style_light.__button
+      div
+        +icon('arrow_right_burger')
+        span ΠΙΣΩ ΓΙΑ ΣΥΝΕΧΕΙΑ ΑΓΟΡΩΝ
+
+mixin ui-kit-cart-back()
+  +ui-section
+    +ui-section-head
+      +ui-title Component cart-back
+      +ui-path
+        p Component: components/cart-back/cart-back
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +cart-back
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

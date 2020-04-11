@@ -1,0 +1,26 @@
+.cart-back {
+  display: block;
+  margin-top: 38px;
+
+  $b: &;
+
+  &__button {
+    padding: 0 37px;
+    border-color: #e5e5e5;
+    font-weight: 400;
+
+    div {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      width: 6px;
+      height: 11px;
+      transform: rotate(180deg);
+      margin-right: 14px;
+      flex-shrink: 0;
+    }
+  }
+}

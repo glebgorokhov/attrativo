@@ -1,22 +1,11 @@
 [
   {
-    "text": "μερικο συνολο",
-    "price": "149,90 €"
+    "text": "ΣΥΝΟΛΙΚΗ ΤΙΜΗ",
+    "price": "120,50€",
+    "class": "_price CartPage-Total"
   },
   {
-    "class": "show-lg",
-    "text": "εκτιμωμενα εξοδα αποστολησ",
-    "price": "00,00 €"
-  },
-  {
-    "class": "_link",
-    "text": "προσθεσε promo κωδικο",
-    "icon": "arrow_right",
-    "href": "#"
-  },
-  {
-    "class": "_summ hide-lg CartPage-Total",
-    "text": "συνολο",
-    "price": "189,80 €"
+    "text": "ΜΕΤΑΦΟΡΙΚΑ ΕΞΟΔΑ",
+    "price": "ΔΩΡΕΑΝ"
   }
 ]

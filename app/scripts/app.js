@@ -25,7 +25,6 @@ import {catalogue} from "../components/catalogue/catalogue";
 import {scrollTop} from "../components/scroll-top/scroll-top";
 import {filters} from "../components/filters/filters";
 import {cartItem} from "../components/cart-item/cart-item";
-import {cartInfo} from "../components/cart-info/cart-info";
 import {productSlider} from "../components/product-slider/product-slider";
 import {productCardSlider} from "../components/product-card/product-card";
 import {backToTop} from "../components/back-to-top/back-to-top";
@@ -69,7 +68,6 @@ $(() => {
   scrollTop();
   filters();
   cartItem();
-  cartInfo();
   productSlider();
   productCardSlider();
   backToTop();

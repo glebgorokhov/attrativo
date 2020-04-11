@@ -1,63 +1,37 @@
-mixin cart-item(data, static, small)
+mixin cart-item(data)
   +b.CartItem&attributes(attributes)
     +e.image.CartItem-Picture
       img(src=data.image)
 
     +e.content
-      +e.title-wrapper
-        +e.P.title.CartItem-Heading!= data.title
-
-      +e.row
+      +e.texts
+        +e.title-wrapper
+          +e.P.title.CartItem-Heading!= data.title
         +e.items
           +e.item
-            span Colour:
+            span Χρώμα:
             span!= data.color
           +e.item
-            span Size:
-            span
-              if !static
-                +e.SELECT.size-select.js-size-select(name="size")
-                  option(value="s-8" selected) s-8
-                  option(value="s-9") s-9
-                  option(value="s-10") s-10
-              else
-                | S-8
+            span Μέγεθος:
+            span S-8
 
-          if static
-            +e.item
-              span Qty:
-              span 1
-
-          if small
-            +e.item
-              span Qty:
-              span
-                +input-number().CartItem-Qty
-
-        if (!static && !small)
-          +e.numberbox
-            +input-number().CartItem-Qty
+      +e.numberbox
+        +input-number().CartItem-Qty
 
       +e.prices.CartItem-Price
         +e.price!= data.price
 
-        if data.oldPrice
-          +e.price._old
-            span!= data.oldPrice
-            span!= data.discount
+      +e.controls
+        +e.LABEL.control._favourite
+          input(type="checkbox" name="favourites")
+          +icon('heart')
 
-      if !static
-        +e.controls
-          +e.LABEL.control._favourite
-            input(type="checkbox" name="favourites")
-            +icon('heart')
+        +e.control._remove.js-cart-remove.CartItem-Delete
+          +icon('remove', true).show-lg
+          +icon('close', true).hide-lg
 
-          +e.control._remove.js-cart-remove.CartItem-Delete
-            +icon('remove', true).show-lg
-            +icon('close_big', true).hide-lg
-
-          +e.control._repeat.show-lg
-            +icon('repeat')
+        +e.control._repeat.show-lg
+          +icon('repeat')
 
 mixin ui-kit-cart-item()
   +ui-section

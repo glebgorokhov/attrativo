@@ -111,10 +111,10 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
   }
 
   &_cart {
-    $grid-gap-vertical: 40px;
-    $grid-gap: 40px;
-    $grid-gap-vertical-lg: 12px;
-    $grid-gap-lg: 12px;
+    $grid-gap-vertical: 0;
+    $grid-gap: 48px;
+    $grid-gap-vertical-lg: 0;
+    $grid-gap-lg: 0;
 
     @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0, lg: -$grid-gap-vertical-lg (-$grid-gap-lg/2) 0));
 

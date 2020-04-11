@@ -1,355 +1,284 @@
 .CartItem {
-  @include rule(display, (xl: block, lg: flex));
-  @include rule(border-radius, (xl: 2px, lg: 0));
+  display: flex;
+  transition: margin $ease-main, opacity $ease-main, transform $ease-main, border-width $ease-main;
 
-  font-size: 12px;
-  transform: translate3d(0, 0, 0);
-  border: 1px solid $color-grey-27;
-  box-sizing: border-box;
-  position: relative;
-  box-sizing: border-box;
-  transition: transform $ease-main, opacity $ease-main, margin $ease-main;
-  width: 100%;
+  @include rule(padding, (xl: 12px 0, lg: 15px 20px));
 
-  @include rule(border-color, (lg: $color-border));
-  @include rule(border-width, (lg: 1px 0 1px 0));
+  @include screen(lg) {
+    margin: 0 -20px;
 
-  $b: &;
+    &:nth-child(2n) {
+      background: #f7f7f7;
+    }
+  }
 
-  &_static {
-    border: 0;
+  @include screen(lg, min) {
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    align-items: flex-start;
+
+    &:first-child {
+      border-top-width: 1px;
+    }
   }
 
   &_small {
     border: 0;
-    border-radius: 0;
-    display: flex;
+    margin: 0;
+    padding: 0;
+
+    .input-numberbox {
+      height: 15px;
+
+      .input-numberbox__input {
+        font-size: 12px;
+      }
+
+      .input-numberbox__button {
+        font-size: 14px;
+      }
+    }
   }
 
   &.is-removed {
     opacity: 0;
-    transform: scale(1.3);
+    transform: scale(.5);
   }
 
+  $b: &;
+
   &__image {
-    @include rule(padding-bottom, (xl: 145.3%, lg: 0));
-    @include rule(width, (xl: 100%, lg: 85px));
-    @include rule(border-radius, (xl: 1px 1px 0 0, lg: 0));
-    @include rule(height, (xl: 0, lg: auto));
-    @include rule(flex-shrink, (lg: 0));
-    @include rule(margin, (lg: -1px 0));
+    @include rule(width, (xl: 94px, lg: 70px));
+    @include rule(height, (xl: 141px, lg: 105px));
+    @include rule(margin-right, (xl: 20px, lg: 10px));
 
     overflow: hidden;
     position: relative;
-
-    #{$b}_static & {
-      width: 80px;
-    }
-
-    #{$b}_small & {
-      padding-bottom: 0;
-      width: 76px;
-      border-radius: 0;
-      height: auto;
-      flex-shrink: 0;
-      margin: -1px 0;
-    }
+    flex-shrink: 0;
 
     img {
       @include fill-img;
     }
+
+    #{$b}_small & {
+      width: 58px;
+      height: 87px;
+      margin-right: 10px;
+    }
   }
 
   &__content {
-    @include rule(padding, (xl: 8px 10px 19px, lg: 12px 70px 12px 10px));
-    @include rule(flex-grow, (lg: 1));
+    @include rule(display, (xl: flex, lg: block));
+    @include rule(padding-top, (xl: 20px, lg: 0));
+    @include rule(position, (lg: relative));
+    @include rule(padding-bottom, (lg: 30px));
 
-    #{$b}_static & {
-      padding: 0 0 40px 10px;
+    flex-grow: 1;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    > *:not(:first-child) {
+      @include rule(padding-left, (xl: 30px, lg: 0));
     }
 
     #{$b}_small & {
-      padding: 0 40px 23px 15px;
-      flex-grow: 1;
+      display: block;
+      padding-top: 0;
+      position: relative;
+      padding-bottom: 30px;
+
+      > *:not(:first-child) {
+        padding-left: 0;
+      }
     }
   }
 
   &__title-wrapper {
     @include rule(display, (lg: grid));
+    @include rule(margin-bottom, (lg: 3px));
 
     #{$b}_small & {
       display: grid;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__texts {
+    @include rule(width, (xl: 280px, lg: auto));
+
+    #{$b}_small & {
+      width: auto;
     }
   }
 
   &__title {
-    @include rule(font-size, (xl: 14px, lg: 12px));
-    @include rule(line-height, (xl: 18px, lg: 15px));
-    @include rule(font-weight, (lg: 600));
-    @include rule(white-space, (lg: nowrap));
-    @include rule(overflow, (lg: hidden));
-    @include rule(text-overflow, (lg: ellipsis));
-
+    font-weight: 300;
+    line-height: 1.5;
     letter-spacing: .06em;
     text-transform: uppercase;
 
-    #{$b}_static & {
-      line-height: 10px;
-    }
+    @include rule(font-size, (xl: 14px, lg: 12px));
+    @include rule(margin-bottom, (xl: 9px, lg: 0));
+    @include ellipsis(150px);
 
     #{$b}_small & {
-      font-size: 14px;
-      line-height: 15px;
-      font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
+      font-size: 12px;
+      margin-bottom: 0;
 
-  &__row {
-    @include rule(display, (xl: flex, lg: block));
-    @include rule(margin-top, (xl: 11px, lg: 13px));
-
-    align-items: center;
-
-    #{$b}_small & {
-      display: block;
-      margin-top: 15px;
+      @include ellipsis(150px);
     }
   }
 
   &__items {
-    flex-grow: 1;
-    margin-right: 20px;
+    @include rule(display, (xl: block, lg: flex));
+
+    #{$b}_small & {
+      display: flex;
+    }
   }
 
   &__item {
-    @include rule(font-size, (xl: 12px, lg: 11px));
-    @include rule(line-height, (xl: 15px, lg: 14px));
-    @include rule(color, (lg: $color-grey-29));
-    @include rule(font-weight, (xl: 300, lg: 400));
-
+    font-size: 12px;
+    line-height: 1.4;
     letter-spacing: .06em;
     text-transform: capitalize;
     display: flex;
     align-items: center;
 
-    .input-numberbox {
-      width: 40px;
-      height: 14px;
-      border: 0;
-      flex-direction: row-reverse;
-      background: transparent !important;
-
-      .input-numberbox__button {
-        width: 8px;
-      }
-
-      .input-numberbox__button svg {
-        width: 8px;
-        height: 9px;
-        fill: black;
-        transition: opacity $ease-main;
-
-        &:hover {
-          opacity: .5;
-        }
-      }
-    }
+    @include rule(font-weight, (xl: 300, lg: 400));
 
     #{$b}_small & {
-      font-size: 12px;
-      line-height: 15px;
-      color: black;
-      font-weight: 300;
-
-      span:last-child {
-        font-weight: 600;
-      }
+      font-weight: 400;
     }
 
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 2px, lg: 0));
-
-      #{$b}_static & {
-        margin-top: 4px;
-      }
+      @include rule(margin-top, (xl: 5px, lg: 0));
+      @include rule(margin-left, (lg: 14px));
 
       #{$b}_small & {
-        margin-top: 5px;
+        margin-left: 14px;
+        margin-top: 0;
       }
     }
 
     span {
 
       &:first-child {
+        @include rule(display, (lg: none));
 
+        #{$b}_small & {
+          display: none;
+        }
       }
 
       &:last-child {
-        margin-left: 7px;
-        font-weight: 600;
+        @include screen(lg, min) {
+          margin-left: 7px;
+          font-weight: 400;
+        }
+
+        #{$b}_small & {
+          margin-left: 0;
+          font-weight: 400;
+        }
       }
     }
   }
 
-  &__number {
-    flex-shrink: 0;
-  }
-
   &__numberbox {
-    @include rule(width, (xl: 68px, lg: 75px));
-    @include rule(margin-top, (lg: 16px));
+    @include rule(width, (xl: 67px, lg: 57px));
+
+    @include screen(lg) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
 
     #{$b}_small & {
-      width: 75px;
-      margin-top: 16px;
+      width: 43px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
     }
   }
 
   &__prices {
-    @include rule(margin-top, (xl: 24px, lg: 0));
-    @include rule(position, (lg: absolute));
-    @include rule(right, (lg: 0));
-    @include rule(bottom, (lg: 10px));
-
-    display: flex;
-    align-items: flex-end;
-
-    #{$b}_static & {
-      bottom: 0;
-    }
+    @include rule(margin-top, (lg: 7px));
 
     #{$b}_small & {
-      margin-top: 0;
-      position: absolute;
-      right: 0;
-      bottom: 0;
+      margin-top: 7px;
     }
   }
 
   &__price {
-    font-family: $font-main;
-
-    @include rule(font-weight, (xl: 600, lg: 500));
-    @include rule(font-size, (xl: 18px, lg: 13px));
-    @include rule(line-height, (xl: 22px, lg: 16px));
+    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(line-height, (xl: 20px, lg: 1));
+    @include rule(font-weight, (xl: 600, lg: 700));
 
     letter-spacing: .06em;
     text-transform: uppercase;
-
-    &:first-child {
-
-      &:not(:last-child) {
-        color: $color-red;
-
-        @include rule(font-weight, (xl: 700, lg: 600));
-
-        #{$b}_small & {
-          font-weight: 600;
-        }
-      }
-    }
+    min-width: 100px;
+    text-align: left;
 
     #{$b}_small & {
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 15px;
-      font-family: $font-main;
-    }
-
-    &_old {
-      margin-left: 10px;
-
-      @include rule(font-size, (xl: 12px, lg: 11px));
-      @include rule(line-height, (xl: 15px, lg: 13px));
-      @include rule(padding-bottom, (xl: 3px, lg: 0));
-
-      display: flex;
-      font-weight: 400;
-
-      #{$b}_small & {
-        font-size: 12px;
-        line-height: 15px;
-        padding-bottom: 0;
-      }
-
-      span {
-
-        &:first-child {
-          text-decoration: line-through;
-        }
-
-        &:not(:first-child) {
-          margin-left: 10px;
-
-          @include rule(display, (lg: none));
-
-          #{$b}_small & {
-            display: none;
-          }
-        }
-      }
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 700;
     }
   }
 
   &__controls {
-    @include screen('lg') {
+    display: flex;
+    align-items: center;
+
+    @include screen(lg) {
       position: absolute;
       right: 0;
-      top: 13px;
+      top: 0;
+      bottom: 0;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     #{$b}_small & {
       position: absolute;
       right: 0;
       top: 0;
+      bottom: 0;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
   &__control {
-    @include rule(position, (xl: absolute, lg: relative));
-    @include rule(font-size, (lg: 0));
-    @include rule(text-align, (lg: center));
+    font-size: 0;
+    text-align: center;
 
-    @include screen('lg') {
+    @include rule(fill, (lg: #B0B0B0));
 
-      &:not(:first-child) {
-        margin-top: 14px;
+    #{$b}_small & {
+      fill: #b0b0b0;
+
+      .hide-lg, &.hide-lg {
+        display: none !important;
+      }
+
+      .show-lg, &.show-lg {
+        display: block !important;
       }
     }
 
-    #{$b}_small & {
-      position: relative;
-      font-size: 0;
-      text-align: center;
+    &:not(:first-child) {
+      @include rule(margin-left, (xl: 19px, lg: 0));
 
-      &.show-lg, .show-lg {
-        display: inline-block;
-      }
-
-      &.hide-lg, .hide-lg {
-        display: none;
-      }
-
-      &:not(:first-child) {
-        margin-top: 14px;
+      #{$b}_small & {
+        margin-left: 0;
       }
     }
 
     &_favourite {
-      @include screen('lg', min) {
-        left: 20px;
-        top: 20px;
-      }
-
       cursor: pointer;
-
-      #{$b}_small & {
-        left: unset;
-        top: unset;
-      }
 
       input {
         display: none;
@@ -360,39 +289,29 @@
       }
 
       svg {
-        @include rule(width, (xl: 18px, lg: 14px));
-        @include rule(height, (xl: 16px, lg: 12px));
+        @include rule(width, (xl: 18px, lg: 15px));
+        @include rule(height, (xl: 16px, lg: 15px));
 
         transition: fill $ease-main;
-      }
 
-      #{$b}_small & svg {
-        width: 16px;
-        height: 16px;
+        #{$b}_small & {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
 
     &_remove {
-      @include screen('lg', min) {
-        top: 20px;
-        right: 20px;
-      }
-
       transition: opacity $ease-main;
       cursor: pointer;
-
-      #{$b}_small & {
-        top: unset;
-        right: unset;
-      }
 
       &:hover {
         opacity: .5;
       }
 
       svg {
-        width: 14px;
-        height: 14px;
+        width: 15px;
+        height: 15px;
       }
     }
 
@@ -408,55 +327,6 @@
 
       &:hover {
         opacity: .5;
-      }
-    }
-  }
-
-  .choices.choices_sizes {
-
-    .choices__list--single {
-      padding-right: 0;
-    }
-
-    .choices__list--dropdown {
-      white-space: nowrap;
-      width: auto;
-      margin-top: 5px;
-      padding: 3px 0;
-    }
-
-    .choices__list--dropdown .choices__item {
-      padding: 2px 7px;
-    }
-
-    &[data-type*=select-one] {
-
-      .choices__inner {
-        border: 0;
-        min-height: 0;
-        height: auto;
-        font-weight: 600;
-        background: transparent;
-
-        @include rule(padding, (xl: 0 15px 0 0));
-        @include rule(font-size, (xl: 12px, lg: 11px));
-        @include rule(line-height, (xl: 15px, lg: 14px));
-        @include rule(color, (lg: black));
-
-        letter-spacing: .06em;
-        text-transform: capitalize;
-
-        #{$b}_small & {
-          font-size: 11px;
-          line-height: 14px;
-          color: black;
-        }
-      }
-
-      &::after {
-        width: 9px;
-        height: 5px;
-        right: 0;
       }
     }
   }

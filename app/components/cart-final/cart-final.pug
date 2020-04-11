@@ -1,0 +1,26 @@
+mixin cart-final()
+  +b.cart-final&attributes(attributes)
+    +e.texts
+      +e.P.title ΣΥΝΟΛO:
+      +e.P.text 128,90€
+
+    +button()(href="#")._with-arrow.__button
+      div
+        span OΛΟΚΛΗΡΩΣΗ
+        +icon('arrow_button')
+
+mixin ui-kit-cart-final()
+  +ui-section
+    +ui-section-head
+      +ui-title Component cart-final
+      +ui-path
+        p Component: components/cart-final/cart-final
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +cart-final
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

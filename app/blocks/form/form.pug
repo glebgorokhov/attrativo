@@ -19,13 +19,9 @@ mixin input()
 
 mixin input-number()
   +b.input-numberbox
-    +e.BUTTON.button(type="button").js-numberbox-plus
-      +icon('plus')
-
+    +e.BUTTON.button(type="button").js-numberbox-minus -
     +e.INPUT.input.js-numberbox-input(value="1")&attributes(attributes)
-
-    +e.BUTTON.button(type="button").js-numberbox-minus
-      +icon('minus')
+    +e.BUTTON.button(type="button").js-numberbox-plus +
 
 mixin textarea()
   +b.TEXTAREA.textarea&attributes(attributes)

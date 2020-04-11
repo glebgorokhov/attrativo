@@ -10,7 +10,7 @@ export function productSlider () {
       slider = block.find('.swiper-container'),
       arrowPrev = block.find('.product-slider__arrow_prev'),
       arrowNext = block.find('.product-slider__arrow_next'),
-      size = block.data('size');
+      slides = block.data('slides');
 
     const mySlider = new Swiper(slider, {
       loop: false,
@@ -24,12 +24,12 @@ export function productSlider () {
         nextEl: arrowNext,
         prevEl: arrowPrev,
       },
-      slidesPerView: 2,
-      spaceBetween: 6,
+      slidesPerView: slides[1],
+      spaceBetween: 9,
       breakpoints: {
         1360: {
-          slidesPerView: 'auto',
-          spaceBetween: 10,
+          slidesPerView: slides[0],
+          spaceBetween: 8,
         },
       },
     });

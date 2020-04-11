@@ -1,4 +1,6 @@
 /* eslint-disable */
+import {freeze, unfreeze} from "../../blocks/js-functions/freeze";
+
 const $ = window.$;
 
 function sideCartToggle(hide) {
@@ -11,10 +13,14 @@ function sideCartToggle(hide) {
   if (hide) {
     cart.removeClass('is-active');
 
+    unfreeze();
+
     setTimeout(() => {
       cart.hide();
     }, globalOptions.animationDuration);
   } else {
+    freeze();
+
     cart.show(0, function () {
       $(this).addClass('is-active');
     });
@@ -22,6 +28,10 @@ function sideCartToggle(hide) {
 }
 
 export function sideCart () {
+  $(document).on('click', '.CartOverlay__wrapper', function (e) {
+    e.stopPropagation();
+  });
+
   $(document).on('click', '.js-side-cart-open', function (e) {
     if ($(window).width() >= globalOptions.sizes.lg) e.preventDefault();
 

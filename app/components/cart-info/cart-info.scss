@@ -1,85 +1,51 @@
 .cart-info {
   display: block;
 
-  @include rule(margin-top, (lg: 12px));
+  @include screen(lg, min) {
+    padding: 21px 24px 24px;
+    border: 1px solid #cbcbcb;
+  }
+
+  @include rule(margin-top, (lg: 24px));
 
   $b: &;
 
-  &__button {
-    height: 35px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 2px;
-    width: 100%;
-    display: block;
-    appearance: none;
-
-    div {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    span {
-      font-weight: 600;
-      font-size: 13px;
-      line-height: 16px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    svg {
-      margin-left: 20px;
-      flex-shrink: 0;
-      height: 10px;
-      width: 7px;
-      transform: rotate(90deg);
-      transition: transform $ease-main;
-    }
-
-    &.is-active svg {
-      transform: rotate(-90deg);
-    }
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: .06em;
+    margin-bottom: 13px;
   }
 
   &__content {
     box-sizing: border-box;
-    border-radius: 2px;
 
-    @include rule(margin-top, (xl: 12px, lg: 0));
-    @include rule(border, (xl: 1px solid $color-grey-25, lg: 0));
-    @include rule(padding, (xl: 10px 10px 7px, lg: 0));
-    @include rule(display, (lg: block !important));
+    @include rule(margin-top, (xl: 7px, lg: 0));
   }
 
-  &__content, &__delivery {
+  &__content {
     transition: opacity $ease-main;
-
-    &.is-hidden {
-      opacity: 0;
-    }
   }
 
   &__text {
     display: flex;
 
-    @include rule(font-weight, (xl: 600, lg: 400));
-    @include rule(font-size, (xl: 13px, lg: 11px));
-    @include rule(line-height, (xl: 16px, lg: 14px));
+    @include rule(font-weight, (xl: 300, lg: 600));
+    @include rule(font-size, (xl: 14px, lg: 12px));
+    @include rule(line-height, (xl: 18px, lg: 15px));
 
     letter-spacing: .06em;
     text-transform: uppercase;
 
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 9px, lg: 5px));
+      @include rule(margin-top, (xl: 10px, lg: 12px));
+    }
 
-      &#{$b}__text_summ {
-        margin-top: 27px;
-      }
+    &_price {
 
-      &#{$b}__text_link {
-        @include rule(margin-top, (lg: 13px));
+      span:last-child {
+        @include rule(font-size, (lg: 14px));
       }
     }
 
@@ -91,82 +57,24 @@
 
       &:last-child {
         margin-left: 20px;
-        flex-shirnk: 0;
-
-        @include rule(font-weight, (lg: 600));
+        flex-shrink: 0;
+        font-weight: 600;
       }
-    }
-
-    svg {
-      width: 7px;
-
-      @include rule(height, (xl: 11px, lg: 10px));
-    }
-
-    &_link {
-      color: $color-grey-26;
-      fill: $color-grey-26;
-      font-weight: 400;
-      transition: opacity $ease-main;
-
-      svg {
-        transition: transform $ease-main;
-      }
-
-      &:hover {
-        opacity: .5;
-
-        svg {
-          transform: translate3d(5px, 0, 0);
-        }
-      }
-    }
-
-    &_summ {
-      @include rule(font-size, (xl: 16px, lg: 13px));
-      @include rule(line-height, (xl: 20px, lg: 16px));
-      @include rule(font-weight, (xl: 700, lg: 600));
-    }
-  }
-
-  &__delivery {
-    margin-top: 11px;
-    padding-left: 11px;
-    margin-right: -5px;
-
-    @include rule(display, (lg: none !important));
-
-    div {
-      display: flex;
-      align-items: center;
-    }
-
-    svg {
-      margin-right: 11px;
-      flex-shrink: 0;
-      width: 18px;
-      height: 19px;
-    }
-
-    span {
-      flex: 1;
-      font-size: 12px;
-      line-height: 15px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
     }
   }
 
   &__send {
-    @include rule(margin-top, (xl: 28px, lg: 11px));
-    @include rule(font-size, (xl: 15px, lg: 13px));
+    @include rule(margin-top, (xl: 23px, lg: 16px));
+    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(height, (xl: 45px, lg: 40px));
 
     width: 100%;
-  }
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+    font-weight: 600;
 
-  &__final {
-    @include rule(background, (lg: $color-grey-7));
-    @include rule(padding, (lg: 14px 20px));
-    @include rule(margin, (lg: 16px -20px 0));
+    @include screen(lg, min) {
+      background: #23a738;
+      background: linear-gradient(180deg, rgba(35, 167, 56, .4) 0%, rgba(255, 255, 255, 0) 100%), #23a738;
+    }
   }
 }
