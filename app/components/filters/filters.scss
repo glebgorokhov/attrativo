@@ -14,8 +14,8 @@
     background: white;
     z-index: 1000;
     overflow: auto;
-    padding-top: 56px;
-    padding-bottom: 61px;
+    padding-top: 47px;
+    padding-bottom: 20px;
     display: none;
     transition: opacity $ease-main;
     opacity: 0;
@@ -28,41 +28,58 @@
   $b: &;
 
   &__header {
-    @include rule(height, (xl: 68px, lg: 56px));
-    @include rule(justify-content, (xl: center, lg: flex-start));
-    @include rule(background, (xl: $color-grey-7, lg: white));
-    @include rule(padding, (xl: 10px, lg: 10px 20px));
-    @include rule(position, (lg: fixed));
+    @include rule(height, (xl: 50px, lg: 47px));
+    @include rule(padding, (lg: 5px 20px));
+    @include rule(position, (xl: relative, lg: fixed));
     @include rule(left, (lg: 0));
     @include rule(top, (lg: 0));
     @include rule(right, (lg: 0));
     @include rule(z-index, (lg: 100));
-    @include rule(border-bottom, (lg: 1px solid $color-border));
+    @include rule(border-bottom, (lg: 1px solid black));
+    @include rule(border-right, (xl: 1px solid #E5E5E5, lg: 0));
 
+    background: white;
+    justify-content: flex-start;
     display: flex;
     align-items: center;
     box-sizing: border-box;
+
+    &::before {
+      @include screen(lg, min) {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        left: calc((100vw - 1600px) / -2);
+        border-top: 1px solid #e5e5e5;
+        height: 0;
+
+        @media (max-width: 1720px) {
+          left: -60px;
+        }
+      }
+    }
   }
 
   &__title {
-    @include rule(font-size, (xl: 13px, lg: 12px));
-    @include rule(line-height, (xl: 16px, lg: 15px));
-    @include rule(font-weight, (xl: 700, lg: 600));
+    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(line-height, (xl: 18px, lg: 20px));
 
+    font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
   }
 
   &__results {
-    @include rule(margin-left, (xl: 14px, lg: 5px));
-    @include rule(font-size, (xl: 13px, lg: 12px));
-    @include rule(line-height, (xl: 16px, lg: 15px));
-    @include rule(color, (xl: $color-grey-8, lg: $color-grey-22));
+    @include rule(margin-left, (xl: 10px, lg: 12px));
+    @include rule(font-size, (xl: 12px, lg: 11px));
+    @include rule(line-height, (xl: 15px, lg: 14px));
 
     letter-spacing: .06em;
     text-transform: lowercase;
 
-    @include screen('lg') {
+    @include screen('lg', min) {
+      color: #9b9b9b;
 
       &::before {
         content: '(';
@@ -76,8 +93,8 @@
 
   &__close {
     margin-left: auto;
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
     cursor: pointer;
     padding: 10px;
     margin-right: -10px;
@@ -89,26 +106,74 @@
   }
 
   &__content {
-    @include rule(margin-top, (xl: 38px, lg: 0));
+    @include rule(margin-top, (xl: 20px, lg: 0));
+    @include rule(padding-right, (xl: 25px, lg: 0));
   }
 
   &__section {
-    @include rule(margin-right, (xl: -25px, lg: 0));
-    @include rule(border-bottom, (lg: 1px solid $color-border));
+    border-bottom: 1px solid #e5e5e5;
+    transition: border $ease-main;
 
-    &:not(:first-child) {
-      @include rule(margin-top, (xl: 27px, lg: 0));
+    @include rule(padding-bottom, (xl: 15px, lg: 0));
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (xl: 15px, lg: 0));
+    }
+
+    &.is-active {
+      @include screen(lg) {
+        border-bottom-color: black;
+
+        &:last-child {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+    &:not(.is-values-checked) {
+
+      #{$b}__section-active-items {
+        display: none !important;
+      }
     }
   }
 
   &__section-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
     cursor: pointer;
-    transition: opacity $ease-main;
+    transition: opacity $ease-main, padding $ease-main;
+    position: relative;
 
-    @include rule(height, (lg: 47px));
+    @include rule(height, (lg: 58px));
     @include rule(padding, (lg: 0 20px));
+
+    @include screen(lg) {
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        background: #f7f7f7;
+        opacity: 0;
+        transition: opacity $ease-main;
+      }
+    }
+
+    #{$b}__section.is-values-checked:not(.is-active) & {
+      @include screen(lg) {
+        padding-left: 27px;
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
 
     &:hover {
       @include screen('lg', min) {
@@ -117,51 +182,113 @@
     }
   }
 
+  &__header-tick {
+    @include screen(lg, min) {
+      display: none;
+    }
+
+    display: block;
+    opacity: 0;
+    transition: opacity $ease-main;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 11px;
+    height: 9px;
+    fill: #23a738;
+    z-index: 5;
+    position: absolute;
+
+    #{$b}__section.is-values-checked:not(.is-active) & {
+      opacity: 1;
+    }
+  }
+
   &__section-title {
-    flex-grow: 1;
     margin-right: 20px;
     letter-spacing: .06em;
     text-transform: uppercase;
-
-    @include rule(font-size, (xl: 13px, lg: 12px));
-    @include rule(line-height, (xl: 16px, lg: 15px));
-    @include rule(font-weight, (lg: 600));
-  }
-
-  &__icon {
-    margin-left: auto;
-    width: 10px;
-    height: 10px;
     position: relative;
+    z-index: 4;
+    font-size: 14px;
+    line-height: 18px;
+    transition: font-weight $ease-main;
 
-    &::before, &::after {
-      content: '';
-      width: 100%;
-      height: 2px;
-      background: black;
-      position: absolute;
-      left: 0;
-      top: 50%;
-      margin-top: -1px;
-      transition: transform $ease-main;
+    @include rule(font-weight, (xl: 700, lg: 400));
+
+    #{$b}__section.is-values-checked:not(.is-active) & {
+      font-weight: 600;
     }
 
-    &::after {
-      transform: rotate(-90deg);
-    }
-
-    #{$b}__section.is-active &, #{$b}__section.is-active-passive & {
-
-      &::after {
-        transform: rotate(0deg);
+    #{$b}__section.is-active & {
+      @include screen(lg) {
+        font-weight: 700;
       }
     }
   }
 
+  &__section-active-items {
+    @include screen(lg, min) {
+      display: none !important;
+    }
+
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: .06em;
+    color: #828282;
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 1px;
+    position: relative;
+    z-index: 4;
+    padding-right: 40px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+  }
+
+  &__icon {
+    width: 7px;
+    height: 13px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(90deg);
+    font-size: 0;
+    margin-right: 3px;
+    transition: transform $ease-main, opacity $ease-main;
+
+    @include screen(lg) {
+      position: absolute;
+      right: 23px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      #{$b}__section.is-values-checked:not(.is-active) & {
+        opacity: 0;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    #{$b}__section.is-active &, #{$b}__section.is-active-passive & {
+      transform: rotate(-90deg);
+    }
+  }
+
   &__section-content {
-    @include rule(margin-top, (xl: 21px, lg: 0));
+    @include rule(margin-top, (xl: 10px, lg: 0));
     @include rule(border-top, (lg: 1px solid $color-border));
     @include rule(padding, (lg: 20px));
+    @include rule(border-top-color, (lg: black));
 
     display: none;
     transition: opacity $ease-main;
@@ -179,21 +306,22 @@
   &__scroll {
     @include rule(padding-right, (xl: 25px, lg: 0));
     @include rule(max-height, (xl: 256px, lg: none));
+    @include rule(overflow, (lg: visible !important));
 
-    #{$b}__section_with_link & {
-      @include rule(max-height, (xl: 280px, lg: none));
+    .os-padding, .os-viewport {
+      @include rule(overflow, (lg: visible !important));
+    }
+
+    .os-content-glue {
+      @include screen(lg) {
+        height: auto !important;
+        width: auto !important;
+      }
     }
   }
 
   &__container {
     display: block;
-    margin: 0 auto;
-
-    @include rule(max-width, (xl: 180px, lg: 100%));
-
-    &:not(:first-child) {
-      @include rule(margin-top, (xl: 8px, lg: 13px));
-    }
   }
 
   &__link {
@@ -226,90 +354,112 @@
     display: block;
     cursor: pointer;
 
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 6px, lg: 21px));
+    }
+
     input {
       display: none;
     }
+  }
 
-    span {
-      text-align: center;
-      display: block;
-      border: 1px solid $color-grey-14;
-      box-sizing: border-box;
+  &__checkbox-content {
+    display: flex;
+    align-items: center;
+    position: relative;
 
-      @include rule(border-color, (lg: $color-grey-23));
-      @include rule(padding, (xl: 9px, lg: 7px));
-      @include rule(border-radius, (xl: 2px, lg: 1px));
-      @include rule(font-size, (xl: 13px, lg: 12px));
-      @include rule(line-height, (xl: 16px, lg: 15px));
+    @include screen(lg) {
+      transition: margin $ease-main, padding $ease-main, background $ease-main;
 
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      transition: background $ease-main, border-color $ease-main, color $ease-main, font-weight $ease-main, opacity $ease-main, font-weight $ease-main;
-    }
+      #{$b}__checkbox input:checked + & {
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 15px;
+        background: #f7f7f7;
+      }
 
-    input:not(:checked) + span {
-      @include screen('lg', min) {
+      #{$b}__checkbox:not(:first-child) input:checked + & {
+        margin-top: -16px;
+      }
 
-        &:hover {
-          opacity: .5;
-        }
+      #{$b}__checkbox:not(:last-child) input:checked + & {
+        margin-bottom: -16px;
       }
     }
+  }
 
-    &[href] {
-      transition: opacity $ease-main;
+  &__checkbox-tick {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 11px;
+    height: 9px;
+    fill: #23a738;
+    opacity: 0;
+    transition: opacity $ease-main;
 
-      &:hover {
-        opacity: .5;
-      }
+    #{$b}__checkbox input:checked + #{$b}__checkbox-content & {
+      opacity: 1;
     }
+  }
 
-    input:checked + span {
-      background-color: black;
-      border-color: black;
-      color: white;
-      font-weight: 600;
+  &__checkbox-box {
+    box-sizing: border-box;
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid black;
+    flex-shrink: 0;
+    transition: background $ease-main;
+
+    @include rule(margin-right, (xl: 15px, lg: 13px));
+
+    #{$b}__checkbox input:checked + #{$b}__checkbox-content & {
+      background: black;
     }
+  }
 
-    &_desktop_style_link {
-      @include screen('lg', min) {
+  &__checkbox-color {
+    box-sizing: border-box;
+    display: block;
+    width: 11px;
+    height: 11px;
+    box-shadow: 0 0 0 1px rgba(black, .1) inset;
+    border-radius: 50%;
 
-        span {
-          height: auto;
-          border: 0;
-          padding: 0;
-          background: transparent !important;
-          color: $color-basic !important;
-        }
+    @include rule(margin-right, (xl: 12px, lg: 9px));
+  }
 
-        input:checked + span {
-          font-weight: 800;
-        }
-      }
-    }
+  &__checkbox-text {
+    @include rule(font-size, (xl: 14px, lg: 12px));
+    @include rule(line-height, (xl: 18px, lg: 15px));
+
+    letter-spacing: .06em;
+    flex-grow: 1;
   }
 
   .os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
     padding: 0;
     border-radius: 0;
+    background: #c4c4c4;
+  }
 
-    &::after {
-      content: '';
-      width: 2px;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: $color-grey-21;
-    }
+  .os-viewport, .os-padding {
+    @include rule(position, (lg: static !important));
   }
 
   .os-theme-dark > .os-scrollbar-vertical, .os-theme-light > .os-scrollbar-vertical {
-    width: 5px;
+    width: 2px;
+  }
+
+  .os-theme-dark > .os-scrollbar-vertical, .os-theme-dark > .os-scrollbar-horizontal {
+    @include rule(display, (lg: none !important));
   }
 
   .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-    background: $color-grey-20;
+    background: black;
     border-radius: 0;
     z-index: 2;
   }
@@ -353,60 +503,95 @@
   }
 
   &__category {
-    border: 1px solid #000;
-    box-sizing: border-box;
-    border-radius: 2px;
-    line-height: 33px;
-    padding: 0 10px;
-    text-align: center;
-    font-size: 13px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
+    display: block;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
   }
 
-  &__category-grid {
-    @include rule(margin-top, (xl: 17px, lg: 0));
+  &__category-title {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    svg {
+      margin-left: auto;
+      width: 7px;
+      height: 13px;
+      transform: rotate(90deg);
+      transition: transform $ease-main;
+      margin-right: 3px;
+    }
+
+    #{$b}__category.is-active & {
+
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &__category-accordion {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: none;
+  }
+
+  &__category-link {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
   }
 
   &__buttons {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 62px;
-    display: flex;
     padding: 0 20px;
     background: white;
-    border-top: 1px solid $color-border;
+    margin-top: 50px;
     box-sizing: border-box;
     z-index: 100;
-    align-items: center;
   }
 
   &__button {
-    flex: 1;
-    appearance: none;
-    cursor: pointer;
-    height: 35px;
-    box-sizing: border-box;
-    border: 1px solid $color-border;
-    border-radius: 2px;
-    text-align: center;
-    line-height: 33px;
-    font-size: 13px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
+    width: 100%;
+    display: block;
 
     &:not(:first-child) {
-      margin-left: 7px;
+      margin-top: 28px;
     }
 
     &_dark {
-      background: black;
-      border-color: black;
-      color: white;
-      font-weight: 600;
+
+    }
+
+    &_clear {
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: .06em;
+      color: #696969;
+      text-align: center;
+      padding: 0 0 7px;
+      border-bottom: 1px solid #b6b6b6;
+      text-transform: uppercase;
     }
   }
 }

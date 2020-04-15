@@ -1,30 +1,42 @@
 .catalogue {
   display: block;
 
-  @include rule(margin-top, (xl: 22px, lg: 0));
-
   $b: &;
 
-  .container {
+  > .container {
     @include rule(display, (xl: flex, lg: block));
   }
 
   &__left {
     @include screen('lg', min) {
-      margin-right: 60px;
-      width: 240px;
+      width: 280px;
       flex-shrink: 0;
     }
   }
 
   &__right {
     flex-grow: 1;
-
-    @include rule(margin-right, (xl: -35px, lg: 0));
   }
 
   &__header {
-    padding: .1px;
+    display: flex;
+
+    @include rule(height, (xl: 50px, lg: 46px));
+
+    @include screen(lg) {
+      margin: 0 -20px;
+      padding: 0 20px;
+      border-bottom: 1px solid #e5e5e5;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  &__breadcrumbs {
+    flex: 1;
+    height: 100%;
+    justify-content: center;
   }
 
   &__title {
@@ -58,54 +70,62 @@
   }
 
   &__content {
-    @include rule(margin-top, (xl: 22px, lg: 15px));
+    @include rule(margin, (xl: 22px 0 0, lg: 0 -20px 0));
   }
 
   &__filters-button {
-    display: block;
-    line-height: 40px;
-    height: 40px;
-    width: 100%;
+    line-height: 1;
+    height: 100%;
     appearance: none;
-    background: black;
+    background: transparent;
     cursor: pointer;
-    color: white;
-    font-weight: 600;
-    font-size: 12px;
-    text-align: center;
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
     letter-spacing: .06em;
     text-transform: uppercase;
-    transition: opacity $ease-main;
-
-    &:hover {
-      opacity: .5;
-    }
-  }
-
-  &__mobile-header {
-    position: relative;
-    background: $color-grey-7;
-    margin: 0 -20px -5px;
-    height: 40px;
-    padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
+    transition: fill $ease-main, color $ease-main;
+    fill: black;
+    position: relative;
 
-  &__back-link {
-    width: 8px;
-    height: 14px;
-    transform: rotate(180deg);
-    padding: 10px;
-    margin-left: -10px;
-    cursor: pointer;
-    transition: opacity $ease-main;
-    font-size: 0;
+    &::before {
+      content: '';
+      left: -20px;
+      top: 5px;
+      bottom: 5px;
+      right: -15px;
+      background: black;
+      position: absolute;
+      opacity: 0;
+      transition: opacity $ease-main;
+    }
+
+    &.is-active {
+      fill: white;
+      color: white;
+
+      svg {
+        display: block;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    span, svg {
+      position: relative;
+      z-index: 3;
+    }
 
     svg {
-      width: 100%;
-      height: 100%;
+      width: 12px;
+      height: 12px;
+      margin-left: 10px;
+      display: none;
     }
 
     &:hover {

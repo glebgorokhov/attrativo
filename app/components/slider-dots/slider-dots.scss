@@ -14,7 +14,14 @@
     background: transparent;
     cursor: pointer;
     position: relative;
-    transition: background $ease-main;
+    transition: background $ease-main, border-color $ease-main;
+
+    #{$b}_card & {
+      width: 7px;
+      height: 7px;
+      background: white;
+      border-color: #d9d9d9;
+    }
 
     &::before {
       content: '';
@@ -27,10 +34,19 @@
 
     &:not(:first-child) {
       margin-left: 6px;
+
+      #{$b}_card & {
+        margin-left: 3px;
+      }
     }
 
     &.is-active {
       background: #808080;
+
+      #{$b}_card & {
+        background: #989898;
+        border-color: #989898;
+      }
     }
   }
 }

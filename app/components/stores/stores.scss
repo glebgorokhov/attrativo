@@ -14,7 +14,7 @@
 
     font-family: $font-second;
     line-height: 1;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
 
     @include screen(lg) {
       text-align: center;
@@ -38,7 +38,7 @@
     display: flex;
     border-width: 1px 0;
     border-style: solid;
-    border-color: #E1E1E1;
+    border-color: #e1e1e1;
 
     @include rule(justify-content, (xl: space-between, lg: flex-start));
     @include rule(padding, (xl: 10px 30px, lg: 13px 20px));
@@ -83,7 +83,7 @@
     position: relative;
 
     @include screen(lg) {
-      background: #F4F4F4;
+      background: #f4f4f4;
       padding: 0 10px 10px;
       box-sizing: border-box;
     }

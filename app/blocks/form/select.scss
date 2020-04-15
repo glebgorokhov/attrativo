@@ -119,17 +119,25 @@
 // Catalogue Select
 
 .catalogue__select {
-  @include rule(height, (xl: 68px, lg: 40px));
-  @include rule(padding, (xl: 0 50px, lg: 0 10px));
-  @include rule(line-height, (xl: 16px, lg: 15px));
-  @include rule(font-size, (xl: 13px, lg: 12px));
-  @include rule(font-weight, (xl: 700, lg: 400));
-
+  height: 100%;
+  font-size: 14px;
+  line-height: 1;
   border: 0;
   border-radius: 0;
-  background: $color-grey-7;
+  background: transparent;
   letter-spacing: .06em;
   text-transform: uppercase;
+  box-sizing: border-box;
+  text-align: center;
+
+  @include rule(font-weight, (xl: 600, lg: 400));
+  @include rule(padding, (xl: 0 50px, lg: 0 20px));
+  @include rule(width, (xl: 440px, lg: auto));
+
+  @include screen(lg) {
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+  }
 }
 
 .choices.choices_catalogue {
@@ -144,29 +152,65 @@
   }
 
   &[data-type*=select-one]::after {
-    @include rule(width, (xl: 13px, lg: 10px));
-    @include rule(height, (xl: 8px, lg: 7px));
-    @include rule(right, (xl: 50px, lg: 10px));
+    width: 11px;
+    height: 6px;
+    right: 0;
+    background-image: url('../images/arrow_select_store.svg');
+
+    @include rule(display, (lg: none));
   }
 
   .choices__list {
     border: 0;
+
+    &--single {
+      padding-right: 0;
+
+      .choices__item {
+        @include screen(lg) {
+          max-width: 80px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        @include screen(lg, min) {
+
+          &::before {
+            content: 'TAΞΙΝΟΜΗΣΗ ΑΝΑ : ';
+            font-weight: 400;
+          }
+        }
+      }
+    }
   }
 
   .choices__list--dropdown {
-    @include rule(margin-top, (xl: 22px, lg: 10px));
-
-    border: 0;
-    background: transparent;
-    padding: 0;
+    margin-top: -1px;
+    border: 1px solid #e5e5e5;
+    background: white;
+    padding: 0 20px;
     border-radius: 0;
+    left: -1px;
+
+    @include screen(lg) {
+      width: auto;
+      white-space: nowrap;
+      left: 0;
+      margin-top: 0;
+      padding: 0;
+    }
   }
 
   .choices__list--dropdown .choices__item {
-    @include rule(padding, (xl: 25px 50px, lg: 10px));
+    @include rule(padding, (xl: 13px 0, lg: 14px 20px));
+    @include rule(text-align, (xl: center, lg: left));
+    @include rule(font-size, (xl: 12px, lg: 11px));
+    @include rule(line-height, (xl: 15px, lg: 14px));
 
-    background: $color-grey-7;
+    background: transparent;
     transition: font-weight $ease-main;
+    text-transform: uppercase;
 
     &:not(:last-child) {
       box-shadow: inset 0 -1px 0 0 rgba(black, .05);
@@ -175,7 +219,7 @@
 
   .choices__list--dropdown .choices__item--selectable.is-highlighted {
     opacity: 1;
-    background: $color-grey-7;
+    background: transparent;
     font-weight: 700;
   }
 }
@@ -225,7 +269,7 @@
   &[data-type*=select-one] {
 
     .choices__inner {
-      border: 1px solid #DADADA;
+      border: 1px solid #dadada;
       line-height: 1;
       letter-spacing: .06em;
       background: transparent;
@@ -259,7 +303,7 @@
     }
 
     .choices__list--dropdown {
-      border-color: #DADADA;
+      border-color: #dadada;
     }
   }
 }

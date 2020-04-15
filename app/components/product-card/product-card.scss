@@ -36,45 +36,35 @@
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 9px 10px 13px;
+    padding: 11px 10px;
     text-align: center;
-    background: $color-grey-7;
+    background: rgba(black, .4);
     z-index: 4;
     transition: transform $ease-main;
     transform: translate3d(0, 100%, 0);
     box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+
+    @include rule(display, (xl: flex, lg: none));
 
     #{$b}:hover & {
       transform: translate3d(0, 0, 0);
     }
   }
 
-  &__sizes-title {
-    font-family: $font-main;
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: .06em;
-    text-transform: capitalize;
-  }
-
-  &__sizes-items {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   &__size {
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 1;
     letter-spacing: .06em;
     text-transform: uppercase;
     transition: opacity $ease-main;
-
+    color: white;
+    font-weight: 600;
 
     &[disabled] {
       pointer-events: none;
-      color: $color-grey-8;
+      color: rgba(white, .5);
     }
 
     &:hover {
@@ -82,20 +72,43 @@
     }
 
     &:not(:first-child) {
-      margin-left: 10px;
+      margin-left: 20px;
+    }
+  }
+
+  &__tag {
+    @include rule(left, (xl: 12px, lg: 6px));
+    @include rule(top, (xl: 12px, lg: 6px));
+    @include rule(min-width, (xl: 68px, lg: 56px));
+    @include rule(padding, (xl: 0 10px, lg: 0 6px));
+
+    position: absolute;
+    z-index: 4;
+    height: 20px;
+    line-height: 20px;
+    background: white;
+    font-family: $font-second;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    box-sizing: border-box;
+
+    &_sale {
+      background: #e01338;
+      color: white;
     }
   }
 
   &__favourite {
     position: absolute;
 
-    @include rule(right, (xl: 22px, lg: 0));
-    @include rule(top, (xl: 22px, lg: 0));
-    @include rule(width, (xl: 22px, lg: 13px));
-    @include rule(height, (xl: 19px, lg: 11px));
+    @include rule(right, (xl: 5px, lg: 0));
+    @include rule(top, (xl: 5px, lg: 0));
+    @include rule(width, (xl: 18px, lg: 14px));
+    @include rule(height, (xl: 18px, lg: 14px));
     @include rule(opacity, (xl: 0, lg: 1));
-    @include rule(padding, (lg: 10px));
 
+    padding: 10px;
     font-size: 0;
     transition: opacity $ease-main;
     z-index: 5;
@@ -110,7 +123,8 @@
     }
 
     svg {
-      fill: black;
+      @include rule(fill, (xl: black, lg: #8E8E8E));
+
       transition: fill $ease-main;
       width: 100%;
       height: 100%;
@@ -128,7 +142,7 @@
   // Bottom
 
   &-Content {
-    padding-top: 9px;
+    @include rule(padding, (xl: 9px 0 0, lg: 10px 10px 0));
   }
 
   &__texts {
@@ -136,10 +150,10 @@
   }
 
   &-Name {
-    @include rule(font-weight, (xl: 600, lg: 300));
-    @include rule(font-size, (xl: 12px, lg: 11px));
-    @include rule(line-height, (xl: 12px, lg: 14px));
+    @include rule(font-size, (xl: 14px, lg: 11px));
 
+    font-weight: 300;
+    line-height: 1;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -155,7 +169,7 @@
   }
 
   &-Prices {
-    margin-top: 2px;
+    margin-top: 6px;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
@@ -163,48 +177,47 @@
   }
 
   &-Price {
-    @include rule(font-size, (xl: 13px, lg: 12px));
-    @include rule(font-weight, (lg: 700));
+    @include rule(font-size, (xl: 14px, lg: 12px));
 
-    line-height: 11px;
+    font-weight: 700;
+    line-height: 1;
     letter-spacing: .06em;
 
     &:not(:first-child) {
-      margin-right: 10px;
-      text-decoration-line: line-through;
+      @include rule(font-size, (xl: 12px, lg: 11px));
+      @include rule(margin-right, (xl: 10px, lg: 7px));
+      @include rule(line-height, (xl: 14px, lg: 12px));
+
+      text-decoration: line-through;
+      font-weight: 400;
     }
 
     &_new {
       color: #be1b1b;
-      font-weight: 700;
-
-      & + #{$b}__price {
-        font-weight: 400;
-      }
     }
   }
 
   &__colors {
     display: flex;
     margin-left: auto;
-    padding-left: 40px;
     flex-shrink: 0;
+
+    @include rule(margin-top, (xl: 0, lg: 4px));
+    @include rule(margin-right, (xl: -8px, lg: -4px));
   }
 
   &-Color {
-    @include rule(width, (xl: 25px, lg: 14px));
-    @include rule(height, (xl: 25px, lg: 14px));
+    @include rule(width, (xl: 12px, lg: 11px));
+    @include rule(height, (xl: 12px, lg: 11px));
+    @include rule(margin, (xl: 8px 8px 0 0, lg: 4px 4px 0 0));
 
     appearance: none;
     background-size: 100% 100%;
     transition: opacity $ease-main;
+    border-radius: 50%;
 
     &:hover {
       opacity: .5;
-    }
-
-    &:not(:first-child) {
-      @include rule(margin-left, (xl: 13px, lg: 10px));
     }
   }
 
@@ -260,25 +273,35 @@
     }
   }
 
+  &__dots {
+    position: absolute;
+    right: 6px !important;
+    width: auto !important;
+    left: auto !important;
+    bottom: 6px !important;
+    z-index: 3;
+
+    @include screen(lg, min) {
+      display: none !important;
+    }
+  }
+
   &__arrow {
-    width: 10px;
+    width: 8px;
     height: 15px;
     font-size: 0;
-    padding: 10px;
+    padding: 14px;
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto;
     transition: opacity $ease-main;
-    opacity: 0;
     z-index: 5;
     cursor: pointer;
 
-    #{$b}:hover & {
-      opacity: 1;
-    }
+    @include rule(display, (lg: none));
 
-    #{$b}:hover &:hover {
+    &:hover {
       opacity: .5;
     }
 
@@ -300,31 +323,22 @@
   &_small-slider {
     @include screen(lg, min) {
 
-      .ProductCard__favourite, .ProductCard-Content, .ProductCard__sizes {
+      .ProductCard__favourite, .ProductCard-Content, .ProductCard__sizes, .ProductCard__slider-wrapper {
         display: none;
       }
     }
 
     @include screen(lg) {
 
-      .ProductCard__favourite {
+      .ProductCard__favourite, .ProductCard__tag, .ProductCard__slider-wrapper {
         display: none;
-      }
-
-      .ProductCard__button {
-        display: none;
-      }
-
-      .ProductCard-Content {
-        padding: 10px 10px 0;
-        text-align: left;
       }
     }
   }
 
   &_small {
 
-    .ProductCard__colors, .ProductCard__favourite, .ProductCard__sizes {
+    .ProductCard__colors, .ProductCard__tag, .ProductCard__favourite, .ProductCard__sizes, .ProductCard__slider-wrapper, {
       display: none;
     }
 

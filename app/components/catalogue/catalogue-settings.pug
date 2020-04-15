@@ -1,21 +1,18 @@
 mixin catalogue-settings()
   +b.catalogue-settings&attributes(attributes)
-    +e.P.title.hide-lg ΠΡΟΪΟΝΤΑ ανα σελιδα
-    +e.amounts.hide-lg
-      +e.A.amount(href="#").is-active 15
-      +e.A.amount(href="#") 30
-      +e.A.amount(href="#") 45
-
     +e.grids.show-lg
-      +e.BUTTON.grid(type="button", data-catalogue-columns="1")
-        +icon('grid_one')(viewBox="0 0 5 13")
+      +e.BUTTON.grid(type="button", data-catalogue-columns="1" data-res="mobile")
+        +icon('grid_lg_one')(viewBox="0 0 19 14")
 
-      +e.BUTTON.grid(type="button", data-catalogue-columns="2").is-active
-        +icon('grid_two')(viewBox="0 0 12 13")
+      +e.BUTTON.grid(type="button", data-catalogue-columns="2" data-res="mobile").is-active
+        +icon('grid_lg_two')(viewBox="0 0 19 14")
 
     +e.grids.hide-lg
-      +e.BUTTON.grid(type="button", data-catalogue-columns="3").is-active
-        +icon('grid_three')(viewBox="0 0 19 14")
+      +e.BUTTON.grid(type="button", data-catalogue-columns="3" data-res="desktop")
+        +icon('grid_one')(viewBox="0 0 17 14")
 
-      +e.BUTTON.grid(type="button", data-catalogue-columns="4")
-        +icon('grid_four')(viewBox="0 0 26 14")
+      +e.BUTTON.grid(type="button", data-catalogue-columns="2" data-res="desktop")
+        +icon('grid_two')(viewBox="0 0 17 14")
+
+      +e.BUTTON.grid(type="button", data-catalogue-columns="4" data-res="desktop").is-active
+        +icon('grid_three')(viewBox="0 0 17 14")

@@ -5,29 +5,46 @@
     "price": "129,90 €",
     "colors": [
       {
-        "image": "assets/images/colors/pattern.jpg"
+        "color": "#BCAEAB"
       },
       {
-        "color": "black"
+        "color": "#3F442C"
       }
-    ]
+    ],
+    "tag": {
+      "class": "",
+      "text": "New in"
+    }
   },
   {
     "title": "φορεμα mini με παγιετα",
     "image": "assets/images/products/2.jpg",
     "price": "70,00 €",
-    "newPrice": "89,90 €"
+    "newPrice": "89,90 €",
+    "tag": {
+      "class": "_sale",
+      "text": "Sale"
+    }
   },
   {
     "title": "φορεμα mini με δαντελα",
     "image": "assets/images/products/3.jpg",
     "price": "79,90 €",
+    "slider": [
+      "assets/images/products/19.jpg",
+      "assets/images/products/1.jpg",
+      "assets/images/products/2.jpg",
+      "assets/images/products/3.jpg"
+    ],
     "colors": [
       {
-        "color": "#AE61DE"
+        "color": "#BCAEAB"
       },
       {
-        "color": "black"
+        "color": "#4196B1"
+      },
+      {
+        "color": "#3B3531"
       }
     ]
   },
@@ -49,11 +66,19 @@
     "special": true,
     "colors": [
       {
-        "image": "assets/images/colors/pattern.jpg",
+        "color": "#B7C7D8",
         "name": "Multicolor"
       },
       {
-        "color": "black",
+        "color": "#214662",
+        "name": "Black"
+      },
+      {
+        "color": "#E79584",
+        "name": "Black"
+      },
+      {
+        "color": "#38383D",
         "name": "Black"
       }
     ]
@@ -68,7 +93,7 @@
         "color": "black"
       },
       {
-        "color": "#FF3636"
+        "color": "#214662"
       }
     ]
   },

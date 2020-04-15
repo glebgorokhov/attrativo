@@ -2,7 +2,10 @@ mixin filters-section(name)
   +e.section&attributes(attributes)
     +e.section-header.CategoryFilterOverlay-ExpandableContentButton
       +e.P.section-title!= name
+      +e.P.section-active-items 123, 123, 123, 123
       +e.icon
+        +icon('arrow_right_burger')
+      +icon('checkbox_tick').__header-tick
 
     +e.section-content.CategoryFilterOverlay-ExpandableContentContent
       block
@@ -11,48 +14,45 @@ mixin filters()
   +b.filters.CategoryFilterOverlay&attributes(attributes)
     +e.header
       +e.P.title φιλτρα
-      +e.P.results 47 αποτελέσματα
-      +icon('close_big').__close.show-lg.js-filters-close
+      +e.P.results 134 προϊόντα
+      +icon('close').__close.show-lg.js-filters-close
 
     +e.content
+      +filters-tags
+
       each section in getData('filters')
         +filters-section(section.title)(class=section.class).CategoryFilterOverlay-Filter
-          +e.scroll.js-scrollbar
-            if section.link
-              +e.container
-                +e.P.link
-                  a(href="#")!= section.link
+          if section.categories
+            each category in section.categories
+              +e.category
+                +e.category-title(href=category.titleLink, class=(category.accordion ? 'js-category-accordion' : false))
+                  span!= category.titleText
+                  if category.accordion
+                    +icon('arrow_right_burger')
+                if category.accordion
+                  +e.category-accordion
+                    each item in category.accordion
+                      +e.A.category-link(href="#")!= item
 
-            if section.categories
-              +e.P.category.hide-lg ρουχα
-              +e.category-grid
-                each item in section.categories
-                  +e.category-content(class=item.class, data-items-id=item.id)
-                    +grid.grid_filters_category
-                      if item.selected
-                        +col({xl: 12})
-                          +e.P.category-selected(data-open-items=item.selected.targetItems)!= item.selected.text
-                      if item.checkboxes
-                        each checkbox in item.checkboxes
-                          +col({xl: 12, lg: 6})
-                            +e(checkbox.type ? 'label' : 'a').checkbox(data-open-items=checkbox.targetItems, href=checkbox.link, class="_desktop_style_link").ProductAttributeValue
-                              if checkbox.type
-                                input(type=checkbox.type, name=checkbox.name, value=checkbox.value, checked=checkbox.checked)
-                              span.ProductAttributeValue-String!= checkbox.text
-
-            if section.checkboxes
+          if section.checkboxes
+            +e.scroll.js-scrollbar
               +e.container
-                +e.grid
-                  +grid.grid_filters
-                    each item in section.checkboxes
-                      +col(item.cols)
-                        +e.LABEL.checkbox.ProductAttributeValue
-                          input(type=item.type, name=item.name, value=item.value, checked=item.checked)
-                          span.ProductAttributeValue-String!= item.text
+                each item in section.checkboxes
+                  +e.LABEL.checkbox.ProductAttributeValue
+                    +e.INPUT.checkbox-input(type=item.type, name=item.name, value=item.value, checked=item.checked)
+                    +e.checkbox-content
+                      +e.checkbox-box
+                      if item.color
+                        +e.checkbox-color(style="background: " + item.color + ";")
+                      +e.SPAN.checkbox-text.ProductAttributeValue-String!= item.text
+                      +icon('checkbox_tick').__checkbox-tick.show-lg
+
+          if section.range
+            +range.__range(data-min=section.range.from, data-max=section.range.to, data-start=section.range.start)
 
     +e.buttons.show-lg
-      +e.BUTTON.button(type="button").js-filters-clear.CategoryFilterOverlay-ResetButton καθαρισμοσ
-      +e.BUTTON.button(type="button")._dark.js-filters-close.CategoryFilterOverlay-SeeResults εφαρμογη
+      +button('button').__button(type="button")._dark.js-filters-close.CategoryFilterOverlay-SeeResults ΕΦΑΡΜΟΓΗ ΦΙΛΤΡΩΝ
+      +e.BUTTON.button(type="button")._clear.js-filters-clear.CategoryFilterOverlay-ResetButton ΑΦΑΙΡΕΣΗ ΦΙΛΤΡΩΝ
 
 mixin ui-kit-filters()
   +ui-section

@@ -40,4 +40,8 @@ mixin checkradio(isRadio, name, value, checked, required)
 
 mixin range()
   +b.range&attributes(attributes).js-range
-    block
+    +e.slider.js-range-slider
+    +e.numbers
+      span.js-range-from
+      span -
+      span.js-range-to

@@ -2,7 +2,59 @@
 // https://github.com/jshjohnson/Choices
 import Choices from 'choices.js';
 
+import noUiSlider from 'nouislider';
+
 const $ = window.$;
+
+export function sliders() {
+  // Параметры берутся из дата-атрибутов
+  $('.js-range').each(function () {
+    const
+      block = $(this),
+      el = block.find('.js-range-slider'),
+      from = block.find('.js-range-from'),
+      to = block.find('.js-range-to');
+
+    const slider = noUiSlider.create(el.get(0), {
+      start: block.data('start'),
+      connect: [false, true, false],
+      range: {
+        min: block.data('min'),
+        max: block.data('max'),
+      },
+      step: 1,
+    });
+
+    let isChanged = false;
+
+    slider.on('update', function (values) {
+      const
+        newFrom = parseInt(values[0]),
+        newTo = parseInt(values[1]);
+
+      from.text(newFrom);
+      to.text(newTo);
+
+      isChanged = !(newFrom === +block.data('start')[0] && newTo === +block.data('start')[1]);
+
+      const
+        section = block.closest('.filters__section'),
+        activeItemsBlock = section.find('.filters__section-active-items');
+
+      if (isChanged) {
+        section.addClass('is-values-checked');
+      } else {
+        section.removeClass('is-values-checked');
+      }
+
+      activeItemsBlock.text(`${newFrom}€ - ${newTo}€`);
+    });
+
+    $(document).on('click', '.js-filters-clear', function () {
+      slider.set(block.data('start'));
+    });
+  });
+}
 
 export function selects() {
   const

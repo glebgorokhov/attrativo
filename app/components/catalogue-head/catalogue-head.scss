@@ -1,14 +1,85 @@
 .catalogue-head {
-  display: flex;
+  display: block;
   color: white;
   position: relative;
-  height: 170px;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 5px 0;
+  height: auto;
   box-sizing: border-box;
+  text-align: center;
+
+  @include rule(padding, (xl: 38px 0, lg: 25px 0));
+
+  &__back {
+    position: absolute;
+    fill: white;
+    width: 10px;
+    height: 18px;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(180deg);
+    }
+  }
 
   $b: &;
+
+  &__title {
+    @include rule(font-size, (xl: 35px, lg: 20px));
+    @include rule(line-height, (xl: 44px, lg: 25px));
+
+    font-weight: 700;
+    letter-spacing: .06em;
+  }
+
+  &__results {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: .06em;
+    color: #dadada;
+    margin-top: 3px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:not(:first-child) {
+      margin-top: 9px;
+    }
+  }
+
+  &__link {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: .06em;
+    text-decoration: underline;
+    transition: opacity $ease-main;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &:not(:first-child) {
+      margin-left: 24px;
+    }
+  }
 
   &__background {
     position: absolute;
@@ -17,6 +88,17 @@
     right: 0;
     bottom: 0;
     overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(black, .4);
+      z-index: 1;
+    }
 
     img {
       @include fill-img;
@@ -28,20 +110,18 @@
     z-index: 2;
   }
 
-  &__breadcrumbs {
-    margin: 0;
-  }
-
   &__texts {
-    margin-top: 3px;
+    margin-top: 15px;
   }
 
   &__text {
+    font-weight: 600;
     font-size: 11px;
-    line-height: 14px;
+    line-height: 15px;
     letter-spacing: .06em;
     transition: opacity $ease-main;
     display: none;
+    color: rgba(white, .7);
 
     &.is-active-passive {
       display: block;
@@ -53,30 +133,32 @@
   }
 
   &__long-text {
+    margin: 0 auto;
 
     &_short {
-      max-width: 130px;
+      max-width: 526px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      display: inline-block;
-      vertical-align: top;
     }
   }
 
   &__button {
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 700;
+    font-size: 11px;
     line-height: 15px;
     letter-spacing: .06em;
-    text-decoration: underline;
     text-transform: uppercase;
     appearance: none;
-    color: white;
     border: 0;
     background: 0;
     padding: 0;
-    margin-left: 10px;
+    color: rgba(white, .8);
+    transition: color $ease-main;
+
+    &:hover {
+      color: white;
+    }
 
     &::before {
       content: attr(data-text-passive);

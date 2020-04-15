@@ -4,24 +4,6 @@ const $ = window.$;
 import Swiper from 'swiper';
 
 export function productCardSlider () {
-  // Z-Index Fix
-  let zIndexCounter = 1;
-
-  $(document).on('mouseenter', '.ProductCard', function () {
-    zIndexCounter > 30 ? zIndexCounter = 1 : zIndexCounter++;
-
-    $(this).css({
-      zIndex: zIndexCounter,
-    });
-  });
-
-  $(document).on('mouseleave', '.ProductCard', function () {
-    setTimeout(() => {
-      $(this).css({
-        zIndex: '',
-      });
-    }, globalOptions.animationDuration);
-  });
 
   // Slider
   $('.ProductCard__slider').each(function () {
@@ -43,6 +25,12 @@ export function productCardSlider () {
       navigation: {
         nextEl: arrowNext,
         prevEl: arrowPrev,
+      },
+      pagination: {
+        el: block.find('.slider-dots'),
+        clickable: true,
+        bulletClass: 'slider-dots__dot',
+        bulletActiveClass: 'is-active',
       },
     });
 

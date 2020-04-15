@@ -3,46 +3,31 @@ $breadpadding: 35px;
 .breadcrumbs {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 27px;
 
   $b: &;
-
-  &_light {
-    color: white;
-  }
 
   &__item {
     display: flex;
     align-items: center;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 14px;
+    line-height: 1;
     letter-spacing: .06em;
     text-transform: uppercase;
+    color: black;
 
     &:not(:last-child)::after {
-      content: '';
-      width: 5px;
-      height: 8px;
+      content: '/';
       margin: 0 10px;
-      background-image: url('../images/arrow_right.svg');
-      background-size: 100% 100%;
-    }
-
-    #{$b}_light & {
-
-      &:not(:last-child)::after {
-        background-image: url('../images/arrow_right_white.svg');
-      }
+      color: #a5a5a5;
     }
 
     a {
-      font-weight: 300;
-      transition: opacity $ease-main;
+      font-weight: 400;
+      transition: color $ease-main;
+      color: #a5a5a5;
 
       &:hover {
-        opacity: .5;
+        color: black;
       }
     }
   }

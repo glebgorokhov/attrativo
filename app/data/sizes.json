@@ -1,19 +1,11 @@
 [
   {
-    "text": "es-6"
+    "text": "s-8"
   },
   {
-    "text": "s-8",
-    "disabled": true
+    "text": "m-10"
   },
   {
-    "text": "m-8"
-  },
-  {
-    "text": "l-8",
-    "disabled": true
-  },
-  {
-    "text": "xl-14"
+    "text": "l-12"
   }
 ]

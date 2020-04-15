@@ -1,0 +1,23 @@
+mixin filters-tags()
+  +b.filters-tags&attributes(attributes)
+    +e.P.title EΠΙΛΕΓΜΕΝΑ
+    +e.tags
+      +e.tag
+        span Μπλε
+        +icon('close_big')
+
+mixin ui-kit-filters-tags()
+  +ui-section
+    +ui-section-head
+      +ui-title Component filters-tags
+      +ui-path
+        p Component: components/filters-tags/filters-tags
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +filters-tags
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

@@ -14,7 +14,7 @@
 
     font-weight: 600;
     line-height: 1.5;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
   }
 
   &__schedule {
@@ -22,7 +22,7 @@
     @include rule(margin-top, (xl: 3px, lg: 5px));
 
     line-height: 25px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
 
     li {
       display: flex;
@@ -43,7 +43,7 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-decoration-line: underline;
     transition: opacity $ease-main;
     margin-top: 26px;

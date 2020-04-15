@@ -1,6 +1,9 @@
 mixin product-card(data)
   +b.ProductCard&attributes(attributes)
     +e.top
+      if data.tag
+        +e.tag(class=data.tag.class)!= data.tag.text
+
       +e(data.slider ? 'div' : 'a').image(href=(data.slider ? false : "#"), class='ProductCard-Picture')
         if data.slider
           a(href="#")
@@ -10,27 +13,27 @@ mixin product-card(data)
 
         if data.slider
           +e.slider-wrapper
-            +e.DIV.slider.swper-container
+            +e.DIV.slider.swiper-container
               .swiper-wrapper
                 each item in data.slider
                   +e.slide.swiper-slide
                     img(src=item, alt="@@")
 
               +e.arrow._prev
-                +icon('arrow_right')
+                +icon('arrow_right_burger')
 
               +e.arrow._next
-                +icon('arrow_right')
+                +icon('arrow_right_burger')
+
+              +slider-dots._card.__dots
 
 
       +e.sizes.hide-lg
-        +e.sizes-title choose your size
-        +e.sizes-items
-          each item in getData('sizes')
-            +e.A.size(href="#", disabled=item.disabled)!= item.text
+        each item in getData('sizes')
+          +e.A.size(href="#", disabled=item.disabled)!= item.text
       +e.LABEL.favourite
         input(type="checkbox" name="favourite")
-        +icon('heart')
+        +icon('heart_new')
 
     .ProductCard-Content
       +e.texts

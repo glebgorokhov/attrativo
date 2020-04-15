@@ -1,56 +1,25 @@
 .catalogue-settings {
-  @include screen('lg', min) {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 20px 40px;
-    background: $color-grey-7;
-    height: 68px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+
+  @include screen(lg, min) {
+    padding: 0 24px;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+  }
+
+  @include screen(lg) {
+    order: 100;
   }
 
   $b: &;
 
-  &__title {
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    margin-right: 20px;
-  }
-
-  &__amounts {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  &__amount {
-    font-size: 13px;
-    line-height: 16px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    transition: opacity $ease-main;
-
-    &:hover {
-      opacity: .5;
-    }
-
-    &.is-active {
-      font-weight: 700;
-      text-decoration: underline;
-      pointer-events: none;
-    }
-
-    &:not(:first-child) {
-      margin-left: 13px;
-    }
-  }
-
   &__grids {
     display: flex;
     align-items: center;
-    margin-left: auto;
-    padding-left: 20px;
     flex-shrink: 0;
     font-size: 0;
   }

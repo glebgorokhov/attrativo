@@ -1,18 +1,18 @@
-mixin scroll-top()
-  +b.scroll-top&attributes(attributes)
-    +icon('arrow_top')
+mixin load-more()
+  +b.load-more&attributes(attributes)
+    +button()(href="#")._style_light.__button ΕΜΦΑΝΙΣΗ ΠΕΡΙΣΣΟΤΕΡΩΝ
 
-mixin ui-kit-scroll-top()
+mixin ui-kit-load-more()
   +ui-section
     +ui-section-head
-      +ui-title Component scroll-top
+      +ui-title Component load-more
       +ui-path
-        p Component: components/scroll-top/scroll-top
+        p Component: components/load-more/load-more
       +ui-description
         p Component description
 
     +ui-section-content()
-      +scroll-top
+      +load-more
 
     //- With +ui-section-content(true) container disappears
     //- Choose +ui-elements-list() for creating list of inline elements

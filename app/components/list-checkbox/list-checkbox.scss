@@ -5,6 +5,7 @@
   white-space: nowrap;
 
   $b: &;
+
   &:not(:first-child) {
     margin-left: 43px;
   }
@@ -23,7 +24,7 @@
     @include rule(font-size, (xl: 16px, lg: 14px));
     @include rule(line-height, (xl: 20px, lg: 14px));
 
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     font-family: $font-second;
   }
 

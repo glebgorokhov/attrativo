@@ -21,7 +21,7 @@
     background: white;
     transition: transform $ease-main;
     transform: translate3d(0, 10px, 0);
-    padding: 15px 15px 15px;
+    padding: 15px;
     box-sizing: border-box;
 
     #{$b}.is-active & {

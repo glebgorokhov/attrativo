@@ -1,0 +1,14 @@
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 68px;
+
+  $b: &;
+
+  &__button {
+    max-width: 438px;
+    width: 100%;
+    height: 45px;
+    line-height: 43px;
+  }
+}

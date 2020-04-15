@@ -3,7 +3,7 @@ import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
 import './globalOptions';
 import anchor from '../blocks/js-functions/anchor';
-import { selects, numberinput } from '../blocks/form/form';
+import {selects, numberinput, sliders} from '../blocks/form/form';
 import popups from '../blocks/popups/popups';
 import scrollbar from '../blocks/scrollbar/scrollbar';
 import {slider} from '../blocks/slider/slider';
@@ -82,5 +82,6 @@ $(() => {
   sideCart();
   sloganSlider();
   itemSliderSmall();
+  sliders();
 });
 /* eslint-enable */

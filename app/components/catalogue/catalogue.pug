@@ -2,43 +2,31 @@ include catalogue-settings
 
 mixin catalogue()
   +b.catalogue&attributes(attributes)
-    .container.container_big
+    .container
       +e.left
         +filters
 
       +e.right
         +e.header
-          +grid
-            +col({xl: 12}).show-lg
-              +e.mobile-header
-                +e.A.back-link(href="#")
-                  +icon('arrow_right')
-                +e.H1.title
-                  span φορεματα
-                +catalogue-settings
+          +breadcrumbs([{"text": "ΗΟΜΕ", "link": "#"}, {"text": "ΡΟΥΧΑ", "link": "#"}, {"text": "NEEΣ ΑΦΙΞΕΙΣ"}]).__breadcrumbs.hide-lg
 
-            +col({xl: 4, lg: 6}).hide-lg
-              +catalogue-settings
-
-            +col({xl: 4, lg: 6}).hide-lg
-              +e.H1.title
-                span φορεματα
-
-            +col({xl: 4, lg: 6}).show-lg
-              +e.BUTTON.filters-button(type="button").js-filters-open φιλτρα(3)
-
-            +col({xl: 4, lg: 6})
-              +e.SELECT.select(name="#").js-catalogue-select
-                option(value="ταξινομηση" placeholder) ταξινομηση
-                option(value="Χωρις ταξινομηση") Χωρις ταξινομηση
-                option(value="Αυξουσα ΤΙΜΗ") Αυξουσα ΤΙΜΗ
-                option(value="Φθινουσα ΤΙΜΗ") Φθινουσα ΤΙΜΗ
+          +e.BUTTON.filters-button(type="button").js-filters-open.show-lg
+            span φιλτρα
+            +icon('checkbox_tick')
+          +catalogue-settings
+          +e.SELECT.select(name="#").js-catalogue-select
+            option(value="ΝΕΟΤΕΡΑ" selected) ΝΕΟΤΕΡΑ
+            option(value="ΑΥΞΟΥΣΑ ΤΙΜΗ") ΑΥΞΟΥΣΑ ΤΙΜΗ
+            option(value="ΦΘΙΝΟΥΣΑ ΤΙΜΗ") ΦΘΙΝΟΥΣΑ ΤΙΜΗ
+            option(value="ΒEST SELLERS") ΒEST SELLERS
 
         +e.content
-          +grid.grid_catalogue_cols_xl_3.grid_catalogue_cols_lg_2
+          +grid.grid_catalogue_cols_xl_4.grid_catalogue_cols_lg_2
             each item in getData('product-cards')
               +col({xl: 4, lg: 6})
                 +product-card(item)(class=(item.special ? '_special' : false))
+
+          +load-more.hide-lg
 
 mixin ui-kit-catalogue()
   +ui-section
