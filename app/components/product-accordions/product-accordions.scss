@@ -1,48 +1,93 @@
 .product-accordions {
   display: block;
 
+  @include screen(lg) {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 11px 20px;
+    background: #F7F7F7;
+  }
+
   $b: &;
 
-  &__accordion {
-    border-radius: 1px;
-    background: $color-grey-7;
+  &__section {
+    padding-top: 11px;
+    padding-bottom: 11px;
 
-    &:not(:first-child) {
-      margin-top: 3px;
+    &:not(:last-child) {
+      @include screen(lg, min) {
+        border-bottom: 1px solid #F2F2F2;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+  }
+
+  &__accordion {
+  }
+
+  &__delivery  {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+    flex-wrap: wrap;
+
+    b {
+      color: black;
+      margin-right: 8px;
+      font-weight: inherit;
+    }
+
+    span {
+      color: #9E9E9E;
+      margin-right: 15px;
+    }
+
+    svg {
+      width: 27px;
+      height: 15px;
+      fill: #666666;
+      flex-shrink: 0;
     }
   }
 
   &__button {
+    @include rule(line-height, (xl: 16px, lg: 15px));
+
     display: flex;
     align-items: center;
     font-size: 12px;
-    line-height: 15px;
     letter-spacing: .06em;
-    text-transform: capitalize;
+    font-weight: 300;
+    text-transform: uppercase;
     cursor: pointer;
-    padding: 10px 14px 10px 16px;
 
     span {
       flex-grow: 1;
     }
 
-    &::after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 5px 4px 0;
-      border-color: black transparent transparent;
-      display: block;
-      margin-left: 15px;
-      flex-shrink: 0;
+    svg {
+      @include rule(margin-right, (xl: 17px, lg: 0));
+
+      width: 12px;
+      height: 12px;
+      transform: rotate(90deg);
       transition: transform $ease-main;
+      flex-shrink: 0;
+      fill: #9C9C9C;
     }
 
     #{$b}__accordion.is-active & {
 
-      &::after {
-        transform: rotate(180deg);
+      svg {
+        transform: rotate(-90deg);
       }
     }
   }
@@ -52,7 +97,7 @@
   }
 
   &__wrapper {
-    padding: 4px 16px 16px;
+    padding: 10px 0 0;
     font-size: 12px;
     line-height: 15px;
     letter-spacing: .06em;

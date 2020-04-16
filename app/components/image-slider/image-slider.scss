@@ -1,98 +1,111 @@
 .image-slider {
-  @include rule(display, (xl: flex, lg: block));
+  display: block;
+  position: relative;
+
+  @include rule(height, (lg: 150vw));
 
   $b: &;
 
-  &__slider {
-
-    &_big {
-      flex-grow: 1;
-
-      @include rule(height, (xl: 100%, lg: auto));
-    }
-
-    &_small {
-      height: 600px;
-      width: 100px;
-      margin-left: 5px;
-      margin-top: 123px;
-    }
-
-    .swiper-container {
-      height: 100%;
-      width: 100%;
-    }
+  .swiper-container {
+    @include rule(height, (lg: 100%));
   }
 
   &__slide {
-    position: relative;
-    overflow: hidden;
+    height: auto;
+    font-size: 0;
 
-    @include rule(height, (lg: 0));
-    @include rule(padding-bottom, (lg: 150%));
-
-    img {
-      @include fill-img;
-
-      bottom: auto;
-    }
-
-    #{$b}__slider_small & {
-
-      &:not(.is-active) {
-        cursor: pointer;
-      }
+    @include screen(lg, min) {
+      width: auto !important;
 
       img {
-        transition: opacity $ease-main, filter $ease-main;
-        filter: blur(0);
+        height: 100%;
       }
+    }
 
-      &.is-active img {
-        filter: blur(2px);
-        opacity: .4;
+    @include screen(lg) {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        @include fill-img;
       }
     }
   }
 
-  &__dots {
+  &__arrows {
     position: absolute;
-    left: 20px;
-    top: 20px;
-    display: flex;
-    right: 20px;
-    bottom: auto;
-    margin: 0;
-    z-index: 30;
+    z-index: 10;
+    height: 37px;
+    left: 80px;
+    right: 80px;
+    justify-content: space-between;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    pointer-events: none;
+
+    @include rule(display, (xl: flex, lg: none));
   }
 
-  &__dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    border: 1px solid $color-grey-34;
-    background: $color-grey-35;
-    transition: border-color $ease-main, background $ease-main;
+  &__arrow {
+    height: 100%;
+    width: 20px;
+    fill: #8C8C8C;
+    pointer-events: all;
+    transition: fill $ease-main;
     cursor: pointer;
     position: relative;
-    box-sizing: border-box;
 
-    &.is-active {
-      background: $color-grey-36;
-      border-color: $color-grey-36;
+    &.swiper-button-disabled {
+      pointer-events: none;
+      fill: rgba(#8c8c8c, .5);
     }
 
-    &::after {
+    &::before {
       content: '';
-      left: -6px;
-      top: -6px;
-      right: -6px;
-      bottom: -6px;
       position: absolute;
+      left: -20px;
+      top: -20px;
+      right: -20px;
+      bottom: -20px;
     }
 
-    &:not(:first-child) {
-      margin-left: 10px;
+    &:hover {
+      fill: black;
+    }
+
+    &_prev {
+      transform: rotate(180deg);
+    }
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__pages.slider-pages {
+    position: absolute;
+    z-index: 10;
+    right: 26px;
+    bottom: 15px;
+    left: auto;
+
+    @include rule(display, (lg: none));
+  }
+
+  &__scrollbar {
+    @include screen(lg, min) {
+      display: none;
+    }
+
+    height: 3px;
+    margin-top: -2px;
+    position: relative;
+    z-index: 10;
+
+    .swiper-scrollbar-drag {
+      background: #757575;
     }
   }
 }

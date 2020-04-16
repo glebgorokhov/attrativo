@@ -2,41 +2,40 @@ include product-colors
 include product-sizes
 include product-final
 
-mixin product()
+mixin product(amount)
   +b.product&attributes(attributes)
     .container
       +e.left
-        +e.LABEL.favourite.hide-lg
-          input(type="checkbox" name="favourite")
-          +icon('heart')
-
+        +e.LABEL.favourite.js-product-favourite.show-lg
+          input(type="checkbox" name="favourite" value="true")
+          +icon('heart_new')
         +image-slider.__slider
 
       +e.right
-        +product-navigation.hide-lg
 
-        +e.info.hide-lg
-          +e.P.title.ProductActions-Title ΚΙΜΟΝΟ ΜΕ ΥΦΑΣΜΑΤΙΝΗ ΖΩΝΗ
-          +e.P.text.ProductActions-Sku Κωδικός Προϊόντος: 82406613
-          +e.prices
-            +e.P.price.ProductActions-Price 90,00 €
-            +e.P.price._old.ProductActions-Price 129,99 €
+        +breadcrumbs([{"text": "ΗΟΜΕ", "link": "#"}, {"text": "ΡΟΥΧΑ", "link": "#"}, {"text": "NEEΣ ΑΦΙΞΕΙΣ", "link": "#"}, {"text":"ΦΟΡΕΜΑ ΑΜΑΝΙΚΟ ΜΕ ΚΟΥΜΠΙΑ"}])._small.__breadcrumbs.hide-lg
 
-        +product-colors.__colors
-        +product-sizes.__sizes.hide-lg
-        +product-final.__final.hide-lg
+        +e.wrapper
+          +e.info
+            +e.P.title.ProductActions-Title Φόρεμα Αμάνικο Με Κουμπιά
+            +e.P.text.ProductActions-Sku.hide-lg ΚΩΔΙΚΟΣ: <span>917 389 29</span>
+            +e.prices
+              +e.P.price.ProductActions-Price 64,90€
+              // +e.P.price._old.ProductActions-Price 129,99 €
 
-        +e.links.hide-lg
-          each item in ["σύνθεση & Εφαρμογή", "αποστολές - επιστροφές"]
-            +e.A.link(href="#")!= item
+          +product-colors.__colors
+          +product-sizes.__sizes
+          +product-final(amount || false).__final
 
-        +e.accordions.show-lg
-          +product-accordions
+          +product-result
 
-        +product-result.__result.show-lg
+          +e.sections
+            +product-accordions
 
-        +e.small-slider
-          +product-slider(getData('product-cards_preview_2'), true)(data-size="small").product-slider_small PAIRS WELL WITH
+          +product-info.__information.hide-lg
+
+          +e.small-slider
+            +product-slider(getData('product-cards_preview_2'), true)(data-slides="[2, 3]").product-slider_small.product-slider_no-mobile-arrows GET THE LOOK
 
 mixin ui-kit-product()
   +ui-section

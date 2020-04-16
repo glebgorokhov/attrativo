@@ -1,0 +1,146 @@
+.notify-popup {
+  @include rule(width, (xl: 595px, lg: 100%));
+
+  max-width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background: white;
+  position: relative;
+
+  $b: &;
+
+  &__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    fill: #979797;
+    cursor: pointer;
+    transition: fill $ease-main;
+
+    &:hover {
+      fill: black;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__image {
+    width: 205px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+
+    @include rule(display, (lg: none));
+
+    img {
+      @include fill-img;
+    }
+  }
+
+  &__content {
+    @include rule(padding, (xl: 30px 40px, lg: 30px 20px));
+
+    box-sizing: border-box;
+    flex: 1;
+  }
+
+  &__title {
+    font-family: $font-second;
+    font-size: 25px;
+    line-height: 27px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 6px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+  }
+
+  &__input {
+    background: #F0F0F0;
+    box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.07);
+    padding: 0 20px;
+    color: black;
+    border: 0;
+    height: 35px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #979797;
+    }
+  }
+
+  &__inputbox {
+    &_input {
+      &:not(:first-child) {
+        margin-top: 21px;
+      }
+    }
+
+    &_button {
+      &:not(:first-child) {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__button {
+    height: 40px;
+    font-weight: 700;
+    font-size: 13px;
+    width: 100%;
+    display: block;
+
+    svg {
+      margin-left: 13px;
+      fill: white;
+      width: 13px;
+      height: 13px;
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__select {
+    max-width: 192px;
+    margin: 11px auto 0;
+
+    .choices {
+      width: 100%;
+      margin: 0;
+    }
+
+    .choices.choices_default[data-type*=select-one]:after {
+      right: 8px;
+      opacity: .7;
+    }
+
+    .choices.choices_default[data-type*=select-one] .choices__list--dropdown .choices__item {
+      font-size: 11px;
+      padding: 7px 14px;
+    }
+
+    .choices.choices_default[data-type*=select-one] .choices__inner {
+      border-color: #D4D4D4;
+      padding: 0 30px 0 15px;
+      font-size: 12px;
+      color: #979797;
+    }
+  }
+}

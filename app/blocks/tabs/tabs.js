@@ -19,6 +19,12 @@ export default function tabs() {
 
     tab.show(0, function () {
       $(this).addClass('is-active');
+
+      setTimeout(() => {
+        var resizeEvent = window.document.createEvent('UIEvents');
+        resizeEvent.initUIEvent('resize', true, false, window, 0);
+        window.dispatchEvent(resizeEvent);
+      }, 1);
     });
   });
 }

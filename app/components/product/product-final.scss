@@ -4,15 +4,53 @@
 
   $b: &;
 
-  &__title {
-    font-size: 11px;
-    line-height: 14px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
+  &__button-wrapper {
+    display: flex;
+  }
+
+  &__amount {
+    background: black;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    margin-right: 6px;
+    flex-shrink: 0;
+
+    .input-numberbox__input {
+      color: white;
+      width: 30px;
+    }
+
+    .input-numberbox__button {
+      color: white;
+    }
   }
 
   &__button {
     width: 100%;
-    margin-top: 7px;
+    flex: 1;
+
+    @include rule(height, (xl: 45px, lg: 40px));
+
+    @include screen(lg) {
+      font-weight: 600;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 28px;
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    color: #9D9D9D;
   }
 }

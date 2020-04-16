@@ -17,10 +17,6 @@ function productSizes() {
           containerOuter: 'choices choices_product',
         },
       });
-
-      choices.passedElement.element.addEventListener('change', function(event) {
-        $(document).find(valueClass).text(event.detail.value);
-      }, false);
     });
   }
 }
@@ -36,11 +32,11 @@ function productColors() {
 }
 
 function productFavouriteAdaptive() {
-  $(document).on('click', '.product__favourite', function () {
+  $(document).on('click', '.js-product-favourite', function () {
     const
       state = $(this).find('input').prop('checked');
 
-    $(document).find('.product__favourite input').prop('checked', state);
+    $(document).find('.js-product-favourite input').prop('checked', state);
   });
 }
 

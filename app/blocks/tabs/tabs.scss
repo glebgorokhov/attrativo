@@ -1,24 +1,44 @@
 .tabs {
-  $tab-gap: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 
-  display: block;
-  font-size: 0;
-  margin-top: -$tab-gap;
+  @include rule(flex-direction, (lg: column));
 
   &__tab {
-    display: inline-block;
-    margin-right: $tab-gap;
-    margin-top: $tab-gap;
-    border-bottom: 2px solid transparent;
-    transition: border-color $ease-main, opacity $ease-main;
-    padding-bottom: 10px;
+    transition: color $ease-main, border-color $ease-main;
     cursor: pointer;
-    opacity: .5;
-    font-size: 14px;
+    color: #AFAFAF;
+    font-family: $font-second;
 
-    &.is-active {
-      border-color: $color-basic;
-      opacity: 1;
+    @include rule(font-size, (xl: 25px, lg: 16px));
+    @include rule(line-height, (xl: 32px, lg: 31px));
+    @include rule(border-width, (lg: 1px 0));
+    @include rule(border-style, (lg: solid));
+    @include rule(border-color, (lg: transparent));
+    @include rule(padding, (lg: 0 15px));
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    pointer-events: all;
+
+    &:not(:first-child) {
+      @include screen(lg, min) {
+        padding-left: 20px;
+        margin-left: 20px;
+        border-left: 2px solid black;
+      }
+
+      @include screen(lg) {
+        margin-top: -1px;
+      }
+    }
+
+    &.is-active, &:hover {
+      color: black;
+
+      @include rule(border-color, (lg: black));
     }
   }
 

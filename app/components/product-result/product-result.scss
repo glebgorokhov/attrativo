@@ -1,113 +1,221 @@
 .product-result {
   display: block;
-  padding: 15px 20px;
+  padding: 17px 20px;
   background: white;
-  transition: box-shadow $ease-main;
+  box-sizing: border-box;
+  position: relative;
 
   $b: &;
 
-  &.is-sticky {
+  &.is-hidden {
+    @include screen(lg) {
+      transition: transform $ease-main, opacity $ease-main;
+      transform: translate3d(0, 100%, 0);
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  @include screen(lg, min) {
+    border: 1px solid #D8D8D8;
+    border-radius: 2px;
+    margin-top: 30px;
+    display: none;
+    opacity: 0;
+    transition: opacity $ease-main;
+
+    &.is-visible {
+      opacity: 1;
+    }
+  }
+
+  @include screen(lg) {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: 0;
-    z-index: 40;
-    box-shadow: 0 -1px 0 0 $color-border;
+    z-index: 50;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  // is-active
+
+  &__default {
+    display: block;
+    transition: opacity $ease-main;
+    opacity: 1;
+
+    #{$b}.is-active & {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   &__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+  }
+
+  &__text {
+    flex: 1;
+    margin-right: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.06em;
   }
 
   &__content {
+    @include rule(margin-top, (xl: 18px, lg: 14px));
+
     display: flex;
-    align-items: center;
-    margin-top: 12px;
   }
 
   &__select-wrapper {
-    flex: 1;
-    position: relative;
-  }
+    width: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 10px;
 
-  &__select {
-    width: 100%;
-  }
-
-  .choices {
-    transition: opacity $ease-main;
-    pointer-events: all;
-    margin: 0;
-  }
-
-  &.is-active .choices {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &__amount {
-    position: absolute;
-    z-index: -1;
-    transition: opacity $ease-main;
-    opacity: 0;
-    pointer-events: none;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-
-    #{$b}.is-active & {
-      opacity: 1;
-      pointer-events: all;
-      z-index: 20;
-    }
-
-    .input-numberbox {
-      height: 100%;
+    .choices {
+      margin: 0;
       width: 100%;
-      border: 1px solid $color-border;
+      height: 100%;
 
-      &__input {
-        font-size: 13px;
-        font-family: $font-main;
-        font-weight: 600;
-        letter-spacing: .06em;
+      .choices__inner {
+        height: 100%;
       }
     }
   }
 
   &__button {
-    margin-left: 6px;
-    flex-shrink: 0;
-    height: 35px;
-    line-height: 35px;
-    padding: 0 22px;
-  }
-
-  &__text {
+    height: 40px;
+    padding: 0 20px;
     font-weight: 600;
-    font-size: 11px;
-    line-height: 14px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
+    line-height: 38px;
+
+    @include rule(font-size, (xl: 14px, lg: 12px));
+
+    @include screen(lg, min) {
+      height: 36px;
+      line-height: 34px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &_light {
+      min-width: 108px;
+      border-color: #D8D8D8;
+      color: #A1A1A1;
+      font-weight: 400;
+      font-size: 14px;
+
+      @include screen(lg, min) {
+        border-color: #d4d4d4;
+        color: #9d9d9d;
+      }
+    }
+
+    &_submit, &_next {
+      flex: 1;
+    }
+
+    &_next {
+      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+
+      @include screen(lg, min) {
+        background: linear-gradient(180deg, rgba(35, 167, 56, 0.4) 0%, rgba(255, 255, 255, 0) 100%), #23A738;
+      }
+    }
+
+    &_next, &_light {
+      @include screen(lg, min) {
+        flex: 1;
+      }
+    }
   }
 
-  &__price {
-    font-size: 13px;
-    line-height: 16px;
-    text-align: right;
-    letter-spacing: .06em;
+  // Sent
+  &__sent {
+    transition: opacity $ease-main;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+
+    @include screen(lg) {
+      top: auto;
+      bottom: 0;
+    }
+
+    #{$b}.is-active & {
+      opacity: 1;
+      pointer-events: all;
+    }
   }
 
-  &__shadow {
-    display: none;
-    margin: 14px 0 -15px;
+  &__success-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    #{$b}.is-sticky + & {
-      display: block;
+    svg {
+      width: 17px;
+      height: 13px;
+      fill: #23A738;
+      margin-right: 6px;
+    }
+
+    span {
+      font-size: 12px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+
+      @include screen(lg, min) {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__close {
+    width: 14px;
+    height: 14px;
+    fill: black;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ease-main;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 30px;
+
+    #{$b}.is-active & {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    @include screen(lg, min) {
+      display: none !important;
     }
   }
 }

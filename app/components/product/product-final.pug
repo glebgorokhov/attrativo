@@ -1,4 +1,13 @@
-mixin product-final()
+mixin product-final(amount)
   +b.product-final&attributes(attributes)
-    +e.P.title δωρεαν μεταφορικα σε ολη την ελλαδα
-    +button()(href="#").__button.ProductActions-AddToCart προσθηκη στο καλαθι
+    +e.button-wrapper
+      if amount
+        +e.amount
+          +input-number
+
+      +button('button')(type="button")._with-arrow.__button.ProductActions-AddToCart.js-button-add-to-cart
+        div
+          span(data-passive="ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ" data-active="ΠΛΗΡΩΜΗ")
+          +icon('arrow_button')
+
+    +e.P.text.show-lg To μοντέλο έχει ύψος 1.73 και βάρος 59 κιλά

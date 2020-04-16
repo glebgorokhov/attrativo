@@ -38,20 +38,6 @@ function popupSticky () {
 }
 
 export function popupPreview () {
-  $(document).on('click', '.js-popup-minicart-open', function () {
-    popupMinicartToggle();
-  });
 
-  $(document).on('click', '.js-popup-minicart-close', function () {
-    popupMinicartToggle(true);
-  });
-
-  popupSticky();
-
-  $(window).resize(function () {
-    if ($(window).width() >= globalOptions.sizes.lg && $('.popup-preview').hasClass('is-active')) {
-      popupMinicartToggle(true);
-    }
-  });
 }
 /* eslint-enable */

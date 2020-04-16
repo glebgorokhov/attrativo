@@ -1,4 +1,4 @@
-mixin product-slider(data)
+mixin product-slider(data, dots)
   +b.product-slider.js-product-slider&attributes(attributes)
     +e.header
       +e.title
@@ -16,6 +16,9 @@ mixin product-slider(data)
         .swiper-wrapper
           each item in data
             +product-card(item)._small.swiper-slide.product-slider__slide
+
+    if dots
+      +slider-dots.show-lg
 
 mixin ui-kit-product-slider()
   +ui-section

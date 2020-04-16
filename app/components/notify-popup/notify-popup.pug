@@ -1,0 +1,40 @@
+mixin notify-popup()
+  +b.notify-popup#popup-notify&attributes(attributes)
+    +icon('close').__close(data-fancybox-close="")
+
+    +e.wrapper
+      +e.image
+        img(src="assets/images/product/1.jpg")
+
+      +e.FORM.content(action="#" method="post" data-parsley-validate)
+        +e.P.title NOTIFY ME
+        +e.P.text Το προϊον προσωρινά δεν είναι διαθέσιμο στο νούμερο που ζητήσατε. Μπορούμε να σας ειδοποιήσουμε εντός λίγων ημερών με την επαναπαραλαβή του.
+        +e.select
+          +select.js-select(name="size")
+            option(value="M - 10 (Mη διαθέσιμο)" selected) M - 10 (Mη διαθέσιμο)
+            option(value="M - 5 (Mη διαθέσιμο)") M - 5 (Mη διαθέσιμο)
+
+        +inputbox.__inputbox._input
+          input.notify-popup__input(type="email" name="email" placeholder="*Το email σας" required)
+        +inputbox.__inputbox._button
+          +button('button')(type="submit").notify-popup__button
+            div
+              span ΕΙΔΟΠΟΙΗΣΤΕ ΜΕ
+              +icon('email')
+
+
+mixin ui-kit-notify-popup()
+  +ui-section
+    +ui-section-head
+      +ui-title Component notify-popup
+      +ui-path
+        p Component: components/notify-popup/notify-popup
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +notify-popup
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

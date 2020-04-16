@@ -3,14 +3,7 @@
 
   $b: &;
 
-  & + &:not(&_grey) {
-    @include rule(margin-top, (xl: 40px, lg: 30px));
-  }
-
-  &_grey {
-    @include screen('lg', min) {
-      padding: 40px 0;
-      background-color: $color-grey-7;
-    }
+  &:not(:first-child) {
+    @include rule(margin-top, (xl: 100px, lg: 50px));
   }
 }

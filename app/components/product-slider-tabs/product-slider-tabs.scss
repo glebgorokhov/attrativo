@@ -1,0 +1,31 @@
+.product-slider-tabs {
+  display: block;
+
+  $b: &;
+
+  &__tabs {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__wrapper {
+    @include rule(margin-top, (xl: -20px, lg: 15px));
+  }
+
+  &__slider {
+    .product-slider__content {
+      @include rule(margin-top, (xl: 20px, lg: 0));
+    }
+
+    @include screen(lg, min) {
+      .product-slider__arrow {
+        width: 13px;
+        height: 24px;
+
+        &:not(:first-child) {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+}

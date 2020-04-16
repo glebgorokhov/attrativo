@@ -1,6 +1,7 @@
 mixin popups()
   +b.popups&attributes(attributes)
     +popup(getData('signInOut'))
+    +notify-popup
 
 mixin popup(data)
   +b.popup&attributes(attributes)(id=data.id)

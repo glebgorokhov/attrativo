@@ -7,53 +7,46 @@ export function imageSlider() {
   $('.image-slider').each(function () {
     const
       block = $(this),
-      bigSlider = block.find('.image-slider__slider_big .swiper-container'),
-      smallSlider = block.find('.image-slider__slider_small .swiper-container');
+      slider = block.find('.swiper-container');
 
-    const secondSlider = new Swiper(smallSlider, {
-      loop: false,
-      speed: 700,
-      direction: 'vertical',
-      autoplay: false,
-      slidesPerView: 4,
-      spaceBetween: 5,
-      centeredSlides: false,
-      roundLengths: true,
-      freeMode: false,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-    });
-
-    const mainSlider = new Swiper(bigSlider, {
+    const mySlider = new Swiper(slider, {
       loop: false,
       speed: 700,
       direction: 'horizontal',
       autoplay: false,
       slidesPerView: 1,
-      spaceBetween: 5,
-      centeredSlides: false,
+      spaceBetween: 0,
+      centeredSlides: true,
       roundLengths: true,
       freeMode: false,
-      pagination: {
-        el: block.find('.image-slider__dots'),
-        clickable: true,
-        bulletClass: 'image-slider__dot',
-        bulletActiveClass: 'is-active',
+      navigation: {
+        nextEl: block.find('.js-arrow-next'),
+        prevEl: block.find('.js-arrow-prev'),
       },
-      thumbs: {
-        swiper: secondSlider,
-        slideThumbActiveClass: 'is-active',
+      pagination: {
+        el: block.find('.slider-pages'),
+        clickable: true,
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+          return `
+            <div class="slider-pages__current">0${current}</div>
+            <div class="slider-pages__slash">/</div>
+            <div class="slider-pages__amount">0${total}</div>  
+          `;
+        }
+      },
+      scrollbar: {
+        el: block.find('.image-slider__scrollbar'),
+        draggable: true,
       },
       breakpoints: {
         1360: {
-          direction: 'vertical',
-        },
-      },
+          slidesPerView: 'auto',
+          spaceBetween: 5,
+          loop: true,
+        }
+      }
     });
-
-    // $(document).on('click', '.image-slider__slide_small', function () {
-    //   $(this).addClass('is-active').siblings().removeClass('is-active');
-    // });
   });
 }
 

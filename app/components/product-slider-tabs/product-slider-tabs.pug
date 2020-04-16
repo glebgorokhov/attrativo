@@ -1,0 +1,28 @@
+mixin product-slider-tabs()
+  +b.product-slider-tabs&attributes(attributes)
+    +tabs.__tabs
+      +tab(data-tab-target="tab1").is-active COMPLETE THE SILHOUETTE
+      +tab(data-tab-target="tab2") RECENTLY VIEWED
+
+    +e.wrapper
+      +tab-wrapper(data-tab="tab1" data-tab-group="tabs")
+        +product-slider(getData('product-cards'), true)(data-slides="[6, 2]", data-space-desktop="15").product-slider_no-mobile-arrows.__slider
+
+      +tab-wrapper(data-tab="tab2" data-tab-group="tabs")
+        +product-slider(getData('product-cards'), true)(data-slides="[6, 2]", data-space-desktop="15").product-slider_no-mobile-arrows.__slider
+
+mixin ui-kit-product-slider-tabs()
+  +ui-section
+    +ui-section-head
+      +ui-title Component product-slider-tabs
+      +ui-path
+        p Component: components/product-slider-tabs/product-slider-tabs
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +product-slider-tabs
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

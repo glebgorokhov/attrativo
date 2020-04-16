@@ -1,0 +1,25 @@
+mixin product-info()
+  +b.product-info&attributes(attributes)
+    +e.text To μοντέλο έχει ύψος 1.73 και βάρος 59 κιλά
+
+    +e.line
+
+    +e.LABEL.favourite.js-product-favourite
+      input(type="checkbox" name="favourite" value="true")
+      +icon('heart_new')
+
+mixin ui-kit-product-info()
+  +ui-section
+    +ui-section-head
+      +ui-title Component product-info
+      +ui-path
+        p Component: components/product-info/product-info
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +product-info
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

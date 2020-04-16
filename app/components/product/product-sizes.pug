@@ -1,11 +1,12 @@
 mixin product-sizes()
   +b.product-sizes&attributes(attributes)
-    +e.header
-      +e.P.current size: <span class="js-product-select-size">m-10</span>
-      +e.A.link(href="#") size guide
-
     +e.select
       +e.SELECT.sizes-select(name="#").js-product-select
-        option(value="m-10 ") m-10
-        option(value="m-11 ") m-11
-        option(value="m-12 ") m-12
+        option(value="Μέγεθος" placeholder) Μέγεθος
+        option(value="ES - 6") ES - 6
+        option(value="S - 8") S - 8
+        option(value="M - 10" disabled) M - 10
+        option(value="L - 12") L - 12
+        option(value="XL - 14 ") XL - 14
+
+    +e.A.link(href="#") size guide

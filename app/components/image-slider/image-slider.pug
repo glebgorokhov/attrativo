@@ -1,21 +1,20 @@
 mixin image-slider()
   +b.image-slider&attributes(attributes)
-    +e.slider._big
-      .swiper-container
-        .swiper-wrapper
-          each item in [0, 1, 2, 3]
-            +e.slide.swiper-slide
-              img(src="assets/images/product/" + item + ".jpg", alt="@@")
+    .swiper-container
+      .swiper-wrapper
+        each item in [0, 1, 0, 1]
+          +e.slide.swiper-slide
+            img(src="assets/images/product/" + item + ".jpg", alt="@@")
 
-      +e.dots.show-lg
-        +e.dot
+    +slider-pages.__pages
 
-    +e.slider._small.hide-lg
-      .swiper-container
-        .swiper-wrapper
-          each item in [0, 1, 2, 3]
-            +e.slide._small.swiper-slide
-              img(src="assets/images/product/" + item + ".jpg", alt="@@")
+    +e.arrows.hide-lg
+      +e.arrow._prev.js-arrow-prev
+        +icon('arrow_slider_big')
+      +e.arrow._next.js-arrow-next
+        +icon('arrow_slider_big')
+
+    +e.scrollbar
 
 mixin ui-kit-image-slider()
   +ui-section

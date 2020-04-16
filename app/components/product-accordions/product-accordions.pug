@@ -1,12 +1,24 @@
 mixin product-accordions()
   +b.product-accordions&attributes(attributes)
-    each accordion in ['σύνθεση & Εφαρμογή', 'αποστολές - επιστροφές']
-      +e.accordion
-        +e.button
-          span!= accordion
-        +e.content
-          +e.wrapper
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nunc sed posuere tincidunt. Fusce id commodo metus. Integer vel velit suscipit, pulvinar magna vel, hendrerit mauris.
+    each item in getData('product-accordions')
+      +e.section(class=item.class)
+        if item.text
+          +e.P.text!= item.text
+
+        if item.accordion
+          +e.accordion
+           +e.button
+             span!= item.accordion.title
+             +icon('arrow_right_burger')
+           +e.content
+             +e.wrapper
+               p Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper nunc sed posuere tincidunt. Fusce id commodo metus. Integer vel velit suscipit, pulvinar magna vel, hendrerit mauris.
+
+        if item.delivery
+          +e.delivery
+            b ΜΕΤΑΦΟΡΙΚA:
+            span ΔΩΡΕΑΝ ΣΕ ΟΛΗ ΤΗΝ ΕΛΛΑΔΑ
+            +icon('package')
 
 mixin ui-kit-product-accordions()
   +ui-section

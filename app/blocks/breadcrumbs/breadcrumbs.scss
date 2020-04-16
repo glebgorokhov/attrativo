@@ -3,6 +3,8 @@ $breadpadding: 35px;
 .breadcrumbs {
   display: flex;
   align-items: center;
+  max-width: 100%;
+  white-space: nowrap;
 
   $b: &;
 
@@ -14,6 +16,14 @@ $breadpadding: 35px;
     letter-spacing: .06em;
     text-transform: uppercase;
     color: black;
+
+    #{$b}_small & {
+      font-size: 12px;
+    }
+
+    &:last-child {
+      overflow: hidden;
+    }
 
     &:not(:last-child)::after {
       content: '/';
@@ -30,5 +40,10 @@ $breadpadding: 35px;
         color: black;
       }
     }
+  }
+
+  &__link {
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }

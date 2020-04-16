@@ -1,0 +1,20 @@
+[
+  {
+    "class": "show-lg",
+    "text": "ΚΩΔΙΚΟΣ: 917 389 29"
+  },
+  {
+    "accordion": {
+      "title": "ΛΕΠΤΟΜΕΡΕΙΕΣ"
+    }
+  },
+  {
+    "accordion": {
+      "title": "ΑΠΟΣΤΟΛΗ / ΕΠΙΣΤΡΟΦΕΣ"
+    }
+  },
+  {
+    "class": "hide-lg",
+    "delivery": true
+  }
+]

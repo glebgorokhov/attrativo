@@ -1,24 +1,20 @@
 .product-sizes {
+  display: flex;
+  align-items: center;
+
   $b: &;
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__current {
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: .06em;
-    text-transform: capitalize;
-  }
-
   &__link {
-    font-size: 12px;
-    line-height: 15px;
-    letter-spacing: .06em;
-    text-decoration-line: underline;
-    text-transform: capitalize;
+    @include rule(margin-left, (xl: 18px, lg: 10px));
+
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-family: $font-second;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-decoration: underline;
     transition: opacity $ease-main;
 
     &:hover {
@@ -27,27 +23,34 @@
   }
 
   &__select {
-    margin-top: 5px;
+    flex: 1;
+
+    .choices {
+      margin-bottom: 0;
+    }
   }
 
   &__sizes-select {
-    height: 40px;
+    @include rule(height, (xl: 40px, lg: 35px));
+    @include rule(padding, (xl: 0 50px 0 18px, lg: 0 40px 0 12px));
+    @include rule(font-size, (xl: 14px, lg: 11px));
+
     box-sizing: border-box;
-    border-width: 1px 0;
+    border-width: 1px;
     border-style: solid;
-    border-color: $color-grey-14;
-    padding: 0 50px 0 14px;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 16px;
+    border-color: #979797;
+    font-weight: 400;
+    line-height: 1;
     letter-spacing: .06em;
-    text-transform: uppercase;
     width: 100%;
-    border-radius: 0;
-    background: transparent;
+    border-radius: 2px;
+    background: white;
   }
 
   .choices.choices_product {
+    .choices__placeholder {
+      color: black;
+    }
 
     &[data-type*=select-one] {
 
@@ -56,11 +59,64 @@
       }
 
       &::after {
-        right: 13px;
+        width: 14px;
+        height: 8px;
+        background-image: url(../images/arrow_select_store.svg);
+        background-size: 100% 100%;
+
+        @include rule(right, (xl: 18px, lg: 9px));
+      }
+    }
+
+    .choices__list--dropdown {
+      border-color: #979797;
+      border-width: 0 1px 1px;
+      margin-top: -1px;
+
+      &::before {
+        @include rule(left, (xl: 17px, lg: 10px));
+        @include rule(right, (xl: 17px, lg: 10px));
+
+        content: '';
+        top: 0;
+        height: 1px;
+        position: absolute;
+        background: #D2D2D2;
       }
 
-      .choices__list--dropdown .choices__item {
-        padding: 7px 13px;
+      .choices__item {
+        @include rule(padding, (xl: 6px 17px, lg: 6px 10px));
+        @include rule(font-size, (xl: 12px, lg: 11px));
+
+        line-height: 16px;
+        letter-spacing: 0.06em;
+        transition: background $ease-main, font-weight $ease-main;
+        color: black;
+        opacity: 1;
+
+        &--disabled {
+          color: #848484 !important;
+          background: transparent !important;
+          font-weight: 400 !important;
+
+          &::after {
+            content: '';
+            width: 11px;
+            height: 11px;
+            background: url('../images/email.svg');
+            background-size: 100% 100%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 12px;
+          }
+        }
+
+        &.is-highlighted {
+          font-weight: 700;
+          background: #F6F6F6;
+          color: black;
+          opacity: 1;
+        }
       }
     }
   }

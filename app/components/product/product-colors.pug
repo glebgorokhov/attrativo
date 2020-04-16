@@ -1,9 +1,7 @@
 mixin product-colors()
   +b.product-colors&attributes(attributes)
-    +e.header
-      +e.P.title
-        | Colour: <span class="js-product-active-color">multicolor</span>
-      p.product__text.show-lg Κωδικός Προϊόντος: 82406613
+    +e.header.hide-lg
+      +e.P.title Χρώμα:
 
     +e.colors
       - var i = 0;
@@ -12,8 +10,6 @@ mixin product-colors()
         +e.LABEL.color
           +e.INPUT.input(type="radio", name="product-color", value=i, checked=(i === 1), data-color-name=color.name).js-product-color
           +e.box
-            +e.image(style="" + (color.color ? ('background-color: ' + color.color + ';') : '') + (color.image ? ('background-image: url(' + color.image + ');') : ''))
-
-    label.product__favourite.show-lg
-      input(type="checkbox" name="favourite")
-      +icon('heart')
+            +e.name!= color.name
+            +e.tick
+              +icon('checkbox_tick')

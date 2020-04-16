@@ -29,7 +29,6 @@ import {productSlider} from "../components/product-slider/product-slider";
 import {productCardSlider} from "../components/product-card/product-card";
 import {backToTop} from "../components/back-to-top/back-to-top";
 import {imageSlider} from "../components/image-slider/image-slider";
-import {recently} from "../components/recently/recently";
 import {product} from "../components/product/product";
 import {productAccordions} from "../components/product-accordions/product-accordions";
 import {productResult} from "../components/product-result/product-result";
@@ -72,7 +71,6 @@ $(() => {
   productCardSlider();
   backToTop();
   imageSlider();
-  recently();
   product();
   productAccordions();
   productResult();

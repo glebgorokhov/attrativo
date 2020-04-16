@@ -21,6 +21,7 @@ Font-weight values:
 
 @include font-face('Open Sans', normal, 300, 'OpenSansLight');
 @include font-face('Open Sans', normal, 400, 'OpenSansRegular');
+@include font-face('Open Sans', italic, 400, 'OpenSansItalic');
 @include font-face('Open Sans', normal, 600, 'OpenSansSemiBold');
 @include font-face('Open Sans', normal, 700, 'OpenSansBold');
 @include font-face('Open Sans', normal, 800, 'OpenSansExtraBold');
