@@ -1,5 +1,5 @@
 mixin header()
-  +b.Header&attributes(attributes)
+  +b.Header(class=(productHeader ? 'is-stickable' : false))&attributes(attributes)
     +e.top
       .container
         +slogan-slider.__slogan.hide-lg
@@ -42,6 +42,8 @@ mixin header()
           img(src="assets/images/burger-icon.svg" alt="@@")
 
     +menu
+
+    +product-sticky
 
 
 mixin ui-kit-header()

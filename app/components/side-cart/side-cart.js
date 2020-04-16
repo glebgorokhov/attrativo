@@ -35,6 +35,8 @@ export function sideCart () {
   $(document).on('click', '.js-side-cart-open', function (e) {
     if ($(window).width() >= globalOptions.sizes.lg) e.preventDefault();
 
+    $(window).scrollTop(0);
+
     sideCartToggle(false);
   });
 

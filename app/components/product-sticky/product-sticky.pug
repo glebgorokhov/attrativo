@@ -1,0 +1,45 @@
+mixin product-sticky()
+  +b.product-sticky&attributes(attributes)
+    .container
+      +e.images
+        each i in [1, 2, 1]
+          +e.image(src=`assets/images/product/${i}.jpg`)
+
+      +e.P.title ΦΟΡΕΜΑ ΑΜΑΝΙΚΟ ΜΕ ΚΟΥΜΠΙΑ
+
+      +e.prices
+        +e.P.price._old 99, 90€
+        +e.P.price._new 79, 90€
+
+      +e.right
+        +e.right-title Μαύρο
+        +e.select-box
+          +e.SELECT.select(name="#").js-product-select
+            option(value="Μέγεθος" placeholder) Μέγεθος
+            option(value="ES - 6") ES - 6
+            option(value="S - 8") S - 8
+            option(value="M - 10" disabled) M - 10
+            option(value="L - 12") L - 12
+            option(value="XL - 14 ") XL - 14
+
+        +button()._with-arrow(href="#").__button
+          div
+            span ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ
+            +icon('arrow_button')
+
+
+mixin ui-kit-product-sticky()
+  +ui-section
+    +ui-section-head
+      +ui-title Component product-sticky
+      +ui-path
+        p Component: components/product-sticky/product-sticky
+      +ui-description
+        p Component description
+
+    +ui-section-content()
+      +product-sticky
+
+    //- With +ui-section-content(true) container disappears
+    //- Choose +ui-elements-list() for creating list of inline elements
+    //- Border for special section: +ui-special()

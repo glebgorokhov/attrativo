@@ -7,6 +7,12 @@
 @import '../components/**/*';
 @import '../pages/**/*';
 
+body {
+  @include screen(lg) {
+    padding-top: 0 !important;
+  }
+}
+
 .container {
   width: $container-width;
 

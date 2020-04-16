@@ -5,6 +5,16 @@
 
   $b: &;
 
+  &.is-sticky {
+    @include screen(lg, min) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background: white;
+    }
+  }
+
   .container {
     // width: 100%;
   }
@@ -15,6 +25,12 @@
     background: black;
     color: white;
     fill: white;
+
+    @include screen(lg, min) {
+      #{$b}.is-sticky & {
+        display: none;
+      }
+    }
 
     .container {
       display: flex;

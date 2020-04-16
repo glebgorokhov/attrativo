@@ -38,6 +38,7 @@ import {popupPreview} from "../components/popup-preview/popup-preview";
 import {sideCart} from "../components/side-cart/side-cart";
 import {sloganSlider} from "../components/slogan-slider/slogan-slider";
 import {itemSliderSmall} from "../components/item-slider-small/item-slider-small";
+import {headerSticky} from "../components/header/header";
 
 const $ = window.$;
 
@@ -81,5 +82,6 @@ $(() => {
   sloganSlider();
   itemSliderSmall();
   sliders();
+  headerSticky();
 });
 /* eslint-enable */
