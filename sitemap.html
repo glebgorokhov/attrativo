@@ -223,10 +223,33 @@
                 </div>
             </div>
         </div>
+        <div class="product-sticky">
+            <div class="container">
+                <div class="product-sticky__images"><img class="product-sticky__image" src="assets/images/product/1.jpg" alt="" role="presentation" /><img class="product-sticky__image" src="assets/images/product/2.jpg" alt="" role="presentation" /><img class="product-sticky__image" src="assets/images/product/1.jpg" alt="" role="presentation" /></div>
+                <p class="product-sticky__title">ΦΟΡΕΜΑ ΑΜΑΝΙΚΟ ΜΕ ΚΟΥΜΠΙΑ</p>
+                <div class="product-sticky__prices">
+                    <p class="product-sticky__price product-sticky__price_old">99, 90€</p>
+                    <p class="product-sticky__price product-sticky__price_new">79, 90€</p>
+                </div>
+                <div class="product-sticky__right">
+                    <div class="product-sticky__right-title">Μαύρο</div>
+                    <div class="product-sticky__select-box"><select class="product-sticky__select js-product-select" name="#">
+                            <option value="Μέγεθος" placeholder="placeholder">Μέγεθος</option>
+                            <option value="ES - 6">ES - 6</option>
+                            <option value="S - 8">S - 8</option>
+                            <option value="M - 10" disabled="disabled">M - 10</option>
+                            <option value="L - 12">L - 12</option>
+                            <option value="XL - 14 ">XL - 14</option>
+                        </select></div><a class="Button Button_with-arrow product-sticky__button" href="#">
+                        <div><span>ΠΡΟΣΘΗΚΗ ΣΤΟ ΚΑΛΑΘΙ</span><svg><use xlink:href="assets/images/icon.svg#icon_arrow_button"></use></svg></div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <main class="main" role="main">
         <div class="sitemap">
-            <div class="container"><a class="sitemap__link js-fancybox" href="#popup-login">[Done] [Popup] Sign In (#popup-login)</a><a class="sitemap__link js-side-cart-open" href="cart.html">[Done] [Desktop Popup] Sidebar Shopping Cart</a><a class="sitemap__link js-bottom-popup-open" href="#popup-size">[Mobile Popup] Sizes (#popup-size)</a><a class="sitemap__link js-popup-minicart-open" href="#popup-preview">[Mobile Popup] Mini Cart (#popup-minicart)</a><br><br><a class="sitemap__link" href="index.html">[Done] Main Page (index.html)</a><a class="sitemap__link" href="cart.html">[Done] Shopping Cart (cart.html)</a><a class="sitemap__link" href="stores.html">[Done] Stores (stores.html)</a><a class="sitemap__link" href="catalogue.html">[Done] Catalogue (catalogue.html)</a><a class="sitemap__link" href="ui-kit.html">UI-kit (ui-kit.html)</a><a class="sitemap__link" href="product.html">Product (product.html)</a></div>
+            <div class="container"><a class="sitemap__link js-fancybox" href="#popup-login">[Popup] Sign In (#popup-login)</a><a class="sitemap__link js-side-cart-open" href="cart.html">[Desktop Popup] Sidebar Shopping Cart</a><a class="sitemap__link js-fancybox" href="#popup-notify">[Desktop Popup] Notify Me</a><br><br><a class="sitemap__link" href="index.html">Main Page (index.html)</a><a class="sitemap__link" href="cart.html">Shopping Cart (cart.html)</a><a class="sitemap__link" href="stores.html">Stores (stores.html)</a><a class="sitemap__link" href="catalogue.html">Catalogue (catalogue.html)</a><a class="sitemap__link" href="product.html">Product (product.html)</a><a class="sitemap__link" href="product_amount.html">Product With Amount (product_amount.html)</a><a class="sitemap__link" href="ui-kit.html">UI-kit (ui-kit.html)</a></div>
         </div>
     </main>
     <div class="Footer">
@@ -466,48 +489,21 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="bottom-popups">
-        <div class="bottom-popup" id="popup-size">
-            <div class="bottom-popup__popup">
-                <div class="popup-size">
-                    <p class="popup-size__title">Επέλεξε το μέγεθός σου</p>
-                    <div class="popup-size__items"><label class="popup-size__size"><input class="popup-size__input" type="radio" value="es-6" name="size_popup" disabled="disabled" /><span class="popup-size__box">es-6</span></label><label class="popup-size__size"><input class="popup-size__input" type="radio" value="μ-10" name="size_popup" checked="checked" /><span class="popup-size__box">μ-10</span></label><label class="popup-size__size"><input class="popup-size__input" type="radio" value="l-12" name="size_popup" /><span class="popup-size__box">l-12</span></label><label class="popup-size__size"><input class="popup-size__input" type="radio" value="xl-14" name="size_popup" /><span class="popup-size__box">xl-14</span></label></div>
-                    <div class="popup-size__link"><a href="#">size guide</a></div><a class="Button popup-size__button" href="#">προσθηκη στο καλαθι</a>
-                </div>
-            </div>
-        </div>
-        <div class="popup-preview">
-            <div class="popup-preview__popup">
-                <div class="popup-preview__head">
-                    <p class="popup-preview__title">ΠΡΟΣΤΕΘΗΚΕ ΣΤΟ ΚΑΛΑΘΙ</p><svg class="popup-preview__close js-popup-minicart-close"><use xlink:href="assets/images/icon.svg#icon_close_bold"></use></svg>
-                </div>
-                <div class="popup-preview__item">
-                    <div class="CartItem CartItem_static">
-                        <div class="CartItem__image CartItem-Picture"><img src="assets/images/products/1.jpg" /></div>
-                        <div class="CartItem__content">
-                            <div class="CartItem__texts">
-                                <div class="CartItem__title-wrapper">
-                                    <p class="CartItem__title CartItem-Heading">φορεμα ασυμμετρο με βολαν</p>
-                                </div>
-                                <div class="CartItem__items">
-                                    <div class="CartItem__item"><span>Χρώμα:</span><span>multicolor</span></div>
-                                    <div class="CartItem__item"><span>Μέγεθος:</span><span>S-8</span></div>
-                                </div>
-                            </div>
-                            <div class="CartItem__numberbox">
-                                <div class="input-numberbox"><button class="input-numberbox__button js-numberbox-minus" type="button">-</button><input class="input-numberbox__input js-numberbox-input CartItem-Qty" value="1" type="text" /><button class="input-numberbox__button js-numberbox-plus" type="button">+</button></div>
-                            </div>
-                            <div class="CartItem__prices CartItem-Price">
-                                <div class="CartItem__price">129,90 €</div>
-                            </div>
-                            <div class="CartItem__controls"><label class="CartItem__control CartItem__control_favourite"><input type="checkbox" name="favourites" /><svg><use xlink:href="assets/images/icon.svg#icon_heart"></use></svg></label>
-                                <div class="CartItem__control CartItem__control_remove js-cart-remove CartItem-Delete"><svg class="show-lg"><use xlink:href="assets/images/icon.svg#icon_remove"></use></svg><svg class="hide-lg"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg></div>
-                                <div class="CartItem__control CartItem__control_repeat show-lg"><svg><use xlink:href="assets/images/icon.svg#icon_repeat"></use></svg></div>
-                            </div>
-                        </div>
-                    </div>
-                </div><button class="Button popup-preview__button js-popup-minicart-close">ολοκληρωση παραγγελιασ</button>
+        <div class="notify-popup" id="popup-notify"><svg class="notify-popup__close" data-fancybox-close=""><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+            <div class="notify-popup__wrapper">
+                <div class="notify-popup__image"><img src="assets/images/product/1.jpg" /></div>
+                <form class="notify-popup__content" action="#" method="post" data-parsley-validate="data-parsley-validate">
+                    <p class="notify-popup__title">NOTIFY ME</p>
+                    <p class="notify-popup__text">Το προϊον προσωρινά δεν είναι διαθέσιμο στο νούμερο που ζητήσατε. Μπορούμε να σας ειδοποιήσουμε εντός λίγων ημερών με την επαναπαραλαβή του.</p>
+                    <div class="notify-popup__select"><select class="select js-select js-select" name="size">
+                            <option value="M - 10 (Mη διαθέσιμο)" selected="selected">M - 10 (Mη διαθέσιμο)</option>
+                            <option value="M - 5 (Mη διαθέσιμο)">M - 5 (Mη διαθέσιμο)</option>
+                        </select></div>
+                    <div class="inputbox notify-popup__inputbox notify-popup__inputbox_input"><input class="notify-popup__input" type="email" name="email" placeholder="*Το email σας" required="required" /></div>
+                    <div class="inputbox notify-popup__inputbox notify-popup__inputbox_button"><button class="Button notify-popup__button" type="submit">
+                            <div><span>ΕΙΔΟΠΟΙΗΣΤΕ ΜΕ</span><svg><use xlink:href="assets/images/icon.svg#icon_email"></use></svg></div>
+                        </button></div>
+                </form>
             </div>
         </div>
     </div>
