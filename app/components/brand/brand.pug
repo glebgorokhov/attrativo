@@ -21,13 +21,11 @@ mixin brand()
 mixin ui-kit-brand()
   +ui-section
     +ui-section-head
-      +ui-title Component brand
+      +ui-title Brand
       +ui-path
         p Component: components/brand/brand
-      +ui-description
-        p Component description
 
-    +ui-section-content()
+    +ui-section-content(true)
       +brand
 
     //- With +ui-section-content(true) container disappears

@@ -96,13 +96,16 @@
   }
 
   &.js-button-add-to-cart {
+
     span {
+
       &::before {
         content: attr(data-passive);
       }
     }
 
     &.is-active {
+
       span::before {
         content: attr(data-active);
       }

@@ -13,7 +13,7 @@
     text-transform: uppercase;
     font-size: 11px;
     line-height: 1;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-decoration: underline;
     transition: opacity $ease-main;
 
@@ -38,7 +38,7 @@
     box-sizing: border-box;
     border-width: 1px;
     border-style: solid;
-    border-color: #979797;
+    border-color: $color-grey-4;
     font-weight: 400;
     line-height: 1;
     letter-spacing: .06em;
@@ -48,6 +48,7 @@
   }
 
   .choices.choices_product {
+
     .choices__placeholder {
       color: black;
     }
@@ -69,7 +70,7 @@
     }
 
     .choices__list--dropdown {
-      border-color: #979797;
+      border-color: $color-grey-4;
       border-width: 0 1px 1px;
       margin-top: -1px;
 
@@ -81,7 +82,7 @@
         top: 0;
         height: 1px;
         position: absolute;
-        background: #D2D2D2;
+        background: $color-grey-5;
       }
 
       .choices__item {
@@ -89,13 +90,13 @@
         @include rule(font-size, (xl: 12px, lg: 11px));
 
         line-height: 16px;
-        letter-spacing: 0.06em;
+        letter-spacing: .06em;
         transition: background $ease-main, font-weight $ease-main;
         color: black;
         opacity: 1;
 
         &--disabled {
-          color: #848484 !important;
+          color: $color-grey-6 !important;
           background: transparent !important;
           font-weight: 400 !important;
 
@@ -113,7 +114,7 @@
 
         &.is-highlighted {
           font-weight: 700;
-          background: #F6F6F6;
+          background: $color-grey-8;
           color: black;
           opacity: 1;
         }

@@ -1,11 +1,11 @@
 .cart-additional {
-  @include rule(border, (xl: 1px solid #DADADA, lg: 0));
+  @include rule(border, (xl: 1px solid $color-grey-14, lg: 0));
   @include rule(border-radius, (xl: 2px, lg: 0));
   @include rule(margin-left, (lg: -20px));
   @include rule(margin-right, (lg: -20px));
 
   display: flex;
-  background: #f7f7f7;
+  background: $color-grey-13;
   box-sizing: border-box;
   padding: 13px 0;
 
@@ -20,21 +20,21 @@
     @include rule(padding, (xl: 0 13px, lg: 0 20px));
 
     &:not(:first-child) {
-      @include rule(border-left, (xl: 4px solid #e0e0e0, lg: 0));
+      @include rule(border-left, (xl: 4px solid $color-grey-17, lg: 0));
     }
   }
 
   &__icon {
     width: 27px;
     height: 14px;
-    fill: #666;
+    fill: $color-red-33;
     flex-shrink: 0;
   }
 
   &__text {
     @include rule(line-height, (xl: 20px, lg: 16px));
     @include rule(margin-left, (xl: 10px, lg: 23px));
-    @include rule(color, (lg: #626262));
+    @include rule(color, (lg: $color-red-34));
 
     font-size: 12px;
     letter-spacing: .06em;

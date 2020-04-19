@@ -13,11 +13,13 @@
   }
 
   &__slider {
+
     .product-slider__content {
       @include rule(margin-top, (xl: 20px, lg: 0));
     }
 
     @include screen(lg, min) {
+
       .product-slider__arrow {
         width: 13px;
         height: 24px;

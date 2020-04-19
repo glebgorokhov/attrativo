@@ -3,7 +3,7 @@
 
   @include screen(lg, min) {
     padding: 21px 24px 24px;
-    border: 1px solid #cbcbcb;
+    border: 1px solid $color-grey-40;
   }
 
   @include rule(margin-top, (lg: 24px));
@@ -73,8 +73,8 @@
     font-weight: 600;
 
     @include screen(lg, min) {
-      background: #23a738;
-      background: linear-gradient(180deg, rgba(35, 167, 56, .4) 0%, rgba(255, 255, 255, 0) 100%), #23a738;
+      background: $color-green;
+      background: linear-gradient(180deg, rgba(35, 167, 56, .4) 0%, rgba(255, 255, 255, 0) 100%), $color-green;
     }
   }
 }

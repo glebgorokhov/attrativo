@@ -8,7 +8,7 @@
     content: '';
     position: absolute;
     bottom: 0;
-    background: #f7f7f7;
+    background: $color-grey-13;
 
     @include rule(right, (xl: calc(50% - 110px), lg: 35px));
     @include rule(left, (xl: calc((100vw - 1600px) / -2), lg: -20px));
@@ -134,7 +134,7 @@
     font-weight: 600;
     letter-spacing: .06em;
     text-transform: uppercase;
-    color: #767045;
+    color: $color-grey-56;
 
     span {
       background: white;

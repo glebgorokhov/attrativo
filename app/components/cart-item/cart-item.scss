@@ -8,14 +8,14 @@
     margin: 0 -20px;
 
     &:nth-child(2n) {
-      background: #f7f7f7;
+      background: $color-grey-13;
     }
   }
 
   @include screen(lg, min) {
     border-width: 0 0 1px;
     border-style: solid;
-    border-color: #e5e5e5;
+    border-color: $color-red-31;
     align-items: flex-start;
 
     &:first-child {
@@ -255,10 +255,10 @@
     font-size: 0;
     text-align: center;
 
-    @include rule(fill, (lg: #B0B0B0));
+    @include rule(fill, (lg: $color-grey-38));
 
     #{$b}_small & {
-      fill: #b0b0b0;
+      fill: $color-grey-38;
 
       .hide-lg, &.hide-lg {
         display: none !important;

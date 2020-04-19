@@ -50,7 +50,7 @@
   &__arrow {
     height: 100%;
     width: 20px;
-    fill: #8C8C8C;
+    fill: $color-grey-34;
     pointer-events: all;
     transition: fill $ease-main;
     cursor: pointer;
@@ -58,7 +58,7 @@
 
     &.swiper-button-disabled {
       pointer-events: none;
-      fill: rgba(#8c8c8c, .5);
+      fill: rgba($color-grey-34, .5);
     }
 
     &::before {
@@ -105,7 +105,7 @@
     z-index: 10;
 
     .swiper-scrollbar-drag {
-      background: #757575;
+      background: $color-grey-36;
     }
   }
 }

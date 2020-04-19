@@ -58,7 +58,7 @@
   }
 
   &__logo {
-    height: 80px;
+    height: 30px;
     font-size: 20px;
   }
 
@@ -106,6 +106,7 @@
     font-size: 30px;
     font-weight: 600;
     line-height: 1.4;
+    font-family: $font-second;
   }
 
   &__section-head {

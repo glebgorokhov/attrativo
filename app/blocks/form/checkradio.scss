@@ -67,7 +67,7 @@
     text-align: left;
 
     #{$b}_light & {
-      color: #c2c2c2;
+      color: $color-grey-48;
     }
   }
 }

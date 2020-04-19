@@ -27,7 +27,7 @@
   }
 
   &__wrapper {
-    background: #f4f4f4;
+    background: $color-grey-41;
     transition: border-color $ease-main;
     width: 100%;
     box-sizing: border-box;
@@ -37,7 +37,7 @@
     flex-direction: column;
     align-items: flex-start;
 
-    @include rule(border-bottom, (xl: 1px solid #F4F4F4, lg: 0));
+    @include rule(border-bottom, (xl: 1px solid $color-grey-41, lg: 0));
     @include rule(padding, (xl: 20px 40px 25px, lg: 17px 24px 17px));
 
     &::before {
@@ -113,7 +113,7 @@
 
     height: 34px;
     line-height: 32px;
-    border-color: #c9c9c9;
+    border-color: $color-grey-37;
     font-size: 12px;
     font-weight: 600;
     transition: background-color $ease-main, border-color $ease-main, color $ease-main;

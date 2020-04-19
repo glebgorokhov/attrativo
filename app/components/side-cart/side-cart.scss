@@ -41,7 +41,7 @@
     justify-content: space-between;
     margin: 0 -15px;
     padding: 0 15px 15px;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid $color-red-36;
   }
 
   &__amount {
@@ -103,7 +103,7 @@
     align-items: center;
     margin: 20px -15px 0;
     padding: 10px 15px;
-    background: #f7f7f7;
+    background: $color-grey-13;
   }
 
   &__info-title {
@@ -134,14 +134,14 @@
     flex: 1;
 
     &.Button_style_light {
-      border-color: #d4d4d4;
-      color: #9d9d9d;
+      border-color: $color-grey-12;
+      color: $color-grey-33;
       font-weight: 400;
     }
 
     &.Button_with-arrow {
-      background-color: #23a738;
-      background: linear-gradient(180deg, rgba(35, 167, 56, .4) 0%, rgba(255, 255, 255, 0) 100%), #23a738;
+      background-color: $color-green;
+      background: linear-gradient(180deg, rgba(35, 167, 56, .4) 0%, rgba(255, 255, 255, 0) 100%), $color-green;
       box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
       font-weight: 700;
     }

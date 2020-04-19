@@ -5,7 +5,7 @@
     margin-left: -20px;
     margin-right: -20px;
     padding: 11px 20px;
-    background: #F7F7F7;
+    background: $color-grey-13;
   }
 
   $b: &;
@@ -16,7 +16,7 @@
 
     &:not(:last-child) {
       @include screen(lg, min) {
-        border-bottom: 1px solid #F2F2F2;
+        border-bottom: 1px solid $color-red-36;
       }
     }
   }
@@ -25,18 +25,18 @@
     font-weight: 300;
     font-size: 12px;
     line-height: 15px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
   }
 
   &__accordion {
   }
 
-  &__delivery  {
+  &__delivery {
     display: flex;
     align-items: center;
     font-size: 12px;
     line-height: 16px;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     flex-wrap: wrap;
 
     b {
@@ -46,14 +46,14 @@
     }
 
     span {
-      color: #9E9E9E;
+      color: $color-red-38;
       margin-right: 15px;
     }
 
     svg {
       width: 27px;
       height: 15px;
-      fill: #666666;
+      fill: $color-red-33;
       flex-shrink: 0;
     }
   }
@@ -81,7 +81,7 @@
       transform: rotate(90deg);
       transition: transform $ease-main;
       flex-shrink: 0;
-      fill: #9C9C9C;
+      fill: $color-red-39;
     }
 
     #{$b}__accordion.is-active & {

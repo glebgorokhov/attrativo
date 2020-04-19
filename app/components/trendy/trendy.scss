@@ -2,7 +2,7 @@
   @include rule(padding, (xl: 29px 0 38px, lg: 15px 0 0));
 
   display: block;
-  background: #f8f8f8;
+  background: $color-grey-52;
   border-width: 1px 0;
   border-style: solid;
   border-color: #d5d5d5;
@@ -83,7 +83,7 @@
     font-size: 10px;
     line-height: 14px;
     letter-spacing: .06em;
-    color: #9a9a9a;
+    color: $color-grey-55;
     display: block;
     text-align: center;
   }
@@ -96,6 +96,6 @@
   }
 
   .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-    background: #a0a0a0;
+    background: $color-grey-54;
   }
 }

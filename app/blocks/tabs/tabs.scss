@@ -9,7 +9,7 @@
   &__tab {
     transition: color $ease-main, border-color $ease-main;
     cursor: pointer;
-    color: #AFAFAF;
+    color: $color-grey-53;
     font-family: $font-second;
 
     @include rule(font-size, (xl: 25px, lg: 16px));
@@ -19,7 +19,7 @@
     @include rule(border-color, (lg: transparent));
     @include rule(padding, (lg: 0 15px));
 
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-transform: uppercase;
     pointer-events: all;
 

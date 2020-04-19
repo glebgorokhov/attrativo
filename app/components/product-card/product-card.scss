@@ -94,7 +94,7 @@
     box-sizing: border-box;
 
     &_sale {
-      background: #e01338;
+      background: $color-red-1;
       color: white;
     }
   }
@@ -123,7 +123,7 @@
     }
 
     svg {
-      @include rule(fill, (xl: black, lg: #8E8E8E));
+      @include rule(fill, (xl: black, lg: $color-grey-35));
 
       transition: fill $ease-main;
       width: 100%;
@@ -193,7 +193,7 @@
     }
 
     &_new {
-      color: #be1b1b;
+      color: $color-red-3;
     }
   }
 

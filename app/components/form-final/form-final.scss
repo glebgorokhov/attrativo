@@ -29,7 +29,7 @@
 
       @include rule(padding-top, (xl: 3px, lg: 5px));
       @include rule(margin-top, (xl: 6px, lg: 10px));
-      @include rule(border-color, (lg: #b8b8b8));
+      @include rule(border-color, (lg: $color-red-35));
     }
   }
 }

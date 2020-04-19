@@ -134,8 +134,8 @@
   @include rule(width, (xl: 440px, lg: auto));
 
   @include screen(lg) {
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid $color-red-31;
+    border-right: 1px solid $color-red-31;
   }
 }
 
@@ -186,7 +186,7 @@
 
   .choices__list--dropdown {
     margin-top: -1px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid $color-red-31;
     background: white;
     padding: 0 20px;
     border-radius: 0;
@@ -228,11 +228,11 @@
   &[data-type*=select-one] {
 
     .choices__inner {
-      border: 1px solid #D8D8D8;
+      border: 1px solid $color-red-32;
       border-radius: 2px;
       padding: 0 44px 0 11px;
       font-size: 12px;
-      letter-spacing: 0.06em;
+      letter-spacing: .06em;
       color: black;
       background: transparent;
 
@@ -261,7 +261,7 @@
     }
 
     .choices__list--dropdown {
-      border-color: #D8D8D8;
+      border-color: $color-red-32;
     }
   }
 }
@@ -271,7 +271,7 @@
   &[data-type*=select-one] {
 
     .choices__inner {
-      border: 1px solid #dadada;
+      border: 1px solid $color-grey-14;
       line-height: 1;
       letter-spacing: .06em;
       background: transparent;
@@ -305,7 +305,7 @@
     }
 
     .choices__list--dropdown {
-      border-color: #dadada;
+      border-color: $color-grey-14;
     }
   }
 }

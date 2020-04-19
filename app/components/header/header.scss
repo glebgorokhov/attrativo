@@ -27,6 +27,7 @@
     fill: white;
 
     @include screen(lg, min) {
+
       #{$b}.is-sticky & {
         display: none;
       }
@@ -129,7 +130,7 @@
 
     border-width: 0 0 1px;
     border-style: solid;
-    border-color: #f2f2f2;
+    border-color: $color-red-36;
     position: relative;
 
     .container {

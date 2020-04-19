@@ -2,10 +2,10 @@
   display: block;
   margin-top: 29px;
   padding: 11px 20px 0;
-  background: #f7f7f7;
+  background: $color-grey-13;
   border-width: 1px 0;
   border-style: solid;
-  border-color: #d4d4d4;
+  border-color: $color-grey-12;
 
   $b: &;
 
@@ -15,7 +15,7 @@
     font-size: 14px;
     line-height: 17px;
     letter-spacing: .06em;
-    color: #a0a0a0;
+    color: $color-grey-54;
   }
 
   &__wrapper {
@@ -67,7 +67,7 @@
     font-size: 10px;
     line-height: 14px;
     letter-spacing: .06em;
-    color: #9a9a9a;
+    color: $color-grey-55;
     text-align: center;
   }
 
@@ -79,6 +79,6 @@
   }
 
   .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-    background: #a0a0a0;
+    background: $color-grey-54;
   }
 }

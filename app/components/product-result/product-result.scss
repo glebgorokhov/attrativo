@@ -17,7 +17,7 @@
   }
 
   @include screen(lg, min) {
-    border: 1px solid #D8D8D8;
+    border: 1px solid $color-red-32;
     border-radius: 2px;
     margin-top: 30px;
     display: none;
@@ -67,7 +67,7 @@
     text-overflow: ellipsis;
     font-size: 12px;
     line-height: 1;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
@@ -75,7 +75,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 1;
-    letter-spacing: 0.06em;
+    letter-spacing: .06em;
   }
 
   &__content {
@@ -120,14 +120,14 @@
 
     &_light {
       min-width: 108px;
-      border-color: #D8D8D8;
-      color: #A1A1A1;
+      border-color: $color-red-32;
+      color: $color-grey-32;
       font-weight: 400;
       font-size: 14px;
 
       @include screen(lg, min) {
-        border-color: #d4d4d4;
-        color: #9d9d9d;
+        border-color: $color-grey-12;
+        color: $color-grey-33;
       }
     }
 
@@ -136,10 +136,10 @@
     }
 
     &_next {
-      box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
 
       @include screen(lg, min) {
-        background: linear-gradient(180deg, rgba(35, 167, 56, 0.4) 0%, rgba(255, 255, 255, 0) 100%), #23A738;
+        background: linear-gradient(180deg, rgba(35, 167, 56, .4) 0%, rgba(255, 255, 255, 0) 100%), $color-green;
       }
     }
 
@@ -151,6 +151,7 @@
   }
 
   // Sent
+
   &__sent {
     transition: opacity $ease-main;
     opacity: 0;
@@ -179,14 +180,14 @@
     svg {
       width: 17px;
       height: 13px;
-      fill: #23A738;
+      fill: $color-green;
       margin-right: 6px;
     }
 
     span {
       font-size: 12px;
       line-height: 1;
-      letter-spacing: 0.06em;
+      letter-spacing: .06em;
       text-transform: uppercase;
 
       @include screen(lg, min) {

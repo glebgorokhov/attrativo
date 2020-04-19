@@ -22,13 +22,11 @@ mixin layer()
 mixin ui-kit-layer()
   +ui-section
     +ui-section-head
-      +ui-title Component layer
+      +ui-title Layer
       +ui-path
         p Component: components/layer/layer
-      +ui-description
-        p Component description
 
-    +ui-section-content()
+    +ui-section-content(true)
       +layer
 
     //- With +ui-section-content(true) container disappears

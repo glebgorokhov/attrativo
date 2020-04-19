@@ -10,7 +10,7 @@
   &__top {
     border-top: 1px solid black;
 
-    @include rule(border-color, (lg: #d4d4d4));
+    @include rule(border-color, (lg: $color-grey-12));
 
     .container {
       @include rule(padding, (lg: 0));
@@ -58,7 +58,7 @@
 
     &:not(:first-child) {
       @include screen(lg) {
-        border-left: 1px solid #d4d4d4;
+        border-left: 1px solid $color-grey-12;
       }
 
       @include screen(lg, min) {
@@ -85,7 +85,7 @@
     display: flex;
     align-items: center;
     padding: 15px 20px;
-    background: #282828;
+    background: $color-grey-45;
 
     svg {
       width: 17px;
@@ -109,26 +109,26 @@
       font-size: 12px;
       line-height: 16px;
       letter-spacing: .08em;
-      color: #c2c2c2;
+      color: $color-grey-48;
     }
 
     &:not(:first-child) {
       margin-top: 3px;
 
       a, svg {
-        color: #acacac;
-        fill: #acacac;
+        color: $color-grey-11;
+        fill: $color-grey-11;
       }
 
       p {
-        color: #acacac;
+        color: $color-grey-11;
       }
     }
   }
 
   &__middle {
     @include rule(padding, (xl: 33px 0, lg: 0));
-    @include rule(background, (xl: #0F0F0F, lg: #212121));
+    @include rule(background, (xl: $color-grey-50, lg: $color-grey-51));
 
     color: white;
 
@@ -214,7 +214,7 @@
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: .08em;
-    color: #afafaf;
+    color: $color-grey-53;
 
     a {
       transition: color $ease-main, opacity $ease-main;
@@ -258,7 +258,7 @@
   &__bottom {
     @include rule(padding, (xl: 9px 0, lg: 2px 0));
     @include rule(margin-top, (lg: 0));
-    @include rule(background, (xl: #F8F8F8));
+    @include rule(background, (xl: $color-grey-52));
 
     .container {
       display: flex;

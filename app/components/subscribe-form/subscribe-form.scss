@@ -10,7 +10,7 @@
 
   &__title {
     @include rule(font-size, (xl: 18px, lg: 14px));
-    @include rule(color, (lg: #f2f2f2));
+    @include rule(color, (lg: $color-red-36));
 
     font-weight: 700;
     line-height: 1.4;
@@ -25,7 +25,7 @@
     line-height: 16px;
     letter-spacing: .08em;
     text-transform: uppercase;
-    color: #878787;
+    color: $color-grey-30;
   }
 
   &__inputbox {
@@ -54,7 +54,7 @@
     }
 
     &::placeholder {
-      color: #a4a4a4;
+      color: $color-grey-31;
     }
   }
 

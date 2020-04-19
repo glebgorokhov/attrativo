@@ -36,7 +36,7 @@
     @include rule(right, (lg: 0));
     @include rule(z-index, (lg: 100));
     @include rule(border-bottom, (lg: 1px solid black));
-    @include rule(border-right, (xl: 1px solid #E5E5E5, lg: 0));
+    @include rule(border-right, (xl: 1px solid $color-red-31, lg: 0));
 
     background: white;
     justify-content: flex-start;
@@ -51,7 +51,7 @@
         bottom: 0;
         width: 100vw;
         left: calc((100vw - 1600px) / -2);
-        border-top: 1px solid #e5e5e5;
+        border-top: 1px solid $color-red-31;
         height: 0;
 
         @media (max-width: 1720px) {
@@ -79,7 +79,7 @@
     text-transform: lowercase;
 
     @include screen('lg', min) {
-      color: #9b9b9b;
+      color: $color-grey-42;
 
       &::before {
         content: '(';
@@ -111,7 +111,7 @@
   }
 
   &__section {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $color-red-31;
     transition: border $ease-main;
 
     @include rule(padding-bottom, (xl: 15px, lg: 0));
@@ -159,7 +159,7 @@
         top: 5px;
         right: 5px;
         bottom: 5px;
-        background: #f7f7f7;
+        background: $color-grey-13;
         opacity: 0;
         transition: opacity $ease-main;
       }
@@ -196,7 +196,7 @@
     margin: auto;
     width: 11px;
     height: 9px;
-    fill: #23a738;
+    fill: $color-green;
     z-index: 5;
     position: absolute;
 
@@ -236,7 +236,7 @@
     font-size: 11px;
     line-height: 14px;
     letter-spacing: .06em;
-    color: #828282;
+    color: $color-grey-39;
     display: none;
     width: 100%;
     overflow: hidden;
@@ -375,7 +375,7 @@
         margin-left: -15px;
         margin-right: -15px;
         padding: 15px;
-        background: #f7f7f7;
+        background: $color-grey-13;
       }
 
       #{$b}__checkbox:not(:first-child) input:checked + & {
@@ -396,7 +396,7 @@
     margin: auto;
     width: 11px;
     height: 9px;
-    fill: #23a738;
+    fill: $color-green;
     opacity: 0;
     transition: opacity $ease-main;
 
@@ -443,7 +443,7 @@
   .os-host-resize-disabled.os-host-scrollbar-horizontal-hidden > .os-scrollbar-vertical {
     padding: 0;
     border-radius: 0;
-    background: #c4c4c4;
+    background: $color-red-30;
   }
 
   .os-viewport, .os-padding {
@@ -587,10 +587,10 @@
       font-size: 11px;
       line-height: 14px;
       letter-spacing: .06em;
-      color: #696969;
+      color: $color-grey-44;
       text-align: center;
       padding: 0 0 7px;
-      border-bottom: 1px solid #b6b6b6;
+      border-bottom: 1px solid $color-grey-46;
       text-transform: uppercase;
     }
   }

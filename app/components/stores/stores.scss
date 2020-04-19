@@ -38,7 +38,7 @@
     display: flex;
     border-width: 1px 0;
     border-style: solid;
-    border-color: #e1e1e1;
+    border-color: $color-grey-47;
 
     @include rule(justify-content, (xl: space-between, lg: flex-start));
     @include rule(padding, (xl: 10px 30px, lg: 13px 20px));
@@ -77,13 +77,13 @@
 
   &__map-container {
     @include rule(height, (xl: 298px, lg: auto));
-    @include rule(border, (xl: 1px solid #ececec, lg: 0));
+    @include rule(border, (xl: 1px solid $color-grey-49, lg: 0));
     @include rule(display, (xl: flex, lg: block));
 
     position: relative;
 
     @include screen(lg) {
-      background: #f4f4f4;
+      background: $color-grey-41;
       padding: 0 10px 10px;
       box-sizing: border-box;
     }

@@ -1,7 +1,7 @@
 .product-colors {
   display: block;
   position: relative;
-  padding: 0.1px;
+  padding: .1px;
 
   $b: &;
 
@@ -31,7 +31,7 @@
     @include rule(padding, (xl: 0 9px, lg: 0 13px));
 
     display: block;
-    background: #efefef;
+    background: $color-grey-43;
     position: relative;
 
     #{$b}__input:not(:checked) + & {
@@ -43,7 +43,7 @@
     @include rule(font-size, (xl: 12px, lg: 11px));
     @include rule(line-height, (xl: 21px, lg: 24px));
 
-    letter-spacing: 0.08em;
+    letter-spacing: .08em;
     text-transform: capitalize;
   }
 
@@ -59,7 +59,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #23A738;
+    background: $color-green;
     fill: white;
     transition: opacity $ease-main;
     opacity: 0;

@@ -27,13 +27,11 @@ mixin match-point()
 mixin ui-kit-match-point()
   +ui-section
     +ui-section-head
-      +ui-title Component match-point
+      +ui-title Match Point
       +ui-path
         p Component: components/match-point/match-point
-      +ui-description
-        p Component description
 
-    +ui-section-content()
+    +ui-section-content(true)
       +match-point
 
     //- With +ui-section-content(true) container disappears
